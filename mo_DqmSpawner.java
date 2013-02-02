@@ -6,7 +6,7 @@ import java.util.*;
 
 import net.minecraft.src.dqmcore.DqmEntity.*;
 
-public final class DqmSpawner
+public final class mo_DqmSpawner
 {
 	private int maxAnimals = 40;
 	private int maxMobs = 60 ;
@@ -25,7 +25,7 @@ public final class DqmSpawner
 	List<Class> DqmPetMobClassList;
 	List<Class> DqmWaterMobClassList;
 
-	public DqmSpawner()
+	public mo_DqmSpawner()
     {
     	biomeList = new ArrayList();
     	try

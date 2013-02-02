@@ -64,7 +64,7 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 	public static int waterCreature = 15;
 
 	private static ModLoader ML;
-	private static DqmSpawner cs;
+	private static mo_DqmSpawner cs;
 	private static EnumCreatureType Type;
 	public static Minecraft mc = ML.getMinecraftInstance();
 
@@ -78,7 +78,7 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		BiomeGenBase[] frozenhell = { BiomeGenBase.frozenOcean,BiomeGenBase.frozenRiver,BiomeGenBase.hell };
 		BiomeGenBase[] Hills = { BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forestHills,BiomeGenBase.jungleHills,BiomeGenBase.taigaHills };
 		BiomeGenBase[] desert = { BiomeGenBase.desert,BiomeGenBase.desertHills };
-		cs = new DqmSpawner(); // spawnerインスタンスを初期化します
+		cs = new mo_DqmSpawner(); // spawnerインスタンスを初期化します
 		cs.setMaxMobs(monster); // カスタムモブの最大数を設定します
 		cs.setMaxAnimals(creature); // カスタム動物モブの最大数を設定します
 		cs.setMaxAquatic(waterCreature); // カスタム水生モブの最大数を設定します
