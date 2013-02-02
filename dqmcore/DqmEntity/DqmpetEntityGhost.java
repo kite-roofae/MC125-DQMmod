@@ -179,27 +179,6 @@ public class DqmpetEntityGhost extends DqmEntityTameable
 
 
 
-	/**
-	 * Returns the sound this mob makes when it is hurt.
-	 */
-	@Override
-	protected String getLivingSound()
-	{
-		return "none";
-	}
-	@Override
-	protected String getHurtSound()
-	{
-		return "mob.irongolem.hit";
-	}
-	@Override
-	protected String getDeathSound()
-	{
-		return "mob.irongolem.death";
-	}
-	/**
-	 * Returns true if the newer Entity AI code should be run
-	 */
 	@Override
 	public boolean isAIEnabled()
 	{

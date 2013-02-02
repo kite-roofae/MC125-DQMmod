@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityRiripat extends EntityMob
+public class DqmEntityRiripat extends DqmEntityMob
 {
 	/** The ItemStack that any Riripat holds (a bow). */
 	private static final ItemStack defaultHeldItem;
@@ -56,10 +56,10 @@ public class DqmEntityRiripat extends EntityMob
 		this.dropItem(mod_Dqm.Uruwasikinoko.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
-		this.dropItem(Item.bow.shiftedIndex, 1);
+		this.dropItem(Item.arrow.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Majuunokawa.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 	}
@@ -67,7 +67,7 @@ public class DqmEntityRiripat extends EntityMob
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
-		this.dropItem(Item.bow.shiftedIndex, 1);
+		this.dropItem(Item.arrow.shiftedIndex, 1);
 	}    	}
 	/*
     		[Akaitama][Amatuyunoito][Bakudanisi][Dokukesisou][Goldburesuretto][Goldring][Hayatenoring][Hikarinoisi][Hosifuru][Hosinokakera]
@@ -146,21 +146,7 @@ public class DqmEntityRiripat extends EntityMob
 	 * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
 	 * use this to react to sunlight and start to burn.
 	 */
-	@Override
-	public void onLivingUpdate()
-	{
-		if (worldObj.isDaytime() && !worldObj.isRemote)
-		{
-			float f = getBrightness(1.0F);
 
-			if (f > 0.5F && worldObj.canBlockSeeTheSky(MathHelper.floor_double(posX), MathHelper.floor_double(posY), MathHelper.floor_double(posZ)) && rand.nextFloat() * 30F < (f - 0.4F) * 2.0F)
-			{
-				setFire(8);
-			}
-		}
-
-		super.onLivingUpdate();
-	}
 
 	/**
 	 * Called when the mob's health reaches 0.
@@ -184,14 +170,7 @@ public class DqmEntityRiripat extends EntityMob
 		}
 	}
 
-	/**
-	 * Returns the item ID for the item the mob drops on death.
-	 */
-	@Override
-	protected int getDropItemId()
-	{
-		return mod_Dqm.Hosinokakera.shiftedIndex;
-	}
+
 
 
 	static

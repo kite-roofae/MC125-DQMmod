@@ -2,9 +2,9 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityHerughost extends EntityMob
+public class DqmEntityHerughost extends DqmEntityMob
 {
-	
+
 
 	//EntityAnimal,EntityZombie,EntityMob,EntityWaterMob
 

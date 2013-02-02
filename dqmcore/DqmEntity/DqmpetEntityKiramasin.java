@@ -32,7 +32,7 @@ public class DqmpetEntityKiramasin extends DqmEntityTameable
 		//*******************************Size(yoko*tate)***************************************
 		setSize(1.5F, 1.8F);
 		//*******************************Speed***************************************
-		moveSpeed = 0.30F;
+		moveSpeed = 0.7F;
 		//*******************************ATK***************************************
 		attackStrength = 10;
 		//*******************************EXP***************************************
@@ -44,20 +44,24 @@ public class DqmpetEntityKiramasin extends DqmEntityTameable
 		//*******************************Koudo***************************************
 		//heightOffset = 0.5F;
 		//*******************************ETC***************************************
-		this.getNavigator().setAvoidsWater(true);
+		//ペット時フォロー
+		this.tasks.addTask(5, new EntityAIFollowOwner(this, this.moveSpeed, 10.0F, 2.0F));
+		//ペット時攻撃してくれる
+		this.tasks.addTask(4, new EntityAIAttackOnCollide(this, this.moveSpeed, true));
+
+
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(2, this.aiSit);
+		this.tasks.addTask(4, new EntityAIArrowAttack(this, moveSpeed, 1, 50));
 		this.tasks.addTask(3, new EntityAILeapAtTarget(this, 0.4F));
-		this.tasks.addTask(4, new EntityAIAttackOnCollide(this, this.moveSpeed, true));
-		this.tasks.addTask(5, new EntityAIFollowOwner(this, this.moveSpeed, 10.0F, 2.0F));
-		this.tasks.addTask(6, new EntityAIMate(this, this.moveSpeed));
-		this.tasks.addTask(7, new EntityAIWander(this, this.moveSpeed));
-		//this.tasks.addTask(8, new EntityAIBeg(this, 8.0F));
-		this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+
+		tasks.addTask(6, new EntityAIWatchClosest(this, net.minecraft.src.EntityPlayer.class, 8F));
+
 		this.tasks.addTask(9, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIOwnerHurtByTarget(this));
 		this.targetTasks.addTask(2, new EntityAIOwnerHurtTarget(this));
-		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
+		targetTasks.addTask(3, new EntityAIHurtByTarget(this,  true));
+		//tasks.addTask(4, new EntityAIAvoidEntity(this, net.minecraft.src.EntityPlayer.class, 16F, 0.45F, 0.50F));
 		//this.targetTasks.addTask(4, new EntityAITargetNonTamed(this, EntitySheep.class, 16.0F, 200, false));
 	}
 
@@ -74,15 +78,7 @@ public class DqmpetEntityKiramasin extends DqmEntityTameable
 	//public int getTotalArmorValue()    {        return 20;    }
 	//*******************************Fall taisei***************************************
 	//protected void fall(float par1) {}
-	//*******************************Sound***************************************
-	//protected String getLivingSound()    {        return "none";    }
-	@Override
-	protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	@Override
-	protected String getDeathSound()    {        return "mob.irongolem.death";    }
 
-	//protected String getHurtSound()    {        return "mob.slime";    }
-	//protected String getDeathSound()    {        return "mob.slime";    }
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
@@ -187,26 +183,6 @@ public class DqmpetEntityKiramasin extends DqmEntityTameable
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-	@Override
-	public boolean isAIEnabled()
-	{
-		return true;
-	}
-	/**
-	 * Sets the active target the Task system uses for tracking
-	 */
 	@Override
 	public void setAttackTarget(EntityLiving par1EntityLiving)
 	{
@@ -466,11 +442,7 @@ public class DqmpetEntityKiramasin extends DqmEntityTameable
 	 * The speed it takes to move the entityliving's rotationPitch through the faceEntity method. This is only currently
 	 * use in wolves.
 	 */
-	@Override
-	public int getVerticalFaceSpeed()
-	{
-		return this.isSitting() ? 20 : super.getVerticalFaceSpeed();
-	}
+
 
 	/**
 	 * Called when the entity is attacked.
@@ -603,5 +575,23 @@ public class DqmpetEntityKiramasin extends DqmEntityTameable
 			DqmpetEntityKiramasin var2 = (DqmpetEntityKiramasin)par1EntityAnimal;
 			return !var2.isTamed() ? false : (var2.isSitting() ? false : this.isInLove() && var2.isInLove());
 		}
+	}
+	//弓か剣
+	@Override
+	public boolean isAIEnabled()
+	{
+		//ペット化
+		if(isTamed()){
+		return true;}
+
+		if(health<=65 && health>=50){
+		return true;}
+
+		if(health<=40 && health>=30){
+		return true;}
+
+		if(health<=20 && health>=10){
+		return true;}
+		return false;
 	}
 }

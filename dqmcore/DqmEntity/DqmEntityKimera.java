@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityKimera extends EntityMob
+public class DqmEntityKimera extends DqmEntityMob
 {
 	/** Random offset used in floating behaviour */
 	private float heightOffset;
@@ -102,24 +102,6 @@ public class DqmEntityKimera extends EntityMob
 		dataWatcher.addObject(16, new Byte((byte)0));
 	}
 
-/*
-	@Override
-	protected String getLivingSound()
-	{
-		return "mob.blaze.breathe";
-	}
-	@Override
-	protected String getHurtSound()
-	{
-		return "mob.blaze.hit";
-	}
-	@Override
-	protected String getDeathSound()
-	{
-		return "mob.blaze.death";
-	}
-*/
-
 	@Override
 	public boolean attackEntityFrom(DamageSource par1DamageSource, int par2)
 	{
@@ -198,16 +180,16 @@ public class DqmEntityKimera extends EntityMob
 
 				if (field_40152_d == 1)
 				{
-					attackTime = 150;
+					attackTime = 50;
 					func_40150_a(true);
 				}
 				else if (field_40152_d <= 4)
 				{
-					attackTime = 150;
+					attackTime = 50;
 				}
 				else
 				{
-					attackTime = 150;
+					attackTime = 50;
 					field_40152_d = 0;
 					func_40150_a(false);
 				}
@@ -222,12 +204,13 @@ public class DqmEntityKimera extends EntityMob
 						EntitySmallFireball entitysmallfireball = new EntitySmallFireball(worldObj, this, d + rand.nextGaussian() * f, d1, d2 + rand.nextGaussian() * f);
 						entitysmallfireball.posY = posY + (height / 2.0F) + 0.5D;
 						worldObj.spawnEntityInWorld(entitysmallfireball);
+						this.worldObj.playSoundAtEntity(this, "DQM_Sound.Fire", 1.0F, 1.0F);
 					}
 				}
 			}
 
 			rotationYaw = (float)((Math.atan2(d2, d) * 180D) / Math.PI) - 90F;
-			hasAttacked = true;
+			//hasAttacked = true;
 		}
 	}
 
@@ -248,28 +231,7 @@ public class DqmEntityKimera extends EntityMob
 		super.readEntityFromNBT(par1NBTTagCompound);
 	}
 
-	/**
-	 * Returns the item ID for the item the mob drops on death.
-	 */
-	/*protected int getDropItemId()
-    {
-        return Item.blazeRod.shiftedIndex;
-    }*/
 
-
-	/**
-	 * Returns true if the entity is on fire. Used by render to add the fire effect on rendering.
-	 */
-/*
-	@Override
-	public boolean isBurning()
-	{
-		return func_40151_ac();
-	}
-*/
-	/**
-	 * Drop 0-2 items of this living's type
-	 */
 
 	public boolean func_40151_ac()
 	{
@@ -292,13 +254,7 @@ public class DqmEntityKimera extends EntityMob
 		dataWatcher.updateObject(16, Byte.valueOf(byte0));
 	}
 
-	/**
-	 * Checks to make sure the light is not too bright where the mob is spawning
-	 */
-	/*protected boolean isValidLightLevel()
-    {
-        return true;
-    }*/
+
 }
 
 

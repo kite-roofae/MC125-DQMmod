@@ -13,7 +13,7 @@ public class DqmpetEntityDqmdragon extends DqmEntityTameable
 	private boolean looksWithInterest = false;
 	private float field_25048_b;
 	private float field_25054_c;
-
+	private int field_40152_d;
 	/** true is the wolf is wet else false */
 	private boolean isShaking;
 	private boolean field_25052_g;
@@ -63,7 +63,10 @@ public class DqmpetEntityDqmdragon extends DqmEntityTameable
 	@Override
 	public String getTexture()
 	{
-		return this.isSitting() ? "/dqm/DqmdragonPetzzz.png" : isTamed() ? "/dqm/DqmdragonPet.png":(this.isAngry() ? "/dqm/Dqmdragon.png" : super.getTexture());
+		if(isTamed()){
+		return this.isSitting() ? "/dqm/DqmdragonPetzzz.png" : isTamed() ? "/dqm/DqmdragonPet.png":(this.isAngry() ? "/dqm/Dqmdragon.png" : super.getTexture());}
+		return this.isSitting() ? "/dqm/Dqmdragon.png" : isTamed() ? "/dqm/Dqmdragon.png":(this.isAngry() ? "/dqm/Dqmdragon.png" : super.getTexture());
+
 	}
 	//*******************************HP(PetTameHP,MobHP***************************************
 	@Override
@@ -184,26 +187,6 @@ public class DqmpetEntityDqmdragon extends DqmEntityTameable
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-	@Override
-	public boolean isAIEnabled()
-	{
-		return true;
-	}
-	/**
-	 * Sets the active target the Task system uses for tracking
-	 */
 	@Override
 	public void setAttackTarget(EntityLiving par1EntityLiving)
 	{
@@ -600,5 +583,95 @@ public class DqmpetEntityDqmdragon extends DqmEntityTameable
 			DqmpetEntityDqmdragon var2 = (DqmpetEntityDqmdragon)par1EntityAnimal;
 			return !var2.isTamed() ? false : (var2.isSitting() ? false : this.isInLove() && var2.isInLove());
 		}
+	}
+	public void func_40150_a(boolean par1)
+	{
+		byte byte0 = dataWatcher.getWatchableObjectByte(16);
+
+		if (par1)
+		{
+			byte0 |= 1;
+		}
+		else
+		{
+			byte0 &= 0xfe;
+		}
+
+		dataWatcher.updateObject(16, Byte.valueOf(byte0));
+	}
+	protected void attackEntity(Entity par1Entity, float par2)
+	{
+		if (attackTime <= 0 && par2 < 2.0F && par1Entity.boundingBox.maxY > boundingBox.minY && par1Entity.boundingBox.minY < boundingBox.maxY)
+		{
+			attackTime = 5;
+			attackEntityAsMob(par1Entity);
+		}
+		else if (par2 < 30F)
+		{
+			double d = par1Entity.posX - posX;
+			double d1 = (par1Entity.boundingBox.minY + (par1Entity.height / 2.0F)) - (posY + (height / 2.0F));
+			double d2 = par1Entity.posZ - posZ;
+
+
+			if (attackTime == 0)
+			{
+				field_40152_d++;
+
+				if (field_40152_d == 1)
+				{
+					//3”­‚ð“f‚­‚Ü‚Å‚ÌŽžŠÔi10‚Å1•b‚­‚ç‚¢j
+					attackTime = 40;
+					func_40150_a(true);
+				}
+				else if (field_40152_d <= 4)
+				{
+					//3”­“f‚­ŠÔŠu
+					attackTime = 1;
+				}
+				else
+				{
+					//3”­‘Å‚¿I‚í‚Á‚½‚ ‚ÆŽŸ‚Ì3”­‚ð‘Å‚¿o‚·‚Ü‚Å‚ÌŽžŠÔ
+					attackTime = 40;
+					field_40152_d = 0;
+					func_40150_a(false);
+				}
+				if (this.onGround)                {
+					double var4 = par1Entity.posX - this.posX;
+					double var6 = par1Entity.posZ - this.posZ;
+					float var8 = MathHelper.sqrt_double(var4 * var4 + var6 * var6);
+					this.motionX = var4 / var8 * 0.5D * 0.800000011920929D + this.motionX * 0.50000000298023224D;
+					this.motionZ = var6 / var8 * 0.5D * 0.800000011920929D + this.motionZ * 0.50000000298023224D;
+					this.motionY = 0.5000000059604645D;       }
+
+
+				if (field_40152_d > 1)
+				{
+					float f = MathHelper.sqrt_float(par2) * 0.5F;
+					worldObj.playAuxSFXAtEntity(null, 1009, (int)posX, (int)posY, (int)posZ, 0);
+
+					for (int i = 0; i < 1; i++)
+					{
+						EntitySmallFireball entitysmallfireball = new EntitySmallFireball(worldObj, this, d + rand.nextGaussian() * f, d1, d2 + rand.nextGaussian() * f);
+						entitysmallfireball.posY = posY + (height / 2.0F) + 0.5D;
+						worldObj.spawnEntityInWorld(entitysmallfireball);
+						this.worldObj.playSoundAtEntity(this, "DQM_Sound.Dragonfire", 1.0F, 1.0F);
+					}
+				}}
+
+
+			rotationYaw = (float)((Math.atan2(d2, d) * 180D) / Math.PI) - 90F;
+			//hasAttacked = true;
+		}
+	}
+	@Override
+	public boolean isAIEnabled()
+	{
+		//ƒyƒbƒg‰»
+		if(isTamed()){
+		return true;}
+		//32-31‚ÌŽž‚Í‰Î‚ð“f‚©‚È‚¢
+		if(health<=45 && health>=44){
+		return true;}
+		return false;
 	}
 }

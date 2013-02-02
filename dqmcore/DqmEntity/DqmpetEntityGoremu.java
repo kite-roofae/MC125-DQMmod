@@ -72,16 +72,7 @@ public class DqmpetEntityGoremu extends DqmEntityTameable
 	//public int getTotalArmorValue()    {        return 20;    }
 	//*******************************Fall taisei***************************************
 	//protected void fall(float par1) {}
-	//*******************************Sound***************************************
-	@Override
-	protected String getLivingSound()    {        return "none";    }
-	@Override
-	protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	@Override
-	protected String getDeathSound()    {        return "mob.irongolem.death";    }
 
-	//protected String getHurtSound()    {        return "mob.slime";    }
-	//protected String getDeathSound()    {        return "mob.slime";    }
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);

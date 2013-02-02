@@ -2,12 +2,10 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityDqmdragon extends EntityMob
+public class DqmEntityDqmdragon extends DqmEntityMob
 {
 
-
-	//EntityAnimal,EntityZombie,EntityMob,EntityWaterMob
-
+	private int field_40152_d;
 	public DqmEntityDqmdragon(World par1World)
 	{
 		super(par1World);
@@ -16,7 +14,7 @@ public class DqmEntityDqmdragon extends EntityMob
 		//*******************************Size(yoko*tate)***************************************
 		setSize(1.0F, 1.0F);
 		//*******************************Speed***************************************
-		moveSpeed = 0.35F;
+		moveSpeed = 0.45F;
 		//*******************************ATK***************************************
 		attackStrength = 8;
 		//*******************************EXP***************************************
@@ -89,31 +87,120 @@ public class DqmEntityDqmdragon extends EntityMob
 	}}
 
 
-	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	//001*******************************Jump kougeki***************************************
-
+	@Override
+	public int getMaxSpawnedInChunk()
+	{
+		return 1;
+	}
+	@Override
+	protected void entityInit()
+	{
+		super.entityInit();
+		dataWatcher.addObject(16, new Byte((byte)0));
+	}
+	@Override
+	public boolean attackEntityFrom(DamageSource par1DamageSource, int par2)
+	{
+		return super.attackEntityFrom(par1DamageSource, par2);
+	}
+	@Override
+	public void onDeath(DamageSource par1DamageSource)
+	{
+		super.onDeath(par1DamageSource);
+	}
 	@Override
 	protected void attackEntity(Entity par1Entity, float par2)
-	{        float var3 = this.getBrightness(1.0F);        if (var3 > 0.5F && this.rand.nextInt(100) == 0)
-	{            this.entityToAttack = null;        }
-	else        {            if (par2 > 2.0F && par2 < 6.0F && this.rand.nextInt(10) == 0)            {
-		if (this.onGround)                {
-			double var4 = par1Entity.posX - this.posX;
-			double var6 = par1Entity.posZ - this.posZ;
-			float var8 = MathHelper.sqrt_double(var4 * var4 + var6 * var6);
-			this.motionX = var4 / var8 * 0.5D * 0.800000011920929D + this.motionX * 0.50000000298023224D;
-			this.motionZ = var6 / var8 * 0.5D * 0.800000011920929D + this.motionZ * 0.80000000298023224D;
-			this.motionY = 0.5000000059604645D;   }}
+	{
+		if (attackTime <= 0 && par2 < 2.0F && par1Entity.boundingBox.maxY > boundingBox.minY && par1Entity.boundingBox.minY < boundingBox.maxY)
+		{
+			attackTime = 5;
+			attackEntityAsMob(par1Entity);
+		}
+		else if (par2 < 30F)
+		{
+			double d = par1Entity.posX - posX;
+			double d1 = (par1Entity.boundingBox.minY + (par1Entity.height / 2.0F)) - (posY + (height / 2.0F));
+			double d2 = par1Entity.posZ - posZ;
 
-	else            {                super.attackEntity(par1Entity, par2);            }}}
 
-	/* Esterk
-    this.motionX = var4 / (double)var8 * 0.5D * 0.800000011920929D + this.motionX * 1.00000000298023224D;
-    this.motionZ = var6 / (double)var8 * 0.5D * 0.800000011920929D + this.motionZ * 1.00000000298023224D;
-    this.motionY = 1.5000000059604645D;}}*/
-	//001*******************************Jump kougeki***************************************
+			if (attackTime == 0)
+			{
+				field_40152_d++;
 
-	//*******************************SpawnMax***************************************
+				if (field_40152_d == 1)
+				{
+					//3”­‚ð“f‚­‚Ü‚Å‚ÌŽžŠÔi10‚Å1•b‚­‚ç‚¢j
+					attackTime = 40;
+					func_40150_a(true);
+				}
+				else if (field_40152_d <= 4)
+				{
+					//3”­“f‚­ŠÔŠu
+					attackTime = 1;
+				}
+				else
+				{
+					//3”­‘Å‚¿I‚í‚Á‚½‚ ‚ÆŽŸ‚Ì3”­‚ð‘Å‚¿o‚·‚Ü‚Å‚ÌŽžŠÔ
+					attackTime = 40;
+					field_40152_d = 0;
+					func_40150_a(false);
+				}
+				if (this.onGround)                {
+					double var4 = par1Entity.posX - this.posX;
+					double var6 = par1Entity.posZ - this.posZ;
+					float var8 = MathHelper.sqrt_double(var4 * var4 + var6 * var6);
+					this.motionX = var4 / var8 * 0.5D * 0.800000011920929D + this.motionX * 0.50000000298023224D;
+					this.motionZ = var6 / var8 * 0.5D * 0.800000011920929D + this.motionZ * 0.50000000298023224D;
+					this.motionY = 0.5000000059604645D;       }
+
+
+				if (field_40152_d > 1)
+				{
+					float f = MathHelper.sqrt_float(par2) * 0.5F;
+					worldObj.playAuxSFXAtEntity(null, 1009, (int)posX, (int)posY, (int)posZ, 0);
+
+					for (int i = 0; i < 1; i++)
+					{
+						EntitySmallFireball entitysmallfireball = new EntitySmallFireball(worldObj, this, d + rand.nextGaussian() * f, d1, d2 + rand.nextGaussian() * f);
+						entitysmallfireball.posY = posY + (height / 2.0F) + 0.5D;
+						worldObj.spawnEntityInWorld(entitysmallfireball);
+						this.worldObj.playSoundAtEntity(this, "DQM_Sound.Dragonfire", 1.0F, 1.0F);
+					}
+				}}
+
+
+			rotationYaw = (float)((Math.atan2(d2, d) * 180D) / Math.PI) - 90F;
+			//hasAttacked = true;
+		}
+	}
 	@Override
-	public int getMaxSpawnedInChunk()    {        return 1;    }
+	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
+	{
+		super.writeEntityToNBT(par1NBTTagCompound);
+	}
+	@Override
+	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
+	{
+		super.readEntityFromNBT(par1NBTTagCompound);
+	}
+	public boolean func_40151_ac()
+	{
+		return (dataWatcher.getWatchableObjectByte(16) & 1) != 0;
+	}
+	public void func_40150_a(boolean par1)
+	{
+		byte byte0 = dataWatcher.getWatchableObjectByte(16);
+
+		if (par1)
+		{
+			byte0 |= 1;
+		}
+		else
+		{
+			byte0 &= 0xfe;
+		}
+
+		dataWatcher.updateObject(16, Byte.valueOf(byte0));
+	}
+
 }

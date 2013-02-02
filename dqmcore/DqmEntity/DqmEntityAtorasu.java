@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityAtorasu extends EntityMob
+public class DqmEntityAtorasu extends DqmEntityMob
 {
 	public DqmEntityAtorasu(World par1World)
 	{
@@ -39,12 +39,7 @@ public class DqmEntityAtorasu extends EntityMob
 	//public int getTotalArmorValue()    {        return 10;    }
 	//*******************************Fall taisei***************************************
 	//protected void fall(float par1) {}
-	//*******************************Sound***************************************
-	//protected String getLivingSound()    {        return "none";    }
-	@Override
-	protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	@Override
-	protected String getDeathSound()    {        return "mob.irongolem.death";    }
+
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);

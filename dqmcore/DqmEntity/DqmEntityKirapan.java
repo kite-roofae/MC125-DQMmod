@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityKirapan extends EntityMob
+public class DqmEntityKirapan extends DqmEntityMob
 {
 
 

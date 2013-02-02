@@ -2,13 +2,10 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityHagumeta extends EntityMob
+public class DqmEntityHagumeta extends DqmEntityMob
 {
-	/**
-	 * The tempt AI task for this mob, used to prevent taming while it is fleeing.
-	 */
-	private EntityAITempt aiTempt;
 
+	private int field_40152_d;
 	public DqmEntityHagumeta(World par1World)
 	{
 		super(par1World);
@@ -26,21 +23,23 @@ public class DqmEntityHagumeta extends EntityMob
 		isImmuneToFire = true;
 
 
-		//getNavigator().func_48664_a(true);
+
 		tasks.addTask(1, new EntityAISwimming(this));
-		//tasks.addTask(2, aiSit);
-		tasks.addTask(3, aiTempt = new EntityAITempt(this, 0.18F, Item.fishRaw.shiftedIndex, true));
-		tasks.addTask(4, new EntityAIAvoidEntity(this, net.minecraft.src.EntityPlayer.class, 16F, 0.30F, 0.50F));  //nige
-		//tasks.addTask(5, new EntityAIFollowOwner(this, 0.3F, 10F, 5F));
-		//tasks.addTask(6, new EntityAIOcelotSit(this, 0.4F));
+		//ì¶Ç∞ÇÈ
+		tasks.addTask(4, new EntityAIAvoidEntity(this, net.minecraft.src.EntityPlayer.class, 16F, 0.45F, 0.50F));
+
+		//â£ÇÁÇÍÇΩÇÁçUåÇÇ∑ÇÈ
+		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+		//ÉvÉåÉCÉÑÅ[ÇçUåÇÇ∑ÇÈ
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 16.0F, 0, true));
+
 		tasks.addTask(7, new EntityAILeapAtTarget(this, 0.3F));
 		tasks.addTask(8, new EntityAIOcelotAttack(this));
-		//tasks.addTask(9, new EntityAIMate(this, 0.23F));
 		tasks.addTask(10, new EntityAIWander(this, 0.23F));
 		tasks.addTask(11, new EntityAIWatchClosest(this, net.minecraft.src.EntityPlayer.class, 10F));
-		//targetTasks.addTask(1, new EntityAITargetNonTamed(this, net.minecraft.src.EntityChicken.class, 14F, 750, false));
 
 	}
+
 	//*******************************HP***************************************
 	@Override
 	public int getMaxHealth()    {        return 12;    }
@@ -51,9 +50,11 @@ public class DqmEntityHagumeta extends EntityMob
 	@Override
 	protected void fall(float par1) {}
 	//*******************************Sound***************************************
-	//protected String getLivingSound()    {        return "none";    }
-	//protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	//protected String getDeathSound()    {        return "mob.irongolem.death";    }
+	@Override
+	protected String getLivingSound()
+	{
+		return "mob.slime";
+	}
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
@@ -98,120 +99,126 @@ public class DqmEntityHagumeta extends EntityMob
 	{
 		return 1;
 	}
-
-
-	@Override
-	protected String getHurtSound()
-	{
-		return "mob.slime";
-	}
-
-	@Override
-	protected String getDeathSound()
-	{
-		return "mob.slime";
-	}
-
-
-
-
-
-
-
-
 	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
-		dataWatcher.addObject(18, Byte.valueOf((byte)0));
+		dataWatcher.addObject(16, new Byte((byte)0));
 	}
-
-	/**
-	 * main AI tick function, replaces updateEntityActionState
-	 */
 	@Override
-	public void updateAITick()
+	public boolean attackEntityFrom(DamageSource par1DamageSource, int par2)
 	{
-		if (!getMoveHelper().func_48186_a())
-		{
-			setSneaking(false);
-			setSprinting(false);
-		}
-		else
-		{
-			float f = getMoveHelper().getSpeed();
-
-			if (f == 0.18F)
-			{
-				setSneaking(true);
-				setSprinting(false);
-			}
-			else if (f == 0.4F)
-			{
-				setSneaking(false);
-				setSprinting(true);
-			}
-			else
-			{
-				setSneaking(false);
-				setSprinting(false);
-			}
-		}
+		return super.attackEntityFrom(par1DamageSource, par2);
 	}
-
 	@Override
-	public boolean isAIEnabled()
+	public void onDeath(DamageSource par1DamageSource)
 	{
-		return true;
+		super.onDeath(par1DamageSource);
 	}
+	@Override
+	protected void attackEntity(Entity par1Entity, float par2)
+	{
+		if (attackTime <= 0 && par2 < 2.0F && par1Entity.boundingBox.maxY > boundingBox.minY && par1Entity.boundingBox.minY < boundingBox.maxY)
+		{
+			attackTime = 5;
+			attackEntityAsMob(par1Entity);
+		}
+		else if (par2 < 30F)
+		{
+			double d = par1Entity.posX - posX;
+			double d1 = (par1Entity.boundingBox.minY + (par1Entity.height / 2.0F)) - (posY + (height / 2.0F));
+			double d2 = par1Entity.posZ - posZ;
 
-	/**
-	 * (abstract) Protected helper method to write subclass entity data to NBT.
-	 */
+			//écÇËHP10à»â∫ÇÃéû
+			if(health<=10){
+			if (attackTime == 0)
+			{
+				field_40152_d++;
+
+				if (field_40152_d == 1)
+				{
+					//3î≠ÇìfÇ≠Ç‹Ç≈ÇÃéûä‘Åi10Ç≈1ïbÇ≠ÇÁÇ¢Åj
+					attackTime = 70;
+					func_40150_a(true);
+				}
+				else if (field_40152_d <= 4)
+				{
+					//3î≠ìfÇ≠ä‘äu
+					attackTime = 70;
+				}
+				else
+				{
+					//3î≠ë≈ÇøèIÇÌÇ¡ÇΩÇ†Ç∆éüÇÃ3î≠Çë≈ÇøèoÇ∑Ç‹Ç≈ÇÃéûä‘
+					attackTime = 70;
+					field_40152_d = 0;
+					func_40150_a(false);
+				}
+
+
+				if (field_40152_d > 1)
+				{
+					float f = MathHelper.sqrt_float(par2) * 0.5F;
+					worldObj.playAuxSFXAtEntity(null, 1009, (int)posX, (int)posY, (int)posZ, 0);
+
+					for (int i = 0; i < 1; i++)
+					{
+						EntitySmallFireball entitysmallfireball = new EntitySmallFireball(worldObj, this, d + rand.nextGaussian() * f, d1, d2 + rand.nextGaussian() * f);
+						entitysmallfireball.posY = posY + (height / 2.0F) + 0.5D;
+						worldObj.spawnEntityInWorld(entitysmallfireball);
+						this.worldObj.playSoundAtEntity(this, "DQM_Sound.Jumon", 1.0F, 1.0F);
+					}
+				}}}
+
+
+			rotationYaw = (float)((Math.atan2(d2, d) * 180D) / Math.PI) - 90F;
+			//hasAttacked = true;
+		}
+	}
 	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.writeEntityToNBT(par1NBTTagCompound);
-		par1NBTTagCompound.setInteger("CatType", func_48148_ad());
 	}
-
-	/**
-	 * (abstract) Protected helper method to read subclass entity data from NBT.
-	 */
 	@Override
 	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.readEntityFromNBT(par1NBTTagCompound);
-		func_48147_c(par1NBTTagCompound.getInteger("CatType"));
 	}
+	public boolean func_40151_ac()
+	{
+		return (dataWatcher.getWatchableObjectByte(16) & 1) != 0;
+	}
+	public void func_40150_a(boolean par1)
+	{
+		byte byte0 = dataWatcher.getWatchableObjectByte(16);
 
+		if (par1)
+		{
+			byte0 |= 1;
+		}
+		else
+		{
+			byte0 &= 0xfe;
+		}
 
+		dataWatcher.updateObject(16, Byte.valueOf(byte0));
+	}
+	//ì¶Ç∞ÇÈ
 	@Override
-	public boolean attackEntityAsMob(Entity par1Entity)
+	public boolean isAIEnabled()
 	{
-		return par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), 3);
+		//HP10-9à»â∫Ç≈ì¶Ç∞ÇÈ
+		if(health<=10 && health>=9){
+		return true;}
+		//HP6-5à»â∫Ç≈ì¶Ç∞ÇÈ
+		if(health<=6 && health>=5){
+		return true;}
+		//HP2-1Ç≈ì¶Ç∞ÇÈ
+		if(health<=2 && health>=1){
+		return true;}
+		return false;
 	}
-
-	public boolean isWheat(ItemStack par1ItemStack)
-	{
-		return par1ItemStack != null && par1ItemStack.itemID == Item.slimeBall.shiftedIndex;
-	}
-
-
-	public int func_48148_ad()
-	{
-		return dataWatcher.getWatchableObjectByte(18);
-	}
-
-	public void func_48147_c(int par1)
-	{
-		dataWatcher.updateObject(18, Byte.valueOf((byte)par1));
-	}
-
-
-
 }
-
 
 
 

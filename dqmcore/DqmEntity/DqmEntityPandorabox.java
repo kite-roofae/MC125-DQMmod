@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityPandorabox extends EntityMob
+public class DqmEntityPandorabox extends DqmEntityMob
 {
 
 

@@ -246,6 +246,16 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addName(Dokukesisou, "ja_JP", "どくけしそう");
 		ModLoader.addName(Suraimunofuku, "Slime Clothes");
 		ModLoader.addName(Suraimunofuku, "ja_JP", "スライムのふく");
+		ModLoader.addName(Rakkipendanto, "Lucky pendant");
+		ModLoader.addName(Rakkipendanto, "ja_JP", "ラッキーペンダント");
+		ModLoader.addName(Tikaranorubi, "Ruby of force");
+		ModLoader.addName(Tikaranorubi, "ja_JP", "ちからのルビー");
+		ModLoader.addName(Gouketunoudewa, "Heroes bangles");
+		ModLoader.addName(Gouketunoudewa, "ja_JP", "ごうけつの腕輪");
+		ModLoader.addName(Mamorinorubi, "Ruby defensive");
+		ModLoader.addName(Mamorinorubi, "ja_JP", "まもりのルビー");
+		ModLoader.addName(Rubinogenseki, "Ruby Ore");
+		ModLoader.addName(Rubinogenseki, "ja_JP", "ルビーの原石");
 
 
 		//モンスター名（日）************************************************************************************************************************************************************
@@ -299,6 +309,8 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addLocalization("entity.Waraibukuro.name", "ja_JP", "わらいぶくろ");
 		ModLoader.addLocalization("entity.Zinmentyo.name", "ja_JP", "じんめんちょう");
 		ModLoader.addLocalization("entity.Zoma.name", "ja_JP", "ゾーマ");
+		ModLoader.addLocalization("entity.Suraimunaito.name", "ja_JP", "スライムナイト");
+		ModLoader.addLocalization("entity.Metaruraida.name", "ja_JP", "メタルライダー");
 
 
 
@@ -323,6 +335,7 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addLocalization("entity.PetSura.name", "ja_JP", "[ペット]スライム");
 		ModLoader.addLocalization("entity.PetSuraimutawa.name", "ja_JP", "[ペット]スライムタワー");
 		ModLoader.addLocalization("entity.PetSyado.name", "ja_JP", "[ペット]シャドー");
+		ModLoader.addLocalization("entity.PetSuraimunaito.name", "ja_JP", "[ペット]スライムナイト");
 	}
 
 }

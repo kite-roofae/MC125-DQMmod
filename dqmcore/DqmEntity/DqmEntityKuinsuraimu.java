@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityKuinsuraimu extends EntityMob
+public class DqmEntityKuinsuraimu extends DqmEntityMob
 {
 
 
@@ -52,17 +52,6 @@ public class DqmEntityKuinsuraimu extends EntityMob
 		return "mob.slime";
 	}
 
-	@Override
-	protected String getHurtSound()
-	{
-		return "mob.slime";
-	}
-
-	@Override
-	protected String getDeathSound()
-	{
-		return "mob.slime";
-	}
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);

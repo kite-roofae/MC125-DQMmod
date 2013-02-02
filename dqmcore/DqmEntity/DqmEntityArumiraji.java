@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityArumiraji extends EntityMob
+public class DqmEntityArumiraji extends DqmEntityMob
 {
 
 
@@ -59,12 +59,12 @@ public class DqmEntityArumiraji extends EntityMob
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Usaginosippo.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Usaginosippo.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Majuunokawa.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yawarakauru.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);

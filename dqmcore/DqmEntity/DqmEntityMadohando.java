@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityMadohando extends EntityMob
+public class DqmEntityMadohando extends DqmEntityMob
 {
 
 

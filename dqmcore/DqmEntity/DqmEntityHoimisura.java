@@ -65,9 +65,17 @@ public class DqmEntityHoimisura extends EntityWaterMob
 	//*******************************Fall taisei***************************************
 	//protected void fall(float par1) {}
 	//*******************************Sound***************************************
-	//protected String getLivingSound()    {        return "none";    }
-	//protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	//protected String getDeathSound()    {        return "mob.irongolem.death";    }
+	@Override
+	protected String getDeathSound()
+	{
+		this.worldObj.playSoundAtEntity(this, "DQM_Sound.Death", 1.0F, 1.0F);
+		return "";
+	}
+	@Override
+	protected String getLivingSound()
+	{
+		return "mob.slime";
+	}
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
@@ -79,7 +87,7 @@ public class DqmEntityHoimisura extends EntityWaterMob
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
@@ -131,36 +139,7 @@ public class DqmEntityHoimisura extends EntityWaterMob
 		super.readEntityFromNBT(par1NBTTagCompound);
 	}
 
-	/**
-	 * Returns the sound this mob makes while it's alive.
-	 */
-	@Override
-	protected String getLivingSound()
-	{
-		return null;
-	}
 
-	/**
-	 * Returns the sound this mob makes when it is hurt.
-	 */
-	@Override
-	protected String getHurtSound()
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the sound this mob makes on death.
-	 */
-	@Override
-	protected String getDeathSound()
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the volume for the sounds this mob makes.
-	 */
 	@Override
 	protected float getSoundVolume()
 	{
@@ -356,14 +335,7 @@ public class EntityHoimisura extends EntityWaterMob
 
     }
 
-    public int getMaxHealth()
-    {
-        return 15;
-    }
-
-    protected String getHurtSound()
-    {
-        return "mob.slime";
+     return "mob.slime";
     }
 
     protected String getDeathSound()

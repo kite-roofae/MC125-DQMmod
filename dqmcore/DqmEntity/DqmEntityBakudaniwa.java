@@ -2,17 +2,12 @@ package net.minecraft.src.dqmcore.DqmEntity;
 import net.minecraft.src.*;
 
 
-public class DqmEntityBakudaniwa extends EntityMob
+public class DqmEntityBakudaniwa extends DqmEntityMob
 {
 	/**
 	 * The amount of time since the creeper was close enough to the player to ignite
 	 */
 	int timeSinceIgnited;
-
-	/**
-	 * Time when this creeper was last in an active state (Messed up code here, probably causes creeper animation to go
-	 * weird)
-	 */
 	int lastActiveTime;
 
 
@@ -93,17 +88,11 @@ public class DqmEntityBakudaniwa extends EntityMob
 
 
 
-
-	/**
-	 * Returns true if the newer Entity AI code should be run
-	 */
 	@Override
 	public boolean isAIEnabled()
 	{
 		return true;
 	}
-
-
 	@Override
 	protected void entityInit()
 	{
@@ -111,10 +100,6 @@ public class DqmEntityBakudaniwa extends EntityMob
 		dataWatcher.addObject(16, Byte.valueOf((byte) - 1));
 		dataWatcher.addObject(17, Byte.valueOf((byte)0));
 	}
-
-	/**
-	 * (abstract) Protected helper method to write subclass entity data to NBT.
-	 */
 	@Override
 	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
 	{
@@ -125,10 +110,6 @@ public class DqmEntityBakudaniwa extends EntityMob
 			par1NBTTagCompound.setBoolean("powered", true);
 		}
 	}
-
-	/**
-	 * (abstract) Protected helper method to read subclass entity data from NBT.
-	 */
 	@Override
 	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
@@ -136,9 +117,8 @@ public class DqmEntityBakudaniwa extends EntityMob
 		dataWatcher.updateObject(17, Byte.valueOf((byte)(par1NBTTagCompound.getBoolean("powered") ? 1 : 0)));
 	}
 
-	/**
-	 * Called to update the entity's position/logic.
-	 */
+	
+	
 	@Override
 	public void onUpdate()
 	{
@@ -182,75 +162,32 @@ public class DqmEntityBakudaniwa extends EntityMob
 		super.onUpdate();
 	}
 
-	/**
-	 * Returns the sound this mob makes when it is hurt.
-	 */
 	@Override
 	protected String getHurtSound()
 	{
 		return "mob.creeper";
 	}
-
-	/**
-	 * Returns the sound this mob makes on death.
-	 */
 	@Override
 	protected String getDeathSound()
 	{
 		return "mob.creeperdeath";
 	}
-
-	/**
-	 * Called when the mob's health reaches 0.
-	 */
-
-
-	@Override
-	public boolean attackEntityAsMob(Entity par1Entity)
-	{
-		return true;
-	}
-
-	/**
-	 * Returns true if the creeper is powered by a lightning bolt.
-	 */
 	public boolean getPowered()
 	{
 		return dataWatcher.getWatchableObjectByte(17) == 1;
 	}
-
-	/**
-	 * Connects the the creeper flashes to the creeper's color multiplier
-	 */
 	public float setCreeperFlashTime(float par1)
 	{
 		return (lastActiveTime + (timeSinceIgnited - lastActiveTime) * par1) / 28F;
 	}
-
-	/**
-	 * Returns the item ID for the item the mob drops on death.
-	 */
-
-
-	/**
-	 * Returns the current state of creeper, -1 is idle, 1 is 'in fuse'
-	 */
 	public int getCreeperState()
 	{
 		return dataWatcher.getWatchableObjectByte(16);
 	}
-
-	/**
-	 * Sets the state of creeper, -1 to idle and 1 to be 'in fuse'
-	 */
 	public void setCreeperState(int par1)
 	{
 		dataWatcher.updateObject(16, Byte.valueOf((byte)par1));
 	}
-
-	/**
-	 * Called when a lightning bolt hits the entity.
-	 */
 	@Override
 	public void onStruckByLightning(EntityLightningBolt par1EntityLightningBolt)
 	{

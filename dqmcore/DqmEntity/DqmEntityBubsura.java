@@ -1,7 +1,7 @@
 package net.minecraft.src.dqmcore.DqmEntity;
 import net.minecraft.src.*;
 
-public class DqmEntityBubsura extends EntityMob {
+public class DqmEntityBubsura extends DqmEntityMob {
 	//EntityAnimal,EntityZombie,EntityMob,EntityWaterMob
 
 
@@ -82,12 +82,6 @@ public class DqmEntityBubsura extends EntityMob {
 
 	@Override
 	protected String getHurtSound()
-	{
-		return "mob.slime";
-	}
-
-	@Override
-	protected String getDeathSound()
 	{
 		return "mob.slime";
 	}

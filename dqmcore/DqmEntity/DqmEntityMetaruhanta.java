@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityMetaruhanta extends EntityMob
+public class DqmEntityMetaruhanta extends DqmEntityMob
 {
 	/** The ItemStack that any Riripat holds (a bow). */
 	private static final ItemStack defaultHeldItem;
@@ -30,7 +30,7 @@ public class DqmEntityMetaruhanta extends EntityMob
 		tasks.addTask(1, new EntityAISwimming(this));
 		//tasks.addTask(2, new EntityAIRestrictSun(this));
 		tasks.addTask(3, new EntityAIFleeSun(this, moveSpeed));
-		tasks.addTask(4, new EntityAIArrowAttack(this, moveSpeed, 1, 30));
+		tasks.addTask(4, new EntityAIArrowAttack(this, moveSpeed, 1, 50));
 		tasks.addTask(5, new EntityAIWander(this, moveSpeed));
 		tasks.addTask(6, new EntityAIWatchClosest(this, net.minecraft.src.EntityPlayer.class, 8F));
 		tasks.addTask(6, new EntityAILookIdle(this));
@@ -45,12 +45,7 @@ public class DqmEntityMetaruhanta extends EntityMob
 	//public int getTotalArmorValue()    {        return 20;    }
 	//*******************************Fall taisei***************************************
 	//protected void fall(float par1) {}
-	//*******************************Sound***************************************
-	//protected String getLivingSound()    {        return "none";    }
-	@Override
-	protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	@Override
-	protected String getDeathSound()    {        return "mob.irongolem.death";    }
+
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);

@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntitySuraimubehomazun extends EntityMob
+public class DqmEntitySuraimubehomazun extends DqmEntityMob
 {
 
 
@@ -52,17 +52,7 @@ public class DqmEntitySuraimubehomazun extends EntityMob
 		return "mob.slime";
 	}
 
-	@Override
-	protected String getHurtSound()
-	{
-		return "mob.slime";
-	}
 
-	@Override
-	protected String getDeathSound()
-	{
-		return "mob.slime";
-	}
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
@@ -108,16 +98,25 @@ public class DqmEntitySuraimubehomazun extends EntityMob
 
 	@Override
 	protected void attackEntity(Entity par1Entity, float par2)
-	{        float var3 = this.getBrightness(1.0F);        if (var3 > 0.5F && this.rand.nextInt(100) == 0)
-	{            this.entityToAttack = null;        }
-	else        {            if (par2 > 2.0F && par2 < 6.0F && this.rand.nextInt(10) == 0)            {
-		if (this.onGround)                {
+	{
+		float var3 = this.getBrightness(1.0F);        if (var3 > 0.5F && this.rand.nextInt(100) == 0)
+	{
+			this.entityToAttack = null;
+	}
+	else
+	{
+		if (par2 > 2.0F && par2 < 6.0F && this.rand.nextInt(10) == 0)
+		{
+			if (this.onGround)
+			{
 			double var4 = par1Entity.posX - this.posX;
 			double var6 = par1Entity.posZ - this.posZ;
 			float var8 = MathHelper.sqrt_double(var4 * var4 + var6 * var6);
 			this.motionX = var4 / var8 * 0.5D * 0.800000011920929D + this.motionX * 0.50000000298023224D;
 			this.motionZ = var6 / var8 * 0.5D * 0.800000011920929D + this.motionZ * 0.50000000298023224D;
-			this.motionY = 0.5000000059604645D;   }}
+			this.motionY = 0.5000000059604645D;
+			}
+		}
 
 	else            {                super.attackEntity(par1Entity, par2);            }}}
 

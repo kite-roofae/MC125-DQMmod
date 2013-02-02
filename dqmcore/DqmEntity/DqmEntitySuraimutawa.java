@@ -2,9 +2,9 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntitySuraimutawa extends EntityMob
+public class DqmEntitySuraimutawa extends DqmEntityMob
 {
-	
+
 
 	//EntityAnimal,EntityZombie,EntityMob,EntityWaterMob
 
@@ -51,9 +51,10 @@ public class DqmEntitySuraimutawa extends EntityMob
 	//protected String getDeathSound()    {        return "mob.irongolem.death";    }
 
 	@Override
-	protected String getHurtSound()    {        return "mob.slime";    }
-	@Override
-	protected String getDeathSound()    {        return "mob.slime";    }
+	protected String getLivingSound()
+	{
+		return "mob.slime";
+	}
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
@@ -88,7 +89,7 @@ public class DqmEntitySuraimutawa extends EntityMob
 	protected void dropRareDrop(int par1)    {        switch (rand.nextInt(4))        {
 	case 1:dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);                break;
 	case 2:dropItem(mod_Dqm.Sabitakabuto.shiftedIndex, 1);                break;
-	//case 2:dropItem(mod_Dqm.Sabitayoroi.shiftedIndex, 1);                break;
+	case 3:dropItem(mod_Dqm.Suraimunofuku.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakote.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;
 	}}

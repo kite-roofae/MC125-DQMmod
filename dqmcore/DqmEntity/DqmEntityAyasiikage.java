@@ -59,9 +59,12 @@ public class DqmEntityAyasiikage extends EntityEnderman
 	@Override
 	protected void fall(float par1) {}
 	//*******************************Sound***************************************
-	//protected String getLivingSound()    {        return "none";    }
-	//protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	//protected String getDeathSound()    {        return "mob.irongolem.death";    }
+	@Override
+	protected String getDeathSound()
+	{
+		this.worldObj.playSoundAtEntity(this, "DQM_Sound.Death", 1.0F, 1.0F);
+		return "";
+	}
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)
@@ -246,33 +249,6 @@ public class DqmEntityAyasiikage extends EntityEnderman
 		super.onLivingUpdate();
 	}
 
-
-	/**
-	 * Returns the sound this mob makes while it's alive.
-	 */
-	@Override
-	protected String getLivingSound()
-	{
-		return "mob.slime.idle";
-	}
-
-	/**
-	 * Returns the sound this mob makes when it is hurt.
-	 */
-	@Override
-	protected String getHurtSound()
-	{
-		return "mob.slime.hit";
-	}
-
-	/**
-	 * Returns the sound this mob makes on death.
-	 */
-	@Override
-	protected String getDeathSound()
-	{
-		return "mob.slime.death";
-	}
 
 	static
 	{

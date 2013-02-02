@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityZoma extends EntityMob
+public class DqmEntityZoma extends DqmEntityMob
 {
 	/** Random offset used in floating behaviour */
 	//private float heightOffset;
@@ -29,17 +29,19 @@ public class DqmEntityZoma extends EntityMob
 		isImmuneToFire = true;
 
 		//*******************************ETC***************************************
+
 		this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
 		this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityVillager.class, this.moveSpeed, true));
+
 		this.tasks.addTask(4, new EntityAIMoveTwardsRestriction(this, this.moveSpeed));
 		this.tasks.addTask(5, new EntityAIMoveThroughVillage(this, this.moveSpeed, false));
+
 		this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
 		this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		this.tasks.addTask(7, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 16.0F, 0, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, 16.0F, 0, false));
-
 
 
 	}
@@ -54,7 +56,12 @@ public class DqmEntityZoma extends EntityMob
 	@Override
 	protected void fall(float par1) {}
 	//*******************************Sound***************************************
-
+	@Override
+	protected String getDeathSound()
+	{
+		this.worldObj.playSoundAtEntity(this, "DQM_Sound.PetBoss", 1.0F, 1.0F);
+		return "";
+	}
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
@@ -212,18 +219,18 @@ public class DqmEntityZoma extends EntityMob
 				if (field_40152_d == 1)
 				{
 					//3î≠ÇìfÇ≠Ç‹Ç≈ÇÃéûä‘Åi10Ç≈1ïbÇ≠ÇÁÇ¢Åj
-					attackTime = 10;
+					attackTime = 30;
 					func_40150_a(true);
 				}
 				else if (field_40152_d <= 4)
 				{
 					//3î≠ìfÇ≠ä‘äu
-					attackTime = 5;
+					attackTime = 15;
 				}
 				else
 				{
 					//3î≠ë≈ÇøèIÇÌÇ¡ÇΩÇ†Ç∆éüÇÃ3î≠Çë≈ÇøèoÇ∑Ç‹Ç≈ÇÃéûä‘
-					attackTime = 10;
+					attackTime = 25;
 					field_40152_d = 0;
 					func_40150_a(false);
 				}
@@ -235,7 +242,7 @@ public class DqmEntityZoma extends EntityMob
 
 					for (int i = 0; i < 1; i++)
 					{
-						EntitySmallFireball entitysmallfireball = new EntitySmallFireball(worldObj, this, d + rand.nextGaussian() * f, d1, d2 + rand.nextGaussian() * f);
+						EntityFireball entitysmallfireball = new EntityFireball(worldObj, this, d + rand.nextGaussian() * f, d1, d2 + rand.nextGaussian() * f);
 						entitysmallfireball.posY = posY + (height / 2.0F) + 0.5D;
 						worldObj.spawnEntityInWorld(entitysmallfireball);
 						this.worldObj.playSoundAtEntity(this, "DQM_Sound.Jumon", 1.0F, 1.0F);
@@ -261,7 +268,7 @@ public class DqmEntityZoma extends EntityMob
 				else
 				{
 					//3î≠ë≈ÇøèIÇÌÇ¡ÇΩÇ†Ç∆éüÇÃ3î≠Çë≈ÇøèoÇ∑Ç‹Ç≈ÇÃéûä‘
-					attackTime = 7;
+					attackTime = 15;
 					field_40152_d = 0;
 					func_40150_a(false);
 				}

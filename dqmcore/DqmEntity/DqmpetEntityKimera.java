@@ -23,14 +23,19 @@ public class DqmpetEntityKimera extends DqmEntityTameable
 	 */
 	private float timeWolfIsShaking;
 	private float prevTimeWolfIsShaking;
+	/** Random offset used in floating behaviour */
+	private float heightOffset;
 
+	/** ticks until heightOffset is randomized */
+	private int heightOffsetUpdateTime;
+	private int field_40152_d;
 	public DqmpetEntityKimera(World par1World)
 	{
 		super(par1World);
 		//*******************************Texture***************************************
 		texture = "/dqm/Kimera.png";
 		//*******************************Size(yoko*tate)***************************************
-		setSize(0.5F, 1.0F);
+		setSize(0.8F, 2.0F);
 		//*******************************Speed***************************************
 		moveSpeed = 0.33F;
 		//*******************************ATK***************************************
@@ -57,17 +62,24 @@ public class DqmpetEntityKimera extends DqmEntityTameable
 		this.targetTasks.addTask(2, new EntityAIOwnerHurtTarget(this));
 		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
 		//this.targetTasks.addTask(4, new EntityAITargetNonTamed(this, EntitySheep.class, 16.0F, 200, false));
+		tasks.addTask(1, new EntityAIAttackOnCollide(this, net.minecraft.src.EntityPlayer.class, moveSpeed, false));
+		targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+		//targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, net.minecraft.src.EntityPlayer.class, 16F, 0, true));
+		//super(par1World);
+		heightOffset = 0.5F;
 	}
 
 	//*******************************Texture(zzz,pet,Ang)***************************************
 	@Override
 	public String getTexture()
 	{
-		return this.isSitting() ? "/dqm/KimeraPetzzz.png" : isTamed() ? "/dqm/KimeraPet.png":(this.isAngry() ? "/dqm/Kimera.png" : super.getTexture());
+		if(isTamed()){
+		return this.isSitting() ? "/dqm/KimeraPetzzz.png" : isTamed() ? "/dqm/KimeraPet.png":(this.isAngry() ? "/dqm/Kimera.png" : super.getTexture());}
+		return this.isSitting() ? "/dqm/Kimera.png" : isTamed() ? "/dqm/Kimera":(this.isAngry() ? "/dqm/Kimera.png" : super.getTexture());
 	}
 	//*******************************HP(PetTameHP,MobHP***************************************
 	@Override
-	public int getMaxHealth()    {        return this.isTamed() ? 26 : 26;    }
+	public int getMaxHealth()    {        return this.isTamed() ? 32 : 32;    }
 	//*******************************Armor***************************************
 	//public int getTotalArmorValue()    {        return 20;    }
 	//*******************************Fall taisei***************************************
@@ -182,9 +194,59 @@ public class DqmpetEntityKimera extends DqmEntityTameable
 	return super.interact(par1EntityPlayer);
 	}
 
+	@Override
+	protected void attackEntity(Entity par1Entity, float par2)
+	{
+		if (attackTime <= 0 && par2 < 2.0F && par1Entity.boundingBox.maxY > boundingBox.minY && par1Entity.boundingBox.minY < boundingBox.maxY)
+		{
+			attackTime = 5;
+			attackEntityAsMob(par1Entity);
+		}
+		else if (par2 < 30F)
+		{
+			double d = par1Entity.posX - posX;
+			double d1 = (par1Entity.boundingBox.minY + (par1Entity.height / 2.0F)) - (posY + (height / 2.0F));
+			double d2 = par1Entity.posZ - posZ;
 
+			if (attackTime == 0)
+			{
+				field_40152_d++;
 
+				if (field_40152_d == 1)
+				{
+					attackTime = 50;
+					func_40150_a(true);
+				}
+				else if (field_40152_d <= 4)
+				{
+					attackTime = 50;
+				}
+				else
+				{
+					attackTime = 50;
+					field_40152_d = 0;
+					func_40150_a(false);
+				}
 
+				if (field_40152_d > 1)
+				{
+					float f = MathHelper.sqrt_float(par2) * 0.5F;
+					worldObj.playAuxSFXAtEntity(null, 1009, (int)posX, (int)posY, (int)posZ, 0);
+
+					for (int i = 0; i < 1; i++)
+					{
+						EntitySmallFireball entitysmallfireball = new EntitySmallFireball(worldObj, this, d + rand.nextGaussian() * f, d1, d2 + rand.nextGaussian() * f);
+						entitysmallfireball.posY = posY + (height / 2.0F) + 0.5D;
+						worldObj.spawnEntityInWorld(entitysmallfireball);
+						this.worldObj.playSoundAtEntity(this, "DQM_Sound.Fire", 1.0F, 1.0F);
+					}
+				}
+			}
+
+			rotationYaw = (float)((Math.atan2(d2, d) * 180D) / Math.PI) - 90F;
+			//hasAttacked = true;
+		}
+	}
 
 
 
@@ -198,7 +260,13 @@ public class DqmpetEntityKimera extends DqmEntityTameable
 	@Override
 	public boolean isAIEnabled()
 	{
-		return true;
+		//ƒyƒbƒg‰»
+		if(isTamed()){
+		return true;}
+		//32-31‚ÌŽž‚Í‰Î‚ð“f‚©‚È‚¢
+		if(health<=32 && health>=31){
+		return true;}
+		return false;
 	}
 	/**
 	 * Sets the active target the Task system uses for tracking
@@ -575,7 +643,21 @@ public class DqmpetEntityKimera extends DqmEntityTameable
 	{
 		this.looksWithInterest = par1;
 	}
+	public void func_40150_a(boolean par1)
+	{
+		byte byte0 = dataWatcher.getWatchableObjectByte(16);
 
+		if (par1)
+		{
+			byte0 |= 1;
+		}
+		else
+		{
+			byte0 &= 0xfe;
+		}
+
+		dataWatcher.updateObject(16, Byte.valueOf(byte0));
+	}
 	/**
 	 * Returns true if the mob is currently able to mate with the specified mob.
 	 */

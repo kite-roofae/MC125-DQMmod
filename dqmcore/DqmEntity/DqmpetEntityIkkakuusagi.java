@@ -80,13 +80,13 @@ public class DqmpetEntityIkkakuusagi extends DqmEntityTameable
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
-		this.dropItem(mod_Dqm.Usaginosippo.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Majuunokawa.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Togetogenokiba.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Usaginosippo.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}

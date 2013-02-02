@@ -187,6 +187,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@MLProp(info="Kagaminoisi ID")
 	public static int KagaminoisiID = 5612- 256;
 	public static Item Kagaminoisi;
+	@MLProp(info="Rubinogenseki ID")
+	public static int RubinogensekiID = 5613- 256;
+	public static Item Rubinogenseki;
 
 
 	//“ÁŽê
@@ -300,6 +303,18 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@MLProp(info="Hayatenoring ID")
 	public static int HayatenoringID = 5902- 256;
 	public static Item Hayatenoring;
+	@MLProp(info="Rakkipendanto ID")
+	public static int RakkipendantoID = 5903- 256;
+	public static Item Rakkipendanto;
+	@MLProp(info="Mamorinorubi ID")
+	public static int MamorinorubiID = 5904- 256;
+	public static Item Mamorinorubi;
+	@MLProp(info="Tikaranorubi ID")
+	public static int TikaranorubiID = 5905- 256;
+	public static Item Tikaranorubi;
+	@MLProp(info="Gouketunoudewa ID")
+	public static int GouketunoudewaID = 5906- 256;
+	public static Item Gouketunoudewa;
 
 
 	//‹|
@@ -605,6 +620,12 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Saigonokagi = new DqmItem(SaigonokagiID).setItemName("Saigonokagi").setIconCoord(3, 14);
 		Kenjanoisi = new DqmItem(KenjanoisiID, 1).setItemName("Kenjanoisi").setIconCoord(10, 8);
 		Dokukesisou = new DqmItemFood(DokukesisouID,1, 0.0F, false,64).setItemName("Dokukesisou").setIconCoord(8, 11);
+		Rakkipendanto = new DqmItemRing(RakkipendantoID, 1.0).setItemName("Rakkipendanto").setIconCoord(3, 6);
+		Mamorinorubi = new DqmItemRing(MamorinorubiID, 1.0).setItemName("Mamorinorubi").setIconCoord(2, 6);
+		Tikaranorubi = new DqmItemRing(TikaranorubiID, 1.0).setItemName("Tikaranorubi").setIconCoord(0, 6);
+		Gouketunoudewa = new DqmItemRing(GouketunoudewaID, 1.0).setItemName("Gouketunoudewa").setIconCoord(1, 6);
+		Rubinogenseki = new DqmItem(RubinogensekiID).setItemName("Rubinogenseki").setIconCoord(12, 9);
+
 		/*
 		moveSpeed	//idou
 		moveSlowdown	//idou

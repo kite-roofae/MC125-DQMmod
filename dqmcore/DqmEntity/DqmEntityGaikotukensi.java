@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityGaikotukensi extends EntityMob
+public class DqmEntityGaikotukensi extends DqmEntityMob
 {
 	public DqmEntityGaikotukensi(World par1World)
 	{
@@ -44,12 +44,7 @@ public class DqmEntityGaikotukensi extends EntityMob
 	//protected String getLivingSound()    {        return "none";    }
 	//protected String getHurtSound()    {        return "mob.irongolem.hit";    }
 	//protected String getDeathSound()    {        return "mob.irongolem.death";    }
-	@Override
-	protected String getLivingSound()    {        return "mob.skeleton";    }
-	@Override
-	protected String getHurtSound()    {        return "mob.skeletonhurt";    }
-	@Override
-	protected String getDeathSound()    {        return "mob.skeletonhurt";    }
+
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);

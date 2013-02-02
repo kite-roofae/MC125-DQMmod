@@ -43,7 +43,12 @@ public abstract class DqmEntityTameable extends EntityTameable
 	{
 		return true;
 	}
-
+	@Override
+	protected String getDeathSound()
+	{
+		this.worldObj.playSoundAtEntity(this, "DQM_Sound.Death", 1.0F, 1.0F);
+		return "";
+	}
 	/**
 	 * Sets the active target the Task system uses for tracking
 	 */

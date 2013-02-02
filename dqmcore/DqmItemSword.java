@@ -177,12 +177,12 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 		}
 		else if(attack == 1){attack=0;}
 		else w.playSoundAtEntity(par2, "DQM_Sound.Hit", 0.9F, 0.9F);
-		if(heel >= 1 && par3.getHealth() < par3.getMaxHealth() && itemRand.nextInt(4) <= 1)
-		{
-			par3.setEntityHealth(par3.getHealth()+heel);
-			w.playSoundAtEntity(par3, "DQM_Sound.Kiseki", 0.9F, 0.9F);
-			heel = 0;
-		}
+		 if(heel >= 1 && par3.getHealth() < par3.getMaxHealth() && itemRand.nextInt(4) <= 1)
+		  {
+		   par3.setEntityHealth(par3.getHealth()+heel);
+		   w.playSoundAtEntity(par3, "DQM_Sound.Kiseki", 0.9F, 0.9F);
+		   heel = 0;
+		  }
 		return true;
 	}
 
@@ -200,6 +200,7 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 	@Override
 	public int getDamageVsEntity(Entity par1Entity)
 	{
+		World w = ModLoader.getMinecraftInstance().theWorld;
 		if(model =="Kisekinoturugi" && ((EntityLiving) par1Entity).getHealth() > 0)
 		{
 			heel = 1;
@@ -210,7 +211,9 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 		}
 		if(model == "Doragonkira" && (par1Entity.getClass() == DqmpetEntityDqmdragon.class || par1Entity.getClass() == DqmEntityDqmdragon.class))
 		{
+			w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
 			return this.weaponDamage * 2;
+			
 		}
 		return this.weaponDamage;
 	}

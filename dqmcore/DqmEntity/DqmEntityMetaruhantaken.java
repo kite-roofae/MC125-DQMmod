@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityMetaruhantaken extends EntityMob
+public class DqmEntityMetaruhantaken extends DqmEntityMob
 {
 
 
@@ -47,12 +47,7 @@ public class DqmEntityMetaruhantaken extends EntityMob
 	//public int getTotalArmorValue()    {        return 20;    }
 	//*******************************Fall taisei***************************************
 	//protected void fall(float par1) {}
-	//*******************************Sound***************************************
-	//protected String getLivingSound()    {        return "none";    }
-	@Override
-	protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	@Override
-	protected String getDeathSound()    {        return "mob.irongolem.death";    }
+
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);

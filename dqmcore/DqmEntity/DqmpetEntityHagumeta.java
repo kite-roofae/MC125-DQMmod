@@ -12,7 +12,7 @@ public class DqmpetEntityHagumeta extends EntityTameable
 	private boolean looksWithInterest = false;
 	private float field_25048_b;
 	private float field_25054_c;
-
+	private int field_40152_d;
 	/** true is the wolf is wet else false */
 	private boolean isShaking;
 	private boolean field_25052_g;
@@ -33,7 +33,7 @@ public class DqmpetEntityHagumeta extends EntityTameable
 		//*******************************Texture***************************************
 		texture = "/dqm/Hagumeta.png";
 		//*******************************Size(yoko*tate)***************************************
-		setSize(0.8F, 0.3F);
+		setSize(0.8F, 0.4F);
 		//*******************************Speed***************************************
 		moveSpeed = 0.6F;
 		//*******************************ATK***************************************
@@ -42,19 +42,27 @@ public class DqmpetEntityHagumeta extends EntityTameable
 		experienceValue = 300;
 		//*******************************Fire taisei***************************************
 		isImmuneToFire = true;
-		tasks.addTask(4, new EntityAIAvoidEntity(this, net.minecraft.src.EntityPlayer.class, 16F, 0.30F, 0.50F));  //nige
+		//ペット時フォロー
+		this.tasks.addTask(5, new EntityAIFollowOwner(this, this.moveSpeed, 10.0F, 2.0F));
+		//ペット時攻撃してくれる
+		this.tasks.addTask(4, new EntityAIAttackOnCollide(this, this.moveSpeed, true));
+
+		this.targetTasks.addTask(1, new EntityAIOwnerHurtByTarget(this));
+		this.tasks.addTask(3, new EntityAILeapAtTarget(this, 0.4F));
 
 		this.getNavigator().setAvoidsWater(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(2, this.aiSit);
-		this.tasks.addTask(3, new EntityAILeapAtTarget(this, 0.4F));
-		this.tasks.addTask(4, new EntityAIAttackOnCollide(this, this.moveSpeed, true));
-		this.tasks.addTask(5, new EntityAIFollowOwner(this, this.moveSpeed, 10.0F, 2.0F));
-		this.tasks.addTask(6, new EntityAIMate(this, this.moveSpeed));
-		this.tasks.addTask(7, new EntityAIWander(this, this.moveSpeed));
-		//this.tasks.addTask(8, new EntityAIBeg(this, 8.0F));
-		this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-		this.tasks.addTask(9, new EntityAILookIdle(this));
+
+		tasks.addTask(4, new EntityAIAvoidEntity(this, net.minecraft.src.EntityPlayer.class, 16F, 0.45F, 0.50F));
+		//殴られたら攻撃する
+		//this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+		//プレイヤーを攻撃する
+		//this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 16.0F, 0, true));
+
+		this.targetTasks.addTask(1, new EntityAIOwnerHurtByTarget(this));
+		this.targetTasks.addTask(2, new EntityAIOwnerHurtTarget(this));
+		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
 		//this.targetTasks.addTask(1, new EntityAIOwnerHurtByTarget(this));
 		//this.targetTasks.addTask(2, new EntityAIOwnerHurtTarget(this));
 		//this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
@@ -65,7 +73,9 @@ public class DqmpetEntityHagumeta extends EntityTameable
 	@Override
 	public String getTexture()
 	{
-		return this.isSitting() ? "/dqm/HagumetaPetzzz.png" : isTamed() ? "/dqm/HagumetaPet.png":(this.isAngry() ? "/dqm/Hagumeta.png" : super.getTexture());
+		if(isTamed()){
+		return this.isSitting() ? "/dqm/HagumetaPetzzz.png" : isTamed() ? "/dqm/HagumetaPet.png":(this.isAngry() ? "/dqm/Hagumeta.png" : super.getTexture());}
+		return this.isSitting() ? "/dqm/Hagumeta.png" : isTamed() ? "/dqm/Hagumeta":(this.isAngry() ? "/dqm/Hagumeta.png" : super.getTexture());
 	}
 	//*******************************HP(PetTameHP,MobHP***************************************
 	@Override
@@ -82,9 +92,10 @@ public class DqmpetEntityHagumeta extends EntityTameable
 	//protected String getDeathSound()    {        return "mob.irongolem.death";    }
 
 	@Override
-	protected String getHurtSound()    {        return "mob.slime";    }
-	@Override
-	protected String getDeathSound()    {        return "mob.slime";    }
+	protected String getLivingSound()
+	{
+		return "mob.slime";
+	}
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
@@ -188,7 +199,80 @@ public class DqmpetEntityHagumeta extends EntityTameable
 	return super.interact(par1EntityPlayer);
 	}
 
+	@Override
+	protected void attackEntity(Entity par1Entity, float par2)
+	{
+		if (attackTime <= 0 && par2 < 2.0F && par1Entity.boundingBox.maxY > boundingBox.minY && par1Entity.boundingBox.minY < boundingBox.maxY)
+		{
+			attackTime = 5;
+			attackEntityAsMob(par1Entity);
+		}
+		else if (par2 < 30F)
+		{
+			double d = par1Entity.posX - posX;
+			double d1 = (par1Entity.boundingBox.minY + (par1Entity.height / 2.0F)) - (posY + (height / 2.0F));
+			double d2 = par1Entity.posZ - posZ;
 
+			//残りHP10以下の時
+			if(health<=10){
+			if (attackTime == 0)
+			{
+				field_40152_d++;
+
+				if (field_40152_d == 1)
+				{
+					//3発を吐くまでの時間（10で1秒くらい）
+					attackTime = 70;
+					func_40150_a(true);
+				}
+				else if (field_40152_d <= 4)
+				{
+					//3発吐く間隔
+					attackTime = 70;
+				}
+				else
+				{
+					//3発打ち終わったあと次の3発を打ち出すまでの時間
+					attackTime = 70;
+					field_40152_d = 0;
+					func_40150_a(false);
+				}
+
+
+				if (field_40152_d > 1)
+				{
+					float f = MathHelper.sqrt_float(par2) * 0.5F;
+					worldObj.playAuxSFXAtEntity(null, 1009, (int)posX, (int)posY, (int)posZ, 0);
+
+					for (int i = 0; i < 1; i++)
+					{
+						EntitySmallFireball entitysmallfireball = new EntitySmallFireball(worldObj, this, d + rand.nextGaussian() * f, d1, d2 + rand.nextGaussian() * f);
+						entitysmallfireball.posY = posY + (height / 2.0F) + 0.5D;
+						worldObj.spawnEntityInWorld(entitysmallfireball);
+						this.worldObj.playSoundAtEntity(this, "DQM_Sound.Jumon", 1.0F, 1.0F);
+					}
+				}}}
+
+
+			rotationYaw = (float)((Math.atan2(d2, d) * 180D) / Math.PI) - 90F;
+			//hasAttacked = true;
+		}
+	}
+	public void func_40150_a(boolean par1)
+	{
+		byte byte0 = dataWatcher.getWatchableObjectByte(16);
+
+		if (par1)
+		{
+			byte0 |= 1;
+		}
+		else
+		{
+			byte0 &= 0xfe;
+		}
+
+		dataWatcher.updateObject(16, Byte.valueOf(byte0));
+	}
 
 	@Override
 	public boolean attackEntityFrom(DamageSource par1DamageSource, int par2)
@@ -237,18 +321,6 @@ public class DqmpetEntityHagumeta extends EntityTameable
 	}
 
 
-	/**
-	 * Returns the sound this mob makes when it is hurt.
-	 */
-
-	/**
-	 * Returns true if the newer Entity AI code should be run
-	 */
-	@Override
-	public boolean isAIEnabled()
-	{
-		return true;
-	}
 
 	/**
 	 * Sets the active target the Task system uses for tracking
@@ -325,11 +397,6 @@ public class DqmpetEntityHagumeta extends EntityTameable
 	/**
 	 * Returns the sound this mob makes while it's alive.
 	 */
-	@Override
-	protected String getLivingSound()
-	{
-		return this.isAngry() ? "mob.slime" : (this.rand.nextInt(3) == 0 ? (this.isTamed() && this.dataWatcher.getWatchableObjectInt(18) < 10 ? "mob.slime" : "mob.slime") : "mob.slime");
-	}
 
 
 
@@ -609,5 +676,22 @@ public class DqmpetEntityHagumeta extends EntityTameable
 			DqmpetEntityHagumeta var2 = (DqmpetEntityHagumeta)par1EntityAnimal;
 			return !var2.isTamed() ? false : (var2.isSitting() ? false : this.isInLove() && var2.isInLove());
 		}
+	}
+	@Override
+	public boolean isAIEnabled()
+	{
+		//ペット化
+		if(isTamed()){
+		return true;}
+		//HP10-9以下で逃げる
+		if(health<=10 && health>=9){
+		return true;}
+		//HP6-5以下で逃げる
+		if(health<=6 && health>=5){
+		return true;}
+		//HP2-1で逃げる
+		if(health<=2 && health>=1){
+		return true;}
+		return false;
 	}
 }

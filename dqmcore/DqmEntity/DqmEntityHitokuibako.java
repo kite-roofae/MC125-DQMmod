@@ -2,7 +2,7 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityHitokuibako extends EntityMob
+public class DqmEntityHitokuibako extends DqmEntityMob
 {
 
 

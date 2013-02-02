@@ -10,7 +10,39 @@ public class DqmAddItemRecipe extends mod_Dqm
 
 	public static void addRecipe()
 	{
-		//New
+		//不定形レシピ
+    	ModLoader.addShapelessRecipe(new ItemStack(Bannouyaku ,1),new Object[]{
+    		new ItemStack(Yakusou, 1), new ItemStack(Dokukesisou, 1)});
+    	ModLoader.addShapelessRecipe(new ItemStack(Jouyakusou ,2),new Object[]{
+    		new ItemStack(Yakusou, 1),new ItemStack(Yakusou, 1),new ItemStack(Yakusou, 1)});
+    	ModLoader.addShapelessRecipe(new ItemStack(Tokuyakusou ,2),new Object[]{
+    		new ItemStack(Jouyakusou, 1),new ItemStack(Jouyakusou, 1),new ItemStack(Jouyakusou, 1)});
+    	ModLoader.addShapelessRecipe(new ItemStack(Kimeranotubasa ,1),new Object[]{
+    		new ItemStack(Kazekirinohane, 1),new ItemStack(Koumorinohane, 1),new ItemStack(Tyounohane, 1)});
+
+		//固定レシピ
+		ModLoader.addRecipe(new ItemStack(Rakkipendanto ,1),new Object[]{
+			"WXZ",
+			"XYX",
+			"VXW",
+			Character.valueOf('V'),Littlemedal,Character.valueOf('W'),Hikarinoisi, Character.valueOf('X'),Amatuyunoito, Character.valueOf('Y'),Seireiseki, Character.valueOf('Z'),Metaloubu,});
+		ModLoader.addRecipe(new ItemStack(Mamorinorubi ,1),new Object[]{
+			"WXY",
+			"ZVZ",
+			"YXW",
+			Character.valueOf('V'),Rubinogenseki,Character.valueOf('W'),Kinkai, Character.valueOf('X'),Mamorinotane, Character.valueOf('Y'),Hikarinoisi, Character.valueOf('Z'),Taiyounoisi,});
+		ModLoader.addRecipe(new ItemStack(Gouketunoudewa ,1),new Object[]{
+			"WYW",
+			"YXY",
+			"WYW",
+			Character.valueOf('W'),Tikaranorubi, Character.valueOf('X'),Goldburesuretto, Character.valueOf('Y'),Metaloubu});
+		ModLoader.addRecipe(new ItemStack(Tikaranorubi ,1),new Object[]{
+			"UZW",
+			"XVZ",
+			"YXU",
+			Character.valueOf('U'),Hosinokakera,Character.valueOf('V'),Rubinogenseki,Character.valueOf('W'),Kinkai, Character.valueOf('X'),Tikaranotane, Character.valueOf('Y'),Hikarinoisi, Character.valueOf('Z'),Taiyounoisi,});
+
+
 		ModLoader.addRecipe(new ItemStack(Honoonoyoroi ,1),new Object[]{
 			"WXW",
 			"ZYZ",
@@ -66,21 +98,6 @@ public class DqmAddItemRecipe extends mod_Dqm
 			" WW",
 			"X  ",
 			Character.valueOf('W'),Inotinoisi, Character.valueOf('X'),Kinkai, });
-		ModLoader.addRecipe(new ItemStack(Kimeranotubasa ,1),new Object[]{
-			"W",
-			"X",
-			"Y",
-			Character.valueOf('W'),Kazekirinohane, Character.valueOf('X'),Koumorinohane,  Character.valueOf('Y'),Tyounohane,});
-		ModLoader.addRecipe(new ItemStack(Jouyakusou ,2),new Object[]{
-			"WWW",
-			//"XXX",
-			//"YYY",
-			Character.valueOf('W'),Yakusou,});
-		ModLoader.addRecipe(new ItemStack(Tokuyakusou ,2),new Object[]{
-			"WWW",
-			//"XXX",
-			//"YYY",
-			Character.valueOf('W'),Jouyakusou,});
 		ModLoader.addRecipe(new ItemStack(Kawanobousi ,1),new Object[]{
 			"WWW",
 			"W W",
@@ -101,6 +118,12 @@ public class DqmAddItemRecipe extends mod_Dqm
 			"W W",
 			//"W W",
 			Character.valueOf('W'),Majuunokawa,});
+		ModLoader.addRecipe(new ItemStack(Suraimunofuku ,1),new Object[]{
+			"WWW",
+			"WXW",
+			"WWW",
+			Character.valueOf('W'),Suraimuzeri,Character.valueOf('X'),Majuunokawa,  });
+
 
 
 

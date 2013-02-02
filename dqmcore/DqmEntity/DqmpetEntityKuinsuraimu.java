@@ -75,14 +75,11 @@ public class DqmpetEntityKuinsuraimu extends DqmEntityTameable
 	//*******************************Fall taisei***************************************
 	//protected void fall(float par1) {}
 	//*******************************Sound***************************************
-	//protected String getLivingSound()    {        return "none";    }
-	//protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	//protected String getDeathSound()    {        return "mob.irongolem.death";    }
-
 	@Override
-	protected String getHurtSound()    {        return "mob.slime";    }
-	@Override
-	protected String getDeathSound()    {        return "mob.slime";    }
+	protected String getLivingSound()
+	{
+		return "mob.slime";
+	}
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);

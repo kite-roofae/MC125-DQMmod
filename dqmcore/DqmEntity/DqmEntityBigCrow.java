@@ -1,7 +1,7 @@
 package net.minecraft.src.dqmcore.DqmEntity;
 import net.minecraft.src.*;
 
-public class DqmEntityBigCrow extends EntityMob
+public class DqmEntityBigCrow extends DqmEntityMob
 {
 
 

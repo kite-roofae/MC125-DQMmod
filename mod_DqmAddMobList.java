@@ -70,7 +70,14 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 
 	@Override
 	public void load() {
+		//(beach),(desert),(desertHills),(extremeHills),(extremeHillsEdge),(forest),(forestHills),
+		//(frozenOcean),(frozenRiver),(hell),(iceMountains),(icePlains),(jungle),(jungleHills),(mushroomIsland),
+		//(mushroomIslandShore),(ocean),(plains),(river),(sky),(swampland),(taiga),(taigaHills),
 		BiomeGenBase[] hell = { BiomeGenBase.hell };
+		BiomeGenBase[] sky = { BiomeGenBase.sky,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forestHills,BiomeGenBase.jungleHills,BiomeGenBase.taigaHills };
+		BiomeGenBase[] frozenhell = { BiomeGenBase.frozenOcean,BiomeGenBase.frozenRiver,BiomeGenBase.hell };
+		BiomeGenBase[] Hills = { BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forestHills,BiomeGenBase.jungleHills,BiomeGenBase.taigaHills };
+		BiomeGenBase[] desert = { BiomeGenBase.desert,BiomeGenBase.desertHills };
 		cs = new DqmSpawner(); // spawnerインスタンスを初期化します
 		cs.setMaxMobs(monster); // カスタムモブの最大数を設定します
 		cs.setMaxAnimals(creature); // カスタム動物モブの最大数を設定します
@@ -97,13 +104,13 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		cs.addCustomSpawn(DqmEntityBuraddihando.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityDesufuratta.class, 20, 1, 1, Type.monster,hell);
 		cs.addCustomSpawn(DqmEntityDoraki.class, 5, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityDorakima.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityDorakima.class, 4, 1, 1, Type.monster, sky);
 		cs.addCustomSpawn(DqmEntityDqmdragon.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityEsterk.class, 1, 1, 1, Type.monster,	hell);
+		cs.addCustomSpawn(DqmEntityEsterk.class, 1, 1, 1, Type.monster,	frozenhell);
 		cs.addCustomSpawn(DqmEntityFurosutogizumo.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityGaikotukensi.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityGhost.class, 5, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityGigantesu.class, 2, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGigantesu.class, 2, 1, 1, Type.monster, Hills);
 		cs.addCustomSpawn(DqmEntityGizumo.class, 5, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityGoremu.class, 2, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityHagumeta.class, 1, 1, 1, Type.monster);
@@ -111,32 +118,34 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		cs.addCustomSpawn(DqmEntityHiitogizumo.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityHitokuibako.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityHoimisura.class, 10, 1, 5,Type.waterCreature);
-		cs.addCustomSpawn(DqmEntityHoroghost.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityHoroghost.class, 4, 1, 1, Type.monster,sky);
 		cs.addCustomSpawn(DqmEntityIkkakuusagi.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityKimera.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityKimera.class, 3, 1, 1, Type.monster, Hills);
 		cs.addCustomSpawn(DqmEntityKingsura.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityKiramasin.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityKirapan.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityKirikabuobake.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityKuinsuraimu.class, 10, 1, 1, Type.monster,hell);
+		cs.addCustomSpawn(DqmEntityKuinsuraimu.class, 10, 1, 1, Type.monster,frozenhell);
 		cs.addCustomSpawn(DqmEntityMadohando.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityMaounokage.class, 15, 1, 1, Type.monster,hell);
 		cs.addCustomSpawn(DqmEntityMetaking.class, 2, 1, 1, Type.monster,hell);
 		cs.addCustomSpawn(DqmEntityMetaruhanta.class, 2, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityMetasura.class, 3, 1, 2, Type.monster);
 		cs.addCustomSpawn(DqmEntityMetoroghost.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityMimikku.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMimikku.class, 4, 1, 1, Type.monster, sky);
 		cs.addCustomSpawn(DqmEntityPandorabox.class, 6, 1, 1, Type.monster,	hell);
 		cs.addCustomSpawn(DqmEntityRiripat.class, 5, 1, 2, Type.monster);
 		cs.addCustomSpawn(DqmEntitySura.class, 10, 1, 6, Type.monster);
-		cs.addCustomSpawn(DqmEntitySuraimubehomazun.class, 3, 1, 1,	Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimubehomazun.class, 3, 1, 1,	Type.monster,sky);
 		cs.addCustomSpawn(DqmEntitySuraimubesu.class, 7, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntitySuraimutawa.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntitySyado.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityTahodoraki.class, 20, 1, 1, Type.monster,hell);
 		cs.addCustomSpawn(DqmEntityWaraibukuro.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityMetaruhantaken.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityZoma.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityZoma.class, 1, 1, 1, Type.monster,desert);
+		cs.addCustomSpawn(DqmEntitySuraimunaito.class, 5, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMetaruraida.class, 4, 1, 1, Type.monster);
 
 		ML.registerEntityID(DqmEntityArumiraji.class, "Arumiraji",ML.getUniqueEntityId(),16167425,16167425);
 		ML.registerEntityID(DqmEntityAtorasu.class, "Atorasu",ML.getUniqueEntityId(),12720061,12720061);
@@ -187,6 +196,8 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		ML.registerEntityID(DqmEntityTahodoraki.class, "Tahodoraki",ML.getUniqueEntityId(),12720061,12720061);
 		ML.registerEntityID(DqmEntityWaraibukuro.class, "Waraibukuro",ML.getUniqueEntityId(),16579584,16579584);
 		ML.registerEntityID(DqmEntityZoma.class,"Zoma", ML.getUniqueEntityId(),16382457,16382457);
+		ML.registerEntityID(DqmEntitySuraimunaito.class, "Suraimunaito",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntityMetaruraida.class, "Metaruraida",ML.getUniqueEntityId(),4349438,4349438);
 
 
 		// Pet No
@@ -206,12 +217,13 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		cs.addCustomSpawn(DqmpetEntityKiramasin.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntityKirapan.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntityKirikabuobake.class, 3, 1, 1,	Type.creature);
-		cs.addCustomSpawn(DqmpetEntityKuinsuraimu.class, 3, 1, 1,Type.creature, hell);
+		cs.addCustomSpawn(DqmpetEntityKuinsuraimu.class, 3, 1, 1,Type.creature, frozenhell);
 		cs.addCustomSpawn(DqmpetEntityLittleEsterk.class, 0, 0, 0,Type.creature);
 		cs.addCustomSpawn(DqmpetEntityMetoroghost.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntitySura.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntitySuraimutawa.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntitySyado.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntitySuraimunaito.class, 3, 1, 1, Type.creature);
 
 		ML.registerEntityID(DqmpetEntityBakudaniwa.class,"PetBakudaniwa", ML.getUniqueEntityId(),16579584,16579584);
 		ML.registerEntityID(DqmpetEntityDorakima.class, "PetDorakima",ML.getUniqueEntityId(),12720061,12720061);
@@ -234,6 +246,7 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		ML.registerEntityID(DqmpetEntitySura.class, "PetSura",ML.getUniqueEntityId(),4349438,4349438);
 		ML.registerEntityID(DqmpetEntitySuraimutawa.class,"PetSuraimutawa", ML.getUniqueEntityId(),4349438,4349438);
 		ML.registerEntityID(DqmpetEntitySyado.class, "PetSyado",ML.getUniqueEntityId(),16579584,16579584);
+		ML.registerEntityID(DqmpetEntitySuraimunaito.class, "PetSuraimunaito",ML.getUniqueEntityId(),4349438,4349438);
 
 	}
 
@@ -288,6 +301,8 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		renderers.put(DqmEntityWaraibukuro.class, new DqmRender(new DqmModelWaraibukuro(), 0.5f));
 		renderers.put(DqmEntityMetaruhantaken.class, new DqmRender(new DqmModelKiramasin(), 0.5f));
 		renderers.put(DqmEntityZoma.class, new DqmRender(new DqmModelZoma(), 0.5f));
+		renderers.put(DqmEntitySuraimunaito.class, new DqmRender(new DqmModelSuraimunaito(), 0.5f));
+		renderers.put(DqmEntityMetaruraida.class, new DqmRender(new DqmModelSuraimunaito(), 0.5f));
 
 		// Pet************************************************************************************************************************************************************
 
@@ -312,6 +327,7 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		renderers.put(DqmpetEntitySura.class, new DqmRender(new DqmModelSura(),0.5f));
 		renderers.put(DqmpetEntitySuraimutawa.class, new DqmRender(new DqmModelSuraimutawa(), 0.5f));
 		renderers.put(DqmpetEntitySyado.class, new DqmRender(new DqmModelAyasiikage(), 0.5f));
+		renderers.put(DqmpetEntitySuraimunaito.class, new DqmRender(new DqmModelSuraimunaito(), 0.5f));
 	}
 
 

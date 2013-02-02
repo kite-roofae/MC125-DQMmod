@@ -2,9 +2,9 @@ package net.minecraft.src.dqmcore.DqmEntity;
 
 import net.minecraft.src.*;
 
-public class DqmEntityGhost extends EntityMob
+public class DqmEntityGhost extends DqmEntityMob
 {
-	
+
 
 	//EntityAnimal,EntityZombie,EntityMob,EntityWaterMob
 
@@ -45,11 +45,7 @@ public class DqmEntityGhost extends EntityMob
 	//*******************************Fall taisei***************************************
 	@Override
 	protected void fall(float par1) {}
-	//*******************************Sound***************************************
-	@Override
-	protected String getLivingSound()    {        return "none";    }
-	//protected String getHurtSound()    {        return "mob.irongolem.hit";    }
-	//protected String getDeathSound()    {        return "mob.irongolem.death";    }
+
 	//*******************************DROP***************************************
 	@Override
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
