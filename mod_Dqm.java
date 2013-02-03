@@ -7,7 +7,7 @@ import net.minecraft.src.dqmcore.*;
 import net.minecraft.src.dqmcore.DqmEntity.*;
 import net.minecraft.src.dqmcore.DqmModel.*;
 import net.minecraft.src.forge.*;
-
+import net.minecraft.src.dqmcore.Pet.*;
 
 public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 {
@@ -199,6 +199,10 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@MLProp(info="Kimeranotubasa ID")
 	public static int KimeranotubasaID = 6202- 256;
 	public static Item Kimeranotubasa;
+	@MLProp(info="Papasunokatami ID")
+	public static int PapasunokatamiID = 6203- 256;
+	public static Item Papasunokatami;
+
 
 	//åÆ
 	@MLProp(info="Hokoranokagi ID")
@@ -413,6 +417,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		//buki texture para(ATK,3=DIAMOND_foreru mono,8F=DIAMOND_horu sokudo,3=DIAMOND_katasa,enchant)***************************************************************************************
 
 		Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
+		//Debugsword = new DqmItemTool(DebugswordID,1, DqmEnumToolMaterial.DEBUG,Block.cobblestone).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
 
 		Uminarinotue = new DqmItemSword(UminarinotueID,DqmEnumToolMaterial.UMINARI).setmodel("Uminarinotue").setIconCoord(5, 0).setItemName("Uminarinotue");
 		Koorinoyaiba = new DqmItemSword(KoorinoyaibaID,DqmEnumToolMaterial.KOORI).setmodel("Koorinoyaiba").setIconCoord(4, 0).setItemName("Koorinoyaiba");
@@ -625,6 +630,8 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Tikaranorubi = new DqmItemRing(TikaranorubiID, 1.0).setItemName("Tikaranorubi").setIconCoord(0, 6);
 		Gouketunoudewa = new DqmItemRing(GouketunoudewaID, 1.0).setItemName("Gouketunoudewa").setIconCoord(1, 6);
 		Rubinogenseki = new DqmItem(RubinogensekiID).setItemName("Rubinogenseki").setIconCoord(12, 9);
+		Papasunokatami = new DqmItemKirapanBike(PapasunokatamiID).setItemName("Papasunokatami").setIconCoord(2, 13);
+
 
 		/*
 		moveSpeed	//idou
@@ -673,6 +680,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		//ID,0,å¬êî,ämóß
 		ForgeHooks.addGrassSeed(Yakusou.shiftedIndex,0, 1, 1);
 		ForgeHooks.addGrassSeed(Dokukesisou.shiftedIndex,0, 1, 1);
+		ForgeHooks.addGrassSeed(Tikaranotane.shiftedIndex,0, 1, 1);
+		ForgeHooks.addGrassSeed(Mamorinotane.shiftedIndex,0, 1, 1);
+		ForgeHooks.addGrassSeed(Subayasanotane.shiftedIndex,0, 1, 1);
 		ModLoader.setInGUIHook(this, true, false);
 		ModLoader.setInGameHook(this, true, false);
 
@@ -758,6 +768,7 @@ weakness	//jakuten
 	{
 		renderers.put(DqmEntityTntEgg.class, new DqmRenderEgg(Bakudanisi.iconIndex));
 		renderers.put(DqmEntityEgg.class, new DqmRenderEgg(MysteryEgg.iconIndex));
+		renderers.put(DqmEntityKirapanBike.class, new DqmRenderKirapanBike(new DqmModelKirapanBike()));
 	}
 	@Override
 	public String getVersion()

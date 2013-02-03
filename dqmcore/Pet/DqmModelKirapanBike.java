@@ -1,8 +1,8 @@
-package net.minecraft.src.dqmcore.DqmModel;
+package net.minecraft.src.dqmcore.Pet;
 
 import net.minecraft.src.*;
 
-public class DqmModelKirapan extends ModelBase
+public class DqmModelKirapanBike extends ModelBase
 {
 	//fields
 	ModelRenderer kao;
@@ -33,7 +33,7 @@ public class DqmModelKirapan extends ModelBase
 	ModelRenderer doutai2;
 	ModelRenderer siri;
 
-	public DqmModelKirapan()
+	public DqmModelKirapanBike()
 	{
 		textureWidth = 128;
 		textureHeight = 64;
@@ -69,7 +69,7 @@ public class DqmModelKirapan extends ModelBase
 		hmimi.mirror = true;
 		setRotation(hmimi, 0F, 0F, 0F);
 		tategami1 = new ModelRenderer(this, 0, 47);
-		tategami1.addBox(-1.0F, -7F, -4F, 1, 3, 4);
+		tategami1.addBox(-0.5F, -7F, -4F, 1, 3, 4);
 		tategami1.setRotationPoint(0F, 13F, -10F);
 		tategami1.setTextureSize(64, 32);
 		tategami1.mirror = true;
@@ -268,12 +268,12 @@ public class DqmModelKirapan extends ModelBase
 	    sippo3.rotateAngleX = par5 / (180F / (float)Math.PI);
 		 */
 		 //kubi.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
-		 sippo1.rotateAngleY = MathHelper.cos(par1 * 0.1000F) * 0.5F * par2;
-		 sippo1.rotateAngleX = MathHelper.cos(par1 * 0.1000F) * 0.5F * par2;
-		 sippo2.rotateAngleY = MathHelper.cos(par1 * 0.1000F) * 0.5F * par2;
-		 sippo2.rotateAngleX = MathHelper.cos(par1 * 0.1000F) * 0.5F * par2;
+		 sippo1.rotateAngleY = MathHelper.cos(par1 * 0.3000F) * 1.4F * par2;
+		 sippo1.rotateAngleX = MathHelper.cos(par1 * 0.3000F) * 1.4F * par2;
+		 sippo2.rotateAngleY = MathHelper.cos(par1 * 0.3000F) * 1.4F * par2;
+		 sippo2.rotateAngleX = MathHelper.cos(par1 * 0.3000F) * 1.4F * par2;
 		 /*
-	    hidariasi.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 0.1F * par2;
+	    hidariasi.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
 	    hidariasi2.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
 	    usiromigiasi.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
 	    usiromigiasi2.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
@@ -283,21 +283,21 @@ public class DqmModelKirapan extends ModelBase
 	    usirohidariasi2.rotateAngleY = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
 
 		  */
-		 hmasi1.rotateAngleX = MathHelper.cos(par1 * 0.3662F) * 0.5F * par2;
-		 hmasi2.rotateAngleX = MathHelper.cos(par1 * 0.3662F) * 0.5F * par2;
-		 hmasi3.rotateAngleX = MathHelper.cos(par1 * 0.3662F) * 0.5F * par2;
+		 hmasi1.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
+		 hmasi2.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
+		 hmasi3.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
 
-		 muasi1.rotateAngleX = MathHelper.cos(par1 * 0.3662F) * 0.5F * par2;
-		 muasi2.rotateAngleX = MathHelper.cos(par1 * 0.3662F) * 0.5F * par2;
-		 muasi3.rotateAngleX = MathHelper.cos(par1 * 0.3662F) * 0.5F * par2;
+		 muasi1.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
+		 muasi2.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
+		 muasi3.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
 
-		 mmasi1.rotateAngleX = MathHelper.cos(par1 * 0.3662F + (float)Math.PI) * 0.5F * par2;
-		 mmasi2.rotateAngleX = MathHelper.cos(par1 * 0.3662F + (float)Math.PI) * 0.5F * par2;
-		 mmasi3.rotateAngleX = MathHelper.cos(par1 * 0.3662F + (float)Math.PI) * 0.5F * par2;
+		 mmasi1.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
+		 mmasi2.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
+		 mmasi3.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
 
-		 huasi1.rotateAngleX = MathHelper.cos(par1 * 0.3662F + (float)Math.PI) * 0.5F * par2;
-		 huasi2.rotateAngleX = MathHelper.cos(par1 * 0.3662F + (float)Math.PI) * 0.5F * par2;
-		 huasi3.rotateAngleX = MathHelper.cos(par1 * 0.3662F + (float)Math.PI) * 0.5F * par2;
+		 huasi1.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
+		 huasi2.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
+		 huasi3.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
 		 /*
 	    usiromigiasi.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
 	    usiromigiasi2.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;

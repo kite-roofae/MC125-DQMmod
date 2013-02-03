@@ -95,8 +95,6 @@ public class DqmEntitySyado extends DqmEntityAyasiikage
         canCarryBlocks[Block.blockClay.blockID] = true;
         canCarryBlocks[Block.pumpkin.blockID] = true;*/
 		canCarryBlocks[Block.melon.blockID] = true;
-		canCarryBlocks[Block.waterMoving.blockID] = false;
-		canCarryBlocks[Block.waterStill.blockID] = false;
 		//canCarryBlocks[Block.mycelium.blockID] = true;
 	}
 }

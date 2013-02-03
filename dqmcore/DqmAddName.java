@@ -1,6 +1,7 @@
 package net.minecraft.src.dqmcore;
 import net.minecraft.src.*;
-
+import net.minecraft.src.dqmcore.Pet.*;
+import net.minecraft.src.dqmcore.*;
 
 public class DqmAddName extends mod_Dqm
 {
@@ -165,7 +166,7 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addName(Sabitakote, "Gauntlet of Old");
 		ModLoader.addName(Sabitakote, "ja_JP", "錆びたロトの小手");
 		ModLoader.addName(Sabitakutu, "Boots of Old");
-		ModLoader.addName(Sabitakutu, "ja_JP", "錆びたロトの靴？");
+		ModLoader.addName(Sabitakutu, "ja_JP", "錆びたロトの靴");
 		ModLoader.addName(Sabitatate, "ja_JP", "錆びたロトの盾");
 		ModLoader.addName(Sabitatate, "Shield of Old");
 		ModLoader.addName(Sabitayoroi, "Armor of Old");
@@ -256,6 +257,9 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addName(Mamorinorubi, "ja_JP", "まもりのルビー");
 		ModLoader.addName(Rubinogenseki, "Ruby Ore");
 		ModLoader.addName(Rubinogenseki, "ja_JP", "ルビーの原石");
+		ModLoader.addName(Papasunokatami, "Papas keepsake");
+		ModLoader.addName(Papasunokatami, "ja_JP", "パパスの形見");
+
 
 
 		//モンスター名（日）************************************************************************************************************************************************************
