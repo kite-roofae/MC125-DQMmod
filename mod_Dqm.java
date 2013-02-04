@@ -12,7 +12,6 @@ import net.minecraft.src.dqmcore.Pet.*;
 public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 {
 
-
 	//ƒAƒCƒeƒ€ID
 
 	@MLProp(info="Akaitama ID")
@@ -202,6 +201,12 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@MLProp(info="Papasunokatami ID")
 	public static int PapasunokatamiID = 6203- 256;
 	public static Item Papasunokatami;
+	@MLProp(info="Ramia ID")
+	public static int RamiaID = 6204- 256;
+	public static Item Ramia;
+	@MLProp(info="Dragonwing ID")
+	public static int DragonwingID = 6205- 256;
+	public static Item Dragonwing;
 
 
 	//Œ®
@@ -631,7 +636,8 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Gouketunoudewa = new DqmItemRing(GouketunoudewaID, 1.0).setItemName("Gouketunoudewa").setIconCoord(1, 6);
 		Rubinogenseki = new DqmItem(RubinogensekiID).setItemName("Rubinogenseki").setIconCoord(12, 9);
 		Papasunokatami = new DqmItemKirapanBike(PapasunokatamiID).setItemName("Papasunokatami").setIconCoord(2, 13);
-
+		Ramia = new DqmItemRamiaBike(RamiaID).setItemName("Ramia").setIconCoord(3, 13);
+		Dragonwing = new ItemDragonBike(DragonwingID).setItemName("Dragonwing").setIconCoord(4, 13);
 
 		/*
 		moveSpeed	//idou
@@ -781,6 +787,8 @@ weakness	//jakuten
 		renderers.put(DqmEntityTntEgg.class, new DqmRenderEgg(Bakudanisi.iconIndex));
 		renderers.put(DqmEntityEgg.class, new DqmRenderEgg(MysteryEgg.iconIndex));
 		renderers.put(DqmEntityKirapanBike.class, new DqmRenderKirapanBike(new DqmModelKirapanBike()));
+		renderers.put(DqmEntityRamiaBike.class, new DqmRenderRamiaBike());
+		renderers.put(EntityDragonBike.class, new RenderDragonBike());
 	}
 	@Override
 	public String getVersion()

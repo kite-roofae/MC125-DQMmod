@@ -15,7 +15,7 @@ public class DqmRenderKirapanBike extends RenderLiving
         super(var1, 0.0F);
         this.main = var1;
     }
-
+/*
     protected int setWoolColorAndRender(DqmEntityKirapanBike var1, int var2, float var3)
     {
         if (var2 == 0)
@@ -32,11 +32,9 @@ public class DqmRenderKirapanBike extends RenderLiving
         }
     }
 
-    /**
-     * Queries whether should render the specified pass or not.
-     */
+
     protected int shouldRenderPass(EntityLiving var1, int var2, float var3)
     {
         return this.setWoolColorAndRender((DqmEntityKirapanBike)var1, var2, var3);
-    }
+    }*/
 }

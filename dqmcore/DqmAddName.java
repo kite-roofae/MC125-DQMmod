@@ -259,6 +259,10 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addName(Rubinogenseki, "ja_JP", "ルビーの原石");
 		ModLoader.addName(Papasunokatami, "Papas keepsake");
 		ModLoader.addName(Papasunokatami, "ja_JP", "パパスの形見");
+		ModLoader.addName(Ramia, "Soul of the sacred bird");
+		ModLoader.addName(Ramia, "ja_JP", "霊鳥の魂");
+		ModLoader.addName(Dragonwing, "Dragon Wing");
+		ModLoader.addName(Dragonwing, "ja_JP", "ドラゴンウィング");
 
 
 
