@@ -693,6 +693,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	}
 	//Player's special inventory, doesn't drop items, when you die, and a record of it is kept for the Minecraft world;
 	public DqmInventoryPlayer playersSpecialInventory=null;
+	private DqmInventoryPlayer DIP;
 
 
 	//Perform this function, each update tick, that the player is in a menu.
@@ -707,9 +708,20 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@Override
 	public boolean onTickInGame(float f,Minecraft minecraft){
 		EntityPlayer ep = ModLoader.getMinecraftInstance().thePlayer;
-		DqmInventoryPlayer.EpPositionX = (int)ep.posX;
-		DqmInventoryPlayer.EpPositionY = (int)ep.posY;
-		DqmInventoryPlayer.EpPositionZ = (int)ep.posZ;
+		World world = ModLoader.getMinecraftInstance().theWorld;
+		DIP.EpPositionX = (int)ep.posX;
+		DIP.EpPositionY = (int)ep.posY;
+		DIP.EpPositionZ = (int)ep.posZ;
+
+	    ItemStack armor = ep.inventory.armorItemInSlot(2);//アーマーインベントリから防具を取得
+	    if(armor !=null && armor.itemID == mod_Dqm.Mirayoroi.shiftedIndex)//防具が存在しそれぞれ金の防具であるかどうか（デバッグしてないので動かないかも）
+			world.setLightValue(EnumSkyBlock.Sky, (int)ep.posX, (int)ep.posY + 1, (int)ep.posZ, 0xff);
+			world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY + 1, (int)ep.posZ);
+			world.updateAllLightTypes((int)ep.posX + 1, (int)ep.posY + 1, (int)ep.posZ);
+			world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ);
+			world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 2, (int)ep.posZ);
+			world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ - 1);
+			world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ + 1);
 
 		if(minecraft!=null){
 			ensureInventoryKept(minecraft);
