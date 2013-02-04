@@ -759,9 +759,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 				ep.addPotionEffect(new PotionEffect(Potion.regeneration.id, 30, 0));
 				if(Rand.nextInt(5) <= 1){armor.damageItem(1, ep);}
 			}
-		    if(armor != null && ep.isBlocking() && armor.itemID == mod_Dqm.Doragonmeiru.shiftedIndex)
+		    if(armor != null && ep.isBurning() && armor.itemID == mod_Dqm.Doragonmeiru.shiftedIndex)
 		    {
-		    	ep.setFire(0);
+		    	ep.extinguish();
 		    }
 		    if(armor != null && !ep.isPotionActive(Potion.fireResistance) && armor.itemID == mod_Dqm.Honoonoyoroi.shiftedIndex)
 		    {
