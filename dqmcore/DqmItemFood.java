@@ -31,19 +31,19 @@ public class DqmItemFood extends ItemFood implements ITextureProvider
     {
     	super.onFoodEaten(par1ItemStack,par2World,par3EntityPlayer);
 		int ID =par1ItemStack.itemID;
-		EntityPlayer par3 = par3EntityPlayer;
-		if(ID == Dqm.Yakusou.shiftedIndex){par3.setEntityHealth(par3.getHealth()+5);}
-		if(ID == Dqm.Jouyakusou.shiftedIndex){par3.setEntityHealth(par3.getHealth()+10);}
-		if(ID == Dqm.Tokuyakusou.shiftedIndex){par3.setEntityHealth(par3.getHealth()+20);}
-		if(par3.getHealth() > par3.getMaxHealth()){par3.setEntityHealth(par3.getMaxHealth());}
+		EntityPlayer ep = par3EntityPlayer;
+		if(ID == Dqm.Yakusou.shiftedIndex){ep.setEntityHealth(ep.getHealth()+5);}
+		if(ID == Dqm.Jouyakusou.shiftedIndex){ep.setEntityHealth(ep.getHealth()+10);}
+		if(ID == Dqm.Tokuyakusou.shiftedIndex){ep.setEntityHealth(ep.getHealth()+20);}
+		if(ep.getHealth() > ep.getMaxHealth()){ep.setEntityHealth(ep.getMaxHealth());}
 		if(ID == Dqm.Sinkanohiseki.shiftedIndex){
-			par3.addPotionEffect(new PotionEffect(Potion.jump.id, 200 * 20, 2));
-			par3.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 200 * 20, 2));
-			par3.addPotionEffect(new PotionEffect(Potion.resistance.id, 200 * 20, 2));
-			par3.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 200 * 20, 2));
+			ep.addPotionEffect(new PotionEffect(Potion.jump.id, 200 * 20, 2));
+			ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 200 * 20, 2));
+			ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 200 * 20, 2));
+			ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 200 * 20, 2));
 			}
-		if(ID == Dqm.Dokukesisou.shiftedIndex){par3.removePotionEffect(Potion.poison.id);}
-		if(ID == Dqm.Bannouyaku.shiftedIndex){par3.clearActivePotions();}
+		if(ID == Dqm.Dokukesisou.shiftedIndex){ep.removePotionEffect(Potion.poison.id);}
+		if(ID == Dqm.Bannouyaku.shiftedIndex){ep.clearActivePotions();}
         return par1ItemStack;
     }
 

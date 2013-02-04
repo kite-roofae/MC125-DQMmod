@@ -1,6 +1,7 @@
 package net.minecraft.src;
 
 import java.util.*;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.dqmcore.*;
@@ -395,6 +396,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 
 	@MLProp(info = "Keep inventory")
 	public static boolean Keep = false;
+	private int timer = 0;
+	private int c = 0;
+    protected static Random Rand = new Random();
 
 
 
@@ -431,9 +435,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Kisekinoturugi = new DqmItemSword(KisekinoturugiID,DqmEnumToolMaterial.KISEKI).setmodel("Kisekinoturugi").setIconCoord(10, 0).setItemName("Kisekinoturugi");
 		Ginganoturugi = new DqmItemSword(GinganoturugiID,DqmEnumToolMaterial.GINGA).setIconCoord(0, 0).setItemName("Ginganoturugi");
 		Metarukingnoturugi = new DqmItemSword(MetarukingnoturugiID,DqmEnumToolMaterial.METAL).setIconCoord(1, 0).setItemName("Metarukingnoturugi");
-		Rotonotate = new DqmItemSword(RotonotateID,DqmEnumToolMaterial.ROTO).setIconCoord(4, 3).setItemName("Rotonotate");
+		Rotonotate = new DqmItemSword(RotonotateID,DqmEnumToolMaterial.ROTO).setWeaponDamage(0).setIconCoord(4, 3).setItemName("Rotonotate");
 		Rotonoturugi = new DqmItemSword(RotonoturugiID,DqmEnumToolMaterial.ROTO).setIconCoord(2, 0).setItemName("Rotonoturugi");
-		Sabitatate = new DqmItemSword(SabitatateID,DqmEnumToolMaterial.OLD).setItemName("Sabitatate").setIconCoord(4, 4);
+		Sabitatate = new DqmItemSword(SabitatateID,DqmEnumToolMaterial.OLD).setWeaponDamage(0).setItemName("Sabitatate").setIconCoord(4, 4);
 		Doragonkira = new DqmItemSword(DoragonkiraID,DqmEnumToolMaterial.DRAGON).setmodel("Doragonkira").setIconCoord(6, 0).setItemName("Doragonkira");
 		Haganenoturugi = new DqmItemSword(HaganenoturugiID,DqmEnumToolMaterial.HAGANE).setIconCoord(7, 0).setItemName("Haganenoturugi");
 		Heisinoken = new DqmItemSword(HeisinokenID,DqmEnumToolMaterial.HEISHI).setIconCoord(8, 0).setItemName("Heisinoken");
@@ -567,9 +571,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Bannouyaku = new DqmItemFood(BannouyakuID,0, 0.0F, false,64).setItemName("Bannouyaku").setIconCoord(1, 11);
 		Goldburesuretto = new DqmItem(GoldburesurettoID).setItemName("Goldburesuretto").setIconCoord(0, 5);
 		Goldring = new DqmItem(GoldringID).setItemName("Goldring").setIconCoord(2, 5);
-		Hayatenoring = new DqmItemRing(HayatenoringID, 0.75).setItemName("Hayatenoring").setIconCoord(3, 5);
 		Hikarinoisi = new DqmItemFood(HikarinoisiID,0, 0.0F, false,64).setPotionEffect(Potion.regeneration.id, 60, 0, 1.0F).setItemName("Hikarinoisi").setIconCoord(2, 7);
-		Hosifuru = new DqmItemRing(HosifuruID, 0.6).setItemName("Hosifuru").setIconCoord(1, 5);
 		Hosinokakera = new DqmItemFood(HosinokakeraID,0, 0.0F, false,64).setPotionEffect(Potion.digSpeed.id, 120, 2, 1.0F).setItemName("Hosinokakera").setIconCoord(3, 7);
 		Inferunoswordnoha = new DqmItem(InferunoswordnohaID).setItemName("Inferunoswordnoha").setIconCoord(3, 1);
 		Inferunoswordnotuka = new DqmItem(InferunoswordnotukaID).setItemName("Inferunoswordnotuka").setIconCoord(3, 2);
@@ -630,15 +632,17 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Saigonokagi = new DqmItem(SaigonokagiID).setItemName("Saigonokagi").setIconCoord(3, 14);
 		Kenjanoisi = new DqmItem(KenjanoisiID, 1).setItemName("Kenjanoisi").setIconCoord(10, 8);
 		Dokukesisou = new DqmItemFood(DokukesisouID,1, 0.0F, false,64).setItemName("Dokukesisou").setIconCoord(8, 11);
-		Rakkipendanto = new DqmItemRing(RakkipendantoID, 1.0).setItemName("Rakkipendanto").setIconCoord(3, 6);
-		Mamorinorubi = new DqmItemRing(MamorinorubiID, 1.0).setItemName("Mamorinorubi").setIconCoord(2, 6);
-		Tikaranorubi = new DqmItemRing(TikaranorubiID, 1.0).setItemName("Tikaranorubi").setIconCoord(0, 6);
-		Gouketunoudewa = new DqmItemRing(GouketunoudewaID, 1.0).setItemName("Gouketunoudewa").setIconCoord(1, 6);
 		Rubinogenseki = new DqmItem(RubinogensekiID).setItemName("Rubinogenseki").setIconCoord(12, 9);
 		Papasunokatami = new DqmItemKirapanBike(PapasunokatamiID).setItemName("Papasunokatami").setIconCoord(2, 13);
 		Ramia = new DqmItemRamiaBike(RamiaID).setItemName("Ramia").setIconCoord(3, 13);
 		Dragonwing = new ItemDragonBike(DragonwingID).setItemName("Dragonwing").setIconCoord(4, 13);
 
+		Rakkipendanto = new DqmItem(RakkipendantoID).setMaxStackSize(1).setItemName("Rakkipendanto").setIconCoord(3, 6);
+		Mamorinorubi = new DqmItem(MamorinorubiID).setMaxStackSize(1).setItemName("Mamorinorubi").setIconCoord(2, 6);
+		Tikaranorubi = new DqmItem(TikaranorubiID).setMaxStackSize(1).setItemName("Tikaranorubi").setIconCoord(0, 6);
+		Gouketunoudewa = new DqmItem(GouketunoudewaID).setMaxStackSize(1).setItemName("Gouketunoudewa").setIconCoord(1, 6);
+		Hayatenoring = new DqmItem(HayatenoringID).setMaxStackSize(1).setItemName("Hayatenoring").setIconCoord(3, 5);
+		Hosifuru = new DqmItem(HosifuruID).setMaxStackSize(1).setItemName("Hosifuru").setIconCoord(1, 5);
 		/*
 		moveSpeed	//idou
 		moveSlowdown	//idou
@@ -712,22 +716,57 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	}
 
 	@Override
-	public boolean onTickInGame(float f,Minecraft minecraft){
+	public boolean onTickInGame(float f,Minecraft minecraft)
+	{
 		EntityPlayer ep = ModLoader.getMinecraftInstance().thePlayer;
 		World world = ModLoader.getMinecraftInstance().theWorld;
 		DIP.EpPositionX = (int)ep.posX;
 		DIP.EpPositionY = (int)ep.posY;
 		DIP.EpPositionZ = (int)ep.posZ;
-
 	    ItemStack armor = ep.inventory.armorItemInSlot(2);//アーマーインベントリから防具を取得
-	    if(armor !=null && armor.itemID == mod_Dqm.Mirayoroi.shiftedIndex)//防具が存在しそれぞれ金の防具であるかどうか（デバッグしてないので動かないかも）
-			world.setLightValue(EnumSkyBlock.Sky, (int)ep.posX, (int)ep.posY + 1, (int)ep.posZ, 0xff);
-			world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY + 1, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX + 1, (int)ep.posY + 1, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 2, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ - 1);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ + 1);
+		    if(armor != null && armor.itemID == mod_Dqm.Mirayoroi.shiftedIndex)
+		    {
+				world.setLightValue(EnumSkyBlock.Block, (int)ep.posX, (int)ep.posY, (int)ep.posZ, 0xff);
+				world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX + 1, (int)ep.posY, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY - 1, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 1);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 1);
+				c = 0;
+		    }
+		    else if(c == 0)
+		    {
+		    	c = 1;
+		    	world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX - 2, (int)ep.posY, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX + 1, (int)ep.posY, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX + 2, (int)ep.posY, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY - 1, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 1);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 2);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 1);
+				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 2);
+		    }
+		    if(armor != null && ep.isPotionActive(Potion.poison) && armor.itemID == mod_Dqm.Urokonoyoroi.shiftedIndex)
+		    {
+		    	ep.removePotionEffect(Potion.poison.id);
+		    }
+		    if(armor != null && !ep.isPotionActive(Potion.regeneration) && armor.itemID == mod_Dqm.Sinpinoyoroi.shiftedIndex)
+		    {
+				ep.addPotionEffect(new PotionEffect(Potion.regeneration.id, 30, 0));
+				if(Rand.nextInt(5) <= 1){armor.damageItem(1, ep);}
+			}
+		    if(armor != null && ep.isBlocking() && armor.itemID == mod_Dqm.Doragonmeiru.shiftedIndex)
+		    {
+		    	ep.setFire(0);
+		    }
+		    if(armor != null && !ep.isPotionActive(Potion.fireResistance) && armor.itemID == mod_Dqm.Honoonoyoroi.shiftedIndex)
+		    {
+		    	ep.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 1, 0));
+		    }
 
 		if(minecraft!=null){
 			ensureInventoryKept(minecraft);

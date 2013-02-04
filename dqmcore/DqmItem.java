@@ -26,10 +26,18 @@ public class DqmItem extends Item implements ITextureProvider
 	@Override
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int i, boolean flag)
 	{
+		int ID = itemstack.itemID;
+		EntityPlayer ep = (EntityPlayer) entity;
 		if(world.isRemote)
 		{
 			return;
 		}
+		if(ID == mod_Dqm.Gouketunoudewa.shiftedIndex && !ep.isPotionActive(Potion.damageBoost)){ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 4));}
+		if(ID == mod_Dqm.Tikaranorubi.shiftedIndex && !ep.isPotionActive(Potion.damageBoost)){ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 1));}
+		if(ID == mod_Dqm.Hosifuru.shiftedIndex && !ep.isPotionActive(Potion.moveSpeed)){ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 1, 4));}
+		if(ID == mod_Dqm.Hayatenoring.shiftedIndex && !ep.isPotionActive(Potion.moveSpeed)){ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 1, 1));}
+		if((ID == mod_Dqm.Hosifuru.shiftedIndex || ID == mod_Dqm.Hayatenoring.shiftedIndex) && !ep.isPotionActive(Potion.jump)){ep.addPotionEffect(new PotionEffect(Potion.jump.id, 1, 1));}
+		if(ID == mod_Dqm.Mamorinorubi.shiftedIndex && !ep.isPotionActive(Potion.resistance)){ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 1, 1));}
 	}
 
 	@Override

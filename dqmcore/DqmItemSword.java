@@ -28,6 +28,12 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 		model = m;
 		return this;
 	}
+
+	public DqmItemSword setWeaponDamage(int par1)
+	{
+		this.weaponDamage = par1;
+		return this;
+	}
 	private static int getRandom(int max, int min) {
 		int ret = (int)Math.floor(Math.random()*(max-min+1))+min;
 
@@ -41,19 +47,22 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 		{
 			return;
 		}
-		if( ep != null)
-		{
 			if(ep.getCurrentEquippedItem()== null)
 			{
 				return;
 			}
-			if(ep.getCurrentEquippedItem().itemID == this.shiftedIndex)
-			{
 				int x = MathHelper.floor_double(ep.posX);
 				int y = MathHelper.floor_double(ep.boundingBox.minY) - 1;
 				int z = MathHelper.floor_double(ep.posZ);
-
-				if(model == "Inferunosword")
+				if(ep.getCurrentEquippedItem().itemID == mod_Dqm.Rotonotate.shiftedIndex && !ep.isPotionActive(Potion.resistance))
+				{
+					ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 1, 4));
+				}
+				if(ep.getCurrentEquippedItem().itemID == mod_Dqm.Sabitatate.shiftedIndex && !ep.isPotionActive(Potion.resistance))
+				{
+					ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 1, 0));
+				}
+				if(ep.getCurrentEquippedItem().itemID == mod_Dqm.Inferunosword.shiftedIndex)
 				{
 					if(world.getBlockMaterial(x, y, z) == Material.lava || world.getBlockMaterial(x, y, z) == Material.water ||world.getBlockId(x, y, z) ==Block.ice.blockID)
 					{
@@ -81,7 +90,7 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 						}
 					}
 				}
-				if(model == "Koorinoyaiba")
+				if(ep.getCurrentEquippedItem().itemID == mod_Dqm.Koorinoyaiba.shiftedIndex)
 				{
 					if(world.getBlockMaterial(x, y, z) == Material.water || world.getBlockMaterial(x, y, z) == Material.lava)
 					{
@@ -101,7 +110,7 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 						world.setBlockWithNotify(x,y,z,Block.ice.blockID);
 					}
 				}
-				if(model == "Uminarinotue")
+				if(ep.getCurrentEquippedItem().itemID == mod_Dqm.Uminarinotue.shiftedIndex)
 				{
 					for(i = 0; i <= 70; i++)
 					{
@@ -114,8 +123,6 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 					}
 				}
 			}
-		}
-	}
 
 	@Override
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7)
@@ -213,7 +220,7 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 		{
 			w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
 			return this.weaponDamage * 2;
-			
+
 		}
 		return this.weaponDamage;
 	}
