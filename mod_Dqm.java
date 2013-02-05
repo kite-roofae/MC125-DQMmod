@@ -299,11 +299,47 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@MLProp(info="Papasunoturuginew ID")
 	public static int PapasunoturuginewID = 5816- 256;
 	public static Item Papasunoturuginew;
+	@MLProp(info="Sabakinotue ID")
+	public static int SabakinotueID = 5817- 256;
+	public static Item Sabakinotue;
+	@MLProp(info="Dragonrod ID")
+	public static int DragonrodID = 5818- 256;
+	public static Item Dragonrod;
+	@MLProp(info="Ikazutinotue ID")
+	public static int IkazutinotueID = 5819- 256;
+	public static Item Ikazutinotue;
+	@MLProp(info="Akumanotume ID")
+	public static int AkumanotumeID = 5820- 256;
+	public static Item Akumanotume;
+	@MLProp(info="Majuunotume ID")
+	public static int MajuunotumeID = 5821- 256;
+	public static Item Majuunotume;
+	@MLProp(info="Seinarunaifu ID")
+	public static int SeinarunaifuID = 5822- 256;
+	public static Item Seinarunaifu;
+	@MLProp(info="Yaibanobumeran ID")
+	public static int YaibanobumeranID = 5823- 256;
+	public static Item Yaibanobumeran;
+	@MLProp(info="Majinnokanaduti ID")
+	public static int MajinnokanadutiID = 5824- 256;
+	public static Item Majinnokanaduti;
+	@MLProp(info="Ookanaduti ID")
+	public static int OokanadutiID = 5825- 256;
+	public static Item Ookanaduti;
+	@MLProp(info="Atorasunokanaduti ID")
+	public static int AtorasunokanadutiID = 5826- 256;
+	public static Item Atorasunokanaduti;
+	@MLProp(info="Gureitoakusu ID")
+	public static int GureitoakusuID = 5827- 256;
+	public static Item Gureitoakusu;
+	@MLProp(info="Oninokanabou ID")
+	public static int OninokanabouID = 5828- 256;
+	public static Item Oninokanabou;
 	@MLProp(info="Hikarinotue ID")
-	public static int HikarinotueID = 5817- 256;
+	public static int HikarinotueID = 5829- 256;
 	public static Item Hikarinotue;
 
-
+	//èÇ
 	@MLProp(info="Rotonotate ID")
 	public static int RotonotateID = 5898- 256;
 	public static Item Rotonotate;
@@ -429,9 +465,8 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		 */
 		//ATK:DIAMOND=7,IRON=6,STORN=5,WOOD=4
 		//buki texture para(ATK,3=DIAMOND_foreru mono,8F=DIAMOND_horu sokudo,3=DIAMOND_katasa,enchant)***************************************************************************************
-
-		Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
 		//Debugsword = new DqmItemTool(DebugswordID,1, DqmEnumToolMaterial.DEBUG,Block.cobblestone).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
+		Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
 
 		Uminarinotue = new DqmItemSword(UminarinotueID,DqmEnumToolMaterial.UMINARI).setmodel("Uminarinotue").setIconCoord(5, 0).setItemName("Uminarinotue");
 		Koorinoyaiba = new DqmItemSword(KoorinoyaibaID,DqmEnumToolMaterial.KOORI).setmodel("Koorinoyaiba").setIconCoord(4, 0).setItemName("Koorinoyaiba");
@@ -450,8 +485,19 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Oujanoturugi = new DqmItemSword(OujanoturugiID,DqmEnumToolMaterial.OUJA).setIconCoord(7, 1).setItemName("Oujanoturugi");
 		Papasunoturugi = new DqmItemSword(PapasunoturugiID,DqmEnumToolMaterial.PAPASU).setIconCoord(8, 1).setItemName("Papasunoturugi");
 		Papasunoturuginew = new DqmItemSword(PapasunoturuginewID,DqmEnumToolMaterial.PAPASUNEW).setIconCoord(9, 1).setItemName("Papasunoturuginew");
-
 		Hikarinotue = new DqmItemSword(HikarinotueID,DqmEnumToolMaterial.HIKARI).setmodel("Hikarinotue").setIconCoord(5, 1).setItemName("Hikarinotue");
+		Oninokanabou = new DqmItemSword(OninokanabouID,DqmEnumToolMaterial.HIKARI).setmodel("Oninokanabou").setIconCoord(13, 2).setItemName("Oninokanabou");
+		Akumanotume = new DqmItemSword(AkumanotumeID,DqmEnumToolMaterial.HIKARI).setmodel("Akumanotume").setIconCoord(6, 2).setItemName("Akumanotume");
+		Seinarunaifu = new DqmItemSword(SeinarunaifuID,DqmEnumToolMaterial.HIKARI).setmodel("Seinarunaifu").setIconCoord(8, 2).setItemName("Seinarunaifu");
+		Yaibanobumeran = new DqmItemSword(YaibanobumeranID,DqmEnumToolMaterial.HIKARI).setmodel("Yaibanobumeran").setIconCoord(9, 2).setItemName("Yaibanobumeran");
+		Majinnokanaduti = new DqmItemSword(MajinnokanadutiID,DqmEnumToolMaterial.HIKARI).setmodel("Majinnokanaduti").setIconCoord(12, 0).setItemName("Majinnokanaduti");
+		Ookanaduti = new DqmItemSword(OokanadutiID,DqmEnumToolMaterial.HIKARI).setmodel("Ookanaduti").setIconCoord(12, 2).setItemName("Ookanaduti");
+		Atorasunokanaduti = new DqmItemSword(AtorasunokanadutiID,DqmEnumToolMaterial.HIKARI).setmodel("Atorasunokanaduti").setIconCoord(12, 1).setItemName("Atorasunokanaduti");
+		Gureitoakusu = new DqmItemSword(GureitoakusuID,DqmEnumToolMaterial.HIKARI).setmodel("Gureitoakusu").setIconCoord(13, 1).setItemName("Gureitoakusu");
+		Ikazutinotue = new DqmItemSword(IkazutinotueID,DqmEnumToolMaterial.HIKARI).setmodel("Ikazutinotue").setIconCoord(4, 2).setItemName("Ikazutinotue");
+		Dragonrod = new DqmItemSword(DragonrodID,DqmEnumToolMaterial.HIKARI).setmodel("Dragonrod").setIconCoord(5, 2).setItemName("Dragonrod");
+		Sabakinotue = new DqmItemSword(SabakinotueID,DqmEnumToolMaterial.HIKARI).setmodel("Sabakinotue").setIconCoord(4, 1).setItemName("Sabakinotue");
+		Majuunotume = new DqmItemSword(MajuunotumeID,DqmEnumToolMaterial.HIKARI).setmodel("Majuunotume").setIconCoord(7, 2).setItemName("Majuunotume");
 
 		Kazekirinoyumi = new DqmItemBow(KazekirinoyumiID).setmodel("Kazekirinoyumi").setIconCoord(15, 0).setItemName("Kazekirinoyumi");
 		Sefiramunoyumi = new DqmItemBow(SefiramunoyumiID).setmodel("Sefiramunoyumi").setIconCoord(15, 1).setItemName("Sefiramunoyumi");

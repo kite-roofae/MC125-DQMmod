@@ -267,6 +267,30 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addName(Hikarinotue, "ja_JP", "ひかりの杖");
 		ModLoader.addName(Moon, "Diamond of the moon");
 		ModLoader.addName(Moon, "ja_JP", "月のダイヤ");
+		ModLoader.addName(Ikazutinotue, "Staff of Lightning");
+		ModLoader.addName(Ikazutinotue, "ja_JP", "いかずちのつえ");
+		ModLoader.addName(Ookanaduti, "Big hammer");
+		ModLoader.addName(Ookanaduti, "ja_JP", "おおかなづち");
+		ModLoader.addName(Atorasunokanaduti, "Atlas hammer");
+		ModLoader.addName(Atorasunokanaduti, "ja_JP", "アトラスのかなづち");
+		ModLoader.addName(Gureitoakusu, "Great Axe");
+		ModLoader.addName(Gureitoakusu, "ja_JP", "グレートアックス");
+		ModLoader.addName(Dragonrod, "Dragon rod");
+		ModLoader.addName(Dragonrod, "ja_JP", "ドラゴンロッド");
+		ModLoader.addName(Sabakinotue, "Wand of justice");
+		ModLoader.addName(Sabakinotue, "ja_JP", "さばきのつえ");
+		ModLoader.addName(Majuunotume, "Claw of beast");
+		ModLoader.addName(Majuunotume, "ja_JP", "まじゅうのつめ");
+		ModLoader.addName(Seinarunaifu, "Holy knife");
+		ModLoader.addName(Seinarunaifu, "ja_JP", "せいなるナイフ");
+		ModLoader.addName(Yaibanobumeran, "Boomerang blade");
+		ModLoader.addName(Yaibanobumeran, "ja_JP", "やいばのブーメラン");
+		ModLoader.addName(Majinnokanaduti, "Hammer of Demon");
+		ModLoader.addName(Majinnokanaduti, "ja_JP", "まじんのかなづち");
+		ModLoader.addName(Oninokanabou, "Kanabo of ogre");
+		ModLoader.addName(Oninokanabou, "ja_JP", "おにのかなぼう");
+		ModLoader.addName(Akumanotume, "Devil's claw");
+		ModLoader.addName(Akumanotume, "ja_JP", "あくまのつめ");
 
 
 
