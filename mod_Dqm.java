@@ -773,14 +773,15 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@Override
 	public boolean onTickInGame(float f,Minecraft minecraft)
 	{
-		EntityPlayer ep = ModLoader.getMinecraftInstance().thePlayer;
+		EntityLiving ep = ModLoader.getMinecraftInstance().thePlayer;
 		World world = ModLoader.getMinecraftInstance().theWorld;
 		DIP.EpPositionX = (int)ep.posX;
 		DIP.EpPositionY = (int)ep.posY;
 		DIP.EpPositionZ = (int)ep.posZ;
-	    ItemStack armor = ep.inventory.armorItemInSlot(2);//アーマーインベントリから防具を取得
-		    if(armor != null && armor.itemID == mod_Dqm.Mirayoroi.shiftedIndex)
+	    ItemStack armor = ModLoader.getMinecraftInstance().thePlayer.inventory.armorItemInSlot(2);//アーマーインベントリから防具を取得
+		    if(armor != null /*&& !ep.isPotionActive(Potion.nightVision)*/ && armor.itemID == mod_Dqm.Mirayoroi.shiftedIndex)
 		    {
+//		    	ep.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1, 0));
 				world.setLightValue(EnumSkyBlock.Block, (int)ep.posX, (int)ep.posY, (int)ep.posZ, 0xff);
 				world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY, (int)ep.posZ);
 				world.updateAllLightTypes((int)ep.posX + 1, (int)ep.posY, (int)ep.posZ);
@@ -788,11 +789,11 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 				world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ);
 				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 1);
 				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 1);
-				c = 0;
+				c = 1;
 		    }
-		    else if(c == 0)
+		    else if((armor == null) || (armor != null && armor.itemID != mod_Dqm.Mirayoroi.shiftedIndex) && c == 1)
 		    {
-		    	c = 1;
+		    	c = 0;
 		    	world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ);
 				world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY, (int)ep.posZ);
 				world.updateAllLightTypes((int)ep.posX - 2, (int)ep.posY, (int)ep.posZ);

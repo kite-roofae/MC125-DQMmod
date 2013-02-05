@@ -27,7 +27,7 @@ public class DqmItem extends Item implements ITextureProvider
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int i, boolean flag)
 	{
 		int ID = itemstack.itemID;
-		EntityPlayer ep = (EntityPlayer) entity;
+		EntityLiving ep = (EntityLiving) entity;
 		if(world.isRemote)
 		{
 			return;
