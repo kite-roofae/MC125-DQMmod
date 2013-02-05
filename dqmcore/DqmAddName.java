@@ -263,6 +263,10 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addName(Ramia, "ja_JP", "霊鳥の魂");
 		ModLoader.addName(Dragonwing, "Dragon Wing");
 		ModLoader.addName(Dragonwing, "ja_JP", "ドラゴンウィング");
+		ModLoader.addName(Hikarinotue, "Wand of light");
+		ModLoader.addName(Hikarinotue, "ja_JP", "ひかりの杖");
+		ModLoader.addName(Moon, "Diamond of the moon");
+		ModLoader.addName(Moon, "ja_JP", "月のダイヤ");
 
 
 
