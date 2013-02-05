@@ -41,9 +41,8 @@ public class DqmItem extends Item implements ITextureProvider
 	}
 
 	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World world, EntityPlayer par3EntityPlayer)
 	{
-		World world = par2World;
 		WorldInfo w = world.getWorldInfo();
 		EntityPlayer ep = par3EntityPlayer;
 		int ID =par1ItemStack.itemID;

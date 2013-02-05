@@ -42,7 +42,7 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 	@Override
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int i, boolean flag)
 	{
-		EntityPlayerSP ep = ModLoader.getMinecraftInstance().thePlayer;
+		EntityPlayer ep = (EntityPlayer) entity;
 		if(world.isRemote)
 		{
 			return;
