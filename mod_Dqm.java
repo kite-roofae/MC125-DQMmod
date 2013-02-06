@@ -465,8 +465,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		 */
 		//ATK:DIAMOND=7,IRON=6,STORN=5,WOOD=4
 		//buki texture para(ATK,3=DIAMOND_foreru mono,8F=DIAMOND_horu sokudo,3=DIAMOND_katasa,enchant)***************************************************************************************
-		//Debugsword = new DqmItemTool(DebugswordID,1, DqmEnumToolMaterial.DEBUG,Block.cobblestone).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
-		Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
+		Debugsword = new DqmItemShovel(DebugswordID, DqmEnumToolMaterial.DEBUG).setIconCoord(6, 1).setItemName("Debugsword");
+		//Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
+		 //redPickaxe = (new ItemRedPickaxe(EEBase.props.getInt("ItemRedPickaxe"))).setIconCoord(64, 0).setItemName("redPickaxe");
 
 		Uminarinotue = new DqmItemSword(UminarinotueID,DqmEnumToolMaterial.UMINARI).setmodel("Uminarinotue").setIconCoord(5, 0).setItemName("Uminarinotue");
 		Koorinoyaiba = new DqmItemSword(KoorinoyaibaID,DqmEnumToolMaterial.KOORI).setmodel("Koorinoyaiba").setIconCoord(4, 0).setItemName("Koorinoyaiba");

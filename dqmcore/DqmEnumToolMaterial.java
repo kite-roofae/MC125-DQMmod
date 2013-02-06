@@ -38,7 +38,7 @@ public enum DqmEnumToolMaterial
 	DRAGONROD(3, 300, 12.0F, -1, 30),
 	SABAKI(3, 300, 12.0F, -2, 25),
 	MAJIN(3, 1200, 12.0F, 9, 5),
-	DEBUG(3, 10000, 100F, 100, 100);
+	DEBUG(100, 10000, 12.0F, 100, 100);
 
 
 

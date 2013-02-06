@@ -362,8 +362,46 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
 				return this.weaponDamage * 2;
 				}
+
+				int x = 0;
+				int x3 = x+getRandom(100, -100);
+
+				if(model == "Ookanaduti" )
+				{
+					if(x3>= -70 && x3<= 80)
+					{
+						return this.weaponDamage * 1;
+					}
+					if(x3>= 81)
+					{
+					w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+					return this.weaponDamage * 4;
+					}
+					if(x3<= -71)
+					{
+					w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
+					return this.weaponDamage * 0;
+					}
+				}
+
+				if(model == "Majinnokanaduti" )
+				{
+					if(x3>= 50)
+					{
+						w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+						return this.weaponDamage * 5;
+					}
+					if(x3<= 49)
+					{
+					w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
+					return this.weaponDamage * 0;
+					}
+				}
+
 		return this.weaponDamage;
 	}
+
+
 }
 
 
