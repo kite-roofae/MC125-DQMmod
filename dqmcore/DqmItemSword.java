@@ -157,24 +157,20 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				//par3World.playSoundEffect((double)par4 + 0.5D, (double)par5 + 0.5D, (double)par6 + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
 				par3World.setBlockWithNotify(par4, par5, par6, Block.waterStill.blockID);
 			}
-			//int var9;
+			long var9;
 			if (var8 == 0 && model == "Hikarinotue")
 			{
-				//var9 == WorldTime();
 				//0で朝、5000で昼、12000で夕焼け、17000で月が真上、23000で朝日、24000周期
-				//var9 = +1;
-				//if (var9 == 1){
+				var9 = par3World.getWorldInfo().getWorldTime();
+				if(15000 < var9 || var9 < 5000)
+				{
 				par3World.getWorldInfo().setWorldTime(5000);
-				par3World.playSoundAtEntity(par2EntityPlayer, "DQM_Sound.Kiseki", 0.9F, 0.9F);
-				//var9 = +1;
-				/*
 				}
-				if (var9 <= 2){
-				par3World.getWorldInfo().setWorldTime(17000);
+				else if(15000 > var9)
+				{
+					par3World.getWorldInfo().setWorldTime(15000);
+				}
 				par3World.playSoundAtEntity(par2EntityPlayer, "DQM_Sound.Kiseki", 0.9F, 0.9F);
-				var9 = 0;
-				}*/
-				//var9 = +1;
 			}
 			par1ItemStack.damageItem(1, par2EntityPlayer);
 			return true;
@@ -192,11 +188,11 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 		if(attack==0) {
 			par1.damageItem(1, par3);
 		}
-		if(model == "Hikarinotue")
-		{
-			w.getWorldInfo().setWorldTime(17000);
-			w.playSoundAtEntity(par2, "DQM_Sound.Kiseki", 0.9F, 0.9F);
-		}
+//		if(model == "Hikarinotue")
+//		{
+//			w.getWorldInfo().setWorldTime(17000);
+//			w.playSoundAtEntity(par2, "DQM_Sound.Kiseki", 0.9F, 0.9F);
+//		}
 		if(model == "Inferunosword")
 		{
 			par2.setFire(+5);

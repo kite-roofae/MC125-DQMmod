@@ -252,19 +252,19 @@ public class DqmEntityAyasiikage extends EntityEnderman
 
 	static
 	{
-		/*canCarryBlocks[Block.grass.blockID] = true;
-        canCarryBlocks[Block.dirt.blockID] = true;
-        canCarryBlocks[Block.sand.blockID] = true;
-        canCarryBlocks[Block.gravel.blockID] = true;
-        canCarryBlocks[Block.plantYellow.blockID] = true;
-        canCarryBlocks[Block.plantRed.blockID] = true;
-        canCarryBlocks[Block.mushroomBrown.blockID] = true;
-        canCarryBlocks[Block.mushroomRed.blockID] = true;
-        canCarryBlocks[Block.tnt.blockID] = true;
-        canCarryBlocks[Block.cactus.blockID] = true;
-        canCarryBlocks[Block.blockClay.blockID] = true;
-        canCarryBlocks[Block.pumpkin.blockID] = true;*/
+		canCarryBlocks[Block.grass.blockID] = false;
+        canCarryBlocks[Block.dirt.blockID] = false;
+        canCarryBlocks[Block.sand.blockID] = false;
+        canCarryBlocks[Block.gravel.blockID] = false;
+        canCarryBlocks[Block.plantYellow.blockID] = false;
+        canCarryBlocks[Block.plantRed.blockID] = false;
+        canCarryBlocks[Block.mushroomBrown.blockID] = false;
+        canCarryBlocks[Block.mushroomRed.blockID] = false;
+        canCarryBlocks[Block.tnt.blockID] = false;
+        canCarryBlocks[Block.cactus.blockID] = false;
+        canCarryBlocks[Block.blockClay.blockID] = false;
+        canCarryBlocks[Block.pumpkin.blockID] = false;
 		canCarryBlocks[Block.melon.blockID] = true;
-		//canCarryBlocks[Block.mycelium.blockID] = true;
+		canCarryBlocks[Block.mycelium.blockID] = false;
 	}
 }
