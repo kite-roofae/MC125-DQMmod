@@ -8,15 +8,15 @@ import net.minecraft.src.forge.ITextureProvider;
 public class DqmItemSword extends ItemSword implements ITextureProvider
 {
 	private int weaponDamage;
-	private final DqmEnumToolMaterial toolMaterial;
+	private final EnumToolMaterial toolMaterial;
 	private String model;
 	private int attack;
 	private int heel;
 	private World world;
 
-	public DqmItemSword(int par1, DqmEnumToolMaterial par2EnumToolMaterial)
+	public DqmItemSword(int par1, EnumToolMaterial par2EnumToolMaterial)
 	{
-		super(par1,EnumToolMaterial.EMERALD);
+		super(par1,par2EnumToolMaterial);
 		this.toolMaterial = par2EnumToolMaterial;
 		this.maxStackSize = 1;
 		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
