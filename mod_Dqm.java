@@ -3,10 +3,8 @@ package net.minecraft.src;
 import java.util.*;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Minecraft;
 import net.minecraft.src.dqmcore.*;
 import net.minecraft.src.dqmcore.DqmEntity.*;
-import net.minecraft.src.dqmcore.DqmModel.*;
 import net.minecraft.src.forge.*;
 import net.minecraft.src.dqmcore.Pet.*;
 
@@ -437,9 +435,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 
 	@MLProp(info = "Keep inventory")
 	public static boolean Keep = false;
-	private int timer = 0;
-	private int c = 0;
-    protected static Random Rand = new Random();
+	public DqmInventoryPlayer playersSpecialInventory=null;
 
 
 
@@ -465,9 +461,8 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		 */
 		//ATK:DIAMOND=7,IRON=6,STORN=5,WOOD=4
 		//buki texture para(ATK,3=DIAMOND_foreru mono,8F=DIAMOND_horu sokudo,3=DIAMOND_katasa,enchant)***************************************************************************************
-		Debugsword = new DqmItemShovel(DebugswordID, DqmEnumToolMaterial.DEBUG).setIconCoord(6, 1).setItemName("Debugsword");
-		//Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
-		 //redPickaxe = (new ItemRedPickaxe(EEBase.props.getInt("ItemRedPickaxe"))).setIconCoord(64, 0).setItemName("redPickaxe");
+		//Debugsword = new DqmItemTool(DebugswordID,1, DqmEnumToolMaterial.DEBUG,Block.cobblestone).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
+		Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
 
 		Uminarinotue = new DqmItemSword(UminarinotueID,DqmEnumToolMaterial.UMINARI).setmodel("Uminarinotue").setIconCoord(5, 0).setItemName("Uminarinotue");
 		Koorinoyaiba = new DqmItemSword(KoorinoyaibaID,DqmEnumToolMaterial.KOORI).setmodel("Koorinoyaiba").setIconCoord(4, 0).setItemName("Koorinoyaiba");
@@ -596,13 +591,13 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		}
 
 
-	    /** Register a new seed to be dropped when breaking tall grass.
-	     * @param bid The item ID of the seeds.
-	     * @param metadata The metadata of the seeds.
-	     * @param quantity The quantity of seeds to drop.
-	     * @param probability The relative probability of the seeds, where wheat seeds are
-	     * 10.
-	     */
+		/** Register a new seed to be dropped when breaking tall grass.
+		 * @param bid The item ID of the seeds.
+		 * @param metadata The metadata of the seeds.
+		 * @param quantity The quantity of seeds to drop.
+		 * @param probability The relative probability of the seeds, where wheat seeds are
+		 * 10.
+		 */
 
 
 
@@ -718,11 +713,11 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		nightVision	//yoru siryoku
 		hunger	//kuufuku
 		weakness	//jakuten
-			 */
+		 */
 
 		//効果名、時間、レベル、確立？
-	    //public static final Potion heal = (new PotionHealth(6, false, 16262179)).setPotionName("potion.heal");
-	    //public static final Potion harm = (new PotionHealth(7, true, 4393481)).setPotionName("potion.harm");
+		//public static final Potion heal = (new PotionHealth(6, false, 16262179)).setPotionName("potion.heal");
+		//public static final Potion harm = (new PotionHealth(7, true, 4393481)).setPotionName("potion.harm");
 		/*
 	    public ItemFood setPotionEffect(int par1, int par2, int par3, float par4)
 	    {
@@ -740,9 +735,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
         this.potionEffectProbability = par4;
         return this;
     }
-	    *
-	    *
-	    */
+		 *
+		 *
+		 */
 		//ID,0,個数,確立
 		ForgeHooks.addGrassSeed(Yakusou.shiftedIndex,0, 1, 1);
 		ForgeHooks.addGrassSeed(Dokukesisou.shiftedIndex,0, 1, 1);
@@ -751,15 +746,13 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		ForgeHooks.addGrassSeed(Subayasanotane.shiftedIndex,0, 1, 1);
 		ModLoader.setInGUIHook(this, true, false);
 		ModLoader.setInGameHook(this, true, false);
-
+		MinecraftForge.registerEntityLivingHandler(new DqmEntityLivingHandler());
 
 		DqmAddName.setName();
 		DqmAddItemRecipe.addRecipe();
 
 	}
 	//Player's special inventory, doesn't drop items, when you die, and a record of it is kept for the Minecraft world;
-	public DqmInventoryPlayer playersSpecialInventory=null;
-	private DqmInventoryPlayer DIP;
 
 
 	//Perform this function, each update tick, that the player is in a menu.
@@ -774,56 +767,6 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@Override
 	public boolean onTickInGame(float f,Minecraft minecraft)
 	{
-		EntityLiving ep = ModLoader.getMinecraftInstance().thePlayer;
-		World world = ModLoader.getMinecraftInstance().theWorld;
-		DIP.EpPositionX = (int)ep.posX;
-		DIP.EpPositionY = (int)ep.posY;
-		DIP.EpPositionZ = (int)ep.posZ;
-	    ItemStack armor = ModLoader.getMinecraftInstance().thePlayer.inventory.armorItemInSlot(2);//アーマーインベントリから防具を取得
-		    if(armor != null /*&& !ep.isPotionActive(Potion.nightVision)*/ && armor.itemID == mod_Dqm.Mirayoroi.shiftedIndex)
-		    {
-//		    	ep.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1, 0));
-				world.setLightValue(EnumSkyBlock.Block, (int)ep.posX, (int)ep.posY, (int)ep.posZ, 0xff);
-				world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX + 1, (int)ep.posY, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY - 1, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 1);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 1);
-				c = 1;
-		    }
-		    else if((armor == null) || (armor != null && armor.itemID != mod_Dqm.Mirayoroi.shiftedIndex) && c == 1)
-		    {
-		    	c = 0;
-		    	world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX - 2, (int)ep.posY, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX + 1, (int)ep.posY, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX + 2, (int)ep.posY, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY - 1, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 1);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 2);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 1);
-				world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 2);
-		    }
-		    if(armor != null && ep.isPotionActive(Potion.poison) && armor.itemID == mod_Dqm.Urokonoyoroi.shiftedIndex)
-		    {
-		    	ep.removePotionEffect(Potion.poison.id);
-		    }
-		    if(armor != null && !ep.isPotionActive(Potion.regeneration) && armor.itemID == mod_Dqm.Sinpinoyoroi.shiftedIndex)
-		    {
-				ep.addPotionEffect(new PotionEffect(Potion.regeneration.id, 30, 0));
-				if(Rand.nextInt(5) <= 1){armor.damageItem(1, ep);}
-			}
-		    if(armor != null && ep.isBurning() && armor.itemID == mod_Dqm.Doragonmeiru.shiftedIndex)
-		    {
-		    	ep.extinguish();
-		    }
-		    if(armor != null && !ep.isPotionActive(Potion.fireResistance) && armor.itemID == mod_Dqm.Honoonoyoroi.shiftedIndex)
-		    {
-		    	ep.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 1, 0));
-		    }
 
 		if(minecraft!=null){
 			ensureInventoryKept(minecraft);
