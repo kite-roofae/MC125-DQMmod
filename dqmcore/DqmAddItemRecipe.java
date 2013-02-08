@@ -21,6 +21,80 @@ public class DqmAddItemRecipe extends mod_Dqm
     		new ItemStack(Kazekirinohane, 1),new ItemStack(Koumorinohane, 1),new ItemStack(Tyounohane, 1)});
 
 		//ŒÅ’èƒŒƒVƒs
+		ModLoader.addRecipe(new ItemStack(Buruoubu,1),new Object[]{
+			"VVV",
+			"VWV",
+			"VVV",
+			Character.valueOf('V'),Amatuyunoito,Character.valueOf('W'),Metaloubu});
+		ModLoader.addRecipe(new ItemStack(Ierooubu,1),new Object[]{
+			"VVV",
+			"VWV",
+			"VVV",
+			Character.valueOf('V'),Moon,Character.valueOf('W'),Metaloubu});
+		ModLoader.addRecipe(new ItemStack(Gurinoubu,1),new Object[]{
+			"VVV",
+			"VWV",
+			"VVV",
+			Character.valueOf('V'),Ikazutinotama,Character.valueOf('W'),Metaloubu});
+		ModLoader.addRecipe(new ItemStack(Paapuruoubu,1),new Object[]{
+			"VVV",
+			"VWV",
+			"VVV",
+			Character.valueOf('V'),Inotinoisi,Character.valueOf('W'),Metaloubu});
+
+		ModLoader.addRecipe(new ItemStack(Rakkipendanto ,1),new Object[]{
+			"STU",
+			"ZYZ",
+			"VWX",
+			Character.valueOf('S'),Redoubu,Character.valueOf('T'),Buruoubu,Character.valueOf('U'),Ierooubu,Character.valueOf('V'),Gurinoubu,
+			Character.valueOf('W'),Paapuruoubu, Character.valueOf('X'),Metaloubu, Character.valueOf('Y'),Hikarinoisi, Character.valueOf('Z'),Rengokunohane,});
+		ModLoader.addRecipe(new ItemStack(Majuunotume ,1),new Object[]{
+			" VV",
+			"WWV",
+			"WW ",
+			Character.valueOf('V'),Majuunotuno,Character.valueOf('W'),Majuunokawa});
+		ModLoader.addRecipe(new ItemStack(Akumanotume ,1),new Object[]{
+			" VV",
+			"WWV",
+			"WW ",
+			Character.valueOf('V'),Kyodainakiba,Character.valueOf('W'),Yawarakauru});
+		ModLoader.addRecipe(new ItemStack(Ookanaduti ,1),new Object[]{
+			" VV",
+			"WVV",
+			"XW ",
+			Character.valueOf('V'),Metaru,Character.valueOf('W'),Bakudanisi, Character.valueOf('X'),Kyodainakiba});
+		ModLoader.addRecipe(new ItemStack(Oninokanabou ,1),new Object[]{
+			"WWW",
+			"WVW",
+			"WWW",
+			Character.valueOf('V'),Ookanaduti,Character.valueOf('W'),Togetogenokiba});
+		ModLoader.addRecipe(new ItemStack(Hikarinotue ,1),new Object[]{
+			" WV",
+			" VW",
+			"X  ",
+			Character.valueOf('V'),Moon,Character.valueOf('W'),Taiyounoisi, Character.valueOf('X'),Kyodainakiba});
+		ModLoader.addRecipe(new ItemStack(Sabakinotue ,1),new Object[]{
+			"VWX",
+			" VW",
+			"Y V",
+			Character.valueOf('V'),Hosinokakera,Character.valueOf('W'),Kazekirinohane, Character.valueOf('X'),Moon, Character.valueOf('Y'),Kyodainakiba});
+		ModLoader.addRecipe(new ItemStack(Ikazutinotue ,1),new Object[]{
+			"WVV",
+			" VV",
+			"X W",
+			Character.valueOf('V'),Ikazutinotama,Character.valueOf('W'),Moon, Character.valueOf('X'),Kyodainakiba});
+		ModLoader.addRecipe(new ItemStack(Seinarunaifu ,1),new Object[]{
+			" VW",
+			"VWV",
+			"XV",
+			Character.valueOf('V'),Seijanohai,Character.valueOf('W'),Tekkouseki, Character.valueOf('X'),Inotinoisi});
+		ModLoader.addRecipe(new ItemStack(Yaibanobumeran ,1),new Object[]{
+			"WVV",
+			"V  ",
+			"V  ",
+			Character.valueOf('V'),Togetogenokiba,Character.valueOf('W'),Misriru});
+
+
 		ModLoader.addRecipe(new ItemStack(Rakkipendanto ,1),new Object[]{
 			"WXZ",
 			"XYX",
@@ -47,7 +121,7 @@ public class DqmAddItemRecipe extends mod_Dqm
 			"WXW",
 			"ZYZ",
 			"WXW",
-			Character.valueOf('W'),Taiyounoisi, Character.valueOf('X'),Yougansekinokakera, Character.valueOf('Y'),Akaitama, Character.valueOf('Z'),Rengokunohane,});
+			Character.valueOf('W'),Taiyounoisi, Character.valueOf('X'),Yougansekinokakera, Character.valueOf('Y'),Redoubu, Character.valueOf('Z'),Rengokunohane,});
 		ModLoader.addRecipe(new ItemStack(Mirayoroi ,1),new Object[]{
 			"WXW",
 			"XYX",
@@ -92,7 +166,7 @@ public class DqmAddItemRecipe extends mod_Dqm
 			"WWX",
 			"WYZ",
 			"XZZ",
-			Character.valueOf('W'),Oriharukon, Character.valueOf('X'),Akaitama, Character.valueOf('Y'),Ryuunonamida, Character.valueOf('Z'),Amatuyunoito,});
+			Character.valueOf('W'),Oriharukon, Character.valueOf('X'),Redoubu, Character.valueOf('Y'),Ryuunonamida, Character.valueOf('Z'),Amatuyunoito,});
 		ModLoader.addRecipe(new ItemStack(Kenjanoisi ,1),new Object[]{
 			" WW",
 			" WW",
@@ -141,7 +215,7 @@ public class DqmAddItemRecipe extends mod_Dqm
 		ModLoader.addRecipe(new ItemStack(Rotonotuka ,1),
 				new Object[]{ "X  ","ZY ","XZX",
 			Character.valueOf('X'),Kinkai,
-			Character.valueOf('Y'),Akaitama,
+			Character.valueOf('Y'),Redoubu,
 			Character.valueOf('Z'),Tokinosuisyou,
 		});
 		ModLoader.addRecipe(new ItemStack(Rotonoha ,1),
@@ -226,9 +300,9 @@ public class DqmAddItemRecipe extends mod_Dqm
 		});
 
 		//item
-		ModLoader.addRecipe(new ItemStack(Akaitama ,1),
-				new Object[]{ " X ","XYX"," X ",
-			Character.valueOf('X'),Yougansekinokakera,
+		ModLoader.addRecipe(new ItemStack(Redoubu ,1),
+				new Object[]{ "XXX","XYX","XXX",
+			Character.valueOf('X'),Taiyounoisi,
 			Character.valueOf('Y'),Metaloubu,
 		});
 		ModLoader.addRecipe(new ItemStack(Kinkai ,1),
@@ -327,7 +401,7 @@ public class DqmAddItemRecipe extends mod_Dqm
 		ModLoader.addRecipe(new ItemStack(Metaloubu ,1),
 				new Object[]{ "XXX","XYX","XXX",
 			Character.valueOf('X'),Metaru,
-			Character.valueOf('Y'),Hikarinoisi,
+			Character.valueOf('Y'),Seireiseki,
 		});
 
 
@@ -420,5 +494,7 @@ public class DqmAddItemRecipe extends mod_Dqm
 		ModLoader.addSmelting(Kazekirinohane.shiftedIndex, new ItemStack(Rengokunohane ,1));
 		ModLoader.addSmelting(Inotinoisi.shiftedIndex, new ItemStack(Taiyounoisi ,1));
 		ModLoader.addSmelting(Oriharukon.shiftedIndex, new ItemStack(Inotinoisi ,1));
+		ModLoader.addSmelting(Papasunoturugi.shiftedIndex, new ItemStack(Papasunokatami ,1));
+
 	}
 }

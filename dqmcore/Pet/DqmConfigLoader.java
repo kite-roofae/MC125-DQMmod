@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class ConfigLoader
+public class DqmConfigLoader
 {
     private boolean updateFile = false;
     private File dir;
@@ -19,7 +19,7 @@ public class ConfigLoader
     private Class configClass;
     private LinkedList configFields;
 
-    public ConfigLoader(Class var1, File var2, String var3)
+    public DqmConfigLoader(Class var1, File var2, String var3)
     {
         if (!var2.exists())
         {
@@ -38,7 +38,7 @@ public class ConfigLoader
         {
             Field var8 = var5[var7];
 
-            if (var8.isAnnotationPresent(ConfigProp.class))
+            if (var8.isAnnotationPresent(DqmConfigProp.class))
             {
                 this.configFields.add(var8);
             }
@@ -56,7 +56,7 @@ public class ConfigLoader
             while (var3.hasNext())
             {
                 Field var4 = (Field)var3.next();
-                ConfigProp var5 = (ConfigProp)var4.getAnnotation(ConfigProp.class);
+                DqmConfigProp var5 = (DqmConfigProp)var4.getAnnotation(DqmConfigProp.class);
                 var2.put(!var5.name().isEmpty() ? var5.name() : var4.getName(), var4);
             }
 
@@ -198,7 +198,7 @@ public class ConfigLoader
             while (var3.hasNext())
             {
                 Field var4 = (Field)var3.next();
-                ConfigProp var5 = (ConfigProp)var4.getAnnotation(ConfigProp.class);
+                DqmConfigProp var5 = (DqmConfigProp)var4.getAnnotation(DqmConfigProp.class);
 
                 if (var5.info().length() != 0)
                 {

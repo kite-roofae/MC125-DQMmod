@@ -405,6 +405,7 @@ public class DqmModelRamiaBike extends ModelBase
 	@Override
 	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6)
 	{
+		/*
 		a1.rotateAngleY = par4 / (180F / (float)Math.PI);
 		a2.rotateAngleY = par4 / (180F / (float)Math.PI);
 		a3.rotateAngleY = par4 / (180F / (float)Math.PI);
@@ -413,7 +414,7 @@ public class DqmModelRamiaBike extends ModelBase
 		a6.rotateAngleY = par4 / (180F / (float)Math.PI);
 		a7.rotateAngleY = par4 / (180F / (float)Math.PI);
 		a8.rotateAngleY = par4 / (180F / (float)Math.PI);
-		a9.rotateAngleY = par4 / (180F / (float)Math.PI);
+		a9.rotateAngleY = par4 / (180F / (float)Math.PI);*/
 
 		sm1.rotateAngleY = MathHelper.cos(par1 * 0.2662F) * 0.7F * par2;
 		sm2.rotateAngleY = MathHelper.cos(par1 * 0.2662F) * 0.7F * par2;

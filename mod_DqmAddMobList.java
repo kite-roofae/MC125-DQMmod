@@ -147,6 +147,30 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		cs.addCustomSpawn(DqmEntitySuraimunaito.class, 5, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityMetaruraida.class, 4, 1, 1, Type.monster);
 
+		cs.addCustomSpawn(DqmEntityBehoimisuraimu.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityBehoimusuraimu.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityDasudragon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGamegon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGamegonload.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGamegonrejendo.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGoldman.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGorudensuraimu.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGorudentotemu.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityKagenokisi.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityKisudragon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMegazarurokku.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMeijikimera.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMeragosuto.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMetaruburazazu.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityPuratinaking.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySamayoutamasii.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySibirekurage.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySiryounokisi.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityStarkimera.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityStonman.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySumairurokku.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimumadyura.class, 3, 1, 1, Type.monster);
+
 		ML.registerEntityID(DqmEntityArumiraji.class, "Arumiraji",ML.getUniqueEntityId(),16167425,16167425);
 		ML.registerEntityID(DqmEntityAtorasu.class, "Atorasu",ML.getUniqueEntityId(),12720061,12720061);
 		ML.registerEntityID(DqmEntityAyasiikage.class, "Ayasiikage",ML.getUniqueEntityId(),16579584,16579584);
@@ -198,6 +222,34 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		ML.registerEntityID(DqmEntityZoma.class,"Zoma", ML.getUniqueEntityId(),16382457,16382457);
 		ML.registerEntityID(DqmEntitySuraimunaito.class, "Suraimunaito",ML.getUniqueEntityId(),4349438,4349438);
 		ML.registerEntityID(DqmEntityMetaruraida.class, "Metaruraida",ML.getUniqueEntityId(),4349438,4349438);
+
+		ML.registerEntityID(DqmEntityBehoimisuraimu.class, "Behoimisuraimu",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntityBehoimusuraimu.class, "Behoimusuraimu",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntityGorudensuraimu.class, "Gorudensuraimu",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntityGorudentotemu.class, "Gorudentotemu",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntitySuraimumadyura.class, "Suraimumadyura",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntityPuratinaking.class, "Puratinaking",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntitySibirekurage.class, "Sibirekurage",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntityMetaruburazazu.class, "Metaruburazazu",ML.getUniqueEntityId(),4349438,4349438);
+
+		ML.registerEntityID(DqmEntityMeijikimera.class, "Meijikimera",ML.getUniqueEntityId(),2349438,2349438);
+		ML.registerEntityID(DqmEntityStarkimera.class, "Starkimera",ML.getUniqueEntityId(),2349438,2349438);
+
+		ML.registerEntityID(DqmEntityKagenokisi.class, "Kagenokisi",ML.getUniqueEntityId(),11013646,11013646);
+		ML.registerEntityID(DqmEntitySiryounokisi.class, "Siryounokisi",ML.getUniqueEntityId(),11013646,11013646);
+		ML.registerEntityID(DqmEntitySamayoutamasii.class, "Samayoutamasii",ML.getUniqueEntityId(),11013646,11013646);
+		ML.registerEntityID(DqmEntityMeragosuto.class, "Meragosuto",ML.getUniqueEntityId(),11013646,11013646);
+
+		ML.registerEntityID(DqmEntityDasudragon.class, "Dasudragon",ML.getUniqueEntityId(),894731,894731);
+		ML.registerEntityID(DqmEntityKisudragon.class, "Kisudragon",ML.getUniqueEntityId(),894731,894731);
+		ML.registerEntityID(DqmEntityGamegon.class, "Gamegon",ML.getUniqueEntityId(),894731,894731);
+		ML.registerEntityID(DqmEntityGamegonload.class, "Gamegonload",ML.getUniqueEntityId(),894731,894731);
+		ML.registerEntityID(DqmEntityGamegonrejendo.class, "Gamegonrejendo",ML.getUniqueEntityId(),894731,894731);
+
+		ML.registerEntityID(DqmEntityGoldman.class, "Goldman",ML.getUniqueEntityId(),16579584,16579584);
+		ML.registerEntityID(DqmEntityMegazarurokku.class, "Megazarurokku",ML.getUniqueEntityId(),16579584,16579584);
+		ML.registerEntityID(DqmEntityStonman.class, "Stonman",ML.getUniqueEntityId(),16579584,16579584);
+		ML.registerEntityID(DqmEntitySumairurokku.class, "Sumairurokku",ML.getUniqueEntityId(),16579584,16579584);
 
 
 		// Pet No
@@ -303,6 +355,31 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		renderers.put(DqmEntityZoma.class, new DqmRender(new DqmModelZoma(), 0.5f));
 		renderers.put(DqmEntitySuraimunaito.class, new DqmRender(new DqmModelSuraimunaito(), 0.5f));
 		renderers.put(DqmEntityMetaruraida.class, new DqmRender(new DqmModelSuraimunaito(), 0.5f));
+
+		renderers.put(DqmEntityBehoimisuraimu.class, new DqmRender(new DqmModelHoimisura(), 0.5f));
+		renderers.put(DqmEntityBehoimusuraimu.class, new DqmRender(new DqmModelHoimisura(), 0.5f));
+		renderers.put(DqmEntityDasudragon.class, new DqmRender(new DqmModelDqmdragon(), 0.5f));
+		renderers.put(DqmEntityGamegon.class, new DqmRender(new DqmModelGamegon(), 0.5f));
+		renderers.put(DqmEntityGamegonload.class, new DqmRender(new DqmModelGamegon(), 0.5f));
+		renderers.put(DqmEntityGamegonrejendo.class, new DqmRender(new DqmModelGamegon(), 0.5f));
+		renderers.put(DqmEntityGoldman.class, new DqmRender(new DqmModelGoremu(), 0.5f));
+		renderers.put(DqmEntityGorudensuraimu.class, new DqmRender(new DqmModelPuratinaking(), 0.5f));
+		renderers.put(DqmEntityGorudentotemu.class, new DqmRender(new DqmModelSuraimutawa(), 0.5f));
+		renderers.put(DqmEntityKagenokisi.class, new DqmRender(new DqmModelGaikotukensi(), 0.5f));
+		renderers.put(DqmEntityKisudragon.class, new DqmRender(new DqmModelDqmdragon(), 0.5f));
+		renderers.put(DqmEntityMegazarurokku.class, new DqmRender(new DqmModelBakudaniwa(), 0.5f));
+		renderers.put(DqmEntityMeijikimera.class, new DqmRender(new DqmModelKimera(), 0.5f));
+		renderers.put(DqmEntityMeragosuto.class, new DqmRender(new DqmModelMeragosuto(), 0.5f));
+		renderers.put(DqmEntityMetaruburazazu.class, new DqmRender(new DqmModelSuraimutawa(), 0.5f));
+		renderers.put(DqmEntityPuratinaking.class, new DqmRender(new DqmModelPuratinaking(), 0.5f));
+		renderers.put(DqmEntitySamayoutamasii.class, new DqmRender(new DqmModelMeragosuto(), 0.5f));
+		renderers.put(DqmEntitySibirekurage.class, new DqmRender(new DqmModelHoimisura(), 0.5f));
+		renderers.put(DqmEntitySiryounokisi.class, new DqmRender(new DqmModelGaikotukensi(), 0.5f));
+		renderers.put(DqmEntityStarkimera.class, new DqmRender(new DqmModelKimera(), 0.5f));
+		renderers.put(DqmEntityStonman.class, new DqmRender(new DqmModelGoremu(), 0.5f));
+		renderers.put(DqmEntitySumairurokku.class, new DqmRender(new DqmModelBakudaniwa(), 0.5f));
+		renderers.put(DqmEntitySuraimumadyura.class, new DqmRender(new DqmModelPuratinaking(), 0.5f));
+
 
 		// Pet************************************************************************************************************************************************************
 

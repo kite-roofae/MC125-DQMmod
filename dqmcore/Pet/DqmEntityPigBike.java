@@ -2,17 +2,29 @@ package net.minecraft.src.dqmcore.Pet;
 
 import net.minecraft.src.World;
 
-public class EntitySpiderBike extends RidableCreature
+public class DqmEntityPigBike extends DqmRidableCreature
 {
-    public EntitySpiderBike(World var1)
+    /** used to check whether entity is jumping. */
+    private boolean isJumping;
+
+    public DqmEntityPigBike(World var1)
     {
         super(var1);
-        this.texture = "/mob/spider.png";
-        this.setSize(1.2F, 0.8F);
-        this.walkSpeed = 0.15F;
+        this.isJumping = false;
+        this.texture = "/mob/pig.png";
+        this.setSize(0.9F, 0.9F);
+        this.walkSpeed = 0.4F;
     }
 
-    public EntitySpiderBike(World var1, double var2, double var4, double var6)
+    /**
+     * If Animal, checks if the age timer is negative
+     */
+    public boolean isChild()
+    {
+        return this.getSpecial();
+    }
+
+    public DqmEntityPigBike(World var1, double var2, double var4, double var6)
     {
         this(var1);
         this.setPosition(var2, var4, var6);
@@ -23,7 +35,7 @@ public class EntitySpiderBike extends RidableCreature
      */
     public double getMountedYOffset()
     {
-        return 0.6D;
+        return this.getSpecial() ? 0.4D : 0.8D;
     }
 
     /**
@@ -31,7 +43,7 @@ public class EntitySpiderBike extends RidableCreature
      */
     protected String getLivingSound()
     {
-        return "mob.spider";
+        return "mob.pig";
     }
 
     /**
@@ -39,7 +51,7 @@ public class EntitySpiderBike extends RidableCreature
      */
     protected String getHurtSound()
     {
-        return "mob.spider";
+        return "mob.pig";
     }
 
     /**
@@ -47,19 +59,6 @@ public class EntitySpiderBike extends RidableCreature
      */
     protected String getDeathSound()
     {
-        return "mob.spiderdeath";
-    }
-
-    public float spiderScaleAmount()
-    {
-        return 1.0F;
-    }
-
-    /**
-     * returns true if this entity is by a ladder, false otherwise
-     */
-    public boolean isOnLadder()
-    {
-        return this.isCollidedHorizontally;
+        return "mob.pigdeath";
     }
 }

@@ -10,13 +10,13 @@ import net.minecraft.src.MathHelper;
 import net.minecraft.src.Tessellator;
 import net.minecraft.src.World;
 
-public class EntityFireFX extends EntityFX
+public class DqmEntityFireFX extends EntityFX
 {
     /** the scale of the flame FX */
     private float flameScale;
-    private EntityDragonBike entityDragonBike;
+    private DqmEntityDragonBike entityDragonBike;
 
-    public EntityFireFX(World var1, double var2, double var4, double var6, double var8, double var10, double var12, EntityDragonBike var14)
+    public DqmEntityFireFX(World var1, double var2, double var4, double var6, double var8, double var10, double var12, DqmEntityDragonBike var14)
     {
         super(var1, var2, var4, var6, var8, var10, var12);
         this.entityDragonBike = var14;
@@ -92,6 +92,7 @@ public class EntityFireFX extends EntityFX
     /**
      * Called to update the entity's position/logic.
      */
+
     public void onUpdate()
     {
         this.prevPosX = this.posX;
@@ -101,7 +102,8 @@ public class EntityFireFX extends EntityFX
         int var2 = MathHelper.floor_double(this.posY);
         int var3 = MathHelper.floor_double(this.posZ);
 
-        if (!mo_DqmPetLoader.PreventTerrainDamage && mo_DqmPetLoader.isMultiplayer(this.worldObj) && !this.worldObj.isAirBlock(var1, var2, var3) && this.worldObj.rand.nextInt(3) == 1)
+        //if (!mo_DqmPetLoader.PreventTerrainDamage && mo_DqmPetLoader.isMultiplayer(this.worldObj) && !this.worldObj.isAirBlock(var1, var2, var3) && this.worldObj.rand.nextInt(3) == 1)
+        if (!mo_DqmPetLoader.PreventTerrainDamage && !this.worldObj.isAirBlock(var1, var2, var3) && this.worldObj.rand.nextInt(3) == 1)
         {
             if (this.worldObj.isAirBlock(var1, var2 + 1, var3) && this.worldObj.rand.nextBoolean())
             {

@@ -7,14 +7,14 @@ import net.minecraft.src.dqmcore.DqmEntity.*;
 import net.minecraft.src.dqmcore.*;
 
 
-public class DqmItemRamiaBike extends ItemAnimalBike implements ITextureProvider
+public class DqmItemRamiaBike extends DqmItemBike implements ITextureProvider
 {
     public DqmItemRamiaBike(int var1)
     {
         super(var1);
     }
 
-    public RidableCreature getBike(EntityPlayer var1)
+    public DqmRidableCreature getBike(EntityPlayer var1)
     {
         return new DqmEntityRamiaBike(var1.worldObj);
     }

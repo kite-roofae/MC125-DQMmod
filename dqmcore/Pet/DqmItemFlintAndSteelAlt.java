@@ -7,9 +7,9 @@ import net.minecraft.src.ModLoader;
 import net.minecraft.src.World;
 
 
-public class ItemFlintAndSteelAlt extends ItemFlintAndSteel
+public class DqmItemFlintAndSteelAlt extends ItemFlintAndSteel
 {
-    public ItemFlintAndSteelAlt(int var1)
+    public DqmItemFlintAndSteelAlt(int var1)
     {
         super(var1);
     }
@@ -23,7 +23,7 @@ public class ItemFlintAndSteelAlt extends ItemFlintAndSteel
         {
             return var1;
         }
-        else if (!(var3.ridingEntity instanceof EntityDragonBike))
+        else if (!(var3.ridingEntity instanceof DqmEntityDragonBike))
         {
             return var1;
         }
@@ -33,7 +33,7 @@ public class ItemFlintAndSteelAlt extends ItemFlintAndSteel
 
             if (var4 || var1.getMaxDamage() > var1.getItemDamage())
             {
-                ((EntityDragonBike)var3.ridingEntity).breathFire = System.currentTimeMillis();
+                ((DqmEntityDragonBike)var3.ridingEntity).breathFire = System.currentTimeMillis();
 
                 if (!var4)
                 {
@@ -51,6 +51,6 @@ public class ItemFlintAndSteelAlt extends ItemFlintAndSteel
      */
     public boolean onItemUse(ItemStack var1, EntityPlayer var2, World var3, int var4, int var5, int var6, int var7)
     {
-        return var2.ridingEntity instanceof EntityDragonBike ? false : super.onItemUse(var1, var2, var3, var4, var5, var6, var7);
+        return var2.ridingEntity instanceof DqmEntityDragonBike ? false : super.onItemUse(var1, var2, var3, var4, var5, var6, var7);
     }
 }

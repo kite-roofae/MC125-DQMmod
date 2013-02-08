@@ -4,17 +4,17 @@ import net.minecraft.src.EntityFX;
 import net.minecraft.src.Tessellator;
 import net.minecraft.src.World;
 
-public class EntityRainbowFX extends EntityFX
+public class DqmEntityRainbowFX extends EntityFX
 {
     public static float[][] colorTable = new float[][] {{1.0F, 0.0F, 0.0F}, {1.0F, 0.5F, 0.0F}, {1.0F, 1.0F, 0.0F}, {0.0F, 1.0F, 0.0F}, {0.0F, 0.0F, 1.0F}, {0.0F, 4375.0F, 0.0F, 1.0F}, {0.5625F, 0.0F, 1.0F}};
     float reddustParticleScale;
 
-    public EntityRainbowFX(World var1, double var2, double var4, double var6, double var8, double var10, double var12)
+    public DqmEntityRainbowFX(World var1, double var2, double var4, double var6, double var8, double var10, double var12)
     {
         this(var1, var2, var4, var6, 1.0F, var8, var10, var12);
     }
 
-    public EntityRainbowFX(World var1, double var2, double var4, double var6, float var8, double var9, double var11, double var13)
+    public DqmEntityRainbowFX(World var1, double var2, double var4, double var6, float var8, double var9, double var11, double var13)
     {
         super(var1, var2, var4, var6, 0.0D, 0.0D, 0.0D);
         this.motionX *= 0.10000000149011612D;

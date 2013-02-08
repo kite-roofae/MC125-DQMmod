@@ -8,14 +8,14 @@ import net.minecraft.src.ModelRenderer;
 
 import org.lwjgl.opengl.GL11;
 
-public class ModelDragonBike extends ModelBase
+public class DqmModelDragonBike extends ModelBase
 {
 
     private ModelRenderer wing;
     private ModelRenderer wingTip;
     private float field_40317_s;
 
-    public ModelDragonBike(float var1)
+    public DqmModelDragonBike(float var1)
     {
         this.textureWidth = 256;
         this.textureHeight = 256;
@@ -66,7 +66,7 @@ public class ModelDragonBike extends ModelBase
      */
     public void render(Entity var1, float var2, float var3, float var4, float var5, float var6, float var7)
     {
-        EntityDragonBike var8 = (EntityDragonBike)var1;
+        DqmEntityDragonBike var8 = (DqmEntityDragonBike)var1;
         GL11.glPushMatrix();
         float var9 = var8.field_40173_aw + (var8.field_40172_ax - var8.field_40173_aw) * this.field_40317_s;
 

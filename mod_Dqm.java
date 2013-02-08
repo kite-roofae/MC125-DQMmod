@@ -13,9 +13,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 
 	//アイテムID
 
-	@MLProp(info="Akaitama ID")
-	public static int AkaitamaID = 5501- 256;
-	public static Item Akaitama;
+	@MLProp(info="Redoubu ID")
+	public static int RedoubuID = 5501- 256;
+	public static Item Redoubu;
 	@MLProp(info="Hosinokakera ID")
 	public static int HosinokakeraID = 5502- 256;
 	public static Item Hosinokakera;
@@ -118,6 +118,18 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@MLProp(info="Moon ID")
 	public static int MoonID = 5535- 256;
 	public static Item Moon;
+	@MLProp(info="Buruoubu ID")
+	public static int BuruoubuID = 5536- 256;
+	public static Item Buruoubu;
+	@MLProp(info="Ierooubu ID")
+	public static int IerooubuID = 5537- 256;
+	public static Item Ierooubu;
+	@MLProp(info="Gurinoubu ID")
+	public static int GurinoubuID = 5538- 256;
+	public static Item Gurinoubu;
+	@MLProp(info="Paapuruoubu ID")
+	public static int PaapuruoubuID = 5539- 256;
+	public static Item Paapuruoubu;
 
 
 	//種・薬草
@@ -336,6 +348,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@MLProp(info="Hikarinotue ID")
 	public static int HikarinotueID = 5829- 256;
 	public static Item Hikarinotue;
+	@MLProp(info="Dokubari ID")
+	public static int DokubariID = 5830- 256;
+	public static Item Dokubari;
 
 	//盾
 	@MLProp(info="Rotonotate ID")
@@ -461,8 +476,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		 */
 		//ATK:DIAMOND=7,IRON=6,STORN=5,WOOD=4
 		//buki texture para(ATK,3=DIAMOND_foreru mono,8F=DIAMOND_horu sokudo,3=DIAMOND_katasa,enchant)***************************************************************************************
-		//Debugsword = new DqmItemTool(DebugswordID,1, DqmEnumToolMaterial.DEBUG,Block.cobblestone).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
-		Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
+		Debugsword = new DqmItemShovel(DebugswordID, DqmEnumToolMaterial.DEBUG).setIconCoord(6, 1).setItemName("Debugsword");
+		//Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
+		 //redPickaxe = (new ItemRedPickaxe(EEBase.props.getInt("ItemRedPickaxe"))).setIconCoord(64, 0).setItemName("redPickaxe");
 
 		Uminarinotue = new DqmItemSword(UminarinotueID,DqmEnumToolMaterial.UMINARI).setmodel("Uminarinotue").setIconCoord(5, 0).setItemName("Uminarinotue");
 		Koorinoyaiba = new DqmItemSword(KoorinoyaibaID,DqmEnumToolMaterial.KOORI).setmodel("Koorinoyaiba").setIconCoord(4, 0).setItemName("Koorinoyaiba");
@@ -471,9 +487,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Kisekinoturugi = new DqmItemSword(KisekinoturugiID,DqmEnumToolMaterial.KISEKI).setmodel("Kisekinoturugi").setIconCoord(10, 0).setItemName("Kisekinoturugi");
 		Ginganoturugi = new DqmItemSword(GinganoturugiID,DqmEnumToolMaterial.GINGA).setIconCoord(0, 0).setItemName("Ginganoturugi");
 		Metarukingnoturugi = new DqmItemSword(MetarukingnoturugiID,DqmEnumToolMaterial.METAL).setIconCoord(1, 0).setItemName("Metarukingnoturugi");
-		Rotonotate = new DqmItemSword(RotonotateID,DqmEnumToolMaterial.ROTO).setWeaponDamage(0).setIconCoord(4, 3).setItemName("Rotonotate");
+		Rotonotate = new DqmItemSword(RotonotateID,DqmEnumToolMaterial.ROTO).setIconCoord(4, 3).setItemName("Rotonotate");
 		Rotonoturugi = new DqmItemSword(RotonoturugiID,DqmEnumToolMaterial.ROTO).setIconCoord(2, 0).setItemName("Rotonoturugi");
-		Sabitatate = new DqmItemSword(SabitatateID,DqmEnumToolMaterial.OLD).setWeaponDamage(0).setItemName("Sabitatate").setIconCoord(4, 4);
+		Sabitatate = new DqmItemSword(SabitatateID,DqmEnumToolMaterial.OLD).setItemName("Sabitatate").setIconCoord(4, 4);
 		Doragonkira = new DqmItemSword(DoragonkiraID,DqmEnumToolMaterial.DRAGON).setmodel("Doragonkira").setIconCoord(6, 0).setItemName("Doragonkira");
 		Haganenoturugi = new DqmItemSword(HaganenoturugiID,DqmEnumToolMaterial.HAGANE).setIconCoord(7, 0).setItemName("Haganenoturugi");
 		Heisinoken = new DqmItemSword(HeisinokenID,DqmEnumToolMaterial.HEISHI).setIconCoord(8, 0).setItemName("Heisinoken");
@@ -494,6 +510,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Dragonrod = new DqmItemSword(DragonrodID,DqmEnumToolMaterial.DRAGONROD).setmodel("Dragonrod").setIconCoord(5, 2).setItemName("Dragonrod");
 		Sabakinotue = new DqmItemSword(SabakinotueID,DqmEnumToolMaterial.SABAKI).setmodel("Sabakinotue").setIconCoord(4, 1).setItemName("Sabakinotue");
 		Majuunotume = new DqmItemSword(MajuunotumeID,DqmEnumToolMaterial.MAJUU).setmodel("Majuunotume").setIconCoord(7, 2).setItemName("Majuunotume");
+		Dokubari = new DqmItemSword(DokubariID,DqmEnumToolMaterial.DOKUBARI).setmodel("Dokubari").setIconCoord(10, 2).setItemName("Dokubari");
 
 		Kazekirinoyumi = new DqmItemBow(KazekirinoyumiID).setmodel("Kazekirinoyumi").setIconCoord(15, 0).setItemName("Kazekirinoyumi");
 		Sefiramunoyumi = new DqmItemBow(SefiramunoyumiID).setmodel("Sefiramunoyumi").setIconCoord(15, 1).setItemName("Sefiramunoyumi");
@@ -614,7 +631,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 
 
 		//アイテム************************************************************************************************************************************************************
-		Akaitama = new DqmItem(AkaitamaID).setItemName("Akaitama").setIconCoord(0, 7);
+		Redoubu = new DqmItem(RedoubuID).setItemName("Redoubu").setIconCoord(0, 7);
 		Amatuyunoito = new DqmItemFood(AmatuyunoitoID,0, 0.0F, false,64).setPotionEffect(Potion.moveSlowdown.id, 120, 5, 1.0F).setItemName("Amatuyunoito").setIconCoord(1, 7);
 		Bakudanisi = new DqmItemTntEgg(BakudanisiID).setItemName("Bakudanisi").setIconCoord(9, 8);
 		Bannouyaku = new DqmItemFood(BannouyakuID,0, 0.0F, false,64).setItemName("Bannouyaku").setIconCoord(1, 11);
@@ -684,8 +701,12 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Rubinogenseki = new DqmItem(RubinogensekiID).setItemName("Rubinogenseki").setIconCoord(12, 9);
 		Papasunokatami = new DqmItemKirapanBike(PapasunokatamiID).setItemName("Papasunokatami").setIconCoord(2, 13);
 		Ramia = new DqmItemRamiaBike(RamiaID).setItemName("Ramia").setIconCoord(3, 13);
-		Dragonwing = new ItemDragonBike(DragonwingID).setItemName("Dragonwing").setIconCoord(4, 13);
+		Dragonwing = new DqmItemDragonBike(DragonwingID).setItemName("Dragonwing").setIconCoord(4, 13);
 		Moon = new DqmItem(MoonID, 1).setItemName("Moon").setIconCoord(13, 9);
+		Buruoubu = new DqmItem(BuruoubuID, 1).setItemName("Buruoubu").setIconCoord(0, 10);
+		Ierooubu = new DqmItem(IerooubuID, 1).setItemName("Ierooubu").setIconCoord(1, 10);
+		Paapuruoubu = new DqmItem(PaapuruoubuID, 1).setItemName("Paapuruoubu").setIconCoord(3, 10);
+		Gurinoubu = new DqmItem(GurinoubuID, 1).setItemName("Gurinoubu").setIconCoord(2, 10);
 
 
 		Rakkipendanto = new DqmItem(RakkipendantoID).setMaxStackSize(1).setItemName("Rakkipendanto").setIconCoord(3, 6);
@@ -713,11 +734,11 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		nightVision	//yoru siryoku
 		hunger	//kuufuku
 		weakness	//jakuten
-		 */
+		*/
 
 		//効果名、時間、レベル、確立？
-		//public static final Potion heal = (new PotionHealth(6, false, 16262179)).setPotionName("potion.heal");
-		//public static final Potion harm = (new PotionHealth(7, true, 4393481)).setPotionName("potion.harm");
+	    //public static final Potion heal = (new PotionHealth(6, false, 16262179)).setPotionName("potion.heal");
+	    //public static final Potion harm = (new PotionHealth(7, true, 4393481)).setPotionName("potion.harm");
 		/*
 	    public ItemFood setPotionEffect(int par1, int par2, int par3, float par4)
 	    {
@@ -735,9 +756,9 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
         this.potionEffectProbability = par4;
         return this;
     }
-		 *
-		 *
-		 */
+	    *
+	    *
+	    */
 		//ID,0,個数,確立
 		ForgeHooks.addGrassSeed(Yakusou.shiftedIndex,0, 1, 1);
 		ForgeHooks.addGrassSeed(Dokukesisou.shiftedIndex,0, 1, 1);
@@ -755,6 +776,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	//Player's special inventory, doesn't drop items, when you die, and a record of it is kept for the Minecraft world;
 
 
+
 	//Perform this function, each update tick, that the player is in a menu.
 	@Override
 	public boolean onTickInGUI(float f,Minecraft minecraft, GuiScreen guiscreen){
@@ -767,7 +789,6 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@Override
 	public boolean onTickInGame(float f,Minecraft minecraft)
 	{
-
 		if(minecraft!=null){
 			ensureInventoryKept(minecraft);
 		}
@@ -827,7 +848,7 @@ weakness	//jakuten
 		renderers.put(DqmEntityEgg.class, new DqmRenderEgg(MysteryEgg.iconIndex));
 		renderers.put(DqmEntityKirapanBike.class, new DqmRenderKirapanBike(new DqmModelKirapanBike()));
 		renderers.put(DqmEntityRamiaBike.class, new DqmRenderRamiaBike());
-		renderers.put(EntityDragonBike.class, new RenderDragonBike());
+		renderers.put(DqmEntityDragonBike.class, new DqmRenderDragonBike());
 	}
 	@Override
 	public String getVersion()

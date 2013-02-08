@@ -8,7 +8,7 @@ import net.minecraft.src.MathHelper;
 import net.minecraft.src.ModLoader;
 import net.minecraft.src.World;
 
-public class EntityDragonBike extends RidableCreature
+public class DqmEntityDragonBike extends DqmRidableCreature
 {
     public double[][] field_40162_d;
     public int field_40164_e;
@@ -19,7 +19,7 @@ public class EntityDragonBike extends RidableCreature
     public boolean isFlying;
     public float ticks;
 
-    public EntityDragonBike(World var1)
+    public DqmEntityDragonBike(World var1)
     {
         super(var1);
         this.breathFire = 0L;
@@ -36,7 +36,7 @@ public class EntityDragonBike extends RidableCreature
         this.isImmuneToFire = true;
     }
 
-    public EntityDragonBike(World var1, double var2, double var4, double var6)
+    public DqmEntityDragonBike(World var1, double var2, double var4, double var6)
     {
         this(var1);
         this.setPosition(var2, var4, var6);
@@ -53,17 +53,18 @@ public class EntityDragonBike extends RidableCreature
     /**
      * Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig.
      */
+
     public boolean interact(EntityPlayer var1)
-    {
+    {/*
         if (!mo_DqmPetLoader.isMultiplayer(this.worldObj))
         {
             return false;
-        }
-        else
-        {
+        }*/
+        //else
+        //{
             ItemStack var2 = var1.inventory.getCurrentItem();
             return var2 != null && var2.getItem() == Item.flintAndSteel && this.riddenByEntity != null ? false : super.interact(var1);
-        }
+        //}
     }
 
     public double[] func_40160_a(int var1, float var2)
@@ -97,9 +98,12 @@ public class EntityDragonBike extends RidableCreature
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
      * use this to react to sunlight and start to burn.
      */
+
     public void onLivingUpdate()
     {
-        if (this.breathFire + 300L > System.currentTimeMillis() && mo_DqmPetLoader.isMultiplayer(this.worldObj))
+
+        //if (this.breathFire + 300L > System.currentTimeMillis() && mo_DqmPetLoader.isMultiplayer(this.worldObj))
+    	if (this.breathFire + 300L > System.currentTimeMillis() )
         {
             double var1 = this.posX;
             double var3 = this.posY;
@@ -121,7 +125,7 @@ public class EntityDragonBike extends RidableCreature
 
             double var13 = (double)(-MathHelper.sin((float)((double)(this.rotationYaw / 180.0F) * Math.PI)) * MathHelper.cos((float)((double)(this.rotationPitch / 180.0F) * Math.PI)));
             double var15 = (double)(MathHelper.cos((float)((double)(this.rotationYaw / 180.0F) * Math.PI)) * MathHelper.cos((float)((double)(this.rotationPitch / 180.0F) * Math.PI)));
-            ModLoader.getMinecraftInstance().effectRenderer.addEffect(new EntityFireFX(this.worldObj, var1 + var13 * 2.2D, var3 + 0.5D, var5 + var15 * 2.2D, var13 * var7, var9, var15 * var11, this));
+            ModLoader.getMinecraftInstance().effectRenderer.addEffect(new DqmEntityFireFX(this.worldObj, var1 + var13 * 2.2D, var3 + 0.5D, var5 + var15 * 2.2D, var13 * var7, var9, var15 * var11, this));
         }
 
         this.field_40173_aw = this.field_40172_ax;

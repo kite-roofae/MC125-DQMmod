@@ -74,7 +74,7 @@ public class DqmEntityGigantesu extends DqmEntityMob
 	//case 2:dropItem(mod_Dqm.Sabitakabuto.shiftedIndex, 1);                break;
 	case 2:dropItem(mod_Dqm.Sabitayoroi.shiftedIndex, 1);                break;
 	case 3:dropItem(mod_Dqm.Metarukingnokutu.shiftedIndex, 1);                break;
-	//case 2:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;
+	case 4:dropItem(mod_Dqm.Gureitoakusu.shiftedIndex, 1);                break;
 	}}
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	//001*******************************Jump kougeki***************************************

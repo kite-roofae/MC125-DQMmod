@@ -17,37 +17,37 @@ public class mo_DqmPetLoader
 {
 
     public static boolean DisableDragon = false;
-    @ConfigProp
+    @DqmConfigProp
     public static int DragonId = 169;
-    @ConfigProp
+    @DqmConfigProp
     public static boolean DisableKirapan = false;
-    @ConfigProp
+    @DqmConfigProp
     public static int KirapanId = 162;
-    @ConfigProp
+    @DqmConfigProp
     public static boolean DisableRamia = false;
-    @ConfigProp
+    @DqmConfigProp
     public static int RamiaId = 163;
 
 
-    @ConfigProp(
+    @DqmConfigProp(
             info = "Prevents creeper and bunny explosions from damaging terrain and prevent dragon fire terrain burning"
     )
     public static boolean PreventTerrainDamage = true;
-    @ConfigProp(
+    @DqmConfigProp(
             info = "Set to true if you want to all Ghasts to spawn in your normal world"
     )
     public static boolean GhastSpawnInNormalWorld = false;
-    @ConfigProp(
+    @DqmConfigProp(
             info = "Set to false to disable pony and dragon flying"
     )
     public static boolean FlyingEnabled = true;
-    @ConfigProp
+    @DqmConfigProp
     public static boolean DisableSaddleRecipe = false;
-    @ConfigProp(
+    @DqmConfigProp(
             info = "All damage the bike gets is transfered to the bike when set to true"
     )
     public static boolean BikeSharesDamageWithRider = false;
-    private ConfigLoader configLoader;
+    private DqmConfigLoader DqmConfigLoader;
     public static BaseMod modInstance;
     private static DqmPetListener listener;
     HashSet nearby = new HashSet();
@@ -55,8 +55,8 @@ public class mo_DqmPetLoader
     public mo_DqmPetLoader()
     {
         File var1 = new File(ModLoader.getMinecraftInstance().mcDataDir, "config");
-        this.configLoader = new ConfigLoader(this.getClass(), var1, "AnimalBikes");
-        this.configLoader.loadConfig();
+        this.DqmConfigLoader = new DqmConfigLoader(this.getClass(), var1, "AnimalBikes");
+        this.DqmConfigLoader.loadConfig();
     }
 
     public void load(BaseMod var1)
@@ -92,11 +92,11 @@ public class mo_DqmPetLoader
         return ModLoader.getMinecraftInstance().gameSettings.keyBindSneak.pressed;
     }
 
-
+/*
     public static boolean isMultiplayer(World var0)
     {
         return !var0.isRemote;
-    }
+    }*/
 
     public static boolean isJumping(EntityPlayer var0)
     {
@@ -119,12 +119,12 @@ public class mo_DqmPetLoader
     }
 
     public static void setEntityOnFire(Entity var0)
-    {
+    {/*
         if (isMultiplayer(var0.worldObj))
         {
             var0.dealFireDamage(3);
             var0.setFire(5);
-        }
+        }*/
     }
 
     public String getVersion()
@@ -132,7 +132,7 @@ public class mo_DqmPetLoader
         return "DQM 1.2.5";
     }
 
-    public static void sendBikeData(EntityPlayerSP var0, RidableCreature var1)
+    public static void sendBikeData(EntityPlayerSP var0, DqmRidableCreature var1)
     {
         if (listener != null)
         {

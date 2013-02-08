@@ -8,16 +8,16 @@ import net.minecraft.src.dqmcore.DqmEntity.*;
 import net.minecraft.src.dqmcore.*;
 
 
-public class ItemDragonBike extends ItemAnimalBike implements ITextureProvider
+public class DqmItemDragonBike extends DqmItemBike implements ITextureProvider
 {
-    public ItemDragonBike(int var1)
+    public DqmItemDragonBike(int var1)
     {
         super(var1);
     }
 
-    public RidableCreature getBike(EntityPlayer var1)
+    public DqmRidableCreature getBike(EntityPlayer var1)
     {
-        return new EntityDragonBike(var1.worldObj);
+        return new DqmEntityDragonBike(var1.worldObj);
     }
 
     public boolean isDisabled()

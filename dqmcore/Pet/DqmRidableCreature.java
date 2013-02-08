@@ -17,9 +17,9 @@ import net.minecraft.src.MathHelper;
 import net.minecraft.src.ModLoader;
 import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.World;
-//import noppes.animalbikes.items.ItemAnimalBike;
+//import noppes.animalbikes.items.DqmItemBike;
 
-public class RidableCreature extends EntityCreature
+public class DqmRidableCreature extends EntityCreature
 {
     public float walkSpeed = 0.2F;
     public boolean canFly = false;
@@ -31,15 +31,15 @@ public class RidableCreature extends EntityCreature
     private long lastOnLadder = 0L;
     private float[][] fleeceColorTable = new float[][] {{1.0F, 1.0F, 1.0F}, {0.95F, 0.7F, 0.2F}, {0.9F, 0.5F, 0.85F}, {0.6F, 0.7F, 0.95F}, {0.9F, 0.9F, 0.2F}, {0.5F, 0.8F, 0.1F}, {0.95F, 0.7F, 0.8F}, {0.3F, 0.3F, 0.3F}, {0.6F, 0.6F, 0.6F}, {0.3F, 0.6F, 0.7F}, {0.7F, 0.4F, 0.9F}, {0.2F, 0.4F, 0.8F}, {0.5F, 0.4F, 0.3F}, {0.4F, 0.5F, 0.2F}, {0.8F, 0.3F, 0.3F}, {0.1F, 0.1F, 0.1F}};
 
-    public RidableCreature(World var1)
+    public DqmRidableCreature(World var1)
     {
         super(var1);
-
+/*
         if (mo_DqmPetLoader.isMultiplayer(var1))
         {
             this.setFleeceColor(this.getRandomFleeceColor());
             this.setSpecial(var1.rand.nextInt(5) == 1);
-        }
+        }*/
     }
 
     protected void entityInit()
@@ -79,7 +79,7 @@ public class RidableCreature extends EntityCreature
 
     public void setOwner(String var1)
     {
-        ItemAnimalBike.bikes.put(var1, this);
+        DqmItemBike.bikes.put(var1, this);
         this.owner = var1;
     }
 
@@ -226,7 +226,7 @@ public class RidableCreature extends EntityCreature
     {
         float var7 = this.width / 2.0F;
 
-        if (this instanceof EntitySpiderBike)
+        if (this instanceof DqmEntitySpiderBike)
         {
             var7 = this.width / 1.2F;
         }
@@ -260,7 +260,7 @@ public class RidableCreature extends EntityCreature
             float var3 = mo_DqmPetLoader.getMoveStrafing(var1);
             this.isJumping = mo_DqmPetLoader.isJumping(var1);
 
-            if (this instanceof EntityPigBike)
+            if (this instanceof DqmEntityPigBike)
             {
                 if (var2 != 0.0F)
                 {
@@ -278,7 +278,7 @@ public class RidableCreature extends EntityCreature
                 this.moveStrafing = var3;
             }
 
-            if (this instanceof EntitySquidBike && this.isInWater())
+            if (this instanceof DqmEntitySquidBike && this.isInWater())
             {
                 this.motionY += 0.02D;
                 this.motionX += this.riddenByEntity.motionX * 5.0D;
@@ -316,6 +316,7 @@ public class RidableCreature extends EntityCreature
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
      * use this to react to sunlight and start to burn.
      */
+
     public void onLivingUpdate()
     {
         this.landMovementFactor = this.walkSpeed;
@@ -332,7 +333,8 @@ public class RidableCreature extends EntityCreature
 
         this.jumpMovementFactor = this.landMovementFactor / 5.0F;
 
-        if (this.getEntityToAttack() == null && !mo_DqmPetLoader.isMultiplayer(this.worldObj) && this.riddenByEntity != null)
+        //if (this.getEntityToAttack() == null && !mo_DqmPetLoader.isMultiplayer(this.worldObj) && this.riddenByEntity != null)
+        if (this.getEntityToAttack() == null && this.riddenByEntity != null)
         {
             if (this.newPosRotationIncrements > 0)
             {
@@ -429,7 +431,7 @@ public class RidableCreature extends EntityCreature
                 float var18 = mo_DqmPetLoader.getMoveStrafing(var15);
                 this.isJumping = mo_DqmPetLoader.isJumping(var15);
 
-                if (this instanceof EntityPigBike)
+                if (this instanceof DqmEntityPigBike)
                 {
                     if (var4 != 0.0F)
                     {
@@ -476,6 +478,7 @@ public class RidableCreature extends EntityCreature
     /**
      * Called to update the entity's position/logic.
      */
+
     public void onUpdate()
     {
         super.onUpdate();
@@ -489,7 +492,8 @@ public class RidableCreature extends EntityCreature
         this.spacebarPressed = var1;
         Minecraft var2 = ModLoader.getMinecraftInstance();
 
-        if (!mo_DqmPetLoader.isMultiplayer(this.worldObj) && ModLoader.isGUIOpen((Class)null) && var2.thePlayer.ridingEntity != null && var2.thePlayer.ridingEntity == this)
+        //if (!mo_DqmPetLoader.isMultiplayer(this.worldObj) && ModLoader.isGUIOpen((Class)null) && var2.thePlayer.ridingEntity != null && var2.thePlayer.ridingEntity == this)
+        if (ModLoader.isGUIOpen((Class)null) && var2.thePlayer.ridingEntity != null && var2.thePlayer.ridingEntity == this)
         {
             mo_DqmPetLoader.sendBikeData(var2.thePlayer, this);
         }

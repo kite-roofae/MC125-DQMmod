@@ -4,7 +4,7 @@ import net.minecraft.src.mo_DqmPetLoader;
 import net.minecraft.src.MathHelper;
 import net.minecraft.src.World;
 
-public class EntitySquidBike extends RidableCreature
+public class DqmEntitySquidBike extends DqmRidableCreature
 {
     public float field_21089_a;
     public float field_21088_b;
@@ -21,7 +21,7 @@ public class EntitySquidBike extends RidableCreature
     private float randomMotionVecY;
     private float randomMotionVecZ;
 
-    public EntitySquidBike(World var1)
+    public DqmEntitySquidBike(World var1)
     {
         super(var1);
         this.yOffset = 0.8F;
@@ -47,7 +47,7 @@ public class EntitySquidBike extends RidableCreature
         this.field_21080_l = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
     }
 
-    public EntitySquidBike(World var1, double var2, double var4, double var6)
+    public DqmEntitySquidBike(World var1, double var2, double var4, double var6)
     {
         this(var1);
         this.setPosition(var2, var4, var6);
@@ -102,6 +102,7 @@ public class EntitySquidBike extends RidableCreature
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
      * use this to react to sunlight and start to burn.
      */
+
     public void onLivingUpdate()
     {
         super.onLivingUpdate();
@@ -119,10 +120,11 @@ public class EntitySquidBike extends RidableCreature
         {
             this.onNotRidenLivingUpdate();
         }
+        /*
         else
         {
             this.onRidenLivingUpdate();
-        }
+        }*/
     }
 
     /**
@@ -134,18 +136,18 @@ public class EntitySquidBike extends RidableCreature
     }
 
     public void onRidenLivingUpdate()
-    {
+    {/*
         if (!mo_DqmPetLoader.isMultiplayer(this.worldObj))
         {
             if (!this.isInWater())
             {
                 super.onLivingUpdate();
             }
-        }
-        else
-        {
+        }*/
+        //else
+        //{
             super.onLivingUpdate();
-        }
+        //}
 
         this.field_21088_b = this.field_21089_a;
         this.field_21086_f = this.field_21087_c;

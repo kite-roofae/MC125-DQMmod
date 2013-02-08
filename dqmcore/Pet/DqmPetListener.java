@@ -7,7 +7,7 @@ public interface DqmPetListener
 {
     void registerBike(Class var1, String var2, int var3);
 
-    void sendBikeData(EntityPlayerSP var1, RidableCreature var2);
+    void sendBikeData(EntityPlayerSP var1, DqmRidableCreature var2);
 
     void updatePlayer(EntityPlayer var1);
 }

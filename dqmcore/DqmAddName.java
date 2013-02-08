@@ -11,8 +11,8 @@ public class DqmAddName extends mod_Dqm
 	public static void setName()
 	{
 		//アイテム名************************************************************************************************************************
-		ModLoader.addName(Akaitama, "ja_JP", "レッドオーブ");
-		ModLoader.addName(Akaitama, "Red of Orb");
+		ModLoader.addName(Redoubu, "ja_JP", "レッドオーブ");
+		ModLoader.addName(Redoubu, "Red of Orb");
 		ModLoader.addName(Amatuyunoito, "ja_JP", "あまつゆの糸");
 		ModLoader.addName(Amatuyunoito, "Yarn of Amatsuyu");
 		ModLoader.addName(Bakudanisi, "ja_JP", "爆弾石");
@@ -291,6 +291,16 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addName(Oninokanabou, "ja_JP", "おにのかなぼう");
 		ModLoader.addName(Akumanotume, "Devil's claw");
 		ModLoader.addName(Akumanotume, "ja_JP", "あくまのつめ");
+		ModLoader.addName(Dokubari, "Stinger");
+		ModLoader.addName(Dokubari, "ja_JP", "どくばり");
+		ModLoader.addName(Buruoubu, "Blue Orb");
+		ModLoader.addName(Buruoubu, "ja_JP", "ブルーオーブ");
+		ModLoader.addName(Ierooubu, "Yellow Orb");
+		ModLoader.addName(Ierooubu, "ja_JP", "イエローオーブ");
+		ModLoader.addName(Gurinoubu, "Green Orb");
+		ModLoader.addName(Gurinoubu, "ja_JP", "グリーンオーブ");
+		ModLoader.addName(Paapuruoubu, "パープルオーブ");
+		ModLoader.addName(Paapuruoubu, "ja_JP", "パープルオーブ");
 
 
 
@@ -347,6 +357,31 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addLocalization("entity.Zoma.name", "ja_JP", "ゾーマ");
 		ModLoader.addLocalization("entity.Suraimunaito.name", "ja_JP", "スライムナイト");
 		ModLoader.addLocalization("entity.Metaruraida.name", "ja_JP", "メタルライダー");
+
+		ModLoader.addLocalization("entity.Behoimisuraimu.name", "ja_JP", "ベホイミスライム");
+		ModLoader.addLocalization("entity.Behoimusuraimu.name", "ja_JP", "ベホイムスライム");
+		ModLoader.addLocalization("entity.Dasudragon.name", "ja_JP", "ダースドラゴン");
+		ModLoader.addLocalization("entity.Gamegon.name", "ja_JP", "ガメゴン");
+		ModLoader.addLocalization("entity.Gamegonload.name", "ja_JP", "ガメゴンロード");
+		ModLoader.addLocalization("entity.Gamegonrejendo.name", "ja_JP", "ガメゴンレジェンド");
+		ModLoader.addLocalization("entity.Goldman.name", "ja_JP", "ゴールドマン");
+		ModLoader.addLocalization("entity.Gorudensuraimu.name", "ja_JP", "ゴールデンスライム");
+		ModLoader.addLocalization("entity.Gorudentotemu.name", "ja_JP", "ゴールデントーテム");
+		ModLoader.addLocalization("entity.Kagenokisi.name", "ja_JP", "かげのきし");
+		ModLoader.addLocalization("entity.Kisudragon.name", "ja_JP", "キースドラゴン");
+		ModLoader.addLocalization("entity.Megazarurokku.name", "ja_JP", "メガザルロック");
+		ModLoader.addLocalization("entity.Meijikimera.name", "ja_JP", "メイジキメラ");
+		ModLoader.addLocalization("entity.Meragosuto.name", "ja_JP", "メラゴースト");
+		ModLoader.addLocalization("entity.Metaruburazazu.name", "ja_JP", "メタルブラザーズ");
+		ModLoader.addLocalization("entity.Puratinaking.name", "ja_JP", "プラチナキング");
+		ModLoader.addLocalization("entity.Samayoutamasii.name", "ja_JP", "さまようたましい");
+		ModLoader.addLocalization("entity.Sibirekurage.name", "ja_JP", "しびれくらげ");
+		ModLoader.addLocalization("entity.Siryounokisi.name", "ja_JP", "しりょうのきし");
+		ModLoader.addLocalization("entity.Starkimera.name", "ja_JP", "スターキメラ");
+		ModLoader.addLocalization("entity.Stonman.name", "ja_JP", "ストーンマン");
+		ModLoader.addLocalization("entity.Sumairurokku.name", "ja_JP", "スマイルロック");
+		ModLoader.addLocalization("entity.Suraimumadyura.name", "ja_JP", "スライムマデュラ");
+
 
 
 

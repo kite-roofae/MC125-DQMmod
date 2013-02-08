@@ -4,7 +4,7 @@ import net.minecraft.src.MathHelper;
 import net.minecraft.src.ModLoader;
 import net.minecraft.src.World;
 
-public class DqmEntityRamiaBike extends RidableCreature
+public class DqmEntityRamiaBike extends DqmRidableCreature
 {
     int prevX;
     int prevZ;
@@ -17,6 +17,7 @@ public class DqmEntityRamiaBike extends RidableCreature
         this.texture = "/dqm/Ramia.png";
         this.setSize(4.0F, 4.0F);
         this.stepHeight = 0.0F;
+        //this.walkSpeed = 3.38F;
         this.canFly = true;
     }
 
@@ -71,7 +72,7 @@ public class DqmEntityRamiaBike extends RidableCreature
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
      * use this to react to sunlight and start to burn.
      */
-    
+
     public void onLivingUpdate()
     {
         super.onLivingUpdate();
@@ -94,7 +95,7 @@ public class DqmEntityRamiaBike extends RidableCreature
                 double var13 = (this.rand.nextDouble() - 0.5D) * 2.0D;
                 double var15 = -this.rand.nextDouble();
                 double var17 = (this.rand.nextDouble() - 0.5D) * 2.0D;
-                ModLoader.getMinecraftInstance().effectRenderer.addEffect(new EntityRainbowFX(this.worldObj, var7, var9, var11, var13, var15, var17));
+                ModLoader.getMinecraftInstance().effectRenderer.addEffect(new DqmEntityRainbowFX(this.worldObj, var7, var9, var11, var13, var15, var17));
             }
 
             this.prevX = var1;

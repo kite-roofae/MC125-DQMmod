@@ -4,7 +4,7 @@ import net.minecraft.src.EntitySnowball;
 import net.minecraft.src.MathHelper;
 import net.minecraft.src.World;
 
-public class DqmEntityKirapanBike extends RidableCreature
+public class DqmEntityKirapanBike extends DqmRidableCreature
 {
 
 	/*
@@ -20,7 +20,6 @@ public class DqmEntityKirapanBike extends RidableCreature
         this.texture = "/dqm/Kirapan.png";
         this.setSize(1.0F, 1.3F);
         this.walkSpeed = 0.38F;
-
 
     }
 
@@ -41,7 +40,7 @@ public class DqmEntityKirapanBike extends RidableCreature
     public void jump()
     {
     	this.worldObj.playSoundAtEntity(this, "DQM_Sound.Kirapansanakigoe", 1.0F, 1.0F);
-    	
+
     	if (this.onGround)
     	{
     	this.motionY = 1.0;

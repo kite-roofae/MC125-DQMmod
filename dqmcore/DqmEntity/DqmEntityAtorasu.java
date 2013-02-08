@@ -73,7 +73,7 @@ public class DqmEntityAtorasu extends DqmEntityMob
 	case 1:dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakabuto.shiftedIndex, 1);                break;
 	case 2:dropItem(mod_Dqm.Sabitayoroi.shiftedIndex, 1);                break;
-	//case 2:dropItem(mod_Dqm.Sabitakote.shiftedIndex, 1);                break;
+	case 3:dropItem(mod_Dqm.Atorasunokanaduti.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;
 	}}
 	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

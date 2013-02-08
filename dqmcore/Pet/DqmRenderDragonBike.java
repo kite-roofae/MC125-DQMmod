@@ -11,29 +11,29 @@ import net.minecraft.src.Tessellator;
 
 import org.lwjgl.opengl.GL11;
 
-public class RenderDragonBike extends RenderLiving
+public class DqmRenderDragonBike extends RenderLiving
 {
     /**
      * The entity instance of the dragon. Note: This is a static field in RenderDragon because there is only supposed to
      * be one dragon
      */
-    public static EntityDragonBike entityDragon;
+    public static DqmEntityDragonBike entityDragon;
     private static int field_40284_d = 0;
 
     /** An instance of the dragon model in RenderDragon */
-    protected ModelDragonBike modelDragon;
+    protected DqmModelDragonBike modelDragon;
 
-    public RenderDragonBike()
+    public DqmRenderDragonBike()
     {
-        super(new ModelDragonBike(0.0F), 0.5F);
-        this.modelDragon = (ModelDragonBike)this.mainModel;
+        super(new DqmModelDragonBike(0.0F), 0.5F);
+        this.modelDragon = (DqmModelDragonBike)this.mainModel;
         this.setRenderPassModel(this.mainModel);
     }
 
     /**
      * Used to rotate the dragon as a whole in RenderDragon. It's called in the rotateCorpse method.
      */
-    protected void rotateDragonBody(EntityDragonBike var1, float var2, float var3, float var4)
+    protected void rotateDragonBody(DqmEntityDragonBike var1, float var2, float var3, float var4)
     {
         float var5 = (float)var1.func_40160_a(7, var4)[0];
         float var6 = (float)(var1.func_40160_a(5, var4)[1] - var1.func_40160_a(10, var4)[1]);
@@ -55,7 +55,7 @@ public class RenderDragonBike extends RenderLiving
         }
     }
 
-    protected void func_40280_a(EntityDragonBike var1, float var2, float var3, float var4, float var5, float var6, float var7)
+    protected void func_40280_a(DqmEntityDragonBike var1, float var2, float var3, float var4, float var5, float var6, float var7)
     {
         if (var1.field_40178_aA > 0)
         {
@@ -89,14 +89,14 @@ public class RenderDragonBike extends RenderLiving
     /**
      * Renders the dragon, along with its dying animation
      */
-    public void renderDragon(EntityDragonBike var1, double var2, double var4, double var6, float var8, float var9)
+    public void renderDragon(DqmEntityDragonBike var1, double var2, double var4, double var6, float var8, float var9)
     {
         var1.ticks = var9;
         entityDragon = var1;
 
         if (field_40284_d != 4)
         {
-            this.mainModel = new ModelDragonBike(0.0F);
+            this.mainModel = new DqmModelDragonBike(0.0F);
             field_40284_d = 4;
         }
 
@@ -109,7 +109,7 @@ public class RenderDragonBike extends RenderLiving
     /**
      * Renders the animation for when an enderdragon dies
      */
-    protected void renderDragonDying(EntityDragonBike var1, float var2)
+    protected void renderDragonDying(DqmEntityDragonBike var1, float var2)
     {
         super.renderEquippedItems(var1, var2);
         Tessellator var3 = Tessellator.instance;
@@ -169,7 +169,7 @@ public class RenderDragonBike extends RenderLiving
         }
     }
 
-    protected int func_40283_a(EntityDragonBike var1, int var2, float var3)
+    protected int func_40283_a(DqmEntityDragonBike var1, int var2, float var3)
     {
         if (var2 == 1)
         {
@@ -214,17 +214,17 @@ public class RenderDragonBike extends RenderLiving
      */
     protected int shouldRenderPass(EntityLiving var1, int var2, float var3)
     {
-        return this.func_40283_a((EntityDragonBike)var1, var2, var3);
+        return this.func_40283_a((DqmEntityDragonBike)var1, var2, var3);
     }
 
     protected void renderEquippedItems(EntityLiving var1, float var2)
     {
-        this.renderDragonDying((EntityDragonBike)var1, var2);
+        this.renderDragonDying((DqmEntityDragonBike)var1, var2);
     }
 
     protected void rotateCorpse(EntityLiving var1, float var2, float var3, float var4)
     {
-        this.rotateDragonBody((EntityDragonBike)var1, var2, var3, var4);
+        this.rotateDragonBody((DqmEntityDragonBike)var1, var2, var3, var4);
     }
 
     /**
@@ -232,12 +232,12 @@ public class RenderDragonBike extends RenderLiving
      */
     protected void renderModel(EntityLiving var1, float var2, float var3, float var4, float var5, float var6, float var7)
     {
-        this.func_40280_a((EntityDragonBike)var1, var2, var3, var4, var5, var6, var7);
+        this.func_40280_a((DqmEntityDragonBike)var1, var2, var3, var4, var5, var6, var7);
     }
 
     public void doRenderLiving(EntityLiving var1, double var2, double var4, double var6, float var8, float var9)
     {
-        this.renderDragon((EntityDragonBike)var1, var2, var4, var6, var8, var9);
+        this.renderDragon((DqmEntityDragonBike)var1, var2, var4, var6, var8, var9);
     }
 
     /**
@@ -248,6 +248,6 @@ public class RenderDragonBike extends RenderLiving
      */
     public void doRender(Entity var1, double var2, double var4, double var6, float var8, float var9)
     {
-        this.renderDragon((EntityDragonBike)var1, var2, var4, var6, var8, var9);
+        this.renderDragon((DqmEntityDragonBike)var1, var2, var4, var6, var8, var9);
     }
 }

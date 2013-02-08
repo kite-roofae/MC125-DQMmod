@@ -12,20 +12,20 @@ import net.minecraft.src.*;
 import net.minecraft.src.dqmcore.DqmEntity.*;
 import net.minecraft.src.forge.ITextureProvider;
 
-public abstract class ItemAnimalBike extends Item
+public abstract class DqmItemBike extends Item
 {
 	public static SoundPoolEntry onPlayStreaming;
 
     public static HashMap bikes = new HashMap();
     private String model;
 
-    public ItemAnimalBike(int var1)
+    public DqmItemBike(int var1)
     {
         super(var1);
         this.maxStackSize = 1;
         this.setMaxDamage(64);
     }
-	public ItemAnimalBike setmodel(String m)
+	public DqmItemBike setmodel(String m)
 	{
 		model = m;
 		return this;
@@ -39,14 +39,14 @@ public abstract class ItemAnimalBike extends Item
 
         if (!this.isDisabled() && !var3.isRemote)
         {
-            if (var2.ridingEntity != null && var2.ridingEntity instanceof RidableCreature)
+            if (var2.ridingEntity != null && var2.ridingEntity instanceof DqmRidableCreature)
             {
                 var2.ridingEntity.interact(var2);
                 return false;
             }
             else
             {
-                RidableCreature var8 = (RidableCreature)bikes.get(var2.username);
+                DqmRidableCreature var8 = (DqmRidableCreature)bikes.get(var2.username);
 
                 if (var8 != null && !var8.isDead)
                 {
@@ -62,7 +62,7 @@ public abstract class ItemAnimalBike extends Item
 
     				if(model == "Ramia"){var3.playSoundAtEntity(var2, "DQM_Sound.Ramia", 0.9F, 0.9F);}
     				if(model == "Papasunokatami"){var3.playSoundAtEntity(var2, "DQM_Sound.Kirapansa", 0.9F, 0.9F);}
-                    RidableCreature var9 = this.getBike(var2);
+                    DqmRidableCreature var9 = this.getBike(var2);
 
                     if (var9 == null)
                     {
@@ -85,12 +85,8 @@ public abstract class ItemAnimalBike extends Item
         }
     }
 
-    private void onPlayStreaming(EntityPlayer var2, String string, float f,
-			float g, float h) {
-		// TODO 自動生成されたメソッド・スタブ
 
-	}
-	public abstract RidableCreature getBike(EntityPlayer var1);
+	public abstract DqmRidableCreature getBike(EntityPlayer var1);
 
     public abstract boolean isDisabled();
 }

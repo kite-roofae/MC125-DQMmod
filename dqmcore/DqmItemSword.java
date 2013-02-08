@@ -29,16 +29,38 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 		return this;
 	}
 
-	public DqmItemSword setWeaponDamage(int par1)
-	{
-		this.weaponDamage = par1;
-		return this;
+	public DqmItemSword setWeaponDamage(int par1)//Etity par1Entity)
+	{/*
+			int x = 0;
+			World w = ModLoader.getMinecraftInstance().theWorld;
+
+				if(par1Entity.getClass() == DqmEntityMetasura.class ||	par1Entity.getClass() == DqmEntityHagumeta.class ||	par1Entity.getClass() == DqmEntityMetaking.class ||	par1Entity.getClass() == DqmpetEntityHagumeta.class	)
+				{
+					int x3 = x+getRandom(100, -100);
+					if(x3>= 1)
+					{
+						w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+						this.weaponDamage = 1;
+					}
+					if(x3<= 0)
+					{
+						w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
+					this.weaponDamage = 0;
+					}
+
+				}
+				else
+				{*/
+				this.weaponDamage = par1;
+				//
+				return this;
 	}
 	private static int getRandom(int max, int min) {
 		int ret = (int)Math.floor(Math.random()*(max-min+1))+min;
 
 		return ret;
 	}
+
 	@Override
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int i, boolean flag)
 	{
@@ -176,6 +198,7 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 			return true;
 		}
 	}
+
 
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLiving par2EntityLiving, EntityLiving par3EntityLiving)
@@ -391,6 +414,19 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 					{
 					w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
 					return this.weaponDamage * 0;
+					}
+				}
+				if(model == "Dokubari" )
+				{
+					if(x3>= 95)
+					{
+						w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+						return this.weaponDamage * 200;
+					}
+					if(x3<= 94)
+					{
+					//w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
+					return this.weaponDamage * 1;
 					}
 				}
 

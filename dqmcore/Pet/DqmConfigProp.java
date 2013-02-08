@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target( {ElementType.FIELD})
-public @interface ConfigProp
+public @interface DqmConfigProp
 {
 
 String name() default "";
