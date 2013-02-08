@@ -99,22 +99,22 @@ public class DqmAddItemRecipe extends mod_Dqm
 			"WXZ",
 			"XYX",
 			"VXW",
-			Character.valueOf('V'),Littlemedal,Character.valueOf('W'),Hikarinoisi, Character.valueOf('X'),Amatuyunoito, Character.valueOf('Y'),Seireiseki, Character.valueOf('Z'),Metaloubu,});
+			Character.valueOf('V'),Littlemedal,Character.valueOf('W'),Hikarinoisi, Character.valueOf('X'),Amatuyunoito, Character.valueOf('Y'),Seireiseki, Character.valueOf('Z'),Buruoubu,});
 		ModLoader.addRecipe(new ItemStack(Mamorinorubi ,1),new Object[]{
-			"WXY",
+			"WXA",
 			"ZVZ",
 			"YXW",
-			Character.valueOf('V'),Rubinogenseki,Character.valueOf('W'),Kinkai, Character.valueOf('X'),Mamorinotane, Character.valueOf('Y'),Hikarinoisi, Character.valueOf('Z'),Taiyounoisi,});
+			Character.valueOf('A'),Paapuruoubu,Character.valueOf('V'),Rubinogenseki,Character.valueOf('W'),Kinkai, Character.valueOf('X'),Mamorinotane, Character.valueOf('Y'),Hikarinoisi, Character.valueOf('Z'),Taiyounoisi,});
 		ModLoader.addRecipe(new ItemStack(Gouketunoudewa ,1),new Object[]{
 			"WYW",
-			"YXY",
-			"WYW",
-			Character.valueOf('W'),Tikaranorubi, Character.valueOf('X'),Goldburesuretto, Character.valueOf('Y'),Metaloubu});
+			"AXZ",
+			"WBW",
+			Character.valueOf('W'),Tikaranorubi, Character.valueOf('X'),Goldburesuretto, Character.valueOf('Y'),Ierooubu, Character.valueOf('Z'),Gurinoubu, Character.valueOf('A'),Buruoubu, Character.valueOf('B'),Paapuruoubu});
 		ModLoader.addRecipe(new ItemStack(Tikaranorubi ,1),new Object[]{
 			"UZW",
 			"XVZ",
 			"YXU",
-			Character.valueOf('U'),Hosinokakera,Character.valueOf('V'),Rubinogenseki,Character.valueOf('W'),Kinkai, Character.valueOf('X'),Tikaranotane, Character.valueOf('Y'),Hikarinoisi, Character.valueOf('Z'),Taiyounoisi,});
+			Character.valueOf('U'),Hosinokakera,Character.valueOf('V'),Rubinogenseki,Character.valueOf('W'),Redoubu, Character.valueOf('X'),Tikaranotane, Character.valueOf('Y'),Hikarinoisi, Character.valueOf('Z'),Taiyounoisi,});
 
 
 		ModLoader.addRecipe(new ItemStack(Honoonoyoroi ,1),new Object[]{

@@ -78,7 +78,7 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				int z = MathHelper.floor_double(ep.posZ);
 				if(ep.getCurrentEquippedItem().itemID == mod_Dqm.Rotonotate.shiftedIndex && !ep.isPotionActive(Potion.resistance))
 				{
-					ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 1, 4));
+					ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 1, 2));
 				}
 				if(ep.getCurrentEquippedItem().itemID == mod_Dqm.Sabitatate.shiftedIndex && !ep.isPotionActive(Potion.resistance))
 				{
@@ -280,7 +280,9 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				par1Entity.getClass() == DqmEntityKimera.class ||
 				par1Entity.getClass() == DqmEntityDesufuratta.class ||
 				par1Entity.getClass() == DqmpetEntityKirikabuobake.class ||
-				par1Entity.getClass() == DqmpetEntityKimera.class
+				par1Entity.getClass() == DqmpetEntityKimera.class||
+				par1Entity.getClass() == DqmEntityMeijikimera.class ||
+				par1Entity.getClass() == DqmEntityStarkimera.class
 				))
 				{
 				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
@@ -288,24 +290,45 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				}
 				if(model == "Oninokanabou" && (
 				par1Entity.getClass() == DqmEntitySura.class ||
-				par1Entity.getClass() == DqmEntityMetasura.class ||
+				//par1Entity.getClass() == DqmEntityMetasura.class ||
 				par1Entity.getClass() == DqmEntitySuraimubesu.class ||
 				par1Entity.getClass() == DqmEntityBubsura.class ||
-				par1Entity.getClass() == DqmEntityHagumeta.class ||
+				//par1Entity.getClass() == DqmEntityHagumeta.class ||
 				par1Entity.getClass() == DqmEntityHoimisura.class ||
 				par1Entity.getClass() == DqmEntitySuraimutawa.class ||
 				par1Entity.getClass() == DqmEntitySuraimunaito.class ||
 				par1Entity.getClass() == DqmEntityKingsura.class ||
-				par1Entity.getClass() == DqmEntityMetaking.class ||
+				//par1Entity.getClass() == DqmEntityMetaking.class ||
 				par1Entity.getClass() == DqmEntitySuraimubehomazun.class ||
 				par1Entity.getClass() == DqmEntityMetaruraida.class ||
 				par1Entity.getClass() == DqmEntityKuinsuraimu.class ||
 				par1Entity.getClass() == DqmpetEntitySura.class ||
-				par1Entity.getClass() == DqmpetEntityHagumeta.class ||
+				//par1Entity.getClass() == DqmpetEntityHagumeta.class ||
 				par1Entity.getClass() == DqmpetEntitySuraimutawa.class ||
 				par1Entity.getClass() == DqmpetEntitySuraimunaito.class ||
 				par1Entity.getClass() == DqmpetEntityKingsura.class ||
-				par1Entity.getClass() == DqmpetEntityKuinsuraimu.class
+				par1Entity.getClass() == DqmpetEntityKuinsuraimu.class||
+				//par1Entity.getClass() == DqmEntityMetaruburazazu.class ||
+				par1Entity.getClass() == DqmEntitySibirekurage.class ||
+				par1Entity.getClass() == DqmEntityBehoimisuraimu.class ||
+				//par1Entity.getClass() == DqmEntityPuratinaking.class ||
+				par1Entity.getClass() == DqmEntityBehoimusuraimu.class ||
+				par1Entity.getClass() == DqmEntityGorudentotemu.class ||
+				par1Entity.getClass() == DqmEntityGorudensuraimu.class ||
+				par1Entity.getClass() == DqmEntitySuraimumadyura.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 2;
+				}
+				if(model == "Metarukingnoturugi" && (
+
+				par1Entity.getClass() == DqmEntityMetasura.class ||
+				par1Entity.getClass() == DqmEntityHagumeta.class ||
+				par1Entity.getClass() == DqmEntityMetaking.class ||
+				par1Entity.getClass() == DqmpetEntityHagumeta.class ||
+				par1Entity.getClass() == DqmEntityMetaruburazazu.class ||
+				par1Entity.getClass() == DqmEntityPuratinaking.class
 				))
 				{
 				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
@@ -318,7 +341,11 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				par1Entity.getClass() == DqmEntityGaikotukensi.class ||
 				par1Entity.getClass() == DqmpetEntityGhost.class ||
 				par1Entity.getClass() == DqmpetEntityMetoroghost.class ||
-				par1Entity.getClass() == DqmpetEntityGaikotukensi.class
+				par1Entity.getClass() == DqmpetEntityGaikotukensi.class||
+				par1Entity.getClass() == DqmEntityMeragosuto.class ||
+				par1Entity.getClass() == DqmEntitySamayoutamasii.class ||
+				par1Entity.getClass() == DqmEntitySiryounokisi.class ||
+				par1Entity.getClass() == DqmEntityKagenokisi.class
 				))
 				{
 				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
@@ -335,7 +362,12 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				}
 				if(model == "Doragonkira" && (
 				par1Entity.getClass() == DqmEntityDqmdragon.class ||
-				par1Entity.getClass() == DqmpetEntityDqmdragon.class
+				par1Entity.getClass() == DqmpetEntityDqmdragon.class||
+				par1Entity.getClass() == DqmEntityGamegon.class ||
+				par1Entity.getClass() == DqmEntityKisudragon.class ||
+				par1Entity.getClass() == DqmEntityGamegonload.class ||
+				par1Entity.getClass() == DqmEntityDasudragon.class ||
+				par1Entity.getClass() == DqmEntityGamegonrejendo.class
 				))
 				{
 				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
@@ -364,7 +396,11 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				par1Entity.getClass() == DqmpetEntitySyado.class ||
 				par1Entity.getClass() == DqmpetEntityHitokuibako.class ||
 				par1Entity.getClass() == DqmpetEntityKiramasin.class ||
-				par1Entity.getClass() == DqmpetEntityGoremu.class
+				par1Entity.getClass() == DqmpetEntityGoremu.class||
+				par1Entity.getClass() == DqmEntitySumairurokku.class ||
+				par1Entity.getClass() == DqmEntityMegazarurokku.class ||
+				par1Entity.getClass() == DqmEntityGoldman.class ||
+				par1Entity.getClass() == DqmEntityStonman.class
 				))
 				{
 				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);

@@ -33,7 +33,7 @@ public class DqmEntityRamiaBike extends DqmRidableCreature
      */
     public double getMountedYOffset()
     {
-        return 4.0D;
+        return 2.3D;
     }
 
     /**

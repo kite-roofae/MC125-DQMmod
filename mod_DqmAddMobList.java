@@ -74,6 +74,7 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		//(frozenOcean),(frozenRiver),(hell),(iceMountains),(icePlains),(jungle),(jungleHills),(mushroomIsland),
 		//(mushroomIslandShore),(ocean),(plains),(river),(sky),(swampland),(taiga),(taigaHills),
 		BiomeGenBase[] hell = { BiomeGenBase.hell };
+		BiomeGenBase[] hellsky = { BiomeGenBase.sky,BiomeGenBase.hell };
 		BiomeGenBase[] sky = { BiomeGenBase.sky,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forestHills,BiomeGenBase.jungleHills,BiomeGenBase.taigaHills };
 		BiomeGenBase[] frozenhell = { BiomeGenBase.frozenOcean,BiomeGenBase.frozenRiver,BiomeGenBase.hell };
 		BiomeGenBase[] Hills = { BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forestHills,BiomeGenBase.jungleHills,BiomeGenBase.taigaHills };
@@ -149,27 +150,27 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 
 		cs.addCustomSpawn(DqmEntityBehoimisuraimu.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityBehoimusuraimu.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityDasudragon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityDasudragon.class, 3, 1, 1, Type.monster,hellsky);
 		cs.addCustomSpawn(DqmEntityGamegon.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityGamegonload.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityGamegonrejendo.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityGoldman.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityGorudensuraimu.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityGorudentotemu.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityKagenokisi.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGamegonrejendo.class, 2, 1, 1, Type.monster,hellsky);
+		cs.addCustomSpawn(DqmEntityGoldman.class, 2, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGorudensuraimu.class, 3, 1, 1, Type.monster,hell);
+		cs.addCustomSpawn(DqmEntityGorudentotemu.class, 3, 1, 1, Type.monster,hell);
+		cs.addCustomSpawn(DqmEntityKagenokisi.class, 3, 1, 1, Type.monster,hellsky);
 		cs.addCustomSpawn(DqmEntityKisudragon.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityMegazarurokku.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMegazarurokku.class, 3, 1, 1, Type.monster,hellsky);
 		cs.addCustomSpawn(DqmEntityMeijikimera.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityMeragosuto.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityMetaruburazazu.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityPuratinaking.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMetaruburazazu.class, 2, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityPuratinaking.class, 1, 1, 1, Type.monster,hellsky);
 		cs.addCustomSpawn(DqmEntitySamayoutamasii.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntitySibirekurage.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntitySiryounokisi.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityStarkimera.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityStonman.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityStarkimera.class, 3, 1, 1, Type.monster,hell);
+		cs.addCustomSpawn(DqmEntityStonman.class, 3, 1, 1, Type.monster,hellsky);
 		cs.addCustomSpawn(DqmEntitySumairurokku.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntitySuraimumadyura.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimumadyura.class, 2, 1, 1, Type.monster,hellsky);
 
 		ML.registerEntityID(DqmEntityArumiraji.class, "Arumiraji",ML.getUniqueEntityId(),16167425,16167425);
 		ML.registerEntityID(DqmEntityAtorasu.class, "Atorasu",ML.getUniqueEntityId(),12720061,12720061);
