@@ -52,17 +52,17 @@ public class DqmModelGamegon extends ModelBase
       k2.mirror = true;
       setRotation(k2, 0F, 0F, 0F);
       k3 = new ModelRenderer(this, 165, -5);
-      k3.addBox(-10F, -4F, -7F, 0, 8, 5);
+      k3.addBox(-3F, -4F, -9F, 0, 8, 5);
       k3.setRotationPoint(0F, 15F, -3F);
       k3.setTextureSize(256, 128);
       k3.mirror = true;
-      setRotation(k3, 0F, -0.7435722F, 0F);
+      setRotation(k3, 0F, 0F, 0F);
       k4 = new ModelRenderer(this, 154, -5);
-      k4.addBox(10F, -4F, -7F, 0, 8, 5);
+      k4.addBox(3F, -4F, -9F, 0, 8, 5);
       k4.setRotationPoint(0F, 15F, -3F);
       k4.setTextureSize(256, 128);
       k4.mirror = true;
-      setRotation(k4, 0F, 0.7435103F, 0F);
+      setRotation(k4, 0F, 0F, 0F);
       k5 = new ModelRenderer(this, 158, 21);
       k5.addBox(-3F, -9F, -8F, 2, 1, 6);
       k5.setRotationPoint(0F, 15F, -3F);
@@ -262,21 +262,21 @@ public class DqmModelGamegon extends ModelBase
 		k7.rotateAngleY = par4 / (180F / (float)Math.PI);
 
 
-		mm1.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 0.6F * par2;
-		mm2.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 0.6F * par2;
-		hu1.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 0.6F * par2;
-		hu2.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 0.6F * par2;
+		mm1.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.2F * par2;
+		mm2.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.2F * par2;
+		hu1.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.2F * par2;
+		hu2.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.2F * par2;
 
 
-		mu1.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 0.6F * par2;
-		mu2.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 0.6F * par2;
-		hm1.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 0.6F * par2;
-		hm2.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 0.6F * par2;
+		mu1.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.2F * par2;
+		mu2.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.2F * par2;
+		hm1.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.2F * par2;
+		hm2.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.2F * par2;
 
-		s1.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 0.6F * par2;
-		s2.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 0.6F * par2;
-		s1.rotateAngleY = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 0.6F * par2;
-		s2.rotateAngleY = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 0.6F * par2;
+		s1.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.2F * par2;
+		s2.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.2F * par2;
+		s1.rotateAngleY = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.2F * par2;
+		s2.rotateAngleY = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.2F * par2;
 
 
 	}

@@ -344,6 +344,8 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 
 		return ret;
 	}
+
+	/*
 	@Override
 	public int getDamageVsEntity(Entity par1Entity)
 	{
@@ -557,5 +559,6 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 
 		return this.weaponDamage;
 	}
+	*/
 
 }

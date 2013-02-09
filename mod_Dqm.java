@@ -236,6 +236,15 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	public static int SaigonokagiID = 6304- 256;
 	public static Item Saigonokagi;
 
+	//育成種
+	/*
+	@MLProp(info="YakusouSeeds ID")
+	public static int YakusouSeedsID = 6401- 256;
+	public static Item YakusouSeeds;
+	@MLProp(info="YakusouSeedsB ID")
+	public static int YakusouSeedsBID = 240- 256;
+	public static Block YakusouSeedsB;*/
+
 
 
 	//剣部品
@@ -459,6 +468,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	public void load()
 	{
 		MinecraftForgeClient.preloadTexture("/dqm/DqmItems.png");
+
 		/*
         public DqmItemSword(int par1, DqmEnumToolMaterial cloth,int w,int h,int t,float s,int d,int e)
         {
@@ -480,7 +490,6 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		//IDの後の引数で0が鍬、1がシャベル、2がピッケル、3が斧
 		Debugsword = new DqmItemTool(DebugswordID, 1, DqmEnumToolMaterial.DEBUG).setIconCoord(6, 1).setItemName("Debugsword");
 		//Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
-		 //redPickaxe = (new ItemRedPickaxe(EEBase.props.getInt("ItemRedPickaxe"))).setIconCoord(64, 0).setItemName("redPickaxe");
 
 		Uminarinotue = new DqmItemSword(UminarinotueID,DqmEnumToolMaterial.UMINARI).setmodel("Uminarinotue").setIconCoord(5, 0).setItemName("Uminarinotue");
 		Koorinoyaiba = new DqmItemSword(KoorinoyaibaID,DqmEnumToolMaterial.KOORI).setmodel("Koorinoyaiba").setIconCoord(4, 0).setItemName("Koorinoyaiba");
@@ -511,10 +520,10 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Ikazutinotue = new DqmItemSword(IkazutinotueID,DqmEnumToolMaterial.IKAZUTI).setmodel("Ikazutinotue").setIconCoord(4, 2).setItemName("Ikazutinotue");
 		Dragonrod = new DqmItemSword(DragonrodID,DqmEnumToolMaterial.DRAGONROD).setmodel("Dragonrod").setIconCoord(5, 2).setItemName("Dragonrod");
 		Dokubari = new DqmItemSword(DokubariID,DqmEnumToolMaterial.DOKUBARI).setmodel("Dokubari").setIconCoord(10, 2).setItemName("Dokubari");
+		Sabakinotue = new DqmItemSword(SabakinotueID,DqmEnumToolMaterial.SABAKI).setIconCoord(4, 1).setItemName("Sabakinotue");
 
 
-		Sabakinotue = new DqmItemTool(SabakinotueID,1,DqmEnumToolMaterial.SABAKI).setIconCoord(4, 1).setItemName("Sabakinotue");
-		Majuunotume = new DqmItemTool(MajuunotumeID,1,DqmEnumToolMaterial.MAJUU).setIconCoord(7, 2).setItemName("Majuunotume");
+		Majuunotume = new DqmItemSword(MajuunotumeID,DqmEnumToolMaterial.MAJUU).setIconCoord(7, 2).setItemName("Majuunotume");
 
 
 		Kazekirinoyumi = new DqmItemBow(KazekirinoyumiID).setmodel("Kazekirinoyumi").setIconCoord(15, 0).setItemName("Kazekirinoyumi");
@@ -720,6 +729,21 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Gouketunoudewa = new DqmItem(GouketunoudewaID).setMaxStackSize(1).setItemName("Gouketunoudewa").setIconCoord(1, 6);
 		Hayatenoring = new DqmItem(HayatenoringID).setMaxStackSize(1).setItemName("Hayatenoring").setIconCoord(3, 5);
 		Hosifuru = new DqmItem(HosifuruID).setMaxStackSize(1).setItemName("Hosifuru").setIconCoord(1, 5);
+
+
+
+
+
+
+
+
+
+
+		//BlockのとこにDqmBlockSeedsとDqmBlockSeeds2を多分入れると思う
+		//YakusouSeeds = new DqmItemSeeds(YakusouSeedsID, Block.crops.blockID, Block.tilledField.blockID).setItemName("YakusouSeeds").setIconCoord(0, 11);
+
+		//YakusouSeedsB = new DqmBlockSeeds(39, 88).setHardness(0.0F).setBlockName("YakusouSeedsB").setStepSound(Block.soundGrassFootstep).disableStats().setRequiresSelfNotify();
+
 		/*
 		moveSpeed	//idou
 		moveSlowdown	//idou
