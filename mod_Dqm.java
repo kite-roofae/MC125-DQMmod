@@ -796,6 +796,10 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@Override
 	public boolean onTickInGame(float f,Minecraft minecraft)
 	{
+		EntityPlayerSP sp = ModLoader.getMinecraftInstance().thePlayer;
+		DIP.EpPositionX = (int)sp.posX;
+		DIP.EpPositionY = (int)sp.posY;
+		DIP.EpPositionZ = (int)sp.posZ;
 		if(minecraft!=null){
 			ensureInventoryKept(minecraft);
 		}
