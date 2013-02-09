@@ -1,10 +1,108 @@
 package net.minecraft.src.dqmcore;
 
 import net.minecraft.src.*;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityArumiraji;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityAtorasu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityAyasiikage;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBakudaniwa;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBehoimisuraimu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBehoimusuraimu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBigCrow;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBubsura;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBuraddihando;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDasudragon;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDesufuratta;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDoraki;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDorakima;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDqmdragon;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityEsterk;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityFurosutogizumo;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGaikotukensi;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGamegon;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGamegonload;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGamegonrejendo;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGhost;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGigantesu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGizumo;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGoldman;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGoremu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGorudensuraimu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGorudentotemu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHagumeta;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHerughost;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHiitogizumo;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHitokuibako;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHoimisura;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHoroghost;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityIkkakuusagi;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKagenokisi;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKimera;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKingsura;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKiramasin;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKirapan;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKirikabuobake;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKisudragon;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKuinsuraimu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMadohando;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMaounokage;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMegazarurokku;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMeijikimera;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMeragosuto;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaking;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaruburazazu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaruhanta;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaruhantaken;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaruraida;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetasura;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetoroghost;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMimikku;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityPandorabox;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityPuratinaking;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityRiripat;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySamayoutamasii;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySibirekurage;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySiryounokisi;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityStarkimera;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityStonman;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySumairurokku;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySura;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimubehomazun;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimubesu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimumadyura;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimunaito;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimutawa;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySyado;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityTahodoraki;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityWaraibukuro;
+import net.minecraft.src.dqmcore.DqmEntity.DqmEntityZoma;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityBakudaniwa;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityDorakima;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityDqmdragon;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityGaikotukensi;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityGhost;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityGigantesu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityGoremu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityHagumeta;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityHitokuibako;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityIkkakuusagi;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKimera;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKingsura;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKiramasin;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKirapan;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKirikabuobake;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKuinsuraimu;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityLittleEsterk;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityMetoroghost;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntitySura;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntitySuraimunaito;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntitySuraimutawa;
+import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntitySyado;
 import net.minecraft.src.forge.ForgeHooks;
 import net.minecraft.src.forge.ITextureProvider;
 
 public class DqmItemTool extends ItemTool implements ITextureProvider {
+	private int weaponDamage;
+	private String model;
 	private Block[] blocksEffectiveAgainst;
 	private int tool = 0; // ツール種別設定
 	protected String Texture = "/dqm/DqmItems.png"; // テクスチャマップパス用変数
@@ -240,6 +338,224 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 			return efficiencyOnProperMaterial;
 		}
 		return getStrVsBlock(stack, block);
+	}
+	private static int getRandom(int max, int min) {
+		int ret = (int)Math.floor(Math.random()*(max-min+1))+min;
+
+		return ret;
+	}
+	@Override
+	public int getDamageVsEntity(Entity par1Entity)
+	{
+		World w = ModLoader.getMinecraftInstance().theWorld;
+
+				if(model == "Akumanotume" && (
+				par1Entity.getClass() == DqmEntityDoraki.class ||
+				par1Entity.getClass() == DqmEntityDorakima.class ||
+				par1Entity.getClass() == DqmEntityRiripat.class ||
+				par1Entity.getClass() == DqmEntityTahodoraki.class ||
+				par1Entity.getClass() == DqmEntityAtorasu.class ||
+				par1Entity.getClass() == DqmEntityGigantesu.class ||
+				par1Entity.getClass() == DqmpetEntityDorakima.class ||
+				par1Entity.getClass() == DqmpetEntityGigantesu.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 2;
+				}
+				if(model == "Gureitoakusu" && (
+				par1Entity.getClass() == DqmEntityBigCrow.class ||
+				par1Entity.getClass() == DqmEntityKirikabuobake.class ||
+				par1Entity.getClass() == DqmEntityKimera.class ||
+				par1Entity.getClass() == DqmEntityDesufuratta.class ||
+				par1Entity.getClass() == DqmpetEntityKirikabuobake.class ||
+				par1Entity.getClass() == DqmpetEntityKimera.class||
+				par1Entity.getClass() == DqmEntityMeijikimera.class ||
+				par1Entity.getClass() == DqmEntityStarkimera.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 2;
+				}
+				if(model == "Oninokanabou" && (
+				par1Entity.getClass() == DqmEntitySura.class ||
+				//par1Entity.getClass() == DqmEntityMetasura.class ||
+				par1Entity.getClass() == DqmEntitySuraimubesu.class ||
+				par1Entity.getClass() == DqmEntityBubsura.class ||
+				//par1Entity.getClass() == DqmEntityHagumeta.class ||
+				par1Entity.getClass() == DqmEntityHoimisura.class ||
+				par1Entity.getClass() == DqmEntitySuraimutawa.class ||
+				par1Entity.getClass() == DqmEntitySuraimunaito.class ||
+				par1Entity.getClass() == DqmEntityKingsura.class ||
+				//par1Entity.getClass() == DqmEntityMetaking.class ||
+				par1Entity.getClass() == DqmEntitySuraimubehomazun.class ||
+				par1Entity.getClass() == DqmEntityMetaruraida.class ||
+				par1Entity.getClass() == DqmEntityKuinsuraimu.class ||
+				par1Entity.getClass() == DqmpetEntitySura.class ||
+				//par1Entity.getClass() == DqmpetEntityHagumeta.class ||
+				par1Entity.getClass() == DqmpetEntitySuraimutawa.class ||
+				par1Entity.getClass() == DqmpetEntitySuraimunaito.class ||
+				par1Entity.getClass() == DqmpetEntityKingsura.class ||
+				par1Entity.getClass() == DqmpetEntityKuinsuraimu.class||
+				//par1Entity.getClass() == DqmEntityMetaruburazazu.class ||
+				par1Entity.getClass() == DqmEntitySibirekurage.class ||
+				par1Entity.getClass() == DqmEntityBehoimisuraimu.class ||
+				//par1Entity.getClass() == DqmEntityPuratinaking.class ||
+				par1Entity.getClass() == DqmEntityBehoimusuraimu.class ||
+				par1Entity.getClass() == DqmEntityGorudentotemu.class ||
+				par1Entity.getClass() == DqmEntityGorudensuraimu.class ||
+				par1Entity.getClass() == DqmEntitySuraimumadyura.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 2;
+				}
+				if(model == "Metarukingnoturugi" && (
+
+				par1Entity.getClass() == DqmEntityMetasura.class ||
+				par1Entity.getClass() == DqmEntityHagumeta.class ||
+				par1Entity.getClass() == DqmEntityMetaking.class ||
+				par1Entity.getClass() == DqmpetEntityHagumeta.class ||
+				par1Entity.getClass() == DqmEntityMetaruburazazu.class ||
+				par1Entity.getClass() == DqmEntityPuratinaking.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 2;
+				}
+				if(model == "Seinarunaifu" && (
+				par1Entity.getClass() == DqmEntityGhost.class ||
+				par1Entity.getClass() == DqmEntityMetoroghost.class ||
+				par1Entity.getClass() == DqmEntityHerughost.class ||
+				par1Entity.getClass() == DqmEntityGaikotukensi.class ||
+				par1Entity.getClass() == DqmpetEntityGhost.class ||
+				par1Entity.getClass() == DqmpetEntityMetoroghost.class ||
+				par1Entity.getClass() == DqmpetEntityGaikotukensi.class||
+				par1Entity.getClass() == DqmEntityMeragosuto.class ||
+				par1Entity.getClass() == DqmEntitySamayoutamasii.class ||
+				par1Entity.getClass() == DqmEntitySiryounokisi.class ||
+				par1Entity.getClass() == DqmEntityKagenokisi.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 3;
+				}
+				if(model == "Rotonoturugi" && (
+				par1Entity.getClass() == DqmEntityEsterk.class ||
+				par1Entity.getClass() == DqmpetEntityLittleEsterk.class ||
+				par1Entity.getClass() == DqmEntityZoma.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 2;
+				}
+				if(model == "Doragonkira" && (
+				par1Entity.getClass() == DqmEntityDqmdragon.class ||
+				par1Entity.getClass() == DqmpetEntityDqmdragon.class||
+				par1Entity.getClass() == DqmEntityGamegon.class ||
+				par1Entity.getClass() == DqmEntityKisudragon.class ||
+				par1Entity.getClass() == DqmEntityGamegonload.class ||
+				par1Entity.getClass() == DqmEntityDasudragon.class ||
+				par1Entity.getClass() == DqmEntityGamegonrejendo.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 2;
+				}
+				if(model == "Atorasunokanaduti" && (
+				par1Entity.getClass() == DqmEntityGizumo.class ||
+				par1Entity.getClass() == DqmEntityAyasiikage.class ||
+				par1Entity.getClass() == DqmEntityWaraibukuro.class ||
+				par1Entity.getClass() == DqmEntityBakudaniwa.class ||
+				par1Entity.getClass() == DqmEntitySyado.class ||
+				par1Entity.getClass() == DqmEntityHiitogizumo.class ||
+				par1Entity.getClass() == DqmEntityFurosutogizumo.class ||
+				par1Entity.getClass() == DqmEntityHoroghost.class ||
+				par1Entity.getClass() == DqmEntityMadohando.class ||
+				par1Entity.getClass() == DqmEntityMaounokage.class ||
+				par1Entity.getClass() == DqmEntityBuraddihando.class ||
+				par1Entity.getClass() == DqmEntityHitokuibako.class ||
+				par1Entity.getClass() == DqmEntityMetaruhanta.class ||
+				par1Entity.getClass() == DqmEntityMetaruhantaken.class ||
+				par1Entity.getClass() == DqmEntityKiramasin.class ||
+				par1Entity.getClass() == DqmEntityGoremu.class ||
+				par1Entity.getClass() == DqmEntityMimikku.class ||
+				par1Entity.getClass() == DqmEntityPandorabox.class ||
+				par1Entity.getClass() == DqmpetEntityBakudaniwa.class ||
+				par1Entity.getClass() == DqmpetEntitySyado.class ||
+				par1Entity.getClass() == DqmpetEntityHitokuibako.class ||
+				par1Entity.getClass() == DqmpetEntityKiramasin.class ||
+				par1Entity.getClass() == DqmpetEntityGoremu.class||
+				par1Entity.getClass() == DqmEntitySumairurokku.class ||
+				par1Entity.getClass() == DqmEntityMegazarurokku.class ||
+				par1Entity.getClass() == DqmEntityGoldman.class ||
+				par1Entity.getClass() == DqmEntityStonman.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 2;
+				}
+				if(model == "Majuunotume" && (
+				par1Entity.getClass() == DqmEntityIkkakuusagi.class ||
+				par1Entity.getClass() == DqmEntityArumiraji.class ||
+				par1Entity.getClass() == DqmEntityKirapan.class ||
+				par1Entity.getClass() == DqmpetEntityIkkakuusagi.class ||
+				par1Entity.getClass() == DqmpetEntityKirapan.class
+				))
+				{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+				return this.weaponDamage * 2;
+				}
+
+				int x = 0;
+				int x3 = x+getRandom(100, -100);
+
+				if(model == "Ookanaduti" )
+				{
+					if(x3>= -70 && x3<= 80)
+					{
+						return this.weaponDamage * 1;
+					}
+					if(x3>= 81)
+					{
+					w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+					return this.weaponDamage * 4;
+					}
+					if(x3<= -71)
+					{
+					w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
+					return this.weaponDamage * 0;
+					}
+				}
+
+				if(model == "Majinnokanaduti" )
+				{
+					if(x3>= 50)
+					{
+						w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+						return this.weaponDamage * 5;
+					}
+					if(x3<= 49)
+					{
+					w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
+					return this.weaponDamage * 0;
+					}
+				}
+				if(model == "Dokubari" )
+				{
+					if(x3>= 95)
+					{
+						w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+						return this.weaponDamage * 200;
+					}
+					if(x3<= 94)
+					{
+					//w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
+					return this.weaponDamage * 1;
+					}
+				}
+
+		return this.weaponDamage;
 	}
 
 }
