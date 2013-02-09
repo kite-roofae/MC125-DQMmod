@@ -42,7 +42,7 @@ public class DqmAddItemRecipe extends mod_Dqm
 			"VVV",
 			Character.valueOf('V'),Inotinoisi,Character.valueOf('W'),Metaloubu});
 
-		ModLoader.addRecipe(new ItemStack(Rakkipendanto ,1),new Object[]{
+		ModLoader.addRecipe(new ItemStack(Ramia ,1),new Object[]{
 			"STU",
 			"ZYZ",
 			"VWX",

@@ -23,7 +23,7 @@ public class DqmEntityMaounokage extends DqmEntityAyasiikage
 		//*******************************EXP***************************************
 		experienceValue = 40;
 		//*******************************Fire taisei***************************************
-		isImmuneToFire = true;
+		//isImmuneToFire = true;
 		isAttacking = false;
 		stepHeight = 1.0F;
 
