@@ -9,6 +9,7 @@ public class DqmEntityRamiaBike extends DqmRidableCreature
     int prevX;
     int prevZ;
 
+
     public DqmEntityRamiaBike(World var1)
     {
         super(var1);
@@ -27,7 +28,11 @@ public class DqmEntityRamiaBike extends DqmRidableCreature
         this.setPosition(var2, var4, var6);
     }
 
+	private static int getRandom(int max, int min) {
+		int ret = (int)Math.floor(Math.random()*(max-min+1))+min;
 
+		return ret;
+	}
     /**
      * Returns the Y offset from the entity's position for any entity riding this one.
      */
@@ -97,7 +102,10 @@ public class DqmEntityRamiaBike extends DqmRidableCreature
                 double var17 = (this.rand.nextDouble() - 0.5D) * 2.0D;
                 ModLoader.getMinecraftInstance().effectRenderer.addEffect(new DqmEntityRainbowFX(this.worldObj, var7, var9, var11, var13, var15, var17));
             }
-
+            int x = 0;
+            int x3 = x+getRandom(50, -50);
+            if(x3==0){
+            this.worldObj.playSoundAtEntity(this, "DQM_Sound.Ramia", 1.0F, 1.0F);}
             this.prevX = var1;
             this.prevZ = var2;
         }

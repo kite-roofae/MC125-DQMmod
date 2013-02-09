@@ -510,9 +510,12 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Gureitoakusu = new DqmItemSword(GureitoakusuID,DqmEnumToolMaterial.GUREITO).setmodel("Gureitoakusu").setIconCoord(13, 1).setItemName("Gureitoakusu");
 		Ikazutinotue = new DqmItemSword(IkazutinotueID,DqmEnumToolMaterial.IKAZUTI).setmodel("Ikazutinotue").setIconCoord(4, 2).setItemName("Ikazutinotue");
 		Dragonrod = new DqmItemSword(DragonrodID,DqmEnumToolMaterial.DRAGONROD).setmodel("Dragonrod").setIconCoord(5, 2).setItemName("Dragonrod");
-		Sabakinotue = new DqmItemSword(SabakinotueID,DqmEnumToolMaterial.SABAKI).setmodel("Sabakinotue").setIconCoord(4, 1).setItemName("Sabakinotue");
-		Majuunotume = new DqmItemSword(MajuunotumeID,DqmEnumToolMaterial.MAJUU).setmodel("Majuunotume").setIconCoord(7, 2).setItemName("Majuunotume");
 		Dokubari = new DqmItemSword(DokubariID,DqmEnumToolMaterial.DOKUBARI).setmodel("Dokubari").setIconCoord(10, 2).setItemName("Dokubari");
+
+
+		Sabakinotue = new DqmItemTool(SabakinotueID,1,DqmEnumToolMaterial.SABAKI).setIconCoord(4, 1).setItemName("Sabakinotue");
+		Majuunotume = new DqmItemTool(MajuunotumeID,1,DqmEnumToolMaterial.MAJUU).setIconCoord(7, 2).setItemName("Majuunotume");
+
 
 		Kazekirinoyumi = new DqmItemBow(KazekirinoyumiID).setmodel("Kazekirinoyumi").setIconCoord(15, 0).setItemName("Kazekirinoyumi");
 		Sefiramunoyumi = new DqmItemBow(SefiramunoyumiID).setmodel("Sefiramunoyumi").setIconCoord(15, 1).setItemName("Sefiramunoyumi");
