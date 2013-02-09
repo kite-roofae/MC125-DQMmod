@@ -451,6 +451,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@MLProp(info = "Keep inventory")
 	public static boolean Keep = false;
 	public DqmInventoryPlayer playersSpecialInventory=null;
+	private DqmInventoryPlayer DIP;
 
 
 
@@ -781,6 +782,11 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	//Perform this function, each update tick, that the player is in a menu.
 	@Override
 	public boolean onTickInGUI(float f,Minecraft minecraft, GuiScreen guiscreen){
+		EntityLiving ep = ModLoader.getMinecraftInstance().thePlayer;
+		DIP.EpPositionX = (int)ep.posX;
+		DIP.EpPositionY = (int)ep.posY;
+		DIP.EpPositionZ = (int)ep.posZ;
+
 		if(minecraft!=null){
 			ensureInventoryKept(minecraft);
 		}
