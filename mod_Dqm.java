@@ -451,6 +451,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@MLProp(info = "Keep inventory")
 	public static boolean Keep = false;
 	public DqmInventoryPlayer playersSpecialInventory=null;
+	private DqmInventoryPlayer DIP;
 
 
 
@@ -790,6 +791,10 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	@Override
 	public boolean onTickInGame(float f,Minecraft minecraft)
 	{
+		EntityPlayerSP sp = ModLoader.getMinecraftInstance().thePlayer;
+		DIP.EpPositionX = (int)sp.posX;
+		DIP.EpPositionY = (int)sp.posY;
+		DIP.EpPositionZ = (int)sp.posZ;
 		if(minecraft!=null){
 			ensureInventoryKept(minecraft);
 		}

@@ -9,7 +9,6 @@ import net.minecraft.src.forge.IEntityLivingHandler;
 public class DqmEntityLivingHandler implements IEntityLivingHandler
 {
 	private int c = 0;
-	private DqmInventoryPlayer DIP;
 	protected static Random Rand = new Random();
 
 	//EntityLiving（動物やモブやプレイヤー）がアイテムによらずに自然にスポーンした時に呼ばれます．
@@ -75,9 +74,6 @@ public class DqmEntityLivingHandler implements IEntityLivingHandler
 	{
 		EntityLiving ep = ModLoader.getMinecraftInstance().thePlayer;
 		World world = ModLoader.getMinecraftInstance().theWorld;
-		DIP.EpPositionX = (int)ep.posX;
-		DIP.EpPositionY = (int)ep.posY;
-		DIP.EpPositionZ = (int)ep.posZ;
 		ItemStack armor = ModLoader.getMinecraftInstance().thePlayer.inventory.armorItemInSlot(2);//アーマーインベントリから防具を取得
 		if(armor != null && !ep.isPotionActive(Potion.fireResistance) && armor.itemID == mod_Dqm.Honoonoyoroi.shiftedIndex)
 		{
