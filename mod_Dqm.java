@@ -682,7 +682,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Yogoretahoutai = new DqmItemFood(YogoretahoutaiID,0, 0.0F, false,64).setPotionEffect(Potion.hunger.id, 90, 5, 1.0F).setItemName("Yogoretahoutai").setIconCoord(5, 9);
 		Yougansekinokakera = new DqmItemFood(YougansekinokakeraID,0, 0.0F, false,64).setPotionEffect(Potion.weakness.id, 60, 0, 1.0F).setItemName("Yougansekinokakera").setIconCoord(8, 8);
 		Kagaminoisi = new DqmItem(KagaminoisiID).setItemName("Kagaminoisi").setIconCoord(15, 8);
-		Inotinoisi = new DqmItem(InotinoisiID, 1).setItemName("Inotinoisi").setIconCoord(14, 8);
+		Inotinoisi = new DqmItem(InotinoisiID, 1).setNoRepair().setItemName("Inotinoisi").setIconCoord(14, 8);
 		Taiyounoisi = new DqmItemFood(TaiyounoisiID,0, 0.0F, false,64).setPotionEffect(Potion.regeneration.id, 150, 2, 1.0F).setItemName("Taiyounoisi").setIconCoord(13, 8);
 		Ryuunonamida = new DqmItemFood(RyuunonamidaID,0, 0.0F, false,64).setPotionEffect(Potion.fireResistance.id, 300, 5, 1.0F).setItemName("Ryuunonamida").setIconCoord(12, 8);
 		Ikazutinotama = new DqmItem(IkazutinotamaID).setItemName("Ikazutinotama").setIconCoord(11, 8);
@@ -693,22 +693,22 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Jouyakusou = new DqmItemFood(JouyakusouID,1, 0.0F, false,64).setItemName("Jouyakusou").setIconCoord(5, 11);
 		Tokuyakusou = new DqmItemFood(TokuyakusouID,1, 0.0F, false,64).setItemName("Tokuyakusou").setIconCoord(6, 11);
 		Sekaijunoha = new DqmItemFood(SekaijunohaID,20, 0.0F, false,64).setPotionEffect(Potion.heal.id, 2, 5, 1.0F).setItemName("Sekaijunoha").setIconCoord(7, 11);
-		Kimeranotubasa = new DqmItem(KimeranotubasaID, 1).setItemName("Kimeranotubasa").setIconCoord(1, 13);
+		Kimeranotubasa = new DqmItem(KimeranotubasaID, 1).setItemName("Kimeranotubasa").setNoRepair().setIconCoord(1, 13);
 		Hokoranokagi = new DqmItem(HokoranokagiID).setItemName("Hokoranokagi").setIconCoord(0, 14);
 		Touzokunokagi = new DqmItem(TouzokunokagiID).setItemName("Touzokunokagi").setIconCoord(1, 14);
 		Mahounokagi = new DqmItem(MahounokagiID).setItemName("Mahounokagi").setIconCoord(2, 14);
 		Saigonokagi = new DqmItem(SaigonokagiID).setItemName("Saigonokagi").setIconCoord(3, 14);
-		Kenjanoisi = new DqmItem(KenjanoisiID, 1).setItemName("Kenjanoisi").setIconCoord(10, 8);
+		Kenjanoisi = new DqmItem(KenjanoisiID, 1).setItemName("Kenjanoisi").setNoRepair().setIconCoord(10, 8);
 		Dokukesisou = new DqmItemFood(DokukesisouID,1, 0.0F, false,64).setItemName("Dokukesisou").setIconCoord(8, 11);
 		Rubinogenseki = new DqmItem(RubinogensekiID).setItemName("Rubinogenseki").setIconCoord(12, 9);
 		Papasunokatami = new DqmItemKirapanBike(PapasunokatamiID).setItemName("Papasunokatami").setIconCoord(2, 13);
 		Ramia = new DqmItemRamiaBike(RamiaID).setItemName("Ramia").setIconCoord(3, 13);
 		Dragonwing = new DqmItemDragonBike(DragonwingID).setItemName("Dragonwing").setIconCoord(4, 13);
-		Moon = new DqmItem(MoonID, 1).setItemName("Moon").setIconCoord(13, 9);
-		Buruoubu = new DqmItem(BuruoubuID, 1).setItemName("Buruoubu").setIconCoord(0, 10);
-		Ierooubu = new DqmItem(IerooubuID, 1).setItemName("Ierooubu").setIconCoord(1, 10);
-		Paapuruoubu = new DqmItem(PaapuruoubuID, 1).setItemName("Paapuruoubu").setIconCoord(3, 10);
-		Gurinoubu = new DqmItem(GurinoubuID, 1).setItemName("Gurinoubu").setIconCoord(2, 10);
+		Moon = new DqmItem(MoonID).setItemName("Moon").setIconCoord(13, 9);
+		Buruoubu = new DqmItem(BuruoubuID).setItemName("Buruoubu").setIconCoord(0, 10);
+		Ierooubu = new DqmItem(IerooubuID).setItemName("Ierooubu").setIconCoord(1, 10);
+		Paapuruoubu = new DqmItem(PaapuruoubuID).setItemName("Paapuruoubu").setIconCoord(3, 10);
+		Gurinoubu = new DqmItem(GurinoubuID).setItemName("Gurinoubu").setIconCoord(2, 10);
 
 
 		Rakkipendanto = new DqmItem(RakkipendantoID).setMaxStackSize(1).setItemName("Rakkipendanto").setIconCoord(3, 6);
