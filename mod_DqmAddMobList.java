@@ -79,6 +79,8 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		BiomeGenBase[] frozenhell = { BiomeGenBase.frozenOcean,BiomeGenBase.frozenRiver,BiomeGenBase.hell };
 		BiomeGenBase[] Hills = { BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forestHills,BiomeGenBase.jungleHills,BiomeGenBase.taigaHills };
 		BiomeGenBase[] desert = { BiomeGenBase.desert,BiomeGenBase.desertHills };
+		BiomeGenBase[] Fire = { BiomeGenBase.beach,BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.frozenOcean,BiomeGenBase.frozenRiver,
+				BiomeGenBase.hell,BiomeGenBase.iceMountains };
 		cs = new mo_DqmSpawner(); // spawnerインスタンスを初期化します
 		cs.setMaxMobs(monster); // カスタムモブの最大数を設定します
 		cs.setMaxAnimals(creature); // カスタム動物モブの最大数を設定します
@@ -106,7 +108,7 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		cs.addCustomSpawn(DqmEntityDesufuratta.class, 20, 1, 1, Type.monster,hell);
 		cs.addCustomSpawn(DqmEntityDoraki.class, 5, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityDorakima.class, 4, 1, 1, Type.monster, sky);
-		cs.addCustomSpawn(DqmEntityDqmdragon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityDqmdragon.class, 3, 1, 1, Type.monster,Fire);
 		cs.addCustomSpawn(DqmEntityEsterk.class, 1, 1, 1, Type.monster,	frozenhell);
 		cs.addCustomSpawn(DqmEntityFurosutogizumo.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityGaikotukensi.class, 3, 1, 1, Type.monster);
@@ -116,12 +118,12 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		cs.addCustomSpawn(DqmEntityGoremu.class, 2, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityHagumeta.class, 1, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityHerughost.class, 15, 1, 1, Type.monster,	hell);
-		cs.addCustomSpawn(DqmEntityHiitogizumo.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityHiitogizumo.class, 4, 1, 1, Type.monster,Fire);
 		cs.addCustomSpawn(DqmEntityHitokuibako.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityHoimisura.class, 10, 1, 5,Type.waterCreature);
 		cs.addCustomSpawn(DqmEntityHoroghost.class, 4, 1, 1, Type.monster,sky);
 		cs.addCustomSpawn(DqmEntityIkkakuusagi.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityKimera.class, 3, 1, 1, Type.monster, Hills);
+		cs.addCustomSpawn(DqmEntityKimera.class, 3, 1, 1, Type.monster,Fire);
 		cs.addCustomSpawn(DqmEntityKingsura.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityKiramasin.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityKirapan.class, 4, 1, 1, Type.monster);
@@ -158,13 +160,13 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		cs.addCustomSpawn(DqmEntityGorudensuraimu.class, 3, 1, 1, Type.monster,hell);
 		cs.addCustomSpawn(DqmEntityGorudentotemu.class, 3, 1, 1, Type.monster,hell);
 		cs.addCustomSpawn(DqmEntityKagenokisi.class, 3, 1, 1, Type.monster,hellsky);
-		cs.addCustomSpawn(DqmEntityKisudragon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityKisudragon.class, 3, 1, 1, Type.monster,Fire);
 		cs.addCustomSpawn(DqmEntityMegazarurokku.class, 3, 1, 1, Type.monster,hellsky);
-		cs.addCustomSpawn(DqmEntityMeijikimera.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityMeragosuto.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMeijikimera.class, 3, 1, 1, Type.monster,Fire);
+		cs.addCustomSpawn(DqmEntityMeragosuto.class, 3, 1, 1, Type.monster,Fire);
 		cs.addCustomSpawn(DqmEntityMetaruburazazu.class, 2, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityPuratinaking.class, 1, 1, 1, Type.monster,hellsky);
-		cs.addCustomSpawn(DqmEntitySamayoutamasii.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySamayoutamasii.class, 3, 1, 1, Type.monster,Fire);
 		cs.addCustomSpawn(DqmEntitySibirekurage.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntitySiryounokisi.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityStarkimera.class, 3, 1, 1, Type.monster,hell);
@@ -257,7 +259,7 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		// biom************************************************************************************************************************************************************
 		cs.addCustomSpawn(DqmpetEntityBakudaniwa.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntityDorakima.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityDqmdragon.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityDqmdragon.class, 3, 1, 1, Type.creature,Fire);
 		cs.addCustomSpawn(DqmpetEntityGaikotukensi.class, 3, 1, 1,Type.creature);
 		cs.addCustomSpawn(DqmpetEntityGhost.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntityGigantesu.class, 3, 1, 1, Type.creature);
@@ -265,7 +267,7 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		cs.addCustomSpawn(DqmpetEntityHagumeta.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntityHitokuibako.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntityIkkakuusagi.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityKimera.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityKimera.class, 3, 1, 1, Type.creature,Fire);
 		cs.addCustomSpawn(DqmpetEntityKingsura.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntityKiramasin.class, 3, 1, 1, Type.creature);
 		cs.addCustomSpawn(DqmpetEntityKirapan.class, 3, 1, 1, Type.creature);

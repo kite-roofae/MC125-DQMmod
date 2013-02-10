@@ -266,6 +266,8 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 
 		return ret;
 	}
+
+	/*
 	@Override
 	public int getDamageVsEntity(Entity par1Entity)
 	{
@@ -397,6 +399,7 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 		}
 		return damageVsEntity;
 	}
+	*/
 
 	//ñhå‰ä÷åW
 	public EnumAction getItemUseAction(ItemStack par1ItemStack)
