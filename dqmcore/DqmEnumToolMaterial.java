@@ -42,5 +42,5 @@ public class DqmEnumToolMaterial
 	public static EnumToolMaterial SABAKI = EnumHelper.addToolMaterial("SABAKI", 3, 300, 12.0F, -2, 25);
 	public static EnumToolMaterial MAJIN = EnumHelper.addToolMaterial("MAJIN", 3, 1200, 12.0F, 9, 5);
 	public static EnumToolMaterial DOKUBARI = EnumHelper.addToolMaterial("DOKUBARI", 3, 500, 12.0F, -3, 5);
-	public static EnumToolMaterial DEBUG = EnumHelper.addToolMaterial("DEBUB", 100, 10000, 12.0F, 100, 100);
+	public static EnumToolMaterial DEBUG = EnumHelper.addToolMaterial("DEBUB", 100, 10000, 12.0F, -3, 100);
 }

@@ -17,7 +17,7 @@ public class DqmRenderEgg extends Render implements ITextureProvider
 
 	public DqmRenderEgg(int par1)
 	{
-		this.itemIconIndex = par1;
+		itemIconIndex = par1;
 	}
 
 	@Override
@@ -38,10 +38,10 @@ public class DqmRenderEgg extends Render implements ITextureProvider
 		GL11.glTranslatef((float)par2, (float)par4, (float)par6);
 		GL11.glEnable(GL12.GL_RESCALE_NORMAL);
 		GL11.glScalef(0.5F, 0.5F, 0.5F);
-		this.loadTexture("/dqm/DqmItems.png");
+		loadTexture("/dqm/DqmItems.png");
 		Tessellator var10 = Tessellator.instance;
 
-		if (this.itemIconIndex == 154)
+		if (itemIconIndex == 154)
 		{
 			int var11 = PotionHelper.func_40358_a(((EntityPotion)par1Entity).getPotionDamage(), false);
 			float var12 = (var11 >> 16 & 255) / 255.0F;
@@ -49,12 +49,12 @@ public class DqmRenderEgg extends Render implements ITextureProvider
 			float var14 = (var11 & 255) / 255.0F;
 			GL11.glColor3f(var12, var13, var14);
 			GL11.glPushMatrix();
-			this.func_40265_a(var10, 141);
+			func_40265_a(var10, 141);
 			GL11.glPopMatrix();
 			GL11.glColor3f(1.0F, 1.0F, 1.0F);
 		}
 
-		this.func_40265_a(var10, this.itemIconIndex);
+		func_40265_a(var10, itemIconIndex);
 		GL11.glDisable(GL12.GL_RESCALE_NORMAL);
 		GL11.glPopMatrix();
 	}
@@ -68,8 +68,8 @@ public class DqmRenderEgg extends Render implements ITextureProvider
 		float var7 = 1.0F;
 		float var8 = 0.5F;
 		float var9 = 0.25F;
-		GL11.glRotatef(180.0F - this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
-		GL11.glRotatef(-this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(180.0F - renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
+		GL11.glRotatef(-renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
 		par1Tessellator.startDrawingQuads();
 		par1Tessellator.setNormal(0.0F, 1.0F, 0.0F);
 		par1Tessellator.addVertexWithUV((0.0F - var8), (0.0F - var9), 0.0D, var3, var6);

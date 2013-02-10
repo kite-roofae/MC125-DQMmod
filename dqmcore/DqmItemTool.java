@@ -1,107 +1,11 @@
 package net.minecraft.src.dqmcore;
 
 import net.minecraft.src.*;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityArumiraji;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityAtorasu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityAyasiikage;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBakudaniwa;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBehoimisuraimu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBehoimusuraimu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBigCrow;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBubsura;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityBuraddihando;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDasudragon;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDesufuratta;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDoraki;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDorakima;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityDqmdragon;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityEsterk;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityFurosutogizumo;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGaikotukensi;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGamegon;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGamegonload;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGamegonrejendo;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGhost;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGigantesu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGizumo;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGoldman;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGoremu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGorudensuraimu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityGorudentotemu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHagumeta;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHerughost;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHiitogizumo;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHitokuibako;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHoimisura;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityHoroghost;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityIkkakuusagi;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKagenokisi;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKimera;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKingsura;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKiramasin;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKirapan;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKirikabuobake;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKisudragon;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityKuinsuraimu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMadohando;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMaounokage;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMegazarurokku;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMeijikimera;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMeragosuto;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaking;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaruburazazu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaruhanta;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaruhantaken;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetaruraida;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetasura;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMetoroghost;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityMimikku;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityPandorabox;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityPuratinaking;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityRiripat;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySamayoutamasii;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySibirekurage;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySiryounokisi;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityStarkimera;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityStonman;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySumairurokku;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySura;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimubehomazun;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimubesu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimumadyura;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimunaito;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySuraimutawa;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntitySyado;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityTahodoraki;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityWaraibukuro;
-import net.minecraft.src.dqmcore.DqmEntity.DqmEntityZoma;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityBakudaniwa;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityDorakima;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityDqmdragon;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityGaikotukensi;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityGhost;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityGigantesu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityGoremu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityHagumeta;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityHitokuibako;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityIkkakuusagi;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKimera;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKingsura;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKiramasin;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKirapan;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKirikabuobake;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityKuinsuraimu;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityLittleEsterk;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntityMetoroghost;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntitySura;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntitySuraimunaito;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntitySuraimutawa;
-import net.minecraft.src.dqmcore.DqmEntity.DqmpetEntitySyado;
+import net.minecraft.src.dqmcore.DqmEntity.*;
 import net.minecraft.src.forge.ForgeHooks;
 import net.minecraft.src.forge.ITextureProvider;
 
 public class DqmItemTool extends ItemTool implements ITextureProvider {
-	private int weaponDamage;
 	private String model;
 	private Block[] blocksEffectiveAgainst;
 	private int tool = 0; // ツール種別設定
@@ -130,64 +34,71 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 		super(id, toolfalg, par3EnumToolMaterial, hoe);
 		tool = toolfalg;
 		if (toolfalg == 0) {
-			this.blocksEffectiveAgainst = hoe;
+			blocksEffectiveAgainst = hoe;
 		}
 		if (toolfalg == 1) {
-			this.blocksEffectiveAgainst = spade;
+			blocksEffectiveAgainst = spade;
 		}
 		if (toolfalg == 2) {
-			this.blocksEffectiveAgainst = pickaxe;
+			blocksEffectiveAgainst = pickaxe;
 		}
 		if (toolfalg == 3) {
-			this.blocksEffectiveAgainst = axe;
+			blocksEffectiveAgainst = axe;
 		}
 		//　攻撃力補正1未満になった場合最低値として1をセット
 		//　それ以外は通常計算式で処理
-		if(1 > toolfalg + par3EnumToolMaterial.getDamageVsEntity())
-        this.damageVsEntity = 1;
+		if(1 > toolfalg + par3EnumToolMaterial.getDamageVsEntity()) {
+			damageVsEntity = 1;
+		}
 	}
 
-    public DqmItemTool setdamageVsEntity(int par1)
-    {
-        this.damageVsEntity = par1;
-        return this;
-    }
-    public DqmItemTool setIconCoord(int par1, int par2)
-    {
-        this.iconIndex = par1 + par2 * 16;
-        return this;
-    }
+	public DqmItemTool setmodel(String m)
+	{
+		model = m;
+		return this;
+	}
+	public DqmItemTool setdamageVsEntity(int par1)
+	{
+		damageVsEntity = par1;
+		return this;
+	}
+	@Override
+	public DqmItemTool setIconCoord(int par1, int par2)
+	{
+		iconIndex = par1 + par2 * 16;
+		return this;
+	}
 
-    public DqmItemTool setIconCoord2(int par1, int par2)
-    {
-        this.iconIndex2 = par1 + par2 * 16;
-        return this;
-    }
+	public DqmItemTool setIconCoord2(int par1, int par2)
+	{
+		iconIndex2 = par1 + par2 * 16;
+		return this;
+	}
 
 	@Override
 	public DqmItemTool setIconIndex(int par1)
 	{
-		this.iconIndex = par1;
+		iconIndex = par1;
 		return this;
 	}
 	public DqmItemTool setIconIndex2(int par1)
 	{
-		this.iconIndex2 = par1;
+		iconIndex2 = par1;
 		return this;
 	}
 	public DqmItemTool setColor(int par1)
 	{
-		this.rColor1 = par1;
+		rColor1 = par1;
 		return this;
 	}
 	public DqmItemTool setColor2(int par1)
 	{
-		this.rColor2 = par1;
+		rColor2 = par1;
 		return this;
 	}
 	public DqmItemTool setTexture(String par1)
 	{
-		this.Texture = par1;
+		Texture = par1;
 		return this;
 	}
 
@@ -204,7 +115,7 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 	@Override
 	public int func_46057_a(int tex1, int tex2)
 	{
-			return tex2 > 0 ? iconIndex:iconIndex2;
+		return tex2 > 0 ? iconIndex:iconIndex2;
 	}
 
 	// 色の乗算
@@ -240,8 +151,9 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 		if (tool == 1) {
 			return par1Block == Block.snow ? true
 					: par1Block == Block.blockSnow;
-		} else if (tool == 2) {
-			return par1Block == Block.obsidian ? this.toolMaterial
+		}
+		else if (tool == 2) {
+			return par1Block == Block.obsidian ? toolMaterial
 					.getHarvestLevel() == 3
 					: (par1Block != Block.blockDiamond
 					&& par1Block != Block.oreDiamond ? (par1Block != Block.blockGold
@@ -250,11 +162,14 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 					&& par1Block != Block.oreLapis ? (par1Block != Block.oreRedstone
 					&& par1Block != Block.oreRedstoneGlowing ? (par1Block.blockMaterial == Material.rock ? true
 							: par1Block.blockMaterial == Material.iron)
-							: this.toolMaterial.getHarvestLevel() >= 2)
-							: this.toolMaterial.getHarvestLevel() >= 1)
-							: this.toolMaterial.getHarvestLevel() >= 1)
-							: this.toolMaterial.getHarvestLevel() >= 2)
-							: this.toolMaterial.getHarvestLevel() >= 2);
+							: toolMaterial.getHarvestLevel() >= 2)
+							: toolMaterial.getHarvestLevel() >= 1)
+							: toolMaterial.getHarvestLevel() >= 1)
+							: toolMaterial.getHarvestLevel() >= 2)
+							: toolMaterial.getHarvestLevel() >= 2);
+		}
+		else if(tool == 4){
+	        return par1Block.blockID == Block.web.blockID;
 		}
 		return false;
 	}
@@ -267,68 +182,75 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block) {
 		if (tool == 2) {
 			return par2Block != null
-					&& (par2Block.blockMaterial == Material.iron || par2Block.blockMaterial == Material.rock) ? this.efficiencyOnProperMaterial
+					&& (par2Block.blockMaterial == Material.iron || par2Block.blockMaterial == Material.rock) ? efficiencyOnProperMaterial
 							: super.getStrVsBlock(par1ItemStack, par2Block);
-		} else if (tool == 3) {
+		}
+		else if (tool == 3) {
 			return par2Block != null
-					&& par2Block.blockMaterial == Material.wood ? this.efficiencyOnProperMaterial
+					&& par2Block.blockMaterial == Material.wood ? efficiencyOnProperMaterial
 							: super.getStrVsBlock(par1ItemStack, par2Block);
-		} else if (tool == 1) {
-			for (int var3 = 0; var3 < this.blocksEffectiveAgainst.length; ++var3) {
-				if (this.blocksEffectiveAgainst[var3] == par2Block) {
-					return this.efficiencyOnProperMaterial;
+		}
+		else if (tool == 1) {
+			for (int var3 = 0; var3 < blocksEffectiveAgainst.length; ++var3) {
+				if (blocksEffectiveAgainst[var3] == par2Block) {
+					return efficiencyOnProperMaterial;
 				}
 			}
+		}
+		else if(tool == 4) {
+	        return par2Block.blockID == Block.web.blockID ? 15.0F : 1.5F;
 		}
 
 		return 1.0F;
 	}
-    public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7)
-    {
-    	if(tool == 0) {
-        if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6))
-        {
-            return false;
-        }
-        else
-        {
-            if (ForgeHooks.onUseHoe(par1ItemStack, par2EntityPlayer, par3World, par4, par5, par6))
-            {
-                par1ItemStack.damageItem(1, par2EntityPlayer);
-                return true;
-            }
-            int var8 = par3World.getBlockId(par4, par5, par6);
-            int var9 = par3World.getBlockId(par4, par5 + 1, par6);
+	@Override
+	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7)
+	{
+		if(tool == 0) {
+			if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6))
+			{
+				return false;
+			}
+			else
+			{
+				if (ForgeHooks.onUseHoe(par1ItemStack, par2EntityPlayer, par3World, par4, par5, par6))
+				{
+					par1ItemStack.damageItem(1, par2EntityPlayer);
+					return true;
+				}
+				int var8 = par3World.getBlockId(par4, par5, par6);
+				int var9 = par3World.getBlockId(par4, par5 + 1, par6);
 
-            if ((par7 == 0 || var9 != 0 || var8 != Block.grass.blockID) && var8 != Block.dirt.blockID)
-            {
-                return false;
-            }
-            else
-            {
-                Block var10 = Block.tilledField;
-                par3World.playSoundEffect((double)((float)par4 + 0.5F), (double)((float)par5 + 0.5F), (double)((float)par6 + 0.5F), var10.stepSound.getStepSound(), (var10.stepSound.getVolume() + 1.0F) / 2.0F, var10.stepSound.getPitch() * 0.8F);
+				if ((par7 == 0 || var9 != 0 || var8 != Block.grass.blockID) && var8 != Block.dirt.blockID)
+				{
+					return false;
+				}
+				else
+				{
+					Block var10 = Block.tilledField;
+					par3World.playSoundEffect((par4 + 0.5F), (par5 + 0.5F), (par6 + 0.5F), var10.stepSound.getStepSound(), (var10.stepSound.getVolume() + 1.0F) / 2.0F, var10.stepSound.getPitch() * 0.8F);
 
-                if (par3World.isRemote)
-                {
-                    return true;
-                }
-                else
-                {
-                    par3World.setBlockWithNotify(par4, par5, par6, var10.blockID);
-                    par1ItemStack.damageItem(1, par2EntityPlayer);
-                    return true;
-                }
-            }
-        }
-        }
-    	else return false;
-    }
+					if (par3World.isRemote)
+					{
+						return true;
+					}
+					else
+					{
+						par3World.setBlockWithNotify(par4, par5, par6, var10.blockID);
+						par1ItemStack.damageItem(1, par2EntityPlayer);
+						return true;
+					}
+				}
+			}
+		} else {
+			return false;
+		}
+	}
 
 	@Override
 	public boolean isItemTool(ItemStack par1ItemStack)
 	{
-		return this.getItemStackLimit() == 1 && this.isDamageable();
+		return getItemStackLimit() == 1 && isDamageable();
 		//		return par1ItemStack.stackSize == 1;
 	}
 
@@ -348,8 +270,21 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 	public int getDamageVsEntity(Entity par1Entity)
 	{
 		World w = ModLoader.getMinecraftInstance().theWorld;
+		int x = 0;
+		int x3 = x+getRandom(100, -100);
 
-				if(model == "Akumanotume" && (
+		if(model == "Majuunotume" && (
+				par1Entity.getClass() == DqmEntityIkkakuusagi.class ||
+				par1Entity.getClass() == DqmEntityArumiraji.class ||
+				par1Entity.getClass() == DqmEntityKirapan.class ||
+				par1Entity.getClass() == DqmpetEntityIkkakuusagi.class ||
+				par1Entity.getClass() == DqmpetEntityKirapan.class
+				))
+		{
+			w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+			return damageVsEntity * 2;
+		}
+		if(model == "Akumanotume" && (
 				par1Entity.getClass() == DqmEntityDoraki.class ||
 				par1Entity.getClass() == DqmEntityDorakima.class ||
 				par1Entity.getClass() == DqmEntityRiripat.class ||
@@ -359,110 +294,11 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 				par1Entity.getClass() == DqmpetEntityDorakima.class ||
 				par1Entity.getClass() == DqmpetEntityGigantesu.class
 				))
-				{
-				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-				return this.weaponDamage * 2;
-				}
-				if(model == "Gureitoakusu" && (
-				par1Entity.getClass() == DqmEntityBigCrow.class ||
-				par1Entity.getClass() == DqmEntityKirikabuobake.class ||
-				par1Entity.getClass() == DqmEntityKimera.class ||
-				par1Entity.getClass() == DqmEntityDesufuratta.class ||
-				par1Entity.getClass() == DqmpetEntityKirikabuobake.class ||
-				par1Entity.getClass() == DqmpetEntityKimera.class||
-				par1Entity.getClass() == DqmEntityMeijikimera.class ||
-				par1Entity.getClass() == DqmEntityStarkimera.class
-				))
-				{
-				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-				return this.weaponDamage * 2;
-				}
-				if(model == "Oninokanabou" && (
-				par1Entity.getClass() == DqmEntitySura.class ||
-				//par1Entity.getClass() == DqmEntityMetasura.class ||
-				par1Entity.getClass() == DqmEntitySuraimubesu.class ||
-				par1Entity.getClass() == DqmEntityBubsura.class ||
-				//par1Entity.getClass() == DqmEntityHagumeta.class ||
-				par1Entity.getClass() == DqmEntityHoimisura.class ||
-				par1Entity.getClass() == DqmEntitySuraimutawa.class ||
-				par1Entity.getClass() == DqmEntitySuraimunaito.class ||
-				par1Entity.getClass() == DqmEntityKingsura.class ||
-				//par1Entity.getClass() == DqmEntityMetaking.class ||
-				par1Entity.getClass() == DqmEntitySuraimubehomazun.class ||
-				par1Entity.getClass() == DqmEntityMetaruraida.class ||
-				par1Entity.getClass() == DqmEntityKuinsuraimu.class ||
-				par1Entity.getClass() == DqmpetEntitySura.class ||
-				//par1Entity.getClass() == DqmpetEntityHagumeta.class ||
-				par1Entity.getClass() == DqmpetEntitySuraimutawa.class ||
-				par1Entity.getClass() == DqmpetEntitySuraimunaito.class ||
-				par1Entity.getClass() == DqmpetEntityKingsura.class ||
-				par1Entity.getClass() == DqmpetEntityKuinsuraimu.class||
-				//par1Entity.getClass() == DqmEntityMetaruburazazu.class ||
-				par1Entity.getClass() == DqmEntitySibirekurage.class ||
-				par1Entity.getClass() == DqmEntityBehoimisuraimu.class ||
-				//par1Entity.getClass() == DqmEntityPuratinaking.class ||
-				par1Entity.getClass() == DqmEntityBehoimusuraimu.class ||
-				par1Entity.getClass() == DqmEntityGorudentotemu.class ||
-				par1Entity.getClass() == DqmEntityGorudensuraimu.class ||
-				par1Entity.getClass() == DqmEntitySuraimumadyura.class
-				))
-				{
-				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-				return this.weaponDamage * 2;
-				}
-				if(model == "Metarukingnoturugi" && (
-
-				par1Entity.getClass() == DqmEntityMetasura.class ||
-				par1Entity.getClass() == DqmEntityHagumeta.class ||
-				par1Entity.getClass() == DqmEntityMetaking.class ||
-				par1Entity.getClass() == DqmpetEntityHagumeta.class ||
-				par1Entity.getClass() == DqmEntityMetaruburazazu.class ||
-				par1Entity.getClass() == DqmEntityPuratinaking.class
-				))
-				{
-				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-				return this.weaponDamage * 2;
-				}
-				if(model == "Seinarunaifu" && (
-				par1Entity.getClass() == DqmEntityGhost.class ||
-				par1Entity.getClass() == DqmEntityMetoroghost.class ||
-				par1Entity.getClass() == DqmEntityHerughost.class ||
-				par1Entity.getClass() == DqmEntityGaikotukensi.class ||
-				par1Entity.getClass() == DqmpetEntityGhost.class ||
-				par1Entity.getClass() == DqmpetEntityMetoroghost.class ||
-				par1Entity.getClass() == DqmpetEntityGaikotukensi.class||
-				par1Entity.getClass() == DqmEntityMeragosuto.class ||
-				par1Entity.getClass() == DqmEntitySamayoutamasii.class ||
-				par1Entity.getClass() == DqmEntitySiryounokisi.class ||
-				par1Entity.getClass() == DqmEntityKagenokisi.class
-				))
-				{
-				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-				return this.weaponDamage * 3;
-				}
-				if(model == "Rotonoturugi" && (
-				par1Entity.getClass() == DqmEntityEsterk.class ||
-				par1Entity.getClass() == DqmpetEntityLittleEsterk.class ||
-				par1Entity.getClass() == DqmEntityZoma.class
-				))
-				{
-				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-				return this.weaponDamage * 2;
-				}
-				if(model == "Doragonkira" && (
-				par1Entity.getClass() == DqmEntityDqmdragon.class ||
-				par1Entity.getClass() == DqmpetEntityDqmdragon.class||
-				par1Entity.getClass() == DqmEntityGamegon.class ||
-				par1Entity.getClass() == DqmEntityKisudragon.class ||
-				par1Entity.getClass() == DqmEntityGamegonload.class ||
-				par1Entity.getClass() == DqmEntityDasudragon.class ||
-				par1Entity.getClass() == DqmEntityGamegonrejendo.class
-				))
-				{
-				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-				return this.weaponDamage * 2;
-				}
-				if(model == "Atorasunokanaduti" && (
+		{
+			w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+			return damageVsEntity * 2;
+		}
+		if(model == "Atorasunokanaduti" && (
 				par1Entity.getClass() == DqmEntityGizumo.class ||
 				par1Entity.getClass() == DqmEntityAyasiikage.class ||
 				par1Entity.getClass() == DqmEntityWaraibukuro.class ||
@@ -491,71 +327,90 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 				par1Entity.getClass() == DqmEntityGoldman.class ||
 				par1Entity.getClass() == DqmEntityStonman.class
 				))
-				{
-				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-				return this.weaponDamage * 2;
-				}
-				if(model == "Majuunotume" && (
-				par1Entity.getClass() == DqmEntityIkkakuusagi.class ||
-				par1Entity.getClass() == DqmEntityArumiraji.class ||
-				par1Entity.getClass() == DqmEntityKirapan.class ||
-				par1Entity.getClass() == DqmpetEntityIkkakuusagi.class ||
-				par1Entity.getClass() == DqmpetEntityKirapan.class
+		{
+			w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+			return damageVsEntity * 2;
+		}
+		if(model == "Oninokanabou" && (
+				par1Entity.getClass() == DqmEntitySura.class ||
+				//par1Entity.getClass() == DqmEntityMetasura.class ||
+				par1Entity.getClass() == DqmEntitySuraimubesu.class ||
+				par1Entity.getClass() == DqmEntityBubsura.class ||
+				//par1Entity.getClass() == DqmEntityHagumeta.class ||
+				par1Entity.getClass() == DqmEntityHoimisura.class ||
+				par1Entity.getClass() == DqmEntitySuraimutawa.class ||
+				par1Entity.getClass() == DqmEntitySuraimunaito.class ||
+				par1Entity.getClass() == DqmEntityKingsura.class ||
+				//par1Entity.getClass() == DqmEntityMetaking.class ||
+				par1Entity.getClass() == DqmEntitySuraimubehomazun.class ||
+				par1Entity.getClass() == DqmEntityMetaruraida.class ||
+				par1Entity.getClass() == DqmEntityKuinsuraimu.class ||
+				par1Entity.getClass() == DqmpetEntitySura.class ||
+				//par1Entity.getClass() == DqmpetEntityHagumeta.class ||
+				par1Entity.getClass() == DqmpetEntitySuraimutawa.class ||
+				par1Entity.getClass() == DqmpetEntitySuraimunaito.class ||
+				par1Entity.getClass() == DqmpetEntityKingsura.class ||
+				par1Entity.getClass() == DqmpetEntityKuinsuraimu.class||
+				//par1Entity.getClass() == DqmEntityMetaruburazazu.class ||
+				par1Entity.getClass() == DqmEntitySibirekurage.class ||
+				par1Entity.getClass() == DqmEntityBehoimisuraimu.class ||
+				//par1Entity.getClass() == DqmEntityPuratinaking.class ||
+				par1Entity.getClass() == DqmEntityBehoimusuraimu.class ||
+				par1Entity.getClass() == DqmEntityGorudentotemu.class ||
+				par1Entity.getClass() == DqmEntityGorudensuraimu.class ||
+				par1Entity.getClass() == DqmEntitySuraimumadyura.class
 				))
-				{
+		{
+			w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+			return damageVsEntity * 2;
+		}
+		if(model == "Gureitoakusu" && (
+				par1Entity.getClass() == DqmEntityBigCrow.class ||
+				par1Entity.getClass() == DqmEntityKirikabuobake.class ||
+				par1Entity.getClass() == DqmEntityKimera.class ||
+				par1Entity.getClass() == DqmEntityDesufuratta.class ||
+				par1Entity.getClass() == DqmpetEntityKirikabuobake.class ||
+				par1Entity.getClass() == DqmpetEntityKimera.class||
+				par1Entity.getClass() == DqmEntityMeijikimera.class ||
+				par1Entity.getClass() == DqmEntityStarkimera.class
+				))
+		{
+			w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
+			return damageVsEntity * 2;
+		}
+		if(model == "Ookanaduti" )
+		{
+			if(x3>= -70 && x3<= 80)
+			{
+				return damageVsEntity * 1;
+			}
+			if(x3>= 81)
+			{
 				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-				return this.weaponDamage * 2;
-				}
-
-				int x = 0;
-				int x3 = x+getRandom(100, -100);
-
-				if(model == "Ookanaduti" )
-				{
-					if(x3>= -70 && x3<= 80)
-					{
-						return this.weaponDamage * 1;
-					}
-					if(x3>= 81)
-					{
-					w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-					return this.weaponDamage * 4;
-					}
-					if(x3<= -71)
-					{
-					w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
-					return this.weaponDamage * 0;
-					}
-				}
-
-				if(model == "Majinnokanaduti" )
-				{
-					if(x3>= 50)
-					{
-						w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-						return this.weaponDamage * 5;
-					}
-					if(x3<= 49)
-					{
-					w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
-					return this.weaponDamage * 0;
-					}
-				}
-				if(model == "Dokubari" )
-				{
-					if(x3>= 95)
-					{
-						w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);
-						return this.weaponDamage * 200;
-					}
-					if(x3<= 94)
-					{
-					//w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
-					return this.weaponDamage * 1;
-					}
-				}
-
-		return this.weaponDamage;
+				return damageVsEntity * 4;
+			}
+			if(x3<= -71)
+			{
+				w.playSoundAtEntity(par1Entity, "DQM_Sound.Miss", 0.9F, 0.9F);
+				return damageVsEntity * 0;
+			}
+		}
+		return damageVsEntity;
 	}
+
+	//防御関係
+	public EnumAction getItemUseAction(ItemStack par1ItemStack)
+    {
+        return EnumAction.block;
+    }
+    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+    {
+        par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
+        return par1ItemStack;
+    }
+    public int getMaxItemUseDuration(ItemStack par1ItemStack)
+    {
+        return 72000;
+    }
 
 }

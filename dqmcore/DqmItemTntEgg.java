@@ -9,7 +9,7 @@ public class DqmItemTntEgg extends ItemEgg implements ITextureProvider
 	public DqmItemTntEgg(int par1)
 	{
 		super(par1);
-		this.maxStackSize = 64;
+		maxStackSize = 64;
 	}
 	@Override
 	public String getTextureFile()

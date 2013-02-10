@@ -1,5 +1,4 @@
 package net.minecraft.src.dqmcore;
-import cpw.mods.fml.common.registry.FMLRegistry;
 import net.minecraft.src.*;
 
 
@@ -11,14 +10,14 @@ public class DqmAddItemRecipe extends mod_Dqm
 	public static void addRecipe()
 	{
 		//不定形レシピ
-    	ModLoader.addShapelessRecipe(new ItemStack(Bannouyaku ,1),new Object[]{
-    		new ItemStack(Yakusou, 1), new ItemStack(Dokukesisou, 1)});
-    	ModLoader.addShapelessRecipe(new ItemStack(Jouyakusou ,2),new Object[]{
-    		new ItemStack(Yakusou, 1),new ItemStack(Yakusou, 1),new ItemStack(Yakusou, 1)});
-    	ModLoader.addShapelessRecipe(new ItemStack(Tokuyakusou ,2),new Object[]{
-    		new ItemStack(Jouyakusou, 1),new ItemStack(Jouyakusou, 1),new ItemStack(Jouyakusou, 1)});
-    	ModLoader.addShapelessRecipe(new ItemStack(Kimeranotubasa ,1),new Object[]{
-    		new ItemStack(Kazekirinohane, 1),new ItemStack(Koumorinohane, 1),new ItemStack(Tyounohane, 1)});
+		ModLoader.addShapelessRecipe(new ItemStack(Bannouyaku ,1),new Object[]{
+			new ItemStack(Yakusou, 1), new ItemStack(Dokukesisou, 1)});
+		ModLoader.addShapelessRecipe(new ItemStack(Jouyakusou ,2),new Object[]{
+			new ItemStack(Yakusou, 1),new ItemStack(Yakusou, 1),new ItemStack(Yakusou, 1)});
+		ModLoader.addShapelessRecipe(new ItemStack(Tokuyakusou ,2),new Object[]{
+			new ItemStack(Jouyakusou, 1),new ItemStack(Jouyakusou, 1),new ItemStack(Jouyakusou, 1)});
+		ModLoader.addShapelessRecipe(new ItemStack(Kimeranotubasa ,1),new Object[]{
+			new ItemStack(Kazekirinohane, 1),new ItemStack(Koumorinohane, 1),new ItemStack(Tyounohane, 1)});
 
 		//固定レシピ
 		ModLoader.addRecipe(new ItemStack(Buruoubu,1),new Object[]{

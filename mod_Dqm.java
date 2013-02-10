@@ -478,45 +478,49 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		//ATK:DIAMOND=7,IRON=6,STORN=5,WOOD=4
 		//buki texture para(ATK,3=DIAMOND_foreru mono,8F=DIAMOND_horu sokudo,3=DIAMOND_katasa,enchant)***************************************************************************************
 		//IDの後の引数で0が鍬、1がシャベル、2がピッケル、3が斧
-		Debugsword = new DqmItemTool(DebugswordID, 1, DqmEnumToolMaterial.DEBUG).setIconCoord(6, 1).setItemName("Debugsword");
+		Debugsword = new DqmItemTool(DebugswordID, 0, DqmEnumToolMaterial.DEBUG).setmodel("Majuunotume").setIconCoord(6, 1).setItemName("Debugsword");
 		//Debugsword = new DqmItemSword(DebugswordID,DqmEnumToolMaterial.DEBUG).setmodel("d").setIconCoord(6, 1).setItemName("Debugsword");
 		 //redPickaxe = (new ItemRedPickaxe(EEBase.props.getInt("ItemRedPickaxe"))).setIconCoord(64, 0).setItemName("redPickaxe");
 
-		Uminarinotue = new DqmItemSword(UminarinotueID,DqmEnumToolMaterial.UMINARI).setmodel("Uminarinotue").setIconCoord(5, 0).setItemName("Uminarinotue");
-		Koorinoyaiba = new DqmItemSword(KoorinoyaibaID,DqmEnumToolMaterial.KOORI).setmodel("Koorinoyaiba").setIconCoord(4, 0).setItemName("Koorinoyaiba");
-		Inferunosword = new DqmItemSword(InferunoswordID,DqmEnumToolMaterial.INFERUNO).setmodel("Inferunosword").setIconCoord(3, 0).setItemName("Inferunosword");
-		Hayabusanoturugi = new DqmItemSword(HayabusanoturugiID,DqmEnumToolMaterial.HAYABUSA).setmodel("Hayabusanoturugi").setIconCoord(9, 0).setItemName("Hayabusanoturugi");
-		Kisekinoturugi = new DqmItemSword(KisekinoturugiID,DqmEnumToolMaterial.KISEKI).setmodel("Kisekinoturugi").setIconCoord(10, 0).setItemName("Kisekinoturugi");
-		Ginganoturugi = new DqmItemSword(GinganoturugiID,DqmEnumToolMaterial.GINGA).setIconCoord(0, 0).setItemName("Ginganoturugi");
-		Metarukingnoturugi = new DqmItemSword(MetarukingnoturugiID,DqmEnumToolMaterial.METAL).setIconCoord(1, 0).setItemName("Metarukingnoturugi");
-		Rotonotate = new DqmItemSword(RotonotateID,DqmEnumToolMaterial.ROTO).setIconCoord(4, 3).setItemName("Rotonotate");
-		Rotonoturugi = new DqmItemSword(RotonoturugiID,DqmEnumToolMaterial.ROTO).setIconCoord(2, 0).setItemName("Rotonoturugi");
-		Sabitatate = new DqmItemSword(SabitatateID,DqmEnumToolMaterial.OLD).setItemName("Sabitatate").setIconCoord(4, 4);
-		Doragonkira = new DqmItemSword(DoragonkiraID,DqmEnumToolMaterial.DRAGON).setmodel("Doragonkira").setIconCoord(6, 0).setItemName("Doragonkira");
-		Haganenoturugi = new DqmItemSword(HaganenoturugiID,DqmEnumToolMaterial.HAGANE).setIconCoord(7, 0).setItemName("Haganenoturugi");
-		Heisinoken = new DqmItemSword(HeisinokenID,DqmEnumToolMaterial.HEISHI).setIconCoord(8, 0).setItemName("Heisinoken");
-		Toraidento = new DqmItemSword(ToraidentoID,DqmEnumToolMaterial.TORAI).setIconCoord(13, 0).setItemName("Toraidento");
-		Oujanoturugi = new DqmItemSword(OujanoturugiID,DqmEnumToolMaterial.OUJA).setIconCoord(7, 1).setItemName("Oujanoturugi");
-		Papasunoturugi = new DqmItemSword(PapasunoturugiID,DqmEnumToolMaterial.PAPASU).setIconCoord(8, 1).setItemName("Papasunoturugi");
-		Papasunoturuginew = new DqmItemSword(PapasunoturuginewID,DqmEnumToolMaterial.PAPASUNEW).setIconCoord(9, 1).setItemName("Papasunoturuginew");
-		Hikarinotue = new DqmItemSword(HikarinotueID,DqmEnumToolMaterial.HIKARI).setmodel("Hikarinotue").setIconCoord(5, 1).setItemName("Hikarinotue");
-		Oninokanabou = new DqmItemSword(OninokanabouID,DqmEnumToolMaterial.ONI).setmodel("Oninokanabou").setIconCoord(13, 2).setItemName("Oninokanabou");
-		Akumanotume = new DqmItemSword(AkumanotumeID,DqmEnumToolMaterial.AKUMA).setmodel("Akumanotume").setIconCoord(6, 2).setItemName("Akumanotume");
-		Seinarunaifu = new DqmItemSword(SeinarunaifuID,DqmEnumToolMaterial.SEINARU).setmodel("Seinarunaifu").setIconCoord(8, 2).setItemName("Seinarunaifu");
-		Yaibanobumeran = new DqmItemSword(YaibanobumeranID,DqmEnumToolMaterial.YAIBA).setmodel("Yaibanobumeran").setIconCoord(9, 2).setItemName("Yaibanobumeran");
-		Majinnokanaduti = new DqmItemSword(MajinnokanadutiID,DqmEnumToolMaterial.MAJIN).setmodel("Majinnokanaduti").setIconCoord(12, 0).setItemName("Majinnokanaduti");
-		Ookanaduti = new DqmItemSword(OokanadutiID,DqmEnumToolMaterial.OO).setmodel("Ookanaduti").setIconCoord(12, 2).setItemName("Ookanaduti");
-		Atorasunokanaduti = new DqmItemSword(AtorasunokanadutiID,DqmEnumToolMaterial.ATORASU).setmodel("Atorasunokanaduti").setIconCoord(12, 1).setItemName("Atorasunokanaduti");
-		Gureitoakusu = new DqmItemSword(GureitoakusuID,DqmEnumToolMaterial.GUREITO).setmodel("Gureitoakusu").setIconCoord(13, 1).setItemName("Gureitoakusu");
-		Ikazutinotue = new DqmItemSword(IkazutinotueID,DqmEnumToolMaterial.IKAZUTI).setmodel("Ikazutinotue").setIconCoord(4, 2).setItemName("Ikazutinotue");
-		Dragonrod = new DqmItemSword(DragonrodID,DqmEnumToolMaterial.DRAGONROD).setmodel("Dragonrod").setIconCoord(5, 2).setItemName("Dragonrod");
-		Dokubari = new DqmItemSword(DokubariID,DqmEnumToolMaterial.DOKUBARI).setmodel("Dokubari").setIconCoord(10, 2).setItemName("Dokubari");
+		Uminarinotue = new DqmItemSword(UminarinotueID, 4,DqmEnumToolMaterial.UMINARI).setmodel("Uminarinotue").setIconCoord(5, 0).setItemName("Uminarinotue");
+		Koorinoyaiba = new DqmItemSword(KoorinoyaibaID, 4,DqmEnumToolMaterial.KOORI).setmodel("Koorinoyaiba").setIconCoord(4, 0).setItemName("Koorinoyaiba");
+		Inferunosword = new DqmItemSword(InferunoswordID, 4,DqmEnumToolMaterial.INFERUNO).setmodel("Inferunosword").setIconCoord(3, 0).setItemName("Inferunosword");
+		Hayabusanoturugi = new DqmItemSword(HayabusanoturugiID, 4,DqmEnumToolMaterial.HAYABUSA).setmodel("Hayabusanoturugi").setIconCoord(9, 0).setItemName("Hayabusanoturugi");
+		Kisekinoturugi = new DqmItemSword(KisekinoturugiID, 4,DqmEnumToolMaterial.KISEKI).setmodel("Kisekinoturugi").setIconCoord(10, 0).setItemName("Kisekinoturugi");
+		Ginganoturugi = new DqmItemSword(GinganoturugiID, 4,DqmEnumToolMaterial.GINGA).setIconCoord(0, 0).setItemName("Ginganoturugi");
+		Metarukingnoturugi = new DqmItemSword(MetarukingnoturugiID, 4,DqmEnumToolMaterial.METAL).setIconCoord(1, 0).setItemName("Metarukingnoturugi");
+		Rotonotate = new DqmItemSword(RotonotateID, 4,DqmEnumToolMaterial.ROTO).setIconCoord(4, 3).setItemName("Rotonotate");
+		Rotonoturugi = new DqmItemSword(RotonoturugiID, 4,DqmEnumToolMaterial.ROTO).setIconCoord(2, 0).setItemName("Rotonoturugi");
+		Sabitatate = new DqmItemSword(SabitatateID, 4,DqmEnumToolMaterial.OLD).setItemName("Sabitatate").setIconCoord(4, 4);
+		Doragonkira = new DqmItemSword(DoragonkiraID, 4,DqmEnumToolMaterial.DRAGON).setmodel("Doragonkira").setIconCoord(6, 0).setItemName("Doragonkira");
+		Haganenoturugi = new DqmItemSword(HaganenoturugiID, 4,DqmEnumToolMaterial.HAGANE).setIconCoord(7, 0).setItemName("Haganenoturugi");
+		Heisinoken = new DqmItemSword(HeisinokenID, 4,DqmEnumToolMaterial.HEISHI).setIconCoord(8, 0).setItemName("Heisinoken");
+		Toraidento = new DqmItemSword(ToraidentoID, 4,DqmEnumToolMaterial.TORAI).setIconCoord(13, 0).setItemName("Toraidento");
+		Oujanoturugi = new DqmItemSword(OujanoturugiID, 4,DqmEnumToolMaterial.OUJA).setIconCoord(7, 1).setItemName("Oujanoturugi");
+		Papasunoturugi = new DqmItemSword(PapasunoturugiID, 4,DqmEnumToolMaterial.PAPASU).setIconCoord(8, 1).setItemName("Papasunoturugi");
+		Papasunoturuginew = new DqmItemSword(PapasunoturuginewID, 4,DqmEnumToolMaterial.PAPASUNEW).setIconCoord(9, 1).setItemName("Papasunoturuginew");
+		Hikarinotue = new DqmItemSword(HikarinotueID, 4,DqmEnumToolMaterial.HIKARI).setmodel("Hikarinotue").setIconCoord(5, 1).setItemName("Hikarinotue");
+		Seinarunaifu = new DqmItemSword(SeinarunaifuID, 4,DqmEnumToolMaterial.SEINARU).setmodel("Seinarunaifu").setIconCoord(8, 2).setItemName("Seinarunaifu");
+		Yaibanobumeran = new DqmItemSword(YaibanobumeranID, 4,DqmEnumToolMaterial.YAIBA).setmodel("Yaibanobumeran").setIconCoord(9, 2).setItemName("Yaibanobumeran");
+		Majinnokanaduti = new DqmItemSword(MajinnokanadutiID, 4,DqmEnumToolMaterial.MAJIN).setmodel("Majinnokanaduti").setIconCoord(12, 0).setItemName("Majinnokanaduti");
+		Ikazutinotue = new DqmItemSword(IkazutinotueID, 4,DqmEnumToolMaterial.IKAZUTI).setmodel("Ikazutinotue").setIconCoord(4, 2).setItemName("Ikazutinotue");
+		Dragonrod = new DqmItemSword(DragonrodID, 4,DqmEnumToolMaterial.DRAGONROD).setmodel("Dragonrod").setIconCoord(5, 2).setItemName("Dragonrod");
+		Dokubari = new DqmItemSword(DokubariID, 4,DqmEnumToolMaterial.DOKUBARI).setmodel("Dokubari").setIconCoord(10, 2).setItemName("Dokubari");
+		Sabakinotue = new DqmItemSword(SabakinotueID, 4,DqmEnumToolMaterial.SABAKI).setIconCoord(4, 1).setItemName("Sabakinotue");
 
+		//シャベル系武器
+		Majuunotume = new DqmItemSword(MajuunotumeID,1,DqmEnumToolMaterial.MAJUU).setmodel("Majuunotume").setIconCoord(7, 2).setItemName("Majuunotume");
+		Akumanotume = new DqmItemSword(AkumanotumeID, 1,DqmEnumToolMaterial.AKUMA).setmodel("Akumanotume").setIconCoord(6, 2).setItemName("Akumanotume");
 
-		Sabakinotue = new DqmItemTool(SabakinotueID,1,DqmEnumToolMaterial.SABAKI).setIconCoord(4, 1).setItemName("Sabakinotue");
-		Majuunotume = new DqmItemTool(MajuunotumeID,1,DqmEnumToolMaterial.MAJUU).setIconCoord(7, 2).setItemName("Majuunotume");
+		//ツルハシ系武器
+		Ookanaduti = new DqmItemSword(OokanadutiID, 2, DqmEnumToolMaterial.OO).setmodel("Ookanaduti").setIconCoord(12, 2).setItemName("Ookanaduti");
+		Atorasunokanaduti = new DqmItemSword(AtorasunokanadutiID, 2,DqmEnumToolMaterial.ATORASU).setmodel("Atorasunokanaduti").setIconCoord(12, 1).setItemName("Atorasunokanaduti");
+		Oninokanabou = new DqmItemSword(OninokanabouID, 2,DqmEnumToolMaterial.ONI).setmodel("Oninokanabou").setIconCoord(13, 2).setItemName("Oninokanabou");
 
+		//アックス系武器
+		Gureitoakusu = new DqmItemTool(GureitoakusuID, 3,DqmEnumToolMaterial.GUREITO).setmodel("Gureitoakusu").setIconCoord(13, 1).setItemName("Gureitoakusu");
 
+		//弓系武器
 		Kazekirinoyumi = new DqmItemBow(KazekirinoyumiID).setmodel("Kazekirinoyumi").setIconCoord(15, 0).setItemName("Kazekirinoyumi");
 		Sefiramunoyumi = new DqmItemBow(SefiramunoyumiID).setmodel("Sefiramunoyumi").setIconCoord(15, 1).setItemName("Sefiramunoyumi");
 		Yuuwakunoyumi = new DqmItemBow(YuuwakunoyumiID).setmodel("Yuuwakunoyumi").setIconCoord(15, 2).setItemName("Yuuwakunoyumi");

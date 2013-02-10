@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.src.*;
 import net.minecraft.src.dqmcore.DqmEntity.*;
+import net.minecraft.src.forge.ForgeHooks;
 import net.minecraft.src.forge.ITextureProvider;
 public class DqmItemSword extends ItemSword implements ITextureProvider
 {
@@ -12,21 +13,130 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 	private String model;
 	private int attack;
 	private int heel;
-	private World world;
+	private Block[] blocksEffectiveAgainst;
+	private int tool = 0; // ツール種別設定
+	static Block[] pickaxe = new Block[] { Block.cobblestone,
+		Block.stairDouble, Block.stairSingle, Block.stone, Block.sandStone,
+		Block.cobblestoneMossy, Block.oreIron, Block.blockSteel,
+		Block.oreCoal, Block.blockGold, Block.oreGold, Block.oreDiamond,
+		Block.blockDiamond, Block.ice, Block.netherrack, Block.oreLapis,
+		Block.blockLapis, Block.oreRedstone, Block.oreRedstoneGlowing,
+		Block.rail, Block.railDetector, Block.railPowered };
+	static Block[] axe = new Block[] { Block.planks, Block.bookShelf,
+		Block.wood, Block.chest, Block.stairDouble, Block.stairSingle,
+		Block.pumpkin, Block.pumpkinLantern };
+	static Block[] spade = new Block[] { Block.grass, Block.dirt, Block.sand,
+		Block.gravel, Block.snow, Block.blockSnow, Block.blockClay,
+		Block.tilledField, Block.slowSand, Block.mycelium };
+	static Block[] hoe = new Block[] { Block.bedrock };// ダミーのブロック破壊適正＆鍬の適正セット
+    public float efficiencyOnProperMaterial = 4.0F;
 
-	public DqmItemSword(int par1, EnumToolMaterial par2EnumToolMaterial)
+	public DqmItemSword(int par1, int toolfalg, EnumToolMaterial par2EnumToolMaterial)
 	{
 		super(par1,par2EnumToolMaterial);
 		this.toolMaterial = par2EnumToolMaterial;
 		this.maxStackSize = 1;
 		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
-		this.weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
+		this.weaponDamage = toolfalg + par2EnumToolMaterial.getDamageVsEntity();
+        this.efficiencyOnProperMaterial = par2EnumToolMaterial.getEfficiencyOnProperMaterial();
+		tool = toolfalg;
+		if (toolfalg == 0) {
+			blocksEffectiveAgainst = hoe;
+		}
+		if (toolfalg == 1) {
+			blocksEffectiveAgainst = spade;
+		}
+		if (toolfalg == 2) {
+			blocksEffectiveAgainst = pickaxe;
+		}
+		if (toolfalg == 3) {
+			blocksEffectiveAgainst = axe;
+		}
+		//　攻撃力補正1未満になった場合最低値として1をセット
+		//　それ以外は通常計算式で処理
+		if(1 > weaponDamage) {
+			weaponDamage = 1;
+		}
 	}
 
 	public DqmItemSword setmodel(String m)
 	{
 		model = m;
 		return this;
+	}
+
+	@Override
+	public boolean canHarvestBlock(Block par1Block) // シャベル用判定
+	{
+		if (tool == 1) {
+			return par1Block == Block.snow ? true
+					: par1Block == Block.blockSnow;
+		}
+		else if (tool == 2) {
+			return par1Block == Block.obsidian ? toolMaterial
+					.getHarvestLevel() == 3
+					: (par1Block != Block.blockDiamond
+					&& par1Block != Block.oreDiamond ? (par1Block != Block.blockGold
+					&& par1Block != Block.oreGold ? (par1Block != Block.blockSteel
+					&& par1Block != Block.oreIron ? (par1Block != Block.blockLapis
+					&& par1Block != Block.oreLapis ? (par1Block != Block.oreRedstone
+					&& par1Block != Block.oreRedstoneGlowing ? (par1Block.blockMaterial == Material.rock ? true
+							: par1Block.blockMaterial == Material.iron)
+							: toolMaterial.getHarvestLevel() >= 2)
+							: toolMaterial.getHarvestLevel() >= 1)
+							: toolMaterial.getHarvestLevel() >= 1)
+							: toolMaterial.getHarvestLevel() >= 2)
+							: toolMaterial.getHarvestLevel() >= 2);
+		}
+		else if(tool == 4){
+	        return par1Block.blockID == Block.web.blockID;
+		}
+		return false;
+	}
+
+    public float getStrVsBlockTool(ItemStack par1ItemStack, Block par2Block)
+    {
+        for (int var3 = 0; var3 < this.blocksEffectiveAgainst.length; ++var3)
+        {
+            if (this.blocksEffectiveAgainst[var3] == par2Block)
+            {
+                return this.efficiencyOnProperMaterial;
+            }
+        }
+
+        return 1.0F;
+    }
+	@Override
+	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block) {
+		if (tool == 2) {
+			return par2Block != null
+					&& (par2Block.blockMaterial == Material.iron || par2Block.blockMaterial == Material.rock) ? efficiencyOnProperMaterial
+							: getStrVsBlockTool(par1ItemStack, par2Block);
+		}
+		else if (tool == 3) {
+			return par2Block != null
+					&& par2Block.blockMaterial == Material.wood ? efficiencyOnProperMaterial
+							: getStrVsBlockTool(par1ItemStack, par2Block);
+		}
+		else if (tool == 1) {
+			for (int var3 = 0; var3 < blocksEffectiveAgainst.length; ++var3) {
+				if (blocksEffectiveAgainst[var3] == par2Block) {
+					return efficiencyOnProperMaterial;
+				}
+			}
+		}
+		else if(tool == 4) {
+	        return par2Block.blockID == Block.web.blockID ? 15.0F : 1.5F;
+		}
+
+		return 1.0F;
+	}
+
+	public float getStrVsBlock(ItemStack stack, Block block, int meta) {
+		if (ForgeHooks.isToolEffective(stack, block, meta)) {
+			return efficiencyOnProperMaterial;
+		}
+		return getStrVsBlock(stack, block);
 	}
 
 	public DqmItemSword setWeaponDamage(int par1)//Etity par1Entity)
@@ -195,7 +305,45 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				par3World.playSoundAtEntity(par2EntityPlayer, "DQM_Sound.Kiseki", 0.9F, 0.9F);
 			}
 			par1ItemStack.damageItem(1, par2EntityPlayer);
-			return true;
+		}
+		if(tool == 0) {
+			if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6))
+			{
+				return false;
+			}
+			else
+			{
+				if (ForgeHooks.onUseHoe(par1ItemStack, par2EntityPlayer, par3World, par4, par5, par6))
+				{
+					par1ItemStack.damageItem(1, par2EntityPlayer);
+					return true;
+				}
+				int var8 = par3World.getBlockId(par4, par5, par6);
+				int var9 = par3World.getBlockId(par4, par5 + 1, par6);
+
+				if ((par7 == 0 || var9 != 0 || var8 != Block.grass.blockID) && var8 != Block.dirt.blockID)
+				{
+					return false;
+				}
+				else
+				{
+					Block var10 = Block.tilledField;
+					par3World.playSoundEffect((par4 + 0.5F), (par5 + 0.5F), (par6 + 0.5F), var10.stepSound.getStepSound(), (var10.stepSound.getVolume() + 1.0F) / 2.0F, var10.stepSound.getPitch() * 0.8F);
+
+					if (par3World.isRemote)
+					{
+						return true;
+					}
+					else
+					{
+						par3World.setBlockWithNotify(par4, par5, par6, var10.blockID);
+						par1ItemStack.damageItem(1, par2EntityPlayer);
+						return true;
+					}
+				}
+			}
+		} else {
+			return false;
 		}
 	}
 
@@ -467,6 +615,12 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				}
 
 		return this.weaponDamage;
+	}
+	@Override
+	public boolean isItemTool(ItemStack par1ItemStack)
+	{
+		return true;
+		//		return par1ItemStack.stackSize == 1;
 	}
 
 

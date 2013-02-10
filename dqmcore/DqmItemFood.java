@@ -9,13 +9,13 @@ public class DqmItemFood extends ItemFood implements ITextureProvider
 	public DqmItemFood(int par1, int par2, float par3, boolean par4,int par5)
 	{
 		super(par1, par2, par3, par4);
-		this.maxStackSize = par5;
+		maxStackSize = par5;
 	}
 
 	@Override
 	public int getItemStackLimit()
 	{
-		return this.maxStackSize;
+		return maxStackSize;
 	}
 
 	@Override
@@ -27,9 +27,10 @@ public class DqmItemFood extends ItemFood implements ITextureProvider
 	/**
 	 * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
 	 */
-    public ItemStack onFoodEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
-    {
-    	super.onFoodEaten(par1ItemStack,par2World,par3EntityPlayer);
+	@Override
+	public ItemStack onFoodEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+	{
+		super.onFoodEaten(par1ItemStack,par2World,par3EntityPlayer);
 		int ID =par1ItemStack.itemID;
 		EntityPlayer ep = par3EntityPlayer;
 		if(ID == Dqm.Yakusou.shiftedIndex){ep.setEntityHealth(ep.getHealth()+5);}
@@ -41,16 +42,16 @@ public class DqmItemFood extends ItemFood implements ITextureProvider
 			ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 200 * 20, 2));
 			ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 200 * 20, 2));
 			ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 200 * 20, 2));
-			}
+		}
 		if(ID == Dqm.Dokukesisou.shiftedIndex){ep.removePotionEffect(Potion.poison.id);}
 		if(ID == Dqm.Bannouyaku.shiftedIndex){ep.clearActivePotions();}
-        return par1ItemStack;
-    }
+		return par1ItemStack;
+	}
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	{
-		par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
+		par3EntityPlayer.setItemInUse(par1ItemStack, getMaxItemUseDuration(par1ItemStack));
 		return par1ItemStack;
 	}
 }

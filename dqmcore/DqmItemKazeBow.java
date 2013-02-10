@@ -61,27 +61,27 @@ public class DqmItemKazeBow extends Item implements ITextureProvider
                 entityarrow.func_46023_b(k);
             }*/
 
-            if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, par1ItemStack) > 0)
-            {
-            	entityarrow.setFire(100);
-            }
+			if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, par1ItemStack) > 0)
+			{
+				entityarrow.setFire(100);
+			}
 
-            par1ItemStack.damageItem(1, par3EntityPlayer);
-            par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+			par1ItemStack.damageItem(1, par3EntityPlayer);
+			par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
 
-            if (!flag)
-            {
-            	par3EntityPlayer.inventory.consumeInventoryItem(Item.arrow.shiftedIndex);
-            }
-            else
-            {
-            	entityarrow.doesArrowBelongToPlayer = false;
-            }
+			if (!flag)
+			{
+				par3EntityPlayer.inventory.consumeInventoryItem(Item.arrow.shiftedIndex);
+			}
+			else
+			{
+				entityarrow.doesArrowBelongToPlayer = false;
+			}
 
-            if (!par2World.isRemote)
-            {
-            	par2World.spawnEntityInWorld(entityarrow);
-            }
+			if (!par2World.isRemote)
+			{
+				par2World.spawnEntityInWorld(entityarrow);
+			}
 		}
 	}
 

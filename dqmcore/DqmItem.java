@@ -33,12 +33,12 @@ public class DqmItem extends Item implements ITextureProvider
 			return;
 		}
 		//ポーション効果：0で+3、1で+6、2で+12・・・・多分3=24,4=48,5=96？
-		if(ID == mod_Dqm.Gouketunoudewa.shiftedIndex && !ep.isPotionActive(Potion.damageBoost)){ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 1));}
-		if(ID == mod_Dqm.Tikaranorubi.shiftedIndex && !ep.isPotionActive(Potion.damageBoost)){ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 0));}
-		if(ID == mod_Dqm.Hosifuru.shiftedIndex && !ep.isPotionActive(Potion.moveSpeed)){ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 1, 4));}
-		if(ID == mod_Dqm.Hayatenoring.shiftedIndex && !ep.isPotionActive(Potion.moveSpeed)){ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 1, 1));}
-		if((ID == mod_Dqm.Hosifuru.shiftedIndex || ID == mod_Dqm.Hayatenoring.shiftedIndex) && !ep.isPotionActive(Potion.jump)){ep.addPotionEffect(new PotionEffect(Potion.jump.id, 1, 1));}
-		if(ID == mod_Dqm.Mamorinorubi.shiftedIndex && !ep.isPotionActive(Potion.resistance)){ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 1, 0));}
+		if(ID == Dqm.Gouketunoudewa.shiftedIndex && !ep.isPotionActive(Potion.damageBoost)){ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 1));}
+		if(ID == Dqm.Tikaranorubi.shiftedIndex && !ep.isPotionActive(Potion.damageBoost)){ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 0));}
+		if(ID == Dqm.Hosifuru.shiftedIndex && !ep.isPotionActive(Potion.moveSpeed)){ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 1, 4));}
+		if(ID == Dqm.Hayatenoring.shiftedIndex && !ep.isPotionActive(Potion.moveSpeed)){ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 1, 1));}
+		if((ID == Dqm.Hosifuru.shiftedIndex || ID == Dqm.Hayatenoring.shiftedIndex) && !ep.isPotionActive(Potion.jump)){ep.addPotionEffect(new PotionEffect(Potion.jump.id, 1, 1));}
+		if(ID == Dqm.Mamorinorubi.shiftedIndex && !ep.isPotionActive(Potion.resistance)){ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 1, 0));}
 	}
 
 	@Override

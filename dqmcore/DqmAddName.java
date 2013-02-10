@@ -1,7 +1,5 @@
 package net.minecraft.src.dqmcore;
 import net.minecraft.src.*;
-import net.minecraft.src.dqmcore.Pet.*;
-import net.minecraft.src.dqmcore.*;
 
 public class DqmAddName extends mod_Dqm
 {

@@ -41,17 +41,18 @@ public class DqmEntityLivingHandler implements IEntityLivingHandler
 		if(entity instanceof EntityPlayer && attack.getEntity() instanceof EntityLiving)
 			//ここでプレイヤーと攻撃対象を判定
 		{
-				ItemStack armor = ((EntityPlayer)entity).inventory.armorItemInSlot(2);
-				//アーマーインベントリから防具を取得
-				if(armor !=null && armor.itemID == mod_Dqm.Honoonoyoroi.shiftedIndex)
-				{
-					attack.getEntity().setFire(5);
-					w.playSoundAtEntity(entity, "DQM_Sound.Honoo", 0.9F, 0.9F);
-				}
-				if(armor != null && armor.itemID == mod_Dqm.Yaibanoyoroi.shiftedIndex)
-					attack.getEntity().attackEntityFrom(DamageSource.generic, damage / 2);
-				w.playSoundAtEntity(entity, "DQM_Sound.Yaiba", 0.9F, 0.9F);
-					//攻撃対象に受けたダメージ分与える
+			ItemStack armor = ((EntityPlayer)entity).inventory.armorItemInSlot(2);
+			//アーマーインベントリから防具を取得
+			if(armor !=null && armor.itemID == mod_Dqm.Honoonoyoroi.shiftedIndex)
+			{
+				attack.getEntity().setFire(5);
+				w.playSoundAtEntity(entity, "DQM_Sound.Honoo", 0.9F, 0.9F);
+			}
+			if(armor != null && armor.itemID == mod_Dqm.Yaibanoyoroi.shiftedIndex) {
+				attack.getEntity().attackEntityFrom(DamageSource.generic, damage / 2);
+			}
+			w.playSoundAtEntity(entity, "DQM_Sound.Yaiba", 0.9F, 0.9F);
+			//攻撃対象に受けたダメージ分与える
 		}
 		return false;
 		//falseで以降のダメージ処理は行う．trueにすればダメージを完全に反射する．
