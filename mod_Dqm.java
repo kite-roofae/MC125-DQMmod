@@ -7,9 +7,14 @@ import net.minecraft.src.dqmcore.*;
 import net.minecraft.src.dqmcore.DqmEntity.*;
 import net.minecraft.src.forge.*;
 import net.minecraft.src.dqmcore.Pet.*;
+import net.minecraft.src.dqmcore.Block.*;
 
 public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 {
+	//ÉuÉçÉbÉNID
+	@MLProp(info="DqmBlock ID")
+    int DqmBlockID = 240;
+    public static Block DqmBlock;
 
 	//ÉAÉCÉeÉÄID
 
@@ -468,6 +473,40 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	public void load()
 	{
 		MinecraftForgeClient.preloadTexture("/dqm/DqmItems.png");
+        MinecraftForgeClient.preloadTexture("/dqm/DqmTerrain.png");
+
+        DqmBlock = (new DqmBlock(DqmBlockID, 0)).setHardness(3.5F).setResistance(1.0F).setBlockName("DqmBlock").setRequiresSelfNotify();
+        Item.itemsList[this.DqmBlockID] = (new DqmItemBlock(this.DqmBlockID - 256)).setItemName("DqmBlock");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 0), "Tekkouseki Ore");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 1), "Yougansekinokakera Ore");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 2), "Kagaminoisi Ore");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 3), "Misriru Ore");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 4), "Puratina Ore");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 5), "Metal Block");
+
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 0), "ja_JP", "ìSçzêŒÇÃçzêŒ");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 1), "ja_JP", "ónä‚êŒÇÃçzêŒ");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 2), "ja_JP", "ãæÇÃêŒÇÃçzêŒ");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 3), "ja_JP", "É~ÉXÉäÉãÇÃçzêŒ");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 4), "ja_JP", "ÉvÉâÉ`ÉiÇÃçzêŒ");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 5), "ja_JP", "ÉÅÉ^ÉãÇÃçzêŒ");
+
+        /*
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 6), "Ruby Block");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 7), "Sapphire Block");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 8), "Emerald Block");
+        ModLoader.addName(new ItemStack(DqmBlock, 1, 9), "Topaz Block");*/
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 0, "pickaxe", 1);
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 1, "pickaxe", 2);
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 2, "pickaxe", 2);
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 3, "pickaxe", 3);
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 4, "pickaxe", 3);
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 5, "pickaxe", 3);
+        /*
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 6, "pickaxe", 3);
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 7, "pickaxe", 2);
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 8, "pickaxe", 3);
+        MinecraftForge.setBlockHarvestLevel(DqmBlock, 9, "pickaxe", 1);*/
 		/*
         public DqmItemSword(int par1, DqmEnumToolMaterial cloth,int w,int h,int t,float s,int d,int e)
         {
@@ -798,8 +837,61 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 
 	}
 	//Player's special inventory, doesn't drop items, when you die, and a record of it is kept for the Minecraft world;
+	//generateNether(w, random, chunkX << 4, chunkZ << 4);
+    public void generateSurface(World var1, Random var2, int var3, int var4)
+    {
+        int var5;
+        int var6;
+        int var7;
+        int var8;
 
+        for (var5 = 0; var5 < 5; ++var5)
+        {
+            var6 = var3 + var2.nextInt(16);
+            var7 = var2.nextInt(20);
+            var8 = var4 + var2.nextInt(16);
+            (new DqmWorldGen(DqmBlock.blockID, 8, 0)).generate(var1, var2, var6, var7, var8);
+        }
 
+        for (var5 = 0; var5 < 3; ++var5)
+        {
+            var6 = var3 + var2.nextInt(16);
+            var7 = var2.nextInt(15);
+            var8 = var4 + var2.nextInt(16);
+            (new DqmWorldGen(DqmBlock.blockID, 8, 1)).generate(var1, var2, var6, var7, var8);
+        }
+
+        for (var5 = 0; var5 < 4; ++var5)
+        {
+            var6 = var3 + var2.nextInt(16);
+            var7 = var2.nextInt(15);
+            var8 = var4 + var2.nextInt(16);
+            (new DqmWorldGen(DqmBlock.blockID, 8, 2)).generate(var1, var2, var6, var7, var8);
+        }
+
+        for (var5 = 0; var5 < 4; ++var5)
+        {
+            var6 = var3 + var2.nextInt(16);
+            var7 = var2.nextInt(10);
+            var8 = var4 + var2.nextInt(16);
+            (new DqmWorldGen(DqmBlock.blockID, 8, 3)).generate(var1, var2, var6, var7, var8);
+        }
+
+        for (var5 = 0; var5 < 5; ++var5)
+        {
+            var6 = var3 + var2.nextInt(16);
+            var7 = var2.nextInt(10);
+            var8 = var4 + var2.nextInt(16);
+            (new DqmWorldGen(DqmBlock.blockID, 8, 4)).generate(var1, var2, var6, var7, var8);
+        }
+        for (var5 = 0; var5 < 6; ++var5)
+        {
+            var6 = var3 + var2.nextInt(16);
+            var7 = var2.nextInt(10);
+            var8 = var4 + var2.nextInt(16);
+            (new DqmWorldGen(DqmBlock.blockID, 8, 5)).generate(var1, var2, var6, var7, var8);
+        }
+    }
 
 	//Perform this function, each update tick, that the player is in a menu.
 	@Override
@@ -885,6 +977,8 @@ weakness	//jakuten
 		renderers.put(DqmEntityKirapanBike.class, new DqmRenderKirapanBike(new DqmModelKirapanBike()));
 		renderers.put(DqmEntityRamiaBike.class, new DqmRenderRamiaBike());
 		renderers.put(DqmEntityDragonBike.class, new DqmRenderDragonBike());
+		//renderers.put(DqmTileEntityTuboRenderer.class, new DqmTileEntityTuboRenderer());
+
 	}
 	@Override
 	public String getVersion()

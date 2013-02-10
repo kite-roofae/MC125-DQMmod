@@ -302,6 +302,7 @@ public class DqmAddName extends mod_Dqm
 
 
 
+
 		//モンスター名（日）************************************************************************************************************************************************************
 		ModLoader.addLocalization("entity.Arumiraji.name", "ja_JP", "アルミラージ");
 		ModLoader.addLocalization("entity.Atorasu.name", "ja_JP", "アトラス");
@@ -379,6 +380,8 @@ public class DqmAddName extends mod_Dqm
 		ModLoader.addLocalization("entity.Stonman.name", "ja_JP", "ストーンマン");
 		ModLoader.addLocalization("entity.Sumairurokku.name", "ja_JP", "スマイルロック");
 		ModLoader.addLocalization("entity.Suraimumadyura.name", "ja_JP", "スライムマデュラ");
+		ModLoader.addLocalization("entity.Marinsuraimu.name", "ja_JP", "マリンスライム");
+		ModLoader.addLocalization("entity.Suraimutumuri.name", "ja_JP", "スライムつむり");
 
 
 

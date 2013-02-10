@@ -150,6 +150,9 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		cs.addCustomSpawn(DqmEntitySuraimunaito.class, 5, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityMetaruraida.class, 4, 1, 1, Type.monster);
 
+		cs.addCustomSpawn(DqmEntitySuraimutumuri.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMarinsuraimu.class, 4, 1, 1, Type.monster);
+
 		cs.addCustomSpawn(DqmEntityBehoimisuraimu.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityBehoimusuraimu.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityDasudragon.class, 3, 1, 1, Type.monster,hellsky);
@@ -234,6 +237,8 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		ML.registerEntityID(DqmEntityPuratinaking.class, "Puratinaking",ML.getUniqueEntityId(),4349438,4349438);
 		ML.registerEntityID(DqmEntitySibirekurage.class, "Sibirekurage",ML.getUniqueEntityId(),4349438,4349438);
 		ML.registerEntityID(DqmEntityMetaruburazazu.class, "Metaruburazazu",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntitySuraimutumuri.class, "Suraimutumuri",ML.getUniqueEntityId(),4349438,4349438);
+		ML.registerEntityID(DqmEntityMarinsuraimu.class, "Marinsuraimu",ML.getUniqueEntityId(),4349438,4349438);
 
 		ML.registerEntityID(DqmEntityMeijikimera.class, "Meijikimera",ML.getUniqueEntityId(),2349438,2349438);
 		ML.registerEntityID(DqmEntityStarkimera.class, "Starkimera",ML.getUniqueEntityId(),2349438,2349438);
@@ -382,6 +387,9 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		renderers.put(DqmEntityStonman.class, new DqmRender(new DqmModelGoremu(), 0.5f));
 		renderers.put(DqmEntitySumairurokku.class, new DqmRender(new DqmModelBakudaniwa(), 0.5f));
 		renderers.put(DqmEntitySuraimumadyura.class, new DqmRender(new DqmModelPuratinaking(), 0.5f));
+
+		renderers.put(DqmEntityMarinsuraimu.class, new DqmRender(new DqmModelMarinsuraimu(), 0.5f));
+		renderers.put(DqmEntitySuraimutumuri.class, new DqmRender(new DqmModelMarinsuraimu(), 0.5f));
 
 
 		// Pet************************************************************************************************************************************************************

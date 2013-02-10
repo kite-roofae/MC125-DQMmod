@@ -494,6 +494,7 @@ public class DqmAddItemRecipe extends mod_Dqm
 		ModLoader.addSmelting(Inotinoisi.shiftedIndex, new ItemStack(Taiyounoisi ,1));
 		ModLoader.addSmelting(Oriharukon.shiftedIndex, new ItemStack(Inotinoisi ,1));
 		ModLoader.addSmelting(Papasunoturugi.shiftedIndex, new ItemStack(Papasunokatami ,1));
+		ModLoader.addSmelting(DqmBlock.blockID, new ItemStack(Tekkouseki ,1));
 
 	}
 }

@@ -463,6 +463,8 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				par1Entity.getClass() == DqmEntityBehoimusuraimu.class ||
 				par1Entity.getClass() == DqmEntityGorudentotemu.class ||
 				par1Entity.getClass() == DqmEntityGorudensuraimu.class ||
+				par1Entity.getClass() == DqmEntitySuraimutumuri.class ||
+				par1Entity.getClass() == DqmEntityMarinsuraimu.class ||
 				par1Entity.getClass() == DqmEntitySuraimumadyura.class
 				))
 				{
