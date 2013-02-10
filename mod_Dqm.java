@@ -236,6 +236,14 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	public static int SaigonokagiID = 6304- 256;
 	public static Item Saigonokagi;
 
+		//àÁê¨éÌ
+		/*
+		@MLProp(info="YakusouSeeds ID")
+		public static int YakusouSeedsID = 6401- 256;
+		public static Item YakusouSeeds;
+		@MLProp(info="YakusouSeedsB ID")
+		public static int YakusouSeedsBID = 240- 256;
+		public static Block YakusouSeedsB;*/
 
 
 	//åïïîïi
@@ -724,6 +732,12 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 		Gouketunoudewa = new DqmItem(GouketunoudewaID).setMaxStackSize(1).setItemName("Gouketunoudewa").setIconCoord(1, 6);
 		Hayatenoring = new DqmItem(HayatenoringID).setMaxStackSize(1).setItemName("Hayatenoring").setIconCoord(3, 5);
 		Hosifuru = new DqmItem(HosifuruID).setMaxStackSize(1).setItemName("Hosifuru").setIconCoord(1, 5);
+
+				//BlockÇÃÇ∆Ç±Ç…DqmBlockSeedsÇ∆DqmBlockSeeds2ÇëΩï™ì¸ÇÍÇÈÇ∆évÇ§
+				//YakusouSeeds = new DqmItemSeeds(YakusouSeedsID, Block.crops.blockID, Block.tilledField.blockID).setItemName("YakusouSeeds").setIconCoord(0, 11);
+
+				//YakusouSeedsB = new DqmBlockSeeds(39, 88).setHardness(0.0F).setBlockName("YakusouSeedsB").setStepSound(Block.soundGrassFootstep).disableStats().setRequiresSelfNotify();
+
 		/*
 		moveSpeed	//idou
 		moveSlowdown	//idou
