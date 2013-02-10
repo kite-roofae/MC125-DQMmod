@@ -14,10 +14,11 @@ import net.minecraft.src.forge.ITextureProvider;
 
 public abstract class DqmItemBike extends Item
 {
+
+
 	public static SoundPoolEntry onPlayStreaming;
 
     public static HashMap bikes = new HashMap();
-    private String model;
 
     public DqmItemBike(int var1)
     {
@@ -25,11 +26,7 @@ public abstract class DqmItemBike extends Item
         this.maxStackSize = 1;
         this.setMaxDamage(64);
     }
-	public DqmItemBike setmodel(String m)
-	{
-		model = m;
-		return this;
-	}
+
     /**
      * Callback for item usage. If the item does something special on right clicking, he will have one of those. Return
      * True if something happen and false if it don't. This is for ITEMS, not BLOCKS !
@@ -60,8 +57,8 @@ public abstract class DqmItemBike extends Item
                 else
                 {
 
-    				if(model == "Ramia"){var3.playSoundAtEntity(var2, "DQM_Sound.Ramia", 0.9F, 0.9F);}
-    				if(model == "Papasunokatami"){var3.playSoundAtEntity(var2, "DQM_Sound.Kirapansa", 0.9F, 0.9F);}
+                	
+
                     DqmRidableCreature var9 = this.getBike(var2);
 
                     if (var9 == null)

@@ -38,6 +38,7 @@ public class DqmEntityRamiaBike extends DqmRidableCreature
      */
     public double getMountedYOffset()
     {
+    	
         return 2.3D;
     }
 
@@ -46,6 +47,7 @@ public class DqmEntityRamiaBike extends DqmRidableCreature
      */
     protected String getLivingSound()
     {
+    	
         return null;
     }
 
@@ -69,7 +71,8 @@ public class DqmEntityRamiaBike extends DqmRidableCreature
      * Returns if this entity is sneaking.
      */
     public boolean isSneaking()
-    {
+    
+    {	
         return !this.onGround ? false : super.isSneaking();
     }
 
