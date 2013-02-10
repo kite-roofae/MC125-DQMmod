@@ -8,8 +8,11 @@ import net.minecraft.src.forge.IEntityLivingHandler;
 
 public class DqmEntityLivingHandler implements IEntityLivingHandler
 {
-	private int c = 0;
+	private int ccount = 0;
 	protected static Random Rand = new Random();
+	private int posX = 0;
+	private int posY = 0;
+	private int posZ = 0;
 
 	//EntityLiving（動物やモブやプレイヤー）がアイテムによらずに自然にスポーンした時に呼ばれます．
 	//trueを返すと，スポーン時の処理がここで終了します．
@@ -97,31 +100,43 @@ public class DqmEntityLivingHandler implements IEntityLivingHandler
 			ep.extinguish();
 		}
 		if(armor != null /*&& !ep.isPotionActive(Potion.nightVision)*/ && armor.itemID == mod_Dqm.Mirayoroi.shiftedIndex)
+		{if(ccount >= 5)
 		{
+			if(posX != (int)ep.posX || posY != (int)ep.posY || posZ != (int)ep.posZ)
+			{
+				world.setLightValue(EnumSkyBlock.Block, posX, posY, posZ, 0);
+				world.updateAllLightTypes(posX - 1, posY, posZ);
+				world.updateAllLightTypes(posX + 1, posY, posZ);
+				world.updateAllLightTypes(posX, posY - 1, posZ);
+				world.updateAllLightTypes(posX, posY + 1, posZ);
+				world.updateAllLightTypes(posX, posY, posZ - 1);
+				world.updateAllLightTypes(posX, posY, posZ + 1);
+				posX = (int)ep.posX;
+				posY = (int)ep.posY;
+				posZ = (int)ep.posZ;
+			}
 			//ep.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1, 0));
-			world.setLightValue(EnumSkyBlock.Block, (int)ep.posX, (int)ep.posY, (int)ep.posZ, 0xff);
-			world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX + 1, (int)ep.posY, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY - 1, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 1);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 1);
-			c = 0;
+			world.setLightValue(EnumSkyBlock.Block, posX, posY, posZ, 0x88);
+			world.updateAllLightTypes(posX - 1, posY, posZ);
+			world.updateAllLightTypes(posX + 1, posY, posZ);
+			world.updateAllLightTypes(posX, posY - 1, posZ);
+			world.updateAllLightTypes(posX, posY + 1, posZ);
+			world.updateAllLightTypes(posX, posY, posZ - 1);
+			world.updateAllLightTypes(posX, posY, posZ + 1);
+			ccount = 0;
 		}
-		else if((armor == null) || (armor != null && armor.itemID != mod_Dqm.Mirayoroi.shiftedIndex) && c == 0)
+		else ccount++;
+		}
+		else if((armor == null) || (armor != null && armor.itemID != mod_Dqm.Mirayoroi.shiftedIndex) && ccount <= 5)
 		{
-			c = 1;
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX - 1, (int)ep.posY, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX - 2, (int)ep.posY, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX + 1, (int)ep.posY, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX + 2, (int)ep.posY, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY - 1, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY + 1, (int)ep.posZ);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 1);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ - 2);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 1);
-			world.updateAllLightTypes((int)ep.posX, (int)ep.posY, (int)ep.posZ + 2);
+			ccount = 6;
+			world.updateAllLightTypes(posX, posY, posZ);
+			world.updateAllLightTypes(posX - 1, posY, posZ);
+			world.updateAllLightTypes(posX + 1, posY, posZ);
+			world.updateAllLightTypes(posX, posY - 1, posZ);
+			world.updateAllLightTypes(posX, posY + 1, posZ);
+			world.updateAllLightTypes(posX, posY, posZ - 1);
+			world.updateAllLightTypes(posX, posY, posZ + 1);
 		}
 
 		return false;

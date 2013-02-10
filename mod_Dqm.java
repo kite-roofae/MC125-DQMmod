@@ -460,6 +460,7 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	public static boolean Keep = false;
 	public DqmInventoryPlayer playersSpecialInventory=null;
 	private DqmInventoryPlayer DIP;
+	private int ccount = 0;
 
 
 
@@ -813,9 +814,17 @@ public class mod_Dqm extends BaseMod //implements IMinecraftRegistry
 	public boolean onTickInGame(float f,Minecraft minecraft)
 	{
 		EntityPlayerSP sp = ModLoader.getMinecraftInstance().thePlayer;
-		DIP.EpPositionX = (int)sp.posX;
-		DIP.EpPositionY = (int)sp.posY;
-		DIP.EpPositionZ = (int)sp.posZ;
+		if(ccount >= 5)
+		{
+			if(DIP.EpPositionX != (int)sp.posX || DIP.EpPositionY != (int)sp.posY || DIP.EpPositionZ != (int)sp.posZ)
+			{
+				DIP.EpPositionX = (int)sp.posX;
+				DIP.EpPositionY = (int)sp.posY;
+				DIP.EpPositionZ = (int)sp.posZ;
+			}
+			ccount  = 0;
+		}
+		else ccount++;
 		if(minecraft!=null){
 			ensureInventoryKept(minecraft);
 		}
