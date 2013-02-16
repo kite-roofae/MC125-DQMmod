@@ -96,10 +96,11 @@ public class DqmpetEntityKimera extends DqmEntityTameable
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
-		this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Rengokunohane.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Kazekirinohane.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
 		this.dropItem(mod_Dqm.Kimeranotubasa.shiftedIndex, 1);
@@ -107,7 +108,7 @@ public class DqmpetEntityKimera extends DqmEntityTameable
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Kazekirinohane.shiftedIndex, 1);
+
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);
@@ -124,7 +125,7 @@ public class DqmpetEntityKimera extends DqmEntityTameable
 	@Override
 	protected void dropRareDrop(int par1)    {        switch (rand.nextInt(4))        {
 	case 1:dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);                break;
-	case 2:dropItem(mod_Dqm.Kimeranotubasa.shiftedIndex, 1);                break;
+	//case 2:dropItem(mod_Dqm.Kimeranotubasa.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitayoroi.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakote.shiftedIndex, 1);                break;
 	case 3:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;

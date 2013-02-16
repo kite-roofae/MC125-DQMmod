@@ -16,11 +16,11 @@ public class DqmEntitySuraimutumuri extends DqmEntityMob
 		//*******************************Size(yoko*tate)***************************************
 		setSize(0.6F, 0.8F);
 		//*******************************Speed***************************************
-		moveSpeed = 0.45F;
+		moveSpeed = 0.35F;
 		//*******************************ATK***************************************
-		attackStrength = 8;
+		attackStrength = 5;
 		//*******************************EXP***************************************
-		experienceValue = 41;
+		experienceValue = 22;
 		//*******************************Fire taisei***************************************
 		//isImmuneToFire = true;
 		//*******************************Koudo***************************************
@@ -40,7 +40,7 @@ public class DqmEntitySuraimutumuri extends DqmEntityMob
 	}
 	//*******************************HP***************************************
 	@Override
-	public int getMaxHealth()    {        return 45;    }
+	public int getMaxHealth()    {        return 23;    }
 	//*******************************Armor***************************************
 	//public int getTotalArmorValue()    {        return 20;    }
 	//*******************************Fall taisei***************************************
@@ -59,18 +59,18 @@ public class DqmEntitySuraimutumuri extends DqmEntityMob
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
-		this.dropItem(mod_Dqm.Metaru.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Koorinokessyou.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Siroikaigara.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Mamorinotane.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Mamorinotane.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Akaisango.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Suraimuzeri.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Suraimuzeri.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);
@@ -79,8 +79,8 @@ public class DqmEntitySuraimutumuri extends DqmEntityMob
     		[Akaitama][Amatuyunoito][Bakudanisi][Dokukesisou][Goldburesuretto][Goldring][Hayatenoring][Hikarinoisi][Hosifuru][Hosinokakera]
     		[Inferunoswordnoha][Inferunoswordnotuka][Kazekirinohane][Kinkai][Koorinokessyou][Koumorinohane][Littlemedal][Madarakumonoito]
     		[Majuunokawa][Majuunotuno][Mamorinotane][Metaloubu][Metaru][Metarukingnoha][Metarukingnotuka][Midorinokoke][Migakizuna]
-    		[Misriru][MysteryEgg][Oriharukon][Puratina][Rotonoha][Rotonotuka][Seijanohai][Seireiseki][Sinkanohiseki][Subayasanotane][Suraimutumuriimunokanmuri]
-    		[Suraimutumuriimuzeri][Syurizai][Tekkouseki][Tikaranotane][Tokinosuisyou][Tyounohane][Uruwasikinoko][Usaginosippo][Yakusou][Yawarakauru]
+    		[Misriru][MysteryEgg][Oriharukon][Puratina][Rotonoha][Rotonotuka][Seijanohai][Seireiseki][Sinkanohiseki][Subayasanotane][Suraimunokanmuri]
+    		[Suraimuzeri][Syurizai][Tekkouseki][Tikaranotane][Tokinosuisyou][Tyounohane][Uruwasikinoko][Usaginosippo][Yakusou][Yawarakauru]
     		[Yogoretahoutai][Yougansekinokakera]*/
 
 	//*******************************REA***************************************
@@ -88,7 +88,7 @@ public class DqmEntitySuraimutumuri extends DqmEntityMob
 	protected void dropRareDrop(int par1)    {        switch (rand.nextInt(4))        {
 	case 1:dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);                break;
 	case 2:dropItem(mod_Dqm.Sabitakabuto.shiftedIndex, 1);                break;
-	//case 3:dropItem(mod_Dqm.Suraimutumuriimuhead.shiftedIndex, 1);                break;
+	//case 3:dropItem(mod_Dqm.Suraimuhead.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakote.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;
 	}}

@@ -16,7 +16,7 @@ public class DqmEntityGamegon extends DqmEntityMob
 		//*******************************Size(yoko*tate)***************************************
 		setSize(2.0F, 1.3F);
 		//*******************************Speed***************************************
-		moveSpeed = 0.20F;
+		moveSpeed = 0.50F;
 		//*******************************ATK***************************************
 		attackStrength = 7;
 		//*******************************EXP***************************************
@@ -55,18 +55,18 @@ public class DqmEntityGamegon extends DqmEntityMob
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
-		this.dropItem(mod_Dqm.Togetogenokiba.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Kyodaihigetokage.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Ryuunonamida.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Honehone.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Mamorinotane.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Mamorinotane.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

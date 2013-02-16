@@ -34,16 +34,38 @@ public class DqmItemFood extends ItemFood implements ITextureProvider
 		int ID =par1ItemStack.itemID;
 		EntityPlayer ep = par3EntityPlayer;
 		if(ID == Dqm.Yakusou.shiftedIndex){ep.setEntityHealth(ep.getHealth()+5);}
+		if(ID == Dqm.Yakusou2.shiftedIndex){ep.setEntityHealth(ep.getHealth()+10);}
+		if(ID == Dqm.Yakusou3.shiftedIndex){ep.setEntityHealth(ep.getHealth()+20);}
 		if(ID == Dqm.Jouyakusou.shiftedIndex){ep.setEntityHealth(ep.getHealth()+10);}
 		if(ID == Dqm.Tokuyakusou.shiftedIndex){ep.setEntityHealth(ep.getHealth()+20);}
 		if(ep.getHealth() > ep.getMaxHealth()){ep.setEntityHealth(ep.getMaxHealth());}
-		if(ID == Dqm.Sinkanohiseki.shiftedIndex){
-			ep.addPotionEffect(new PotionEffect(Potion.jump.id, 200 * 20, 2));
-			ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 200 * 20, 2));
-			ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 200 * 20, 2));
-			ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 200 * 20, 2));
+		if(ID == Dqm.Ougon.shiftedIndex){
+			ep.setEntityHealth(ep.getHealth()+5);
+			ep.clearActivePotions();
+			ep.addPotionEffect(new PotionEffect(Potion.jump.id, 200 * 20, 0));
+			ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 200 * 20, 0));
+			ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 200 * 20, 0));
+			ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 200 * 20, 0));
+		}
+		if(ID == Dqm.Ougon2.shiftedIndex){
+			ep.setEntityHealth(ep.getHealth()+10);
+			ep.clearActivePotions();
+			ep.addPotionEffect(new PotionEffect(Potion.jump.id, 400 * 20, 1));
+			ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 400 * 20, 1));
+			ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 400 * 20, 1));
+			ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 400 * 20, 1));
+		}
+		if(ID == Dqm.Ougon3.shiftedIndex){
+			ep.setEntityHealth(ep.getHealth()+20);
+			ep.clearActivePotions();
+			ep.addPotionEffect(new PotionEffect(Potion.jump.id, 600 * 20, 2));
+			ep.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 600 * 20, 2));
+			ep.addPotionEffect(new PotionEffect(Potion.resistance.id, 600 * 20, 2));
+			ep.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 600 * 20, 2));
 		}
 		if(ID == Dqm.Dokukesisou.shiftedIndex){ep.removePotionEffect(Potion.poison.id);}
+		if(ID == Dqm.Dokukesisou2.shiftedIndex){ep.removePotionEffect(Potion.poison.id);}
+		if(ID == Dqm.Dokukesisou3.shiftedIndex){ep.removePotionEffect(Potion.poison.id);}
 		if(ID == Dqm.Bannouyaku.shiftedIndex){ep.clearActivePotions();}
 		return par1ItemStack;
 	}

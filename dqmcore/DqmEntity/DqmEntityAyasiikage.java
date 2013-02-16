@@ -75,15 +75,16 @@ public class DqmEntityAyasiikage extends EntityEnderman
 			//this.dropItem(mod_Dqm.Kinkai.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
-			this.dropItem(mod_Dqm.Seijanohai.shiftedIndex, 1);
+			this.dropItem(mod_Dqm.Yorunotobari.shiftedIndex, 1);
 		}
 		if (this.isBurning())    {//Fire
+			this.dropItem(mod_Dqm.Uruwasikinoko.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Metaru.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		}
 		else        {             //100%
-			this.dropItem(mod_Dqm.Bannouyaku.shiftedIndex, 1);
+
 			//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Seijanohai.shiftedIndex, 1);
 		}    	}

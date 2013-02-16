@@ -69,7 +69,7 @@ public class DqmEntityZoma extends DqmEntityMob
 		//Randam 0-1
 		this.dropItem(mod_Dqm.Buruoubu.shiftedIndex, 1);
 		this.dropItem(mod_Dqm.Littlemedal.shiftedIndex, 2);
-		this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 2);
+		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 2);
 		this.dropItem(mod_Dqm.Kenjanoisi.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire

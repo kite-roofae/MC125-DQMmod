@@ -93,7 +93,7 @@ public class DqmpetEntityKirapan extends DqmEntityTameable
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Subayasanotane.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Subayasanotane.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);
@@ -180,7 +180,7 @@ public class DqmpetEntityKirapan extends DqmEntityTameable
 
 	return super.interact(par1EntityPlayer);
 	}
-	
+
 
 
 	@Override

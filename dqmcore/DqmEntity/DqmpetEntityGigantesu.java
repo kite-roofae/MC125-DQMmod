@@ -80,19 +80,19 @@ public class DqmpetEntityGigantesu extends DqmEntityTameable
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
 		//this.dropItem(mod_Dqm.Kinkai.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Koorinokessyou.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Koorinokessyou.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Togetogenokiba.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Seireiseki.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Budouekisu.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}    	}
 	/*
     		[Akaitama][Amatuyunoito][Bakudanisi][Dokukesisou][Goldburesuretto][Goldring][Hayatenoring][Hikarinoisi][Hosifuru][Hosinokakera]
@@ -107,8 +107,8 @@ public class DqmpetEntityGigantesu extends DqmEntityTameable
 	case 1:dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakabuto.shiftedIndex, 1);                break;
 	case 2:dropItem(mod_Dqm.Sabitayoroi.shiftedIndex, 1);                break;
-	case 3:dropItem(mod_Dqm.Metarukingnokutu.shiftedIndex, 1);                break;
-	//case 2:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;
+	case 3:dropItem(mod_Dqm.Atorasunokanaduti.shiftedIndex, 1);                break;
+	//case 4:dropItem(mod_Dqm.Gureitoakusu.shiftedIndex, 1);                break;
 	}}
 
 	//*******************************PetItem/SENTOU_HP***************************************

@@ -388,7 +388,7 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 	@Override
 	public String getTextureFile()
 	{
-		return "/dqm/DqmItems.png";
+		return "/dqm/DqmEquipment.png";
 	}
 
 	@Override
@@ -517,7 +517,8 @@ public class DqmItemSword extends ItemSword implements ITextureProvider
 				par1Entity.getClass() == DqmEntityKisudragon.class ||
 				par1Entity.getClass() == DqmEntityGamegonload.class ||
 				par1Entity.getClass() == DqmEntityDasudragon.class ||
-				par1Entity.getClass() == DqmEntityGamegonrejendo.class
+				par1Entity.getClass() == DqmEntityGamegonrejendo.class ||
+				par1Entity.getClass() == DqmEntityBatorurex.class
 				))
 				{
 				w.playSoundAtEntity(par1Entity, "DQM_Sound.Dragon", 0.9F, 0.9F);

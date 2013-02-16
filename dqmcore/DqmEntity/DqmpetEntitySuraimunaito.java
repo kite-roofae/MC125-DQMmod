@@ -89,18 +89,18 @@ public class DqmpetEntitySuraimunaito extends DqmEntityTameable
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
 
-		this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Midorinokoke.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
+		this.dropItem(mod_Dqm.Suraimuosyarebana.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Tokinosuisyou.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Tokinosuisyou.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Tekkouseki.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Tekkouseki.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

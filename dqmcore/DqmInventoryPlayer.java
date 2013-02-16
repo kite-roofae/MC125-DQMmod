@@ -41,7 +41,7 @@ public class DqmInventoryPlayer extends InventoryPlayer {
 		SpawnPosition = new int[]{w.getSpawnX(), w.getSpawnY(), w.getSpawnZ()};
 		for (var1 = 0; var1 < mainInventory.length; ++var1)
 		{
-			if (mainInventory[var1] != null && mainInventory[var1].itemID == mod_Dqm.Inotinoisi.shiftedIndex && ep.getHealth() <= 0 && mainInventory[var1].stackSize > 0)
+			if (mainInventory[var1] != null && mainInventory[var1].itemID == mod_Dqm.Inotinoyubiwa.shiftedIndex && ep.getHealth() <= 0 && mainInventory[var1].stackSize > 0)
 			{
 				itemstack = mainInventory[var1];
 				w.setSpawnPosition(EpPositionX,EpPositionY,EpPositionZ);

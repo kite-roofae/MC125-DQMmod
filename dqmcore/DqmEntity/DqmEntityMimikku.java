@@ -54,8 +54,8 @@ public class DqmEntityMimikku extends DqmEntityMob
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
-		this.dropItem(mod_Dqm.Kinkai.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Puratina.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Ikazutinotama.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Puratina.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Bannouyaku.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 	}
@@ -65,7 +65,7 @@ public class DqmEntityMimikku extends DqmEntityMob
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Tokinosuisyou.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Tokinosuisyou.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);
@@ -84,7 +84,7 @@ public class DqmEntityMimikku extends DqmEntityMob
 	case 1:dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakabuto.shiftedIndex, 1);                break;
 	case 2:dropItem(mod_Dqm.Sabitayoroi.shiftedIndex, 1);                break;
-	case 3:dropItem(mod_Dqm.Sinpinoyoroi.shiftedIndex, 1);                break;
+	//case 3:dropItem(mod_Dqm.Sinpinoyoroi.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;
 	}}
 

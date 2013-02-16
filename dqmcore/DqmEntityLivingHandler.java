@@ -84,7 +84,7 @@ public class DqmEntityLivingHandler implements IEntityLivingHandler
 		ItemStack armor = ModLoader.getMinecraftInstance().thePlayer.inventory.armorItemInSlot(2);//アーマーインベントリから防具を取得
 		if(armor != null && !ep.isPotionActive(Potion.fireResistance) && armor.itemID == mod_Dqm.Honoonoyoroi.shiftedIndex)
 		{
-			ep.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 1, 0));
+			ep.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 50, 0));
 		}
 		if(armor != null && !ep.isPotionActive(Potion.regeneration) && armor.itemID == mod_Dqm.Sinpinoyoroi.shiftedIndex)
 		{
@@ -116,7 +116,7 @@ public class DqmEntityLivingHandler implements IEntityLivingHandler
 				posZ = (int)ep.posZ;
 			}
 			//ep.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1, 0));
-			world.setLightValue(EnumSkyBlock.Block, posX, posY, posZ, 0x88);
+			world.setLightValue(EnumSkyBlock.Block, posX, posY, posZ, 0xbb);
 			world.updateAllLightTypes(posX - 1, posY, posZ);
 			world.updateAllLightTypes(posX + 1, posY, posZ);
 			world.updateAllLightTypes(posX, posY - 1, posZ);

@@ -68,7 +68,7 @@ public class DqmEntityKirapan extends DqmEntityMob
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Subayasanotane.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Subayasanotane.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

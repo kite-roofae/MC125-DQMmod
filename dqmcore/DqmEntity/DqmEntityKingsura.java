@@ -61,7 +61,7 @@ public class DqmEntityKingsura extends DqmEntityMob
 
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
+	    this.dropItem(mod_Dqm.Nebanebazeri.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
@@ -70,7 +70,7 @@ public class DqmEntityKingsura extends DqmEntityMob
 		this.dropItem(mod_Dqm.Suraimunokanmuri.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Suraimuzeri.shiftedIndex, 1);
+
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

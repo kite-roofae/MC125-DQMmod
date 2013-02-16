@@ -13,7 +13,7 @@ public class DqmItemKazeBow extends Item implements ITextureProvider
 	@Override
 	public String getTextureFile()
 	{
-		return "/dqm/DqmItems.png";
+		return "/dqm/DqmEquipment.png";
 	}
 	/**
 	 * called when the player releases the use item button. Args: itemstack, world, entityplayer, itemInUseCount

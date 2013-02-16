@@ -86,7 +86,7 @@ public class DqmpetEntityGhost extends DqmEntityTameable
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Tekkouseki.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Tekkouseki.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}

@@ -51,7 +51,7 @@ public class DqmEntityDasudragon extends DqmEntityMob
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
-		this.dropItem(mod_Dqm.Ikazutinotama.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Ryuunonamida.shiftedIndex, 1);
 
 
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
@@ -63,7 +63,7 @@ public class DqmEntityDasudragon extends DqmEntityMob
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Kyodainakiba.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Kyodainakiba.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Majuunokawa.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);

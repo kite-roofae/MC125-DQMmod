@@ -71,8 +71,8 @@ public class DqmEntityEsterk extends DqmEntityMob
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Seireiseki.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Seireiseki.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);
 		this.dropItem(mod_Dqm.MysteryEgg.shiftedIndex, 1);
 	}    	}
 	/*

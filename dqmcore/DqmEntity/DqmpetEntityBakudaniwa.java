@@ -101,12 +101,12 @@ public class DqmpetEntityBakudaniwa extends DqmEntityTameable
 	if (this.isBurning())    {//Fire
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Seijanohai.shiftedIndex, 1);
 	}
 	else        {             //100%
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Tekkouseki.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Tekkouseki.shiftedIndex, 1);
 	}    	}
 	/*
     		[Akaitama][Amatuyunoito][Bakudanisi][Dokukesisou][Goldburesuretto][Goldring][Hayatenoring][Hikarinoisi][Hosifuru][Hosinokakera]

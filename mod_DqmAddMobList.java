@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.src.dqmcore.DqmRender;
 import net.minecraft.src.dqmcore.DqmEntity.*;
 import net.minecraft.src.dqmcore.DqmModel.*;
+import net.minecraft.src.dqmcore.Pet.DqmModelRamiaBike;
 
 public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 {
@@ -73,14 +74,56 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		//(beach),(desert),(desertHills),(extremeHills),(extremeHillsEdge),(forest),(forestHills),
 		//(frozenOcean),(frozenRiver),(hell),(iceMountains),(icePlains),(jungle),(jungleHills),(mushroomIsland),
 		//(mushroomIslandShore),(ocean),(plains),(river),(sky),(swampland),(taiga),(taigaHills),
-		BiomeGenBase[] hell = { BiomeGenBase.hell };
-		BiomeGenBase[] hellsky = { BiomeGenBase.sky,BiomeGenBase.hell };
-		BiomeGenBase[] sky = { BiomeGenBase.sky,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forestHills,BiomeGenBase.jungleHills,BiomeGenBase.taigaHills };
-		BiomeGenBase[] frozenhell = { BiomeGenBase.frozenOcean,BiomeGenBase.frozenRiver,BiomeGenBase.hell };
-		BiomeGenBase[] Hills = { BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.forestHills,BiomeGenBase.jungleHills,BiomeGenBase.taigaHills };
-		BiomeGenBase[] desert = { BiomeGenBase.desert,BiomeGenBase.desertHills };
-		BiomeGenBase[] Fire = { BiomeGenBase.beach,BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.frozenOcean,BiomeGenBase.frozenRiver,
-				BiomeGenBase.hell,BiomeGenBase.iceMountains };
+
+		//現世界のみ
+		BiomeGenBase[] desert = { BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] extremeHills = { BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] forest = { BiomeGenBase.forest,BiomeGenBase.forestHills,BiomeGenBase.frozenRiver,BiomeGenBase.beach };
+		BiomeGenBase[] hell = { BiomeGenBase.hell,BiomeGenBase.extremeHills,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] iceMountains = { BiomeGenBase.iceMountains,BiomeGenBase.icePlains,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] jungle = { BiomeGenBase.jungle,BiomeGenBase.jungleHills,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] plains = { BiomeGenBase.plains,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] swampland = { BiomeGenBase.swampland,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] taiga = { BiomeGenBase.taiga,BiomeGenBase.taigaHills,BiomeGenBase.river,BiomeGenBase.beach };
+
+		//現世界と地獄
+		BiomeGenBase[] desert2 = { BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.hell };
+		BiomeGenBase[] extremeHills2 = { BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.hell };
+		BiomeGenBase[] forest2 = { BiomeGenBase.forest,BiomeGenBase.forestHills,BiomeGenBase.frozenRiver,BiomeGenBase.beach, BiomeGenBase.hell };
+		BiomeGenBase[] hell2 = { BiomeGenBase.hell,BiomeGenBase.extremeHills,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.hell };
+		BiomeGenBase[] iceMountains2 = { BiomeGenBase.iceMountains,BiomeGenBase.icePlains,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.hell };
+		BiomeGenBase[] jungle2 = { BiomeGenBase.jungle,BiomeGenBase.jungleHills,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] plains2 = { BiomeGenBase.plains,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.hell };
+		BiomeGenBase[] swampland2 = { BiomeGenBase.swampland,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.hell };
+		BiomeGenBase[] taiga2 = { BiomeGenBase.taiga,BiomeGenBase.taigaHills,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.hell };
+
+		//現世界とエンド
+		BiomeGenBase[] desert3 = { BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.sky };
+		BiomeGenBase[] extremeHills3 = { BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.sky };
+		BiomeGenBase[] forest3 = { BiomeGenBase.forest,BiomeGenBase.forestHills,BiomeGenBase.frozenRiver,BiomeGenBase.beach, BiomeGenBase.sky };
+		BiomeGenBase[] sky3 = { BiomeGenBase.sky,BiomeGenBase.extremeHills,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.sky };
+		BiomeGenBase[] iceMountains3 = { BiomeGenBase.iceMountains,BiomeGenBase.icePlains,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.sky };
+		BiomeGenBase[] jungle3 = { BiomeGenBase.jungle,BiomeGenBase.jungleHills,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] plains3 = { BiomeGenBase.plains,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.sky };
+		BiomeGenBase[] swampland3 = { BiomeGenBase.swampland,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.sky };
+		BiomeGenBase[] taiga3 = { BiomeGenBase.taiga,BiomeGenBase.taigaHills,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.sky };
+
+		//現世界とキノコ
+		BiomeGenBase[] desert4 = { BiomeGenBase.desert,BiomeGenBase.desertHills,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore };
+		BiomeGenBase[] extremeHills4 = { BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore };
+		BiomeGenBase[] forest4 = { BiomeGenBase.forest,BiomeGenBase.forestHills,BiomeGenBase.frozenRiver,BiomeGenBase.beach, BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore };
+		BiomeGenBase[] iceMountains4 = { BiomeGenBase.iceMountains,BiomeGenBase.icePlains,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore };
+		BiomeGenBase[] jungle4 = { BiomeGenBase.jungle,BiomeGenBase.jungleHills,BiomeGenBase.river,BiomeGenBase.beach };
+		BiomeGenBase[] mushroomIsland4 = { BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore };
+		BiomeGenBase[] plains4 = { BiomeGenBase.plains,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore };
+		BiomeGenBase[] swampland4 = { BiomeGenBase.swampland,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore };
+		BiomeGenBase[] taiga4 = { BiomeGenBase.taiga,BiomeGenBase.taigaHills,BiomeGenBase.river,BiomeGenBase.beach, BiomeGenBase.mushroomIsland,BiomeGenBase.mushroomIslandShore };
+
+		//ボス系
+		BiomeGenBase[] Esterk = { BiomeGenBase.desert,BiomeGenBase.hell };
+		BiomeGenBase[] Zoma = { BiomeGenBase.iceMountains,BiomeGenBase.icePlains,BiomeGenBase.hell };
+		BiomeGenBase[] DarkRamia = { BiomeGenBase.extremeHills,BiomeGenBase.extremeHillsEdge,BiomeGenBase.hell,BiomeGenBase.sky};
+
 		cs = new mo_DqmSpawner(); // spawnerインスタンスを初期化します
 		cs.setMaxMobs(monster); // カスタムモブの最大数を設定します
 		cs.setMaxAnimals(creature); // カスタム動物モブの最大数を設定します
@@ -95,87 +138,229 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		// 130, 2003199, 8388564);}
 		// DqmAPI.registerEntity(DqmEntitySura.class, "Dqm.Sura", 2003199,
 		// 8388564);}
-
+		/*
+		,desert 	砂漠
+,extremeHills	extremeHills
+,forest	森
+,hell	地獄
+,iceMountains	iceMountains
+,jungle	ジャングル
+,mushroomIsland	mushroomIsland
+,plains	平野
+,swampland	沼沢
+,taiga	タイガ*/
 		// Monster
 		// spawn************************************************************************************************************************************************************
+		cs.addCustomSpawn(DqmEntityArumiraji.class, 4, 1, 1, Type.monster,iceMountains);
+		cs.addCustomSpawn(DqmEntityAtorasu.class, 5, 1, 1, Type.monster,swampland2);
+		cs.addCustomSpawn(DqmEntityAyasiikage.class, 4, 1, 1, Type.monster,plains3);
+		cs.addCustomSpawn(DqmEntityBakudaniwa.class, 5, 1, 2, Type.monster,swampland2);
+		cs.addCustomSpawn(DqmEntityBatorurex.class, 3, 1, 1, Type.monster,swampland2);
+		cs.addCustomSpawn(DqmEntityBehoimisuraimu.class, 3, 1, 1, Type.monster,forest);
+		cs.addCustomSpawn(DqmEntityBehoimusuraimu.class, 3, 1, 1, Type.monster,iceMountains);
+		cs.addCustomSpawn(DqmEntityBigCrow.class, 5, 1, 1, Type.monster,forest);
+		cs.addCustomSpawn(DqmEntityBubsura.class, 5, 1, 3, Type.monster,forest);
+		cs.addCustomSpawn(DqmEntityBuraddihando.class, 4, 1, 1, Type.monster,taiga2);
+		cs.addCustomSpawn(DqmEntityDasudragon.class, 3, 1, 1, Type.monster,iceMountains2);
+		cs.addCustomSpawn(DqmEntityDesufuratta.class, 20, 1, 1, Type.monster,plains);
+		cs.addCustomSpawn(DqmEntityDoraki.class, 5, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityDorakima.class, 4, 1, 1, Type.monster,forest2);
+		cs.addCustomSpawn(DqmEntityDqmdragon.class, 3, 1, 1, Type.monster,extremeHills);
+		cs.addCustomSpawn(DqmEntityFurosutogizumo.class, 4, 1, 1, Type.monster,taiga);
+		cs.addCustomSpawn(DqmEntityGaikotukensi.class, 3, 1, 1, Type.monster,plains);
+		cs.addCustomSpawn(DqmEntityGamegon.class, 3, 1, 1, Type.monster,forest);
+		cs.addCustomSpawn(DqmEntityGamegonload.class, 3, 1, 1, Type.monster,swampland2);
+		cs.addCustomSpawn(DqmEntityGamegonrejendo.class, 2, 1, 1, Type.monster,jungle2);
+		cs.addCustomSpawn(DqmEntityGhost.class, 5, 1, 1, Type.monster,desert);
+		cs.addCustomSpawn(DqmEntityGigantesu.class, 2, 1, 1, Type.monster,iceMountains3);
+		cs.addCustomSpawn(DqmEntityGizumo.class, 5, 1, 1, Type.monster,forest);
+		cs.addCustomSpawn(DqmEntityGoldman.class, 2, 1, 1, Type.monster,swampland3);
+		cs.addCustomSpawn(DqmEntityGoremu.class, 2, 1, 1, Type.monster,plains);
+		cs.addCustomSpawn(DqmEntityGorudensuraimu.class, 3, 1, 1, Type.monster,jungle2);
+		cs.addCustomSpawn(DqmEntityGorudentotemu.class, 3, 1, 1, Type.monster,jungle2);
+		cs.addCustomSpawn(DqmEntityHagumeta.class, 1, 1, 1, Type.monster,desert4);
+		cs.addCustomSpawn(DqmEntityHerughost.class, 15, 1, 1, Type.monster,taiga);
+		cs.addCustomSpawn(DqmEntityHiitogizumo.class, 4, 1, 1, Type.monster,extremeHills2);
+		cs.addCustomSpawn(DqmEntityHitokuibako.class, 4, 1, 1, Type.monster,plains);
+		cs.addCustomSpawn(DqmEntityHoimisura.class, 10, 1, 5,Type.waterCreature);
+		cs.addCustomSpawn(DqmEntityHoroghost.class, 4, 1, 1, Type.monster,jungle2);
+		cs.addCustomSpawn(DqmEntityIkkakuusagi.class, 3, 1, 1, Type.monster,forest);
+		cs.addCustomSpawn(DqmEntityKagenokisi.class, 3, 1, 1, Type.monster,jungle3);
+		cs.addCustomSpawn(DqmEntityKimera.class, 3, 1, 1, Type.monster,plains);
+		cs.addCustomSpawn(DqmEntityKingsura.class, 4, 1, 1, Type.monster,desert);
+		cs.addCustomSpawn(DqmEntityKiramasin.class, 4, 1, 1, Type.monster,iceMountains2);
+		cs.addCustomSpawn(DqmEntityKirapan.class, 4, 1, 1, Type.monster,plains);
+		cs.addCustomSpawn(DqmEntityKirikabuobake.class, 4, 1, 1, Type.monster,forest);
+		cs.addCustomSpawn(DqmEntityKisudragon.class, 3, 1, 1, Type.monster,swampland3);
+		cs.addCustomSpawn(DqmEntityKuinsuraimu.class, 10, 1, 1, Type.monster,jungle);
+		cs.addCustomSpawn(DqmEntityMadohando.class, 4, 1, 1, Type.monster,swampland);
+		cs.addCustomSpawn(DqmEntityMaounokage.class, 15, 1, 1, Type.monster,extremeHills3);
+		cs.addCustomSpawn(DqmEntityMarinsuraimu.class, 4, 1, 1, Type.monster,iceMountains);
+		cs.addCustomSpawn(DqmEntityMegazarurokku.class, 3, 1, 1, Type.monster,extremeHills);
+		cs.addCustomSpawn(DqmEntityMeijikimera.class, 3, 1, 1, Type.monster,swampland2);
+		cs.addCustomSpawn(DqmEntityMeragosuto.class, 3, 1, 1, Type.monster,plains);
+		cs.addCustomSpawn(DqmEntityMetaking.class, 2, 1, 1, Type.monster,jungle4);
+		cs.addCustomSpawn(DqmEntityMetaruburazazu.class, 2, 1, 1, Type.monster,iceMountains4);
+		cs.addCustomSpawn(DqmEntityMetaruhanta.class, 2, 1, 1, Type.monster,swampland4);
+		cs.addCustomSpawn(DqmEntityMetaruhantaken.class, 3, 1, 1, Type.monster,swampland4);
+		cs.addCustomSpawn(DqmEntityMetaruraida.class, 4, 1, 1, Type.monster,desert4);
+		cs.addCustomSpawn(DqmEntityMetasura.class, 3, 1, 2, Type.monster,plains4);
+		cs.addCustomSpawn(DqmEntityMetoroghost.class, 4, 1, 1, Type.monster,desert);
+		cs.addCustomSpawn(DqmEntityMimikku.class, 4, 1, 1, Type.monster,iceMountains);
+		cs.addCustomSpawn(DqmEntityPandorabox.class, 6, 1, 1, Type.monster,extremeHills2);
+		cs.addCustomSpawn(DqmEntityPuratinaking.class, 1, 1, 1, Type.monster,jungle4);
+		cs.addCustomSpawn(DqmEntityRiripat.class, 5, 1, 2, Type.monster,forest);
+		cs.addCustomSpawn(DqmEntitySamayoutamasii.class, 3, 1, 1, Type.monster,iceMountains2);
+		cs.addCustomSpawn(DqmEntitySibirekurage.class, 3, 1, 1, Type.monster,taiga);
+		cs.addCustomSpawn(DqmEntitySiryounokisi.class, 3, 1, 1, Type.monster,iceMountains2);
+		cs.addCustomSpawn(DqmEntityStarkimera.class, 3, 1, 1, Type.monster,desert3);
+		cs.addCustomSpawn(DqmEntityStonman.class, 3, 1, 1, Type.monster,desert);
+		cs.addCustomSpawn(DqmEntitySumairurokku.class, 3, 1, 1, Type.monster,swampland);
+		cs.addCustomSpawn(DqmEntitySura.class, 10, 1, 6, Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimubehomazun.class, 3, 1, 1,Type.monster,extremeHills2);
+		cs.addCustomSpawn(DqmEntitySuraimubesu.class, 7, 1, 1, Type.monster,plains2);
+		cs.addCustomSpawn(DqmEntitySuraimumadyura.class, 2, 1, 1, Type.monster,extremeHills2);
+		cs.addCustomSpawn(DqmEntitySuraimunaito.class, 5, 1, 1, Type.monster,plains);
+		cs.addCustomSpawn(DqmEntitySuraimutawa.class, 4, 1, 1, Type.monster,forest);
+		cs.addCustomSpawn(DqmEntitySuraimutumuri.class, 4, 1, 1, Type.monster,plains);
+		cs.addCustomSpawn(DqmEntitySyado.class, 4, 1, 1, Type.monster,desert);
+		cs.addCustomSpawn(DqmEntityTahodoraki.class, 20, 1, 1, Type.monster,swampland);
+		cs.addCustomSpawn(DqmEntityWaraibukuro.class, 3, 1, 1, Type.monster,extremeHills);
+
+		//ボス系
+		cs.addCustomSpawn(DqmEntityZoma.class, 1, 1, 1, Type.monster,Zoma);
+		cs.addCustomSpawn(DqmEntityDarkRamia.class, 1, 1, 1, Type.monster,DarkRamia);
+		cs.addCustomSpawn(DqmEntityEsterk.class, 1, 1, 1, Type.monster,Esterk);
+
+		//ペット
+		cs.addCustomSpawn(DqmpetEntityBakudaniwa.class, 3, 1, 1, Type.creature,swampland);
+		cs.addCustomSpawn(DqmpetEntityDorakima.class, 3, 1, 1, Type.creature,forest);
+		cs.addCustomSpawn(DqmpetEntityDqmdragon.class, 3, 1, 1, Type.creature,extremeHills);
+		cs.addCustomSpawn(DqmpetEntityGaikotukensi.class, 3, 1, 1,Type.creature,plains);
+		cs.addCustomSpawn(DqmpetEntityGhost.class, 3, 1, 1, Type.creature,desert);
+		cs.addCustomSpawn(DqmpetEntityGigantesu.class, 3, 1, 1, Type.creature,iceMountains);
+		cs.addCustomSpawn(DqmpetEntityGoremu.class, 3, 1, 1, Type.creature,plains);
+		cs.addCustomSpawn(DqmpetEntityHagumeta.class, 3, 1, 1, Type.creature,desert);
+		cs.addCustomSpawn(DqmpetEntityHitokuibako.class, 3, 1, 1, Type.creature,plains);
+		cs.addCustomSpawn(DqmpetEntityIkkakuusagi.class, 3, 1, 1, Type.creature,forest);
+		cs.addCustomSpawn(DqmpetEntityKimera.class, 3, 1, 1, Type.creature,plains);
+		cs.addCustomSpawn(DqmpetEntityKingsura.class, 3, 1, 1, Type.creature,desert);
+		cs.addCustomSpawn(DqmpetEntityKiramasin.class, 3, 1, 1, Type.creature,iceMountains);
+		cs.addCustomSpawn(DqmpetEntityKirapan.class, 3, 1, 1, Type.creature,plains);
+		cs.addCustomSpawn(DqmpetEntityKirikabuobake.class, 3, 1, 1,Type.creature,forest);
+		cs.addCustomSpawn(DqmpetEntityKuinsuraimu.class, 3, 1, 1,Type.creature,jungle);
+		cs.addCustomSpawn(DqmpetEntityMetoroghost.class, 3, 1, 1, Type.creature,desert);
+		cs.addCustomSpawn(DqmpetEntitySura.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntitySuraimunaito.class, 3, 1, 1, Type.creature,plains);
+		cs.addCustomSpawn(DqmpetEntitySuraimutawa.class, 3, 1, 1, Type.creature,forest);
+		cs.addCustomSpawn(DqmpetEntitySyado.class, 3, 1, 1, Type.creature,desert);
+
+/*バイオーム設定無し
 		cs.addCustomSpawn(DqmEntityArumiraji.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityAtorasu.class, 5, 1, 1, Type.monster,hell);
+		cs.addCustomSpawn(DqmEntityAtorasu.class, 5, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityAyasiikage.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityBakudaniwa.class, 5, 1, 2, Type.monster);
+		cs.addCustomSpawn(DqmEntityBatorurex.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityBehoimisuraimu.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityBehoimusuraimu.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityBigCrow.class, 5, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityBubsura.class, 5, 1, 3, Type.monster);
 		cs.addCustomSpawn(DqmEntityBuraddihando.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityDesufuratta.class, 20, 1, 1, Type.monster,hell);
+		cs.addCustomSpawn(DqmEntityDarkRamia.class, 1, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityDasudragon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityDesufuratta.class, 20, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityDoraki.class, 5, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityDorakima.class, 4, 1, 1, Type.monster, sky);
-		cs.addCustomSpawn(DqmEntityDqmdragon.class, 3, 1, 1, Type.monster,Fire);
-		cs.addCustomSpawn(DqmEntityEsterk.class, 1, 1, 1, Type.monster,	frozenhell);
+		cs.addCustomSpawn(DqmEntityDorakima.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityDqmdragon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityEsterk.class, 1, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityFurosutogizumo.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityGaikotukensi.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGamegon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGamegonload.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGamegonrejendo.class, 2, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityGhost.class, 5, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityGigantesu.class, 2, 1, 1, Type.monster, Hills);
+		cs.addCustomSpawn(DqmEntityGigantesu.class, 2, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityGizumo.class, 5, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGoldman.class, 2, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityGoremu.class, 2, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGorudensuraimu.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityGorudentotemu.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityHagumeta.class, 1, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityHerughost.class, 15, 1, 1, Type.monster,	hell);
-		cs.addCustomSpawn(DqmEntityHiitogizumo.class, 4, 1, 1, Type.monster,Fire);
+		cs.addCustomSpawn(DqmEntityHerughost.class, 15, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityHiitogizumo.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityHitokuibako.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityHoimisura.class, 10, 1, 5,Type.waterCreature);
-		cs.addCustomSpawn(DqmEntityHoroghost.class, 4, 1, 1, Type.monster,sky);
+		cs.addCustomSpawn(DqmEntityHoroghost.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityIkkakuusagi.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityKimera.class, 3, 1, 1, Type.monster,Fire);
+		cs.addCustomSpawn(DqmEntityKagenokisi.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityKimera.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityKingsura.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityKiramasin.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityKirapan.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityKirikabuobake.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityKuinsuraimu.class, 10, 1, 1, Type.monster,frozenhell);
+		cs.addCustomSpawn(DqmEntityKisudragon.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityKuinsuraimu.class, 10, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityMadohando.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityMaounokage.class, 15, 1, 1, Type.monster,hell);
-		cs.addCustomSpawn(DqmEntityMetaking.class, 2, 1, 1, Type.monster,hell);
+		cs.addCustomSpawn(DqmEntityMaounokage.class, 15, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMarinsuraimu.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMegazarurokku.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMeijikimera.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMeragosuto.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMetaking.class, 2, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMetaruburazazu.class, 2, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityMetaruhanta.class, 2, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMetaruhantaken.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityMetaruraida.class, 4, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityMetasura.class, 3, 1, 2, Type.monster);
 		cs.addCustomSpawn(DqmEntityMetoroghost.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityMimikku.class, 4, 1, 1, Type.monster, sky);
-		cs.addCustomSpawn(DqmEntityPandorabox.class, 6, 1, 1, Type.monster,	hell);
+		cs.addCustomSpawn(DqmEntityMimikku.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityPandorabox.class, 6, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityPuratinaking.class, 1, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntityRiripat.class, 5, 1, 2, Type.monster);
-		cs.addCustomSpawn(DqmEntitySura.class, 10, 1, 6, Type.monster);
-		cs.addCustomSpawn(DqmEntitySuraimubehomazun.class, 3, 1, 1,	Type.monster,sky);
-		cs.addCustomSpawn(DqmEntitySuraimubesu.class, 7, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntitySuraimutawa.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntitySyado.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityTahodoraki.class, 20, 1, 1, Type.monster,hell);
-		cs.addCustomSpawn(DqmEntityWaraibukuro.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityMetaruhantaken.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityZoma.class, 1, 1, 1, Type.monster,desert);
-		cs.addCustomSpawn(DqmEntitySuraimunaito.class, 5, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityMetaruraida.class, 4, 1, 1, Type.monster);
-
-		cs.addCustomSpawn(DqmEntitySuraimutumuri.class, 4, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityMarinsuraimu.class, 4, 1, 1, Type.monster);
-
-		cs.addCustomSpawn(DqmEntityBehoimisuraimu.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityBehoimusuraimu.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityDasudragon.class, 3, 1, 1, Type.monster,hellsky);
-		cs.addCustomSpawn(DqmEntityGamegon.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityGamegonload.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityGamegonrejendo.class, 2, 1, 1, Type.monster,hellsky);
-		cs.addCustomSpawn(DqmEntityGoldman.class, 2, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityGorudensuraimu.class, 3, 1, 1, Type.monster,hell);
-		cs.addCustomSpawn(DqmEntityGorudentotemu.class, 3, 1, 1, Type.monster,hell);
-		cs.addCustomSpawn(DqmEntityKagenokisi.class, 3, 1, 1, Type.monster,hellsky);
-		cs.addCustomSpawn(DqmEntityKisudragon.class, 3, 1, 1, Type.monster,Fire);
-		cs.addCustomSpawn(DqmEntityMegazarurokku.class, 3, 1, 1, Type.monster,hellsky);
-		cs.addCustomSpawn(DqmEntityMeijikimera.class, 3, 1, 1, Type.monster,Fire);
-		cs.addCustomSpawn(DqmEntityMeragosuto.class, 3, 1, 1, Type.monster,Fire);
-		cs.addCustomSpawn(DqmEntityMetaruburazazu.class, 2, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityPuratinaking.class, 1, 1, 1, Type.monster,hellsky);
-		cs.addCustomSpawn(DqmEntitySamayoutamasii.class, 3, 1, 1, Type.monster,Fire);
+		cs.addCustomSpawn(DqmEntitySamayoutamasii.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntitySibirekurage.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntitySiryounokisi.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntityStarkimera.class, 3, 1, 1, Type.monster,hell);
-		cs.addCustomSpawn(DqmEntityStonman.class, 3, 1, 1, Type.monster,hellsky);
+		cs.addCustomSpawn(DqmEntityStarkimera.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityStonman.class, 3, 1, 1, Type.monster);
 		cs.addCustomSpawn(DqmEntitySumairurokku.class, 3, 1, 1, Type.monster);
-		cs.addCustomSpawn(DqmEntitySuraimumadyura.class, 2, 1, 1, Type.monster,hellsky);
+		cs.addCustomSpawn(DqmEntitySura.class, 10, 1, 6, Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimubehomazun.class, 3, 1, 1,Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimubesu.class, 7, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimumadyura.class, 2, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimunaito.class, 5, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimutawa.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySuraimutumuri.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntitySyado.class, 4, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityTahodoraki.class, 20, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityWaraibukuro.class, 3, 1, 1, Type.monster);
+		cs.addCustomSpawn(DqmEntityZoma.class, 1, 1, 1, Type.monster);
+
+		//ペット
+		cs.addCustomSpawn(DqmpetEntityKirikabuobake.class, 3, 1, 1,Type.creature);
+		cs.addCustomSpawn(DqmpetEntityBakudaniwa.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityDorakima.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityDqmdragon.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityGaikotukensi.class, 3, 1, 1,Type.creature);
+		cs.addCustomSpawn(DqmpetEntityGhost.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityGigantesu.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityGoremu.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityHagumeta.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityHitokuibako.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityIkkakuusagi.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityKimera.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityKingsura.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityKiramasin.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityKirapan.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntityKuinsuraimu.class, 3, 1, 1,Type.creature);
+		cs.addCustomSpawn(DqmpetEntityLittleEsterk.class, 0, 0, 0,Type.creature);
+		cs.addCustomSpawn(DqmpetEntityMetoroghost.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntitySura.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntitySuraimutawa.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntitySyado.class, 3, 1, 1, Type.creature);
+		cs.addCustomSpawn(DqmpetEntitySuraimunaito.class, 3, 1, 1, Type.creature);
+*/
+
+
 
 		ML.registerEntityID(DqmEntityArumiraji.class, "Arumiraji",ML.getUniqueEntityId(),16167425,16167425);
 		ML.registerEntityID(DqmEntityAtorasu.class, "Atorasu",ML.getUniqueEntityId(),12720061,12720061);
@@ -226,6 +411,9 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		ML.registerEntityID(DqmEntityTahodoraki.class, "Tahodoraki",ML.getUniqueEntityId(),12720061,12720061);
 		ML.registerEntityID(DqmEntityWaraibukuro.class, "Waraibukuro",ML.getUniqueEntityId(),16579584,16579584);
 		ML.registerEntityID(DqmEntityZoma.class,"Zoma", ML.getUniqueEntityId(),16382457,16382457);
+		ML.registerEntityID(DqmEntityDarkRamia.class,"DarkRamia", ML.getUniqueEntityId(),16382457,16382457);
+
+
 		ML.registerEntityID(DqmEntitySuraimunaito.class, "Suraimunaito",ML.getUniqueEntityId(),4349438,4349438);
 		ML.registerEntityID(DqmEntityMetaruraida.class, "Metaruraida",ML.getUniqueEntityId(),4349438,4349438);
 
@@ -253,6 +441,7 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		ML.registerEntityID(DqmEntityGamegon.class, "Gamegon",ML.getUniqueEntityId(),894731,894731);
 		ML.registerEntityID(DqmEntityGamegonload.class, "Gamegonload",ML.getUniqueEntityId(),894731,894731);
 		ML.registerEntityID(DqmEntityGamegonrejendo.class, "Gamegonrejendo",ML.getUniqueEntityId(),894731,894731);
+		ML.registerEntityID(DqmEntityBatorurex.class, "Batorurex",ML.getUniqueEntityId(),894731,894731);
 
 		ML.registerEntityID(DqmEntityGoldman.class, "Goldman",ML.getUniqueEntityId(),16579584,16579584);
 		ML.registerEntityID(DqmEntityMegazarurokku.class, "Megazarurokku",ML.getUniqueEntityId(),16579584,16579584);
@@ -262,29 +451,6 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 
 		// Pet No
 		// biom************************************************************************************************************************************************************
-		cs.addCustomSpawn(DqmpetEntityBakudaniwa.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityDorakima.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityDqmdragon.class, 3, 1, 1, Type.creature,Fire);
-		cs.addCustomSpawn(DqmpetEntityGaikotukensi.class, 3, 1, 1,Type.creature);
-		cs.addCustomSpawn(DqmpetEntityGhost.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityGigantesu.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityGoremu.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityHagumeta.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityHitokuibako.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityIkkakuusagi.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityKimera.class, 3, 1, 1, Type.creature,Fire);
-		cs.addCustomSpawn(DqmpetEntityKingsura.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityKiramasin.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityKirapan.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntityKirikabuobake.class, 3, 1, 1,	Type.creature);
-		cs.addCustomSpawn(DqmpetEntityKuinsuraimu.class, 3, 1, 1,Type.creature, frozenhell);
-		cs.addCustomSpawn(DqmpetEntityLittleEsterk.class, 0, 0, 0,Type.creature);
-		cs.addCustomSpawn(DqmpetEntityMetoroghost.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntitySura.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntitySuraimutawa.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntitySyado.class, 3, 1, 1, Type.creature);
-		cs.addCustomSpawn(DqmpetEntitySuraimunaito.class, 3, 1, 1, Type.creature);
-
 		ML.registerEntityID(DqmpetEntityBakudaniwa.class,"PetBakudaniwa", ML.getUniqueEntityId(),16579584,16579584);
 		ML.registerEntityID(DqmpetEntityDorakima.class, "PetDorakima",ML.getUniqueEntityId(),12720061,12720061);
 		ML.registerEntityID(DqmpetEntityDqmdragon.class, "PetDqmdragon",ML.getUniqueEntityId(),894731,894731);
@@ -370,6 +536,8 @@ public class mod_DqmAddMobList extends BaseMod // implements IMinecraftRegistry
 		renderers.put(DqmEntityGamegon.class, new DqmRender(new DqmModelGamegon(), 0.5f));
 		renderers.put(DqmEntityGamegonload.class, new DqmRender(new DqmModelGamegon(), 0.5f));
 		renderers.put(DqmEntityGamegonrejendo.class, new DqmRender(new DqmModelGamegon(), 0.5f));
+		renderers.put(DqmEntityBatorurex.class, new DqmRender(new DqmModelBatorurex(), 0.5f));
+		renderers.put(DqmEntityDarkRamia.class, new DqmRender(new DqmModelRamiaBike(), 0.5f));
 		renderers.put(DqmEntityGoldman.class, new DqmRender(new DqmModelGoremu(), 0.5f));
 		renderers.put(DqmEntityGorudensuraimu.class, new DqmRender(new DqmModelPuratinaking(), 0.5f));
 		renderers.put(DqmEntityGorudentotemu.class, new DqmRender(new DqmModelSuraimutawa(), 0.5f));

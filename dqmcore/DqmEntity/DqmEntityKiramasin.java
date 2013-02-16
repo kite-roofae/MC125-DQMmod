@@ -55,9 +55,9 @@ public class DqmEntityKiramasin extends DqmEntityMob
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Koorinokessyou.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Koorinokessyou.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Tetunokugi.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
@@ -65,7 +65,7 @@ public class DqmEntityKiramasin extends DqmEntityMob
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Metaru.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Metaru.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

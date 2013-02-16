@@ -49,8 +49,8 @@ public class DqmEntityStonman extends DqmEntityMob
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
-		this.dropItem(mod_Dqm.Oriharukon.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Risaikurusuton.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}
@@ -60,7 +60,7 @@ public class DqmEntityStonman extends DqmEntityMob
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Tekkouseki.shiftedIndex, 2);
+		//this.dropItem(mod_Dqm.Tekkouseki.shiftedIndex, 2);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

@@ -51,16 +51,16 @@ public class DqmEntityMaounokage extends DqmEntityAyasiikage
 		//Randam 0-1
 		//this.dropItem(mod_Dqm.Kinkai.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Tokinosuisyou.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.Subayasanotane.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Tokinosuisyou.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Dokuganokona.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Misriru.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Madarakumonoito.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Seijanohai.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Seijanohai.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Seijanohai.shiftedIndex, 1);
 	}    	}

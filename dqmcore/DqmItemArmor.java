@@ -8,7 +8,7 @@ public class DqmItemArmor extends ItemArmor implements ITextureProvider
 	@Override
 	public String getTextureFile()
 	{
-		return "/dqm/DqmItems.png";
+		return "/dqm/DqmEquipment.png";
 	}
 
 	public DqmItemArmor(int par1, EnumArmorMaterial cloth, int par3, int par4,int par5)

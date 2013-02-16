@@ -56,7 +56,7 @@ public class DqmEntityMeragosuto extends DqmEntityMob
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
-		this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Umanofun.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Rengokunohane.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);

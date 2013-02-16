@@ -59,10 +59,10 @@ public class DqmEntityGorudentotemu extends DqmEntityMob
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
 		//this.dropItem(mod_Dqm.Puratina.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Taiyounoisi.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Taiyounoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Moon.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
@@ -71,7 +71,7 @@ public class DqmEntityGorudentotemu extends DqmEntityMob
 	}
 	else        {             //100%
 
-		this.dropItem(mod_Dqm.Kinkai.shiftedIndex, 2);
+		//this.dropItem(mod_Dqm.Kinkai.shiftedIndex, 2);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);
 	}    	}
@@ -88,7 +88,7 @@ public class DqmEntityGorudentotemu extends DqmEntityMob
 	protected void dropRareDrop(int par1)    {        switch (rand.nextInt(4))        {
 	case 1:dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);                break;
 	case 2:dropItem(mod_Dqm.Sabitakabuto.shiftedIndex, 1);                break;
-	//case 3:dropItem(mod_Dqm.Metarukingnoturugi.shiftedIndex, 1);                break;
+	case 3:dropItem(mod_Dqm.Suraimunofuku.shiftedIndex, 1);                break;
 	//case 4:dropItem(mod_Dqm.Metarukingnoturugi.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;
 	}}

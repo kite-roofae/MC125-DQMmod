@@ -18,9 +18,9 @@ public class DqmEntitySuraimubehomazun extends DqmEntityMob
 		//*******************************Speed***************************************
 		moveSpeed = 1.0F;
 		//*******************************ATK***************************************
-		attackStrength = 7;
+		attackStrength = 12;
 		//*******************************EXP***************************************
-		experienceValue = 38;
+		experienceValue = 80;
 		//*******************************Fire taisei***************************************
 		//isImmuneToFire = true;
 		//*******************************Koudo***************************************
@@ -40,7 +40,7 @@ public class DqmEntitySuraimubehomazun extends DqmEntityMob
 	}
 	//*******************************HP***************************************
 	@Override
-	public int getMaxHealth()    {        return 40;    }
+	public int getMaxHealth()    {        return 80;    }
 	//*******************************Armor***************************************
 	//public int getTotalArmorValue()    {        return 20;    }
 	//*******************************Fall taisei***************************************
@@ -60,8 +60,8 @@ public class DqmEntitySuraimubehomazun extends DqmEntityMob
 		//Randam 0-1
 		//this.dropItem(mod_Dqm.Suraimunokanmuri.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Inotinoisi.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Tokuyakusou.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Inotinoisi.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
@@ -69,7 +69,7 @@ public class DqmEntitySuraimubehomazun extends DqmEntityMob
 		this.dropItem(mod_Dqm.Suraimunokanmuri.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Suraimuzeri.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Suraimuzeri.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Bannouyaku.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

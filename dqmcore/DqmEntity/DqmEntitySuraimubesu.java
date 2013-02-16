@@ -60,18 +60,19 @@ public class DqmEntitySuraimubesu extends DqmEntityMob
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
 
-		this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Suraimuzeri.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 2);
+		//this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 2);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Suraimuzeri.shiftedIndex, 1);
+
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.??.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

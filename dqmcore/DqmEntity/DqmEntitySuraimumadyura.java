@@ -59,9 +59,9 @@ public class DqmEntitySuraimumadyura extends DqmEntityMob
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
 		//this.dropItem(mod_Dqm.Puratina.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Genmaseki.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
@@ -69,7 +69,7 @@ public class DqmEntitySuraimumadyura extends DqmEntityMob
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Taiyounoisi.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Taiyounoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Misriru.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

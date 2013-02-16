@@ -48,17 +48,17 @@ public class DqmEntityAtorasu extends DqmEntityMob
 		//this.dropItem(mod_Dqm.Kinkai.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Ikazutinotama.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Maryokunotuti.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Budouekisu.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}    	}
 	/*
     		[Akaitama][Amatuyunoito][Bakudanisi][Dokukesisou][Goldburesuretto][Goldring][Hayatenoring][Hikarinoisi][Hosifuru][Hosinokakera]

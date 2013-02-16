@@ -51,18 +51,18 @@ public class DqmEntitySiryounokisi extends DqmEntityMob
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
 		//this.dropItem(mod_Dqm.Majuunotuno.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Togetogenokiba.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Yogoretahoutai.shiftedIndex, 1);
 
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Inotinoisi.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Majuunotuno.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Inotinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
 		//this.dropItem(Item.bone.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Honehone.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Honehone.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}    	}

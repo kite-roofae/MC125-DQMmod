@@ -56,18 +56,18 @@ public class DqmEntityStarkimera extends DqmEntityMob
 	protected void dropFewItems(boolean par1, int par2)    {        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 	for (int var4 = 0; var4 < var3; ++var4)        {
 		//Randam 0-1
-		this.dropItem(mod_Dqm.Inotinoisi.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Kimeranotubasa.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Inotinoisi.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Haganenoobane.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Taiyounoisi.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Taiyounoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

@@ -63,7 +63,7 @@ public class DqmEntityKisudragon extends DqmEntityMob
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Kyodainakiba.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Kyodainakiba.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Majuunokawa.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);

@@ -51,21 +51,36 @@ public class DqmEntityHoroghost extends DqmEntityAyasiikage
 		for (int var4 = 0; var4 < var3; ++var4)
 		{
 			//Randam 0-1
-			//this.dropItem(mod_Dqm.Kinkai.shiftedIndex, 1);
+			this.dropItem(mod_Dqm.Madarakumonoito.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Midorinokoke.shiftedIndex, 1);
-			this.dropItem(mod_Dqm.Subayasanotane.shiftedIndex, 1);
+			//this.dropItem(mod_Dqm.Subayasanotane.shiftedIndex, 1);
 		}
 		if (this.isBurning())    {//Fire
-			this.dropItem(mod_Dqm.Metaru.shiftedIndex, 1);
+			this.dropItem(mod_Dqm.Gamanoabura.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		}
 		else        {             //100%
-			this.dropItem(mod_Dqm.Seijanohai.shiftedIndex, 1);
+			//this.dropItem(mod_Dqm.Seijanohai.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 			//this.dropItem(mod_Dqm.Seijanohai.shiftedIndex, 1);
 		}    	}
+
+	//*******************************REA***************************************
+	@Override
+	protected void dropRareDrop(int par1)    {        switch (rand.nextInt(4))        {
+	case 1:dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);                break;
+	case 2:dropItem(mod_Dqm.Sabitakote.shiftedIndex, 1);                break;
+	//case 3:dropItem(mod_Dqm.Sekaijunoha.shiftedIndex, 1);                break;
+	//case 2:dropItem(mod_Dqm.Sabitakote.shiftedIndex, 1);                break;
+	//case 2:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;
+	}}
+	@Override
+	public int getMaxSpawnedInChunk()
+	{
+		return 2;
+	}
 	/*
     		[Akaitama][Amatuyunoito][Bakudanisi][Dokukesisou][Goldburesuretto][Goldring][Hayatenoring][Hikarinoisi][Hosifuru][Hosinokakera]
     		[Inferunoswordnoha][Inferunoswordnotuka][Kazekirinohane][Kinkai][Koorinokessyou][Koumorinohane][Littlemedal][Madarakumonoito]

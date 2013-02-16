@@ -61,16 +61,16 @@ public class DqmEntityMetaruraida extends DqmEntityMob
 
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Yougansekinokakera.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Inotinoisi.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Ayakasisou.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
+		this.dropItem(mod_Dqm.Ikazutinotama.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
-		this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Rubinogenseki.shiftedIndex, 1);
 	}
 	else        {             //100%
-		this.dropItem(mod_Dqm.Metaru.shiftedIndex, 1);
+		//this.dropItem(mod_Dqm.Metaru.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 		//this.dropItem(Item.bone.shiftedIndex, 1);

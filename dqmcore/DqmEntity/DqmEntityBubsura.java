@@ -47,7 +47,7 @@ public class DqmEntityBubsura extends DqmEntityMob {
 		//this.dropItem(mod_Dqm.Tikaranotane.shiftedIndex, 1);
 	}
 	if (this.isBurning())    {//Fire
-		this.dropItem(mod_Dqm.Yakusou.shiftedIndex, 1);
+		this.dropItem(mod_Dqm.Dokudokuhedoro.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 		//this.dropItem(mod_Dqm.Hikarinoisi.shiftedIndex, 1);
 	}
@@ -69,7 +69,7 @@ public class DqmEntityBubsura extends DqmEntityMob {
 	protected void dropRareDrop(int par1)    {        switch (rand.nextInt(4))        {
 	case 1:dropItem(mod_Dqm.Littlemedal.shiftedIndex, 1);                break;
 	case 2:dropItem(mod_Dqm.Sabitakabuto.shiftedIndex, 1);                break;
-	case 3:dropItem(mod_Dqm.Urokonoyoroi.shiftedIndex, 1);                break;
+	case 3:dropItem(mod_Dqm.Dokubari.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakote.shiftedIndex, 1);                break;
 	//case 2:dropItem(mod_Dqm.Sabitakutu.shiftedIndex, 1);                break;
 	}}

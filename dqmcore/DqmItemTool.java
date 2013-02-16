@@ -9,7 +9,7 @@ public class DqmItemTool extends ItemTool implements ITextureProvider {
 	private String model;
 	private Block[] blocksEffectiveAgainst;
 	private int tool = 0; // ツール種別設定
-	protected String Texture = "/dqm/DqmItems.png"; // テクスチャマップパス用変数
+	protected String Texture = "/dqm/DqmEquipment.png"; // テクスチャマップパス用変数
 	private int rColor1 = 0xFFFFFF;
 	private int rColor2 = 0xFFFFFF;
 	private int iconIndex2 = -1; // 後面に表示されるテクスチャ設定
